@@ -1,0 +1,6 @@
+{
+  "name": "govuk-11ty",
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }]
+}

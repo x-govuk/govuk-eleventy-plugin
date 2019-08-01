@@ -1,0 +1,122 @@
+@import "govuk/all";
+@import "vendor/prism";
+
+/*
+ * App prose
+ */
+.app-prose-scope {
+  h1:not(class) {
+    @extend %govuk-heading-xl;
+    max-width: 15em;
+  }
+
+  h2:not([class]) {
+    @extend %govuk-heading-l;
+    max-width: 20em;
+  }
+
+  h3:not([class]) {
+    @extend %govuk-heading-m;
+    max-width: 30em;
+  }
+
+  h4:not([class]) {
+    @extend %govuk-heading-s;
+    max-width: 38em;
+  }
+
+  h5:not([class]) {
+    @include govuk-font($size: 19);
+    @include govuk-responsive-margin(4, "bottom");
+    margin-top: 0;
+    color: $govuk-secondary-text-colour;
+  }
+
+  h6:not([class]) {
+    @include govuk-font($size: 16);
+    @include govuk-responsive-margin(4, "bottom");
+    margin-top: 0;
+    color: $govuk-secondary-text-colour;
+  }
+
+  p:not([class]),
+  dl:not([class]) {
+    @extend %govuk-body-m;
+    max-width: 38em;
+  }
+
+  strong,
+  b,
+  dt {
+    @include govuk-typography-weight-bold;
+  }
+
+  ul:not([class]),
+  ol:not([class]) {
+    @extend %govuk-list;
+    max-width: 38em;
+  }
+
+  ol:not([class]) {
+    @extend %govuk-list--number;
+  }
+
+  ul:not([class]) {
+    @extend %govuk-list--bullet;
+  }
+
+  a {
+    @extend %govuk-link;
+  }
+
+  mark {
+    background-color: govuk-colour("yellow");
+  }
+
+  hr {
+    @extend %govuk-section-break;
+    @extend %govuk-section-break--visible;
+    @extend %govuk-section-break--xl;
+  }
+
+  table:not([class]) {
+    @include govuk-font($size: 19);
+    @include govuk-text-colour;
+    margin-bottom: govuk-spacing(4);
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding-right: govuk-spacing(4);
+  }
+
+  pre,
+  code {
+    background-color: govuk-colour("light-grey");
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+
+  pre {
+    padding: govuk-spacing(4);
+  }
+
+  pre + h2 {
+    padding-top: govuk-spacing(4);
+  }
+
+  pre + h3,
+  pre + h4 {
+    padding-top: govuk-spacing(2);
+  }
+
+  .footnote-item,
+  .footnote-item * {
+    @include govuk-font($size: 16, $weight: inherit);
+  }
+
+  .footnote-backref {
+    text-decoration: none;
+  }
+}
