@@ -1,0 +1,38 @@
+{% extends "base.njk" %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: app.serviceName or app.productName,
+      href: "/"
+    }, {
+      text: page.fileSlug | case,
+      href: page.url
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<article class="app-content">
+  <header class="app-content__header">
+    {% if caption %}<span class="govuk-caption-xl">{{ caption }}</span>{% endif %}
+    <h1 class="app-content__title">{{ title }}</h1>
+    {% if description %}<p class="govuk-caption-l govuk-!-margin-top-1">{{ description }}</p>{% endif %}
+  </header>
+
+  <ul class="govuk-list">
+  {%- for post in collections[page.fileSlug] -%}
+    <li class="govuk-!-margin-top-6">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+        <a class="govuk-link" href="{{ post.url }}">{{ post.data.title }}</a>
+      </h2>
+      {% if post.data.summary %}
+      <p class="govuk-body govuk-!-margin-bottom-2">{{ post.data.summary | markdown("inline") }}</p>
+      {% endif %}
+      <p class="govuk-body-s"><time datetime="{{ post.data.date or post.date | date }}">{{ post.data.date or post.date | date("DDD") }}</time></p>
+    </li>
+  {%- endfor -%}
+  </ul>
+</article>
+{% endblock %}

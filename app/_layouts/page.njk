@@ -1,6 +1,18 @@
 {% extends "base.njk" %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: app.serviceName or app.productName,
+      href: "/"
+    }, {
+      text: title,
+      href: page.url
+    }]
+  }) }}
+{% endblock %}
+
 {% block content %}
 <article class="app-content">
   <header class="app-content__header">

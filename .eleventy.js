@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdown);
 
   // Filters
+  eleventyConfig.addFilter('case', require('./lib/filters/change-case'));
   eleventyConfig.addFilter('date', require('./lib/filters/date'));
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown'));
 

@@ -34,6 +34,7 @@
   "dependencies": {
     "@11ty/eleventy": "^0.9.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "change-case": "^3.1.0",
     "govuk-frontend": "^3.3.0",
     "http-server": "^0.11.1",
     "luxon": "^1.19.3",

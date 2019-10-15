@@ -1,6 +1,21 @@
 {% extends "base.njk" %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: app.serviceName or app.productName,
+      href: "/"
+    }, {
+      text: tags[0] | case,
+      href: "/" + tags[0]
+    }, {
+      text: title,
+      href: page.url
+    }]
+  }) }}
+{% endblock %}
+
 {% block content %}
 <article class="app-content">
   <header class="app-content__header">
@@ -8,9 +23,9 @@
     <h1 class="app-content__title">{{ title }}</h1>
   </header>
 
-  {% if date %}
+  {% if date or page.date %}
   <footer class="app-content__footer">
-    <p class="govuk-body-s"><time datetime="{{ date | date }}">{{ date | date("DDD") }}</time></p>
+    <p class="govuk-body-s"><time datetime="{{ date or page.date | date }}">{{ date or page.date | date("DDD") }}</time></p>
   </footer>
   {% endif %}
 
