@@ -1,0 +1,21 @@
+{% extends "base.njk" %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block content %}
+<article class="app-content">
+  <header class="app-content__header">
+    {% if caption %}<span class="govuk-caption-xl">{{ caption }}</span>{% endif %}
+    <h1 class="app-content__title">{{ title }}</h1>
+  </header>
+
+  {% if date %}
+  <footer class="app-content__footer">
+    <p class="govuk-body-s"><time datetime="{{ date | date }}">{{ date | date("DDD") }}</time></p>
+  </footer>
+  {% endif %}
+
+  <div class="app-prose-scope">
+    {{ content | safe }}
+  </div>
+</article>
+{% endblock %}

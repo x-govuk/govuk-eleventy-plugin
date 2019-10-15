@@ -1,0 +1,33 @@
+{% extends "base.njk" %}
+
+{% from "masthead/macro.njk" import appMasthead %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block main %}
+  {{ appMasthead({
+    title: {
+      html: title
+    } if title,
+    description: {
+      html: description | markdown
+    } if description,
+    startButton: startButton if startButton,
+    image: image if image
+  }) }}
+
+  <div class="govuk-width-container">
+    {% block beforeContent %}{% endblock %}
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    {% block content %}
+      <div class="govuk-grid-row product-page-!-border-bottom govuk-!-margin-bottom-7">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="app-prose-scope">
+            {{ content | safe }}
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+    </main>
+  </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+$app-breadcrumbs-inverted-text-colour: govuk-colour("white");
+$app-breadcrumbs-inverted-border-colour: govuk-colour("light-blue");
+
+.app-breadcrumbs--inverted {
+  margin: #{govuk-spacing(6) * -1} 0 govuk-spacing(6);
+  padding: govuk-spacing(3) 0 govuk-spacing(2);
+  border-bottom: 1px solid $app-breadcrumbs-inverted-border-colour;
+
+  .govuk-breadcrumbs__list-item::before {
+    border-color: $app-breadcrumbs-inverted-text-colour;
+  }
+
+  .govuk-breadcrumbs__list-item:last-child a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  a:link,
+  a:visited {
+    color: $app-breadcrumbs-inverted-text-colour;
+  }
+
+  a:hover,
+  a:active {
+    color: $app-breadcrumbs-inverted-text-colour;
+  }
+
+  a:focus {
+    color: $govuk-text-colour;
+  }
+}

@@ -1,11 +1,11 @@
 let Nunjucks = require('nunjucks');
-let markdownIt = require("markdown-it");
+let markdown = require('./lib/markdown');
 
 module.exports = function (eleventyConfig) {
-  // Templates: Nunjucks
+  // Templates: Nunjucks and Markdown
   let nunjucksEnv = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader([
-      'app/_includes',
+      'app/_components',
       'app/_layouts',
       'node_modules/govuk-frontend'
     ]), {
@@ -14,25 +14,11 @@ module.exports = function (eleventyConfig) {
     }
   );
   eleventyConfig.setLibrary('njk', nunjucksEnv);
-
-  // Templates: Markdown
-  let options = {
-    html: true,
-    breaks: true,
-    linkify: true,
-    typographer: true
-  };
-  let markdownLib = markdownIt(options)
-    .use(require('markdown-it-abbr'))
-    .use(require('markdown-it-deflist'))
-    .use(require('markdown-it-footnote'))
-    .use(require('markdown-it-ins'))
-    .use(require('markdown-it-mark'))
-    .use(require('markdown-it-sub'))
-    .use(require('markdown-it-sup'))
-  eleventyConfig.setLibrary("md", markdownLib);
+  eleventyConfig.setLibrary('md', markdown);
 
   // Filters
+  eleventyConfig.addFilter('date', require('./lib/filters/date'));
+  eleventyConfig.addFilter('markdown', require('./lib/filters/markdown'));
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
@@ -42,6 +28,7 @@ module.exports = function (eleventyConfig) {
   // Collections
 
   // Passthrough
+  eleventyConfig.addPassthroughCopy('./app/images');
 
   // Enable data deep merge
   eleventyConfig.setDataDeepMerge(true);
@@ -56,7 +43,7 @@ module.exports = function (eleventyConfig) {
       output: 'public',
       // Overriden by nunjucksEnv but prevents copying to public
       layouts: '_layouts',
-      includes: '_includes'
+      includes: '_components'
     },
     templateFormats: ['njk', 'md'],
     passthroughFileCopy: true
