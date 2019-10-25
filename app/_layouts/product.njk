@@ -1,12 +1,12 @@
 {% extends "base.njk" %}
 
 {% from "masthead/macro.njk" import appMasthead %}
-
-{% block pageTitle %}{{ title }}{% endblock %}
+{% from "prose/macro.njk" import appProse %}
 
 {% block main %}
-  {{ appMasthead({
+  {% call appMasthead({
     title: {
+      classes: "govuk-heading-xl",
       html: title
     } if title,
     description: {
@@ -14,19 +14,27 @@
     } if description,
     startButton: startButton if startButton,
     image: image if image
-  }) }}
+  }) %}{% block pageNavigation %}{{ govukBreadcrumbs({
+    classes: "app-breadcrumbs--inverted",
+    items: [{
+      text: app.serviceName or app.productName,
+      href: "/"
+    }, {
+      text: tags[0] | case,
+      href: "/" + tags[0]
+    }, {
+      text: title,
+      href: page.url
+    }]
+  }) if breadcrumbs != false }}{% endblock %}{% endcall %}
 
   <div class="govuk-width-container">
     {% block beforeContent %}{% endblock %}
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {% block content %}
-      <div class="govuk-grid-row product-page-!-border-bottom govuk-!-margin-bottom-7">
-        <div class="govuk-grid-column-two-thirds">
-          <div class="app-prose-scope">
-            {{ content | safe }}
-          </div>
-        </div>
-      </div>
+      {{ appProse({
+        prose: content
+      }) }}
     {% endblock %}
     </main>
   </div>

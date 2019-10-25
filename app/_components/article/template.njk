@@ -1,0 +1,22 @@
+<article class="app-article">
+  {% if params.header %}
+  <header class="app-article__header">
+    <h1 class="app-article__title">{{ params.header.title }}</h1>
+    {% if params.header.description %}
+    <p class="app-article__description">{{ params.header.description }}</p>
+    {% endif %}
+  </header>
+  {% endif %}
+
+  {% if params.footer %}
+  <footer class="app-article__footer">
+    {% if params.footer.date %}
+    <p class="govuk-body-s"><time datetime="{{ params.footer.date | date }}">{{ params.footer.date | date("DDD") }}</time></p>
+    {% endif %}
+  </footer>
+  {% endif %}
+
+  <div class="app-article__body">
+{{- caller() if caller -}}
+  </div>
+</article>

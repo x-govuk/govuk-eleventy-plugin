@@ -1,13 +1,16 @@
 {% extends "govuk/template.njk" %}
+
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% block head %}
 <!--[if lte IE 8]><link href="/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if gt IE 8]><!--><link href="/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+<meta property="og:title" content="{{ title }}">
+{% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
 {% endblock %}
 
 {% block pageTitle %}
-  {% if title %}{{ title }} - {% endif %}{{ app.serviceName }} - GOV.UK
+  {% if title %}{{ title }} - {% endif %}{{ app.serviceName or app.productName }} - GOV.UK
 {% endblock %}
 
 {% block header %}

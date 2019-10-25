@@ -20,6 +20,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('case', require('./lib/filters/change-case'));
   eleventyConfig.addFilter('date', require('./lib/filters/date'));
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown'));
+  eleventyConfig.addFilter('slug', require('./lib/filters/slug'));
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
@@ -42,7 +43,6 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'app',
       output: 'public',
-      // Overriden by nunjucksEnv but prevents copying to public
       layouts: '_layouts',
       includes: '_components'
     },

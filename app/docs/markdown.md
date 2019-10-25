@@ -1,11 +1,23 @@
 ---
 layout: page
-title: Markdown demo
+title: Using Markdown
+tags: getting-started
 ---
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {{ govukInsetText({
   text: ("This Markdown demo is adapted from that used for <a href=\"https://markdown-it.github.io\">markdown-it</a>, the library used by Eleventy." | safe )
 }) }}
+
+## Headings
+
+```markdown
+# h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+```
 
 # h1 Heading
 ## h2 Heading
@@ -14,8 +26,16 @@ title: Markdown demo
 ##### h5 Heading
 ###### h6 Heading
 
-
 ## Horizontal Rules
+
+```markdown
+___
+
+---
+
+***
+```
+
 ___
 
 ---
@@ -25,7 +45,15 @@ ___
 
 ## Typographic replacements
 
-Enable typographer option to see result.
+```markdown
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,,  -- ---
+
+"Smartypants, double quotes" and 'single quotes'
+```
 
 (c) (C) (r) (R) (tm) (TM) (p) (P) +-
 
@@ -38,6 +66,18 @@ test.. test... test..... test?..... test!....
 
 ## Emphasis
 
+```markdown
+**This is bold text**
+
+__This is bold text__
+
+*This is italic text*
+
+_This is italic text_
+
+~~Strikethrough~~
+```
+
 **This is bold text**
 
 __This is bold text__
@@ -48,14 +88,17 @@ _This is italic text_
 
 ~~Strikethrough~~
 
-
 ## Blockquotes
 
+```markdown
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+```
 
 > Blockquotes can also be nested...
 >> ...by using additional greater-than signs right next to each other...
 > > > ...or with spaces between arrows.
-
 
 ## Lists
 

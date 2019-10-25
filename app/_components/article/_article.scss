@@ -1,0 +1,22 @@
+.app-article__header {
+  @include govuk-responsive-padding(6, "bottom");
+}
+
+.app-article__title {
+  @extend %govuk-heading-xl;
+  margin: 0 0 govuk-spacing(2);
+}
+
+.app-article__description {
+  @include govuk-font($size: 24);
+  color: $govuk-secondary-text-colour;
+  margin: 0 0 govuk-spacing(2);
+}
+
+.app-article__footer {
+  margin-bottom: govuk-spacing(8);
+
+  time {
+    color: govuk-colour("dark-grey");
+  }
+}

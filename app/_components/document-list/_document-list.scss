@@ -1,0 +1,38 @@
+.app-document-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-document-list__item {
+  border-bottom: 1px solid $govuk-border-colour;
+  margin-bottom: govuk-spacing(4);
+  padding-bottom: govuk-spacing(4);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.app-document-list__item-title {
+  @include govuk-font($size: 19, $weight: "bold");
+  margin: 0 0 govuk-spacing(1);
+}
+
+.app-document-list__item-metadata {
+  padding: 0;
+  margin: 0;
+}
+
+.app-document-list__item-description {
+  @include govuk-font($size: 19);
+  margin: 0 0 govuk-spacing(1);
+}
+
+.app-document-list__attribute {
+  @include govuk-font($size: 14);
+  color: $govuk-secondary-text-colour;
+  display: inline-block;
+  margin: 0;
+  padding-right: govuk-spacing(4);
+}

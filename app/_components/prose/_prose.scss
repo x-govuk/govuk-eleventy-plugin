@@ -1,28 +1,4 @@
-@import "govuk/all";
-@import "_components/all";
-@import "vendor/prism";
-
-/*
- * App prose
- */
-.app-content__header {
-  margin-bottom: govuk-spacing(2);
-}
-
-.app-content__title {
-  @extend %govuk-heading-xl;
-  margin-bottom: govuk-spacing(2);
-}
-
-.app-content__footer {
-  margin-bottom: govuk-spacing(8);
-
-  time {
-    color: govuk-colour("dark-grey");
-  }
-}
-
-.app-prose-scope {
+.app-prose {
   @include govuk-font($size: false);
 
   h1:not(class) {
@@ -120,6 +96,7 @@
 
   pre {
     padding: govuk-spacing(4);
+    overflow: scroll;
   }
 
   pre + h2 {
@@ -129,6 +106,10 @@
   pre + h3,
   pre + h4 {
     padding-top: govuk-spacing(2);
+  }
+
+  img {
+    max-width: 100%;
   }
 
   .footnote-backref {

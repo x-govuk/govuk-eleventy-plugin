@@ -1,5 +1,8 @@
 {% extends "base.njk" %}
-{% block pageTitle %}{{ title }}{% endblock %}
+
+{% from "article/macro.njk" import appArticle %}
+{% from "related/macro.njk" import appRelated %}
+{% from "prose/macro.njk" import appProse %}
 
 {% block beforeContent %}
   {{ govukBreadcrumbs({
@@ -13,24 +16,34 @@
       text: title,
       href: page.url
     }]
-  }) }}
+  }) if breadcrumbs != false }}
 {% endblock %}
 
 {% block content %}
-<article class="app-content">
-  <header class="app-content__header">
-    {% if caption %}<span class="govuk-caption-xl">{{ caption }}</span>{% endif %}
-    <h1 class="app-content__title">{{ title }}</h1>
-  </header>
+  {% call appArticle({
+    header: {
+      title: title,
+      description: description
+    },
+    footer: {
+      date: date or page.date
+    }
+  }) %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ appProse({
+        prose: content
+      }) }}
+    </div>
 
-  {% if date or page.date %}
-  <footer class="app-content__footer">
-    <p class="govuk-body-s"><time datetime="{{ date or page.date | date }}">{{ date or page.date | date("DDD") }}</time></p>
-  </footer>
-  {% endif %}
-
-  <div class="app-prose-scope">
-    {{ content | safe }}
+    {% if related %}
+    <div class="govuk-grid-column-one-third">
+      {{ appRelated({
+        title: related.title or "Related links",
+        items: related.items
+      }) }}
+    </div>
+    {% endif %}
   </div>
-</article>
+  {% endcall %}
 {% endblock %}

@@ -1,5 +1,7 @@
 {% extends "base.njk" %}
-{% block pageTitle %}{{ title }}{% endblock %}
+
+{% from "article/macro.njk" import appArticle %}
+{% from "prose/macro.njk" import appProse %}
 
 {% block beforeContent %}
   {{ govukBreadcrumbs({
@@ -7,20 +9,24 @@
       text: app.serviceName or app.productName,
       href: "/"
     }, {
+      text: tags[0] | case,
+      href: "/" + tags[0]
+    }, {
       text: title,
       href: page.url
     }]
-  }) }}
+  }) if breadcrumbs != false }}
 {% endblock %}
 
 {% block content %}
-<article class="app-content">
-  <header class="app-content__header">
-    {% if caption %}<span class="govuk-caption-xl">{{ caption }}</span>{% endif %}
-    <h1 class="govuk-heading-xl">{{ title }}</h1>
-  </header>
-  <div class="app-prose-scope">
-    {{ content | safe }}
-  </div>
-</article>
+  {% call appArticle({
+    header: {
+      title: title,
+      description: description
+    }
+  }) %}
+  {{ appProse({
+    prose: content
+  }) }}
+  {% endcall %}
 {% endblock %}

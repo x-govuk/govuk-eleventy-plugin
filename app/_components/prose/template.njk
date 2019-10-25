@@ -1,0 +1,4 @@
+<div class="app-prose{%- if params.classes %} {{ params.classes }}{% endif %}">
+{{- params.prose | safe if params.prose -}}
+{{- caller() if caller -}}
+</div>
