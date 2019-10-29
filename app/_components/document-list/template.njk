@@ -2,7 +2,7 @@
 {% for item in params.items %}
   <li class="app-document-list__item">
     <h2 class="app-document-list__item-title ">
-      <a class="govuk-link" href="{{ item.url }}">{{ item.data.title }}</a>
+      <a class="govuk-link" href="{{ item.url | pretty }}">{{ item.data.title }}</a>
     </h2>
     {% if item.data.description %}
     <p class="app-document-list__item-description">{{ item.data.description | markdown("inline") | safe }}</p>

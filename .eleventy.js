@@ -2,6 +2,14 @@ let Nunjucks = require('nunjucks');
 let markdown = require('./lib/markdown');
 
 module.exports = function (eleventyConfig) {
+  // Browser Sync
+  eleventyConfig.setBrowserSyncConfig({
+    serveStatic: ['public'],
+    serveStaticOptions: {
+      extensions: ['html']
+    }
+  });
+
   // Templates: Nunjucks and Markdown
   let nunjucksEnv = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader([
