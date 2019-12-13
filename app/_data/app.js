@@ -1,3 +1,4 @@
 module.exports = {
-  productName: 'Eleventy'
+  productName: 'Eleventy',
+  url: '/'
 }

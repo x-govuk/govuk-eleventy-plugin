@@ -15,7 +15,7 @@
 }
 
 .app-document-list__item-title {
-  @include govuk-font($size: 19, $weight: "bold");
+  @include govuk-font($size: 24, $weight: "bold");
   margin: 0 0 govuk-spacing(1);
 }
 

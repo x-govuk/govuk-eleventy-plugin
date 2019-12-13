@@ -1,5 +1,11 @@
+.app-article {
+  .app-prose {
+    @include govuk-responsive-margin(6, "top");
+  }
+}
+
 .app-article__header {
-  @include govuk-responsive-padding(6, "bottom");
+  @include govuk-responsive-padding(2, "bottom");
 }
 
 .app-article__title {
@@ -14,7 +20,7 @@
 }
 
 .app-article__footer {
-  margin-bottom: govuk-spacing(8);
+  @include govuk-responsive-padding(2, "bottom");
 
   time {
     color: govuk-colour("dark-grey");

@@ -1,0 +1,24 @@
+{%- from "../embed/macro.njk" import appEmbed -%}
+{%- from "../image/macro.njk" import appImage -%}
+<figure class="app-figure">
+{% if params.embed %}
+  {{ appEmbed({
+    placeholder: params.embed.placeholder,
+    src: params.embed.src,
+    youtubeId: params.embed.youtubeId,
+    title: params.embed.title
+  }) | indent(2) }}
+{% endif %}
+{% if params.image %}
+  {{ appImage({
+    path: params.image.path,
+    file: params.image.file,
+    alt: params.image.alt
+  }) | indent(2) }}
+{% endif %}
+{% if params.caption %}
+  <figcaption>
+    {{ params.caption | markdown | safe }}
+  </figcaption>
+{% endif %}
+</figure>

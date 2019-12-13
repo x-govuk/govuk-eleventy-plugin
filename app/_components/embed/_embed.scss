@@ -1,0 +1,28 @@
+.app-embed {
+  @include govuk-responsive-margin(4, "bottom");
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+  }
+
+  > :first-child {
+    display: block;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    outline: 1px solid rgba($govuk-border-colour, 0.5);
+    outline-offset: -1px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

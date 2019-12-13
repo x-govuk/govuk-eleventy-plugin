@@ -1,0 +1,58 @@
+{%- set style -%}
+  * {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  img, span {
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+  }
+
+  span {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 1.66;
+    height: 1.5em;
+    width: 1.5em;
+    padding: 0.5rem 0.25rem 0.5rem 0.75rem;
+    font-size: 3em;
+    border-radius: 100%;
+    color: white;
+    text-shadow: 0 0 1px black;
+  }
+
+  a:hover span {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+{%- endset -%}
+{%- if params.youtubeId -%}
+  {%- set src = "https://www.youtube-nocookie.com/embed/" + params.youtubeId + "?modestbranding=1&autoplay=1" -%}
+  {%- set placeholder = "https://img.youtube.com/vi/" + params.youtubeId + "/maxresdefault.jpg" -%}
+{%- else -%}
+  {% set src = params.src %}
+  {% set placeholder = params.placeholder %}
+{%- endif -%}
+<div class="app-embed">
+  <iframe
+    src="{{ src }}"
+    srcdoc="<style>{{ style | replace("  ", "") | replace("\n", "") | trim}}</style><a href={{ src }}><img src={{ placeholder }}><span>▶</span></a>"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    title="{{ params.title }}">
+  </iframe>
+</div>

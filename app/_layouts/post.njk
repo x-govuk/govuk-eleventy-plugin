@@ -6,16 +6,7 @@
 
 {% block beforeContent %}
   {{ govukBreadcrumbs({
-    items: [{
-      text: app.serviceName or app.productName,
-      href: "/"
-    }, {
-      text: tags[0] | case,
-      href: "/" + tags[0]
-    }, {
-      text: title,
-      href: page.url
-    }]
+    items: breadcrumbs | breadcrumbs(app, page, title)
   }) if breadcrumbs != false }}
 {% endblock %}
 

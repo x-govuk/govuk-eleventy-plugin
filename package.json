@@ -34,10 +34,9 @@
   "dependencies": {
     "@11ty/eleventy": "^0.9.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "change-case": "^3.1.0",
-    "govuk-frontend": "^3.3.0",
-    "http-server": "^0.11.1",
-    "luxon": "^1.19.3",
+    "govuk-frontend": "^3.4.0",
+    "http-server": "^0.12.0",
+    "luxon": "^1.21.3",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
@@ -46,7 +45,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-table-of-contents": "^0.4.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5"
   },
   "devDependencies": {

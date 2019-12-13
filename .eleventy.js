@@ -25,10 +25,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdown);
 
   // Filters
-  eleventyConfig.addFilter('case', require('./lib/filters/change-case'));
-  eleventyConfig.addFilter('date', require('./lib/filters/date'));
-  eleventyConfig.addFilter('markdown', require('./lib/filters/markdown'));
-  eleventyConfig.addFilter('slug', require('./lib/filters/slug'));
+  eleventyConfig.addFilter('breadcrumbs', require('./lib/filters/breadcrumbs'))
+  eleventyConfig.addFilter('date', require('./lib/filters/date'))
+  eleventyConfig.addFilter('markdown', require('./lib/filters/markdown'))
+  eleventyConfig.addFilter('pretty', require('./lib/filters/pretty'))
+  eleventyConfig.addFilter('slug', require('./lib/filters/slug'))
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));

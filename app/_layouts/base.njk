@@ -15,7 +15,7 @@
 
 {% block header %}
   {{ govukHeader({
-    homepageUrl: app.url,
+    homepageUrl: app.url or "https://gov.uk",
     productName: app.productName,
     serviceName: app.serviceName,
     serviceUrl: app.serviceUrl,

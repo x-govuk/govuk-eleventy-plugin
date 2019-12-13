@@ -15,19 +15,12 @@
     } if description,
     startButton: startButton if startButton,
     image: image if image
-  }) %}{% block pageNavigation %}{{ govukBreadcrumbs({
-    classes: "app-breadcrumbs--inverted",
-    items: [{
-      text: app.serviceName or app.productName,
-      href: "/"
-    }, {
-      text: tags[0] | case,
-      href: "/" + tags[0]
-    }, {
-      text: title,
-      href: page.url
-    }]
-  }) if breadcrumbs != false }}{% endblock %}{% endcall %}
+  }) %}
+    {{ govukBreadcrumbs({
+      classes: "app-breadcrumbs--inverted",
+      items: breadcrumbs | breadcrumbs(app, page, title)
+    }) if breadcrumbs != false }}
+  {% endcall %}
 
   <div class="govuk-width-container">
     {% block beforeContent %}{% endblock %}
@@ -41,7 +34,7 @@
           <h2 class="govuk-heading-l govuk-!-font-size-27">Posts</h2>
           {{ appDocumentList({
             items: collections[collection] | reverse
-          })}}
+          }) }}
         </section>
 
         {% if related %}

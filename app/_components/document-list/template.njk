@@ -1,17 +1,23 @@
-<ol class="app-document-list">
-{% for item in params.items %}
-  <li class="app-document-list__item">
-    <h2 class="app-document-list__item-title ">
-      <a class="govuk-link" href="{{ item.url | pretty }}">{{ item.data.title }}</a>
-    </h2>
-    {% if item.data.description %}
-    <p class="app-document-list__item-description">{{ item.data.description | markdown("inline") | safe }}</p>
-    {% endif %}
-    {% if (item.data.date or item.date) and item.data.layout == "post" %}
-    <ul class="app-document-list__item-metadata">
-      <li class="app-document-list__attribute"><time datetime="{{ item.data.date or item.date | date }}">{{ (item.data.date or item.date) | date("DDD") }}</time></li>
-    </ul>
-    {% endif %}
-  </li>
-{% endfor %}
-</ol>
+{% if params.items.length > 0 %}
+  <ol class="app-document-list">
+  {% for item in params.items %}
+    <li class="app-document-list__item">
+      <h2 class="app-document-list__item-title ">
+        <a class="govuk-link" href="{{ item.url | pretty }}">{{ item.data.title }}</a>
+      </h2>
+      {% if item.data.description %}
+      <p class="app-document-list__item-description">{{ item.data.description | markdown("inline") | safe }}</p>
+      {% endif %}
+      {% if (item.data.date or item.date) %}
+      <ul class="app-document-list__item-metadata">
+        <li class="app-document-list__attribute">
+          <time datetime="{{ item.data.date or item.date | date }}">{{ (item.data.date or item.date) | date("DDD") }}</time>
+        </li>
+      </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ol>
+{% else %}
+  <p class="govuk-body">No documents found.</p>
+{% endif %}
