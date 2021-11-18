@@ -31,6 +31,7 @@
     "http-server": "^14.0.0",
     "luxon": "^2.1.1",
     "markdown-it-abbr": "^1.0.4",
+    "markdown-it-block-embed": "^0.0.3",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-image-figures": "^2.0.0",

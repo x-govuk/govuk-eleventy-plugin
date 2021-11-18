@@ -197,6 +197,11 @@ The killer feature of `markdown-it` is very effective support of
 [syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
 
 
+### [Embeds](https://www.npmjs.com/package/markdown-it-block-embed)
+
+@[youtube](https://www.youtube.com/watch?v=XnP6jaK7ZAY)
+
+
 ### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
 
 - 19^th^
