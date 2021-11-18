@@ -48,6 +48,11 @@
     "stylelint": "^13.13.1",
     "stylelint-config-gds": "^0.1.0"
   },
+  "standard": {
+    "ignore": [
+      "!.eleventy.js"
+    ]
+  },
   "stylelint": {
     "extends": "stylelint-config-gds/scss"
   }
