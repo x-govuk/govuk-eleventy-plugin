@@ -1,16 +1,23 @@
 .app-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
-  grid-gap: govuk-spacing(6);
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.app-gallery--layout-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem,1fr));
+  grid-gap: govuk-spacing(6);
 
   .app-figure {
-    margin-bottom: 0;
+    @include govuk-responsive-margin(2, "bottom");
+
+    a {
+      display: block;
+      min-height: 12rem;
+    }
 
     img {
-      margin-bottom: 0;
       max-height: 12rem;
       object-fit: cover;
       object-position: top;
