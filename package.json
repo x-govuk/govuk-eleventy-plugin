@@ -40,6 +40,7 @@
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
+    "markdown-it-image-figures": "^2.0.0",
     "markdown-it-ins": "^3.0.0",
     "markdown-it-mark": "^3.0.0",
     "markdown-it-sub": "^1.0.0",

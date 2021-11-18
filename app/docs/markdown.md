@@ -184,7 +184,11 @@ Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
 ## Images
 
-![Stormtroopocat](https://assets.publishing.service.gov.uk/government/assets/history/buildings/larry-the-cat-a47549e08bdbc6cd0e3e042eea943f65b7a4590d95642586e51acb44bb2dcea2.jpg "Larry the cat")
+![Larry the cat sat on the cabinet table](https://www.gov.uk/assets/government-frontend/history/buildings/larry-the-cat-a47549e08bdbc6cd0e3e042eea943f65b7a4590d95642586e51acb44bb2dcea2.jpg)
+
+With caption:
+
+![Larry the cat sat on the cabinet table](https://www.gov.uk/assets/government-frontend/history/buildings/larry-the-cat-a47549e08bdbc6cd0e3e042eea943f65b7a4590d95642586e51acb44bb2dcea2.jpg 'Larry the cat')
 
 
 ## Plugins

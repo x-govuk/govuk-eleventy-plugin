@@ -1,44 +1,105 @@
 .app-prose {
   @include govuk-font($size: false);
 
-  h1:not(class) {
+  h1:not([class]) {
     @extend %govuk-heading-xl;
-    max-width: 15em;
+    max-width: 40rem;
   }
 
   h2:not([class]) {
     @extend %govuk-heading-l;
-    max-width: 20em;
+    max-width: 40rem;
   }
 
   h3:not([class]) {
     @extend %govuk-heading-m;
-    max-width: 30em;
+    max-width: 40rem;
   }
 
   h4:not([class]) {
     @extend %govuk-heading-s;
-    max-width: 38em;
+    max-width: 40rem;
   }
 
   h5:not([class]) {
     @include govuk-font($size: 19);
     @include govuk-responsive-margin(4, "bottom");
-    margin-top: 0;
     color: $govuk-secondary-text-colour;
+    margin-top: 0;
   }
 
   h6:not([class]) {
     @include govuk-font($size: 16);
     @include govuk-responsive-margin(4, "bottom");
-    margin-top: 0;
     color: $govuk-secondary-text-colour;
+    margin-top: 0;
   }
 
-  p:not([class]),
-  dl:not([class]) {
+  p,
+  dl,
+  blockquote p {
     @extend %govuk-body-m;
-    max-width: 38em;
+    max-width: 40rem;
+  }
+
+  > blockquote {
+    @extend .govuk-inset-text;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  figure {
+    margin: 0;
+    @include govuk-responsive-margin(8, "bottom");
+
+    > a {
+      display: block;
+      outline: 1px solid rgba($govuk-border-colour, 0.5);
+
+      &:hover {
+        outline-color: $govuk-link-hover-colour;
+      }
+
+      &:active {
+        outline-color: $govuk-link-active-colour;
+      }
+    }
+
+    a img {
+      outline: 0;
+    }
+  }
+
+  figcaption {
+    @include govuk-responsive-margin(4, "top");
+    @include govuk-font($size: 19);
+
+    h3 {
+      @extend %govuk-heading-s;
+    }
+
+    hr {
+      @extend %govuk-section-break--m;
+    }
+
+    &:not([class]) {
+      color: $govuk-secondary-text-colour;
+    }
+  }
+
+  abbr {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+
+  code {
+    background-color: govuk-colour("light-grey");
+    font-family: monospace;
+    padding: 2px govuk-spacing(1);
+  }
+
+  mark {
+    background-color: govuk-colour("yellow");
   }
 
   strong,
@@ -47,26 +108,29 @@
     @include govuk-typography-weight-bold;
   }
 
-  ul:not([class]),
-  ol:not([class]) {
+  dd + dt {
+    margin-top: govuk-spacing(4);
+  }
+
+  dd {
+    margin-left: 0;
+  }
+
+  ol {
     @extend %govuk-list;
-    max-width: 38em;
-  }
-
-  ol:not([class]) {
     @extend %govuk-list--number;
+    max-width: 40rem;
   }
 
-  ul:not([class]) {
+  ul:not([class]),
+  .table-of-contents ul {
+    @extend %govuk-list;
     @extend %govuk-list--bullet;
+    max-width: 40rem;
   }
 
-  a {
+  a:not([class]) {
     @extend %govuk-link;
-  }
-
-  mark {
-    background-color: govuk-colour("yellow");
   }
 
   hr {
@@ -75,28 +139,57 @@
     @extend %govuk-section-break--xl;
   }
 
-  table:not([class]) {
-    @include govuk-font($size: 19);
-    @include govuk-text-colour;
-    margin-bottom: govuk-spacing(4);
-  }
+  table {
+    @extend .govuk-table;
+    @include govuk-responsive-margin(8, "bottom");
+    @include govuk-responsive-margin(8, "top");
 
-  th,
-  td {
-    text-align: left;
-    padding-right: govuk-spacing(4);
-  }
+    tr {
+      @extend .govuk-table__row !optional;
+    }
 
-  pre,
-  code {
-    background-color: govuk-colour("light-grey");
-    font-family: monospace, monospace;
-    font-size: 1em;
+    tbody {
+      @extend .govuk-table__body !optional;
+    }
+
+    thead {
+      @extend .govuk-table__head !optional;
+    }
+
+    th {
+      @extend .govuk-table__header;
+      padding: govuk-spacing(2);
+    }
+
+    td {
+      @extend .govuk-table__cell;
+      padding: govuk-spacing(2);
+    }
+
+    td *:first-child {
+      margin-top: 0;
+    }
+
+    td *:last-child {
+      margin-bottom: 0;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 0;
+    }
   }
 
   pre {
+    @extend %govuk-body-m;
+    background-color: govuk-colour("light-grey");
     padding: govuk-spacing(4);
     overflow: scroll;
+  }
+
+  pre code {
+    background-color: transparent;
+    padding: 0;
   }
 
   pre + h2 {
@@ -109,10 +202,22 @@
   }
 
   img {
+    @include govuk-responsive-margin(4, "bottom");
+    display: block;
+    width: 100%;
     max-width: 100%;
+    height: 100%;
+    outline: 1px solid rgba($govuk-border-colour, 0.5);
+    outline-offset: -1px;
   }
 
   .footnote-backref {
     text-decoration: none;
+  }
+
+  .table-of-contents {
+    > ul > li {
+      font-weight: bold;
+    }
   }
 }
