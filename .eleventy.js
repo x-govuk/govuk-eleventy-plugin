@@ -40,9 +40,6 @@ module.exports = function (eleventyConfig) {
   // Passthrough
   eleventyConfig.addPassthroughCopy('./app/images');
 
-  // Enable data deep merge
-  eleventyConfig.setDataDeepMerge(true);
-
   // Config
   return {
     dataTemplateEngine: 'njk',
@@ -54,7 +51,6 @@ module.exports = function (eleventyConfig) {
       layouts: '_layouts',
       includes: '_components'
     },
-    templateFormats: ['njk', 'md'],
-    passthroughFileCopy: true
+    templateFormats: ['njk', 'md']
   };
 };
