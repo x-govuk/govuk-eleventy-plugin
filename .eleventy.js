@@ -1,5 +1,5 @@
-let Nunjucks = require('nunjucks');
-let markdown = require('./lib/markdown');
+const Nunjucks = require('nunjucks')
+const markdown = require('./lib/markdown')
 
 module.exports = function (eleventyConfig) {
   // Browser Sync
@@ -8,14 +8,14 @@ module.exports = function (eleventyConfig) {
     serveStaticOptions: {
       extensions: ['html']
     }
-  });
+  })
 
   // Watch targets
   eleventyConfig.addWatchTarget('./app/_javascripts/')
   eleventyConfig.addWatchTarget('./app/_stylesheets/')
 
   // Templates: Nunjucks and Markdown
-  let nunjucksEnv = new Nunjucks.Environment(
+  const nunjucksEnv = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader([
       'app/_components',
       'app/_layouts',
@@ -24,9 +24,9 @@ module.exports = function (eleventyConfig) {
       lstripBlocks: true,
       trimBlocks: true
     }
-  );
-  eleventyConfig.setLibrary('njk', nunjucksEnv);
-  eleventyConfig.setLibrary('md', markdown);
+  )
+  eleventyConfig.setLibrary('njk', nunjucksEnv)
+  eleventyConfig.setLibrary('md', markdown)
 
   // Filters
   eleventyConfig.addFilter('breadcrumbs', require('./lib/filters/breadcrumbs'))
@@ -35,14 +35,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('pretty', require('./lib/filters/pretty'))
 
   // Plugins
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
 
   // Transforms
 
   // Collections
 
   // Passthrough
-  eleventyConfig.addPassthroughCopy('./app/images');
+  eleventyConfig.addPassthroughCopy('./app/images')
   eleventyConfig.addPassthroughCopy({ 'node_modules/govuk-frontend/govuk/assets': 'assets' })
 
   // Config
@@ -57,5 +57,5 @@ module.exports = function (eleventyConfig) {
       includes: '_components'
     },
     templateFormats: ['njk', 'md', '11ty.js']
-  };
-};
+  }
+}
