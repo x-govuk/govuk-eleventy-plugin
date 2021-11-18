@@ -10,6 +10,10 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  // Watch targets
+  eleventyConfig.addWatchTarget('./app/_javascripts/')
+  eleventyConfig.addWatchTarget('./app/_stylesheets/')
+
   // Templates: Nunjucks and Markdown
   let nunjucksEnv = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader([
