@@ -1,7 +1,7 @@
 {%- from "../figure/macro.njk" import appFigure -%}
 <ul class="app-gallery">
 {% for item in params.items %}
-  {% set id = item.id or (item.text | slug) %}
+  {% set id = item.id or (item.text | slugify) %}
   {% set file = item.img.src or (id + ".png") %}
   {% set alt = item.img.alt or ("Screenshot of " + item.text) %}
   <li class="app-gallery__item" id="{{ id }}">
