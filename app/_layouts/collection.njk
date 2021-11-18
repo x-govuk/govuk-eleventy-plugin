@@ -1,6 +1,7 @@
 {% extends "product.njk" %}
 
 {% from "document-list/macro.njk" import appDocumentList %}
+{% from "pagination/macro.njk" import appPagination %}
 {% from "prose/macro.njk" import appProse %}
 {% from "related/macro.njk" import appRelated %}
 
@@ -28,12 +29,24 @@
     {% block content %}
       {{ appProse({
         prose: content
-      }) }}
+      }) if content }}
       <div class="govuk-grid-row">
         <section class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-l govuk-!-font-size-27">Posts</h2>
           {{ appDocumentList({
-            items: collections[collection] | reverse
+            items: pagination.items
+          }) }}
+          {{ appPagination({
+            previous: {
+              text: "Previous",
+              href: pagination.href.previous
+            } if pagination.href.previous,
+            next: {
+              text: 'Next',
+              href: pagination.href.next
+            } if pagination.href.next,
+            selected: pagination.pageNumber,
+            items: pagination.hrefs
           }) }}
         </section>
 

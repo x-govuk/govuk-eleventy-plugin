@@ -1,6 +1,8 @@
 {% extends "govuk/template.njk" %}
 
 {% set htmlClasses = "no-js" %}
+{% set pageNumber = pagination.pageNumber + 1 %}
+{% set pageCount = pagination.pages | length %}
 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -15,7 +17,9 @@
 {% endblock %}
 
 {% block pageTitle %}
-  {% if title %}{{ title }} - {% endif %}{{ app.serviceName or app.productName }} - GOV.UK
+  {{- title if title -}}
+  {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
+  {{- " - " + (app.serviceName or app.productName) + " - GOV.UK" -}}
 {% endblock %}
 
 {% block header %}

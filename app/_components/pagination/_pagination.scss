@@ -1,0 +1,100 @@
+.app-pagination {
+  @include govuk-media-query($from: desktop) {
+    // Alignment adjustments
+    margin-left: - govuk-spacing(1);
+    margin-right: - govuk-spacing(1);
+
+    // Trick to remove the need for floats
+    text-align: justify;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+.app-pagination__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include govuk-media-query($from: desktop) {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+}
+
+.app-pagination__results {
+  padding: govuk-spacing(1);
+
+  @include govuk-media-query($from: desktop) {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+}
+
+.app-pagination__item {
+  @include govuk-font(19);
+  display: inline-block;
+}
+
+.app-pagination__item--active,
+.app-pagination__item--dots {
+  font-weight: bold;
+  height: 25px;
+  padding: govuk-spacing(1) govuk-spacing(2);
+  text-align: center;
+}
+
+.app-pagination__item--dots {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.app-pagination__item--prev .app-pagination__link:before,
+.app-pagination__item--next .app-pagination__link:after {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-style: solid;
+  color: govuk-colour("black");
+  background: transparent;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  content: "";
+}
+
+.app-pagination__item--prev .app-pagination__link:before {
+  border-width: 3px 0 0 3px;
+  margin-right: govuk-spacing(1);
+}
+
+.app-pagination__item--next .app-pagination__link:after {
+  border-width: 0 3px 3px 0;
+  margin-left: govuk-spacing(1);
+}
+
+.app-pagination__link {
+  display: block;
+  padding: govuk-spacing(1);
+  text-align: center;
+  text-decoration: none;
+  min-width: 25px;
+
+  &:link,
+  &:visited {
+    color: govuk-colour("blue");
+  }
+
+  &:hover {
+    color: govuk-colour("light-blue");
+  }
+
+  &:focus {
+    color: govuk-colour("black");
+  }
+}
