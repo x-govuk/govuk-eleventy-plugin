@@ -48,9 +48,6 @@
     "stylelint": "^13.13.1",
     "stylelint-config-gds": "^0.1.0"
   },
-  "nodemonConfig": {
-    "ext": "css, scss, js, json, md, njk"
-  },
   "stylelint": {
     "extends": "stylelint-config-gds/scss"
   }
