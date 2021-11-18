@@ -35,7 +35,7 @@
     margin-top: 0;
   }
 
-  p,
+  p:not([class]),
   dl,
   blockquote p {
     @extend %govuk-body-m;

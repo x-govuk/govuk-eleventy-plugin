@@ -1,7 +1,6 @@
 .app-document-list {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .app-document-list__item {
@@ -11,6 +10,8 @@
 
   &:last-child {
     border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -26,11 +27,11 @@
 
 .app-document-list__item-description {
   @include govuk-font($size: 19);
-  margin: 0 0 govuk-spacing(1);
+  margin: govuk-spacing(1) 0;
 }
 
 .app-document-list__attribute {
-  @include govuk-font($size: 14);
+  @include govuk-font($size: 16);
   color: $govuk-secondary-text-colour;
   display: inline-block;
   margin: 0;
