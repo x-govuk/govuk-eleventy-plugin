@@ -22,7 +22,7 @@
     "dev": "eleventy --serve",
     "prestart": "npm run build",
     "start": "http-server",
-    "lint": "standard"
+    "lint": "standard && stylelint 'app/**/*.scss'"
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.0-beta.8",
@@ -44,9 +44,14 @@
     "sass": "^1.43.4"
   },
   "devDependencies": {
-    "standard": "^16.0.4"
+    "standard": "^16.0.4",
+    "stylelint": "^13.13.1",
+    "stylelint-config-gds": "^0.1.0"
   },
   "nodemonConfig": {
     "ext": "css, scss, js, json, md, njk"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-gds/scss"
   }
 }
