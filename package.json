@@ -18,7 +18,6 @@
   "main": "app.js",
   "scripts": {
     "prebuild": "rm -rf public/assets && mkdir -p public && mkdir -p public/javascripts",
-    "build:govuk-assets": "cp -R node_modules/govuk-frontend/govuk/assets public/assets",
     "build:govuk-scripts": "cp node_modules/govuk-frontend/govuk/all.js public/javascripts/govuk-frontend.js",
     "build:styles": "sass app/_stylesheets:public/stylesheets --load-path node_modules/govuk-frontend --load-path app --quiet-deps",
     "build:javascripts": "cp app/_javascripts/application.js public/javascripts/application.js",
