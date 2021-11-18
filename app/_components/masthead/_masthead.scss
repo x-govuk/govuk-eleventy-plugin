@@ -3,7 +3,7 @@
   @include govuk-responsive-padding(6, "bottom");
   color: govuk-colour("white");
   background-color: govuk-colour("blue");
-  margin-top: #{govuk-spacing(2) * -1};
+  margin-top: #{govuk-spacing(2) * - 1};
 }
 
 .app-masthead__title {

@@ -6,7 +6,7 @@
   overflow: hidden;
   position: relative;
 
-  &::before {
+  &:before {
     content: "";
     display: block;
     padding-bottom: 56.25%;
@@ -18,7 +18,7 @@
     height: 100%;
     position: absolute;
     width: 100%;
-    outline: 1px solid rgba($govuk-border-colour, 0.5);
+    outline: 1px solid rgba($govuk-border-colour, .5);
     outline-offset: -1px;
   }
 

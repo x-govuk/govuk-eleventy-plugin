@@ -54,7 +54,7 @@
 
     > a {
       display: block;
-      outline: 1px solid rgba($govuk-border-colour, 0.5);
+      outline: 1px solid rgba($govuk-border-colour, .5);
 
       &:hover {
         outline-color: $govuk-link-hover-colour;
@@ -207,7 +207,7 @@
     width: 100%;
     max-width: 100%;
     height: 100%;
-    outline: 1px solid rgba($govuk-border-colour, 0.5);
+    outline: 1px solid rgba($govuk-border-colour, .5);
     outline-offset: -1px;
   }
 

@@ -1,13 +1,13 @@
-$token-comment: rgba(govuk-colour("dark-grey"), 0.75);
+$token-comment: rgba(govuk-colour("dark-grey"), .75);
 $token-operator: govuk-colour("dark-grey");
-$token-function: #900;
-$token-keyword: #09c;
-$token-selector: #009;
-$token-string: #c06;
-$token-variable: #399;
+$token-function: govuk-colour("red");
+$token-keyword: govuk-colour("blue");
+$token-selector: govuk-colour("dark-blue");
+$token-string: govuk-colour("pink");
+$token-variable: govuk-colour("turquoise");
 
 .token.namespace {
-  opacity: 0.7;
+  opacity: .7;
 }
 
 .token.cdata,
