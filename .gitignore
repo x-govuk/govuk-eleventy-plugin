@@ -1,3 +1,6 @@
 # Folders to ignore
 node_modules
 public
+
+# Files compiled prior to publish
+package/govuk/assets

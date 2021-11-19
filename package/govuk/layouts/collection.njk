@@ -1,0 +1,60 @@
+{% extends "govuk/layouts/product.njk" %}
+
+{% block main %}
+  {% call appMasthead({
+    title: {
+      classes: "govuk-heading-l",
+      html: title
+    } if title,
+    description: {
+      html: description | markdown
+    } if description,
+    startButton: startButton if startButton,
+    image: image if image
+  }) %}
+    {{ govukBreadcrumbs({
+      classes: "app-breadcrumbs--inverted govuk-!-display-none-print",
+      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items
+    }) if eleventyNavigation.parent }}
+  {% endcall %}
+
+  <div class="govuk-width-container">
+    {% block beforeContent %}{% endblock %}
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    {% block content %}
+      {{ appProse({
+        prose: content
+      }) if content }}
+      <div class="govuk-grid-row">
+        <section class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l govuk-!-font-size-27">Posts</h2>
+          {{ appDocumentList({
+            items: pagination.items
+          }) }}
+          {{ appPagination({
+            previous: {
+              text: "Previous",
+              href: pagination.href.previous
+            } if pagination.href.previous,
+            next: {
+              text: 'Next',
+              href: pagination.href.next
+            } if pagination.href.next,
+            selected: pagination.pageNumber,
+            items: pagination.hrefs
+          }) }}
+        </section>
+
+        {% if related.items | length > 0 %}
+        <div class="govuk-grid-column-one-third">
+          {{ appRelated({
+            title: related.title or "Related links",
+            items: related.items
+          }) }}
+        </div>
+        {% endif %}
+      </div>
+    {% endblock %}
+    </main>
+  </div>
+{% endblock %}

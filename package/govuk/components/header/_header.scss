@@ -1,0 +1,16 @@
+// Forked from header fork on GOV.UK Design System
+// See: https://github.com/alphagov/govuk-design-system/blob/master/src/stylesheets/components/_header.scss
+
+@include govuk-exports("app-header") {
+  // Override the default 33% width on the logo in GOV.UK Frontend (prevents
+  // unnecessary wrapping of app.productName on smaller tablet / desktop
+  // viewports)
+  .app-header__logo {
+    width: auto;
+
+    // Remove right padding of app.productName as affects appearance on hover
+    .govuk-header__product-name {
+      padding-right: 0;
+    }
+  }
+}

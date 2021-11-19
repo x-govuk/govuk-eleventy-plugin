@@ -1,49 +1,11 @@
-const Nunjucks = require('nunjucks')
-const markdown = require('./lib/markdown')
-
 module.exports = function (eleventyConfig) {
-  // Browser Sync
-  eleventyConfig.setBrowserSyncConfig({
-    serveStatic: ['public'],
-    serveStaticOptions: {
-      extensions: ['html']
-    }
+  // Plugins
+  eleventyConfig.addPlugin(require('govuk-eleventy-plugin'), {
+    searchIndex: '/search.json',
   })
 
-  // Watch targets
-  eleventyConfig.addWatchTarget('./app/_javascripts/')
-  eleventyConfig.addWatchTarget('./app/_stylesheets/')
-
-  // Templates: Nunjucks and Markdown
-  const nunjucksEnv = new Nunjucks.Environment(
-    new Nunjucks.FileSystemLoader([
-      'app/_components',
-      'app/_layouts',
-      'node_modules/govuk-frontend'
-    ]), {
-      lstripBlocks: true,
-      trimBlocks: true
-    }
-  )
-  eleventyConfig.setLibrary('njk', nunjucksEnv)
-  eleventyConfig.setLibrary('md', markdown)
-
-  // Filters
-  eleventyConfig.addFilter('breadcrumbs', require('./lib/filters/breadcrumbs'))
-  eleventyConfig.addFilter('date', require('./lib/filters/date'))
-  eleventyConfig.addFilter('markdown', require('./lib/filters/markdown'))
-  eleventyConfig.addFilter('pretty', require('./lib/filters/pretty'))
-
-  // Plugins
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
-
-  // Transforms
-
-  // Collections
-
   // Passthrough
-  eleventyConfig.addPassthroughCopy('./app/images')
-  eleventyConfig.addPassthroughCopy({ 'node_modules/govuk-frontend/govuk/assets': 'assets' })
+  eleventyConfig.addPassthroughCopy('./docs/images')
 
   // Config
   return {
@@ -51,11 +13,10 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {
-      input: 'app',
+      input: 'docs',
       output: 'public',
-      layouts: '_layouts',
-      includes: '_components'
+      layouts: '../node_modules/govuk-eleventy-plugin/govuk/layouts'
     },
-    templateFormats: ['njk', 'md', '11ty.js']
+    templateFormats: ['njk', 'md']
   }
 }

@@ -1,0 +1,18 @@
+---
+permalink: /search.json
+eleventyExcludeFromCollections: true
+---
+[{% for item in collections["search-index"] %}
+  {
+    "data": {
+      "title": {{ item.data.title | dump | safe }},
+      {% if item.data.description %}"description": {{ item.data.description | dump | safe }},{% endif %}
+      {% if item.data.eleventyNavigation.parent %}"section": {{ item.data.eleventyNavigation.parent | dump | safe }},{% endif %}
+      "layout": {{ item.data.layout | dump | safe }}
+    },
+    "date": {{ item.date | date | dump | safe }},
+    "dateString": {{ item.date  | date("d LLLL y") | dump | safe }},
+    "templateContent": {{ item.templateContent | tokenize | dump | safe }},
+    "url": {{ item.url | url | pretty | dump | safe }}
+  }{% if not loop.last %},{% endif %}
+{% endfor %}]

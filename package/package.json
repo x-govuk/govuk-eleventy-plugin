@@ -1,0 +1,78 @@
+{
+  "name": "govuk-eleventy-plugin",
+  "description": "Build websites using the GOV.UK design system and the Eleventy static site generator",
+  "version": "0.1.0",
+  "keywords": [
+    "govuk",
+    "government",
+    "11ty"
+  ],
+  "author": "Paul Robert Lloyd",
+  "license": "MIT",
+  "homepage": "https://govuk-eleventy.herokuapp.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulrobertlloyd/govuk-eleventy.git",
+    "directory": "package"
+  },
+  "bugs": {
+    "url": "https://github.com/paulrobertlloyd/govuk-eleventy/issues"
+  },
+  "engines": {
+    "node": "^16.0.0"
+  },
+  "sass": "govuk/all.scss",
+  "main": ".eleventy.js",
+  "scripts": {
+    "prepare": "rollup -c",
+    "prepublish": "rollup -c",
+    "test": "ava",
+    "lint": "standard && stylelint 'govuk/**/*.scss'"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0-beta",
+    "@11ty/eleventy-navigation": "^0.3.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
+    "accessible-autocomplete": "^2.0.3",
+    "govuk-frontend": "^4.0.0",
+    "luxon": "^2.1.1",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-block-embed": "^0.0.3",
+    "markdown-it-deflist": "^2.0.3",
+    "markdown-it-footnote": "^3.0.2",
+    "markdown-it-image-figures": "^2.0.0",
+    "markdown-it-ins": "^3.0.0",
+    "markdown-it-mark": "^3.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "markdown-it-table-of-contents": "^0.6.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.0",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "ava": "^3.15.0",
+    "rollup": "^2.62.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.45.1",
+    "standard": "^16.0.4",
+    "stylelint": "^13.13.1",
+    "stylelint-config-gds": "^0.1.0"
+  },
+  "standard": {
+    "ignore": [
+      "!.eleventy.js"
+    ]
+  },
+  "stylelint": {
+    "extends": "stylelint-config-gds/scss"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
+  },
+  "files": [
+    "govuk",
+    "lib"
+  ]
+}

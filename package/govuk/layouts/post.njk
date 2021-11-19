@@ -1,0 +1,37 @@
+{% extends "govuk/layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-display-none-print",
+    items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items
+  }) if eleventyNavigation.parent }}
+{% endblock %}
+
+{% block content %}
+  {% call appArticle({
+    header: {
+      title: title,
+      description: description
+    },
+    footer: {
+      date: date or page.date
+    }
+  }) %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ appProse({
+        prose: content
+      }) }}
+    </div>
+
+    {% if related.items | length > 0 %}
+    <div class="govuk-grid-column-one-third">
+      {{ appRelated({
+        title: related.title or "Related links",
+        items: related.items
+      }) }}
+    </div>
+    {% endif %}
+  </div>
+  {% endcall %}
+{% endblock %}

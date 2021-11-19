@@ -1,0 +1,32 @@
+{% extends "govuk/layouts/base.njk" %}
+
+{% block main %}
+  {% call appMasthead({
+    classes: "app-masthead--large",
+    title: {
+      classes: "govuk-heading-xl",
+      html: title
+    } if title,
+    description: {
+      html: description | markdown
+    } if description,
+    startButton: startButton if startButton,
+    image: image if image
+  }) %}
+    {{ govukBreadcrumbs({
+      classes: "app-breadcrumbs--inverted govuk-!-display-none-print",
+      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items
+    }) if eleventyNavigation.parent }}
+  {% endcall %}
+
+  <div class="govuk-width-container">
+    {% block beforeContent %}{% endblock %}
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    {% block content %}
+      {{ appProse({
+        prose: content
+      }) }}
+    {% endblock %}
+    </main>
+  </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+$rig-button-shadow-size: $govuk-border-width-form-element;
+$rig-button-inverted-background-colour: govuk-colour("white");
+$rig-button-inverted-foreground-colour: $govuk-brand-colour;
+$rig-button-inverted-shadow-colour: govuk-shade($rig-button-inverted-foreground-colour, 30%);
+$rig-button-inverted-hover-background-colour: govuk-tint($rig-button-inverted-foreground-colour, 90%);
+
+.rig-button--inverted,
+.rig-button--inverted:link,
+.rig-button--inverted:visited {
+  color: $rig-button-inverted-foreground-colour;
+  background-color: $rig-button-inverted-background-colour;
+  box-shadow: 0 $rig-button-shadow-size 0 $rig-button-inverted-shadow-colour;
+}
+
+.rig-button--inverted:hover {
+  color: $rig-button-inverted-foreground-colour;
+  background-color: $rig-button-inverted-hover-background-colour;
+}
+
+.rig-button--inverted:focus:not(:hover) {
+  color: $govuk-focus-text-colour;
+  background-color: $govuk-focus-colour;
+}
+
+.rig-button--inverted:active,
+.rig-button--inverted:focus {
+  border-color: $govuk-focus-colour;
+  color: $rig-button-inverted-foreground-colour;
+  background-color: $rig-button-inverted-hover-background-colour;
+  box-shadow: inset 0 0 0 2px $govuk-focus-colour;
+}

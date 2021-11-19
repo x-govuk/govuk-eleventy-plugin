@@ -1,0 +1,50 @@
+{% extends "govuk/template.njk" %}
+
+{% set htmlClasses = "no-js" %}
+{% set pageNumber = pagination.pageNumber + 1 %}
+{% set pageCount = pagination.pages | length %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% from "govuk/components/article/macro.njk" import appArticle %}
+{% from "govuk/components/document-list/macro.njk" import appDocumentList %}
+{% from "govuk/components/header/macro.njk" import appHeader %}
+{% from "govuk/components/masthead/macro.njk" import appMasthead %}
+{% from "govuk/components/prose/macro.njk" import appProse %}
+{% from "govuk/components/pagination/macro.njk" import appPagination %}
+{% from "govuk/components/related/macro.njk" import appRelated %}
+
+{% block head %}
+  <link rel="stylesheet" href="/assets/govuk-eleventy.min.css">
+  {% block styles %}{% endblock %}
+
+  <meta property="og:title" content="{{ title }}">
+  {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
+{% endblock %}
+
+{% block pageTitle %}
+  {{- title if title -}}
+  {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
+  {{- " - " + (app.serviceName or app.productName) + " - GOV.UK" -}}
+{% endblock %}
+
+{% block header %}
+  {{ appHeader({
+    homepageUrl: app.url or "/",
+    productName: app.productName,
+    serviceName: app.serviceName if not app.productName,
+    serviceUrl: app.serviceUrl if not app.productName,
+    searchIndex: searchIndex
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  <script src="/assets/govuk-eleventy.min.js"></script>
+  <script>
+    document.documentElement.classList.remove('no-js')
+    const searchContainer = document.querySelector('[data-module="app-search"]')
+    new GOVUK11ty.SiteSearch(searchContainer).init()
+  </script>
+  {% block scripts %}{% endblock %}
+{% endblock %}

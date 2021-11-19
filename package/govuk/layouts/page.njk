@@ -1,0 +1,21 @@
+{% extends "govuk/layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-display-none-print",
+    items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items
+  }) if eleventyNavigation.parent }}
+{% endblock %}
+
+{% block content %}
+  {% call appArticle({
+    header: {
+      title: title,
+      description: description
+    }
+  }) %}
+  {{ appProse({
+    prose: content
+  }) }}
+  {% endcall %}
+{% endblock %}
