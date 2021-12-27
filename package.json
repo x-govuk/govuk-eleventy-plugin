@@ -2,11 +2,6 @@
   "name": "govuk-eleventy",
   "description": "Build websites using the GOV.UK design system and the Eleventy static site generator",
   "private": true,
-  "keywords": [
-    "govuk",
-    "government",
-    "11ty"
-  ],
   "author": "Paul Robert Lloyd",
   "license": "MIT",
   "homepage": "https://govuk-eleventy.herokuapp.com",
