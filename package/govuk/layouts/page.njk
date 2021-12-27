@@ -10,7 +10,7 @@
 {% block content %}
   {% call appArticle({
     header: {
-      title: title,
+      title: title | noOrphans,
       description: description
     }
   }) %}
