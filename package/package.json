@@ -1,7 +1,7 @@
 {
   "name": "govuk-eleventy-plugin",
   "description": "Build websites using the GOV.UK design system and the Eleventy static site generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "govuk",
     "government",
