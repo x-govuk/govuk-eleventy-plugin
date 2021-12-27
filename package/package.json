@@ -5,7 +5,8 @@
   "keywords": [
     "govuk",
     "government",
-    "11ty"
+    "eleventy",
+    "eleventy-plugin"
   ],
   "author": "Paul Robert Lloyd",
   "license": "MIT",
