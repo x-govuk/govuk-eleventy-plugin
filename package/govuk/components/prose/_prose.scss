@@ -237,6 +237,37 @@
     text-decoration: none;
   }
 
+  .header-anchor {
+    color: $govuk-text-colour;
+    margin-left: -1.5ch;
+    padding-left: 1.5ch;
+    text-decoration: none;
+
+    &:visited {
+      color: $govuk-text-colour;
+    }
+
+    &:hover {
+      text-decoration: none !important;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      content: "#";
+      color: govuk-colour("mid-grey");
+      float: left;
+      font-style: italic;
+      height: 0;
+      left: -1.5ch;
+      position: relative;
+      width: 0;
+    }
+
+    &:focus::before {
+      color: $govuk-focus-text-colour;
+    }
+  }
+
   .table-of-contents {
     > ul > li {
       font-weight: bold;
