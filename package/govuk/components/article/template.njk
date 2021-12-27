@@ -17,6 +17,9 @@
     {% if params.footer.modified %}
       Last updated <time datetime="{{ params.footer.modified | date }}">{{ params.footer.modified | date("d LLLL y") }}</time>
     {% endif %}
+    {% if params.footer.author %}
+      Written by {{ params.footer.author }}
+    {% endif %}
   </footer>
   {% endif %}
 </article>

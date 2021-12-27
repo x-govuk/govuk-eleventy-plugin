@@ -10,11 +10,12 @@
 {% block content %}
   {% call appArticle({
     header: {
-      title: title,
-      description: description
+      title: title | noOrphans
     },
     footer: {
-      date: date or page.date
+      date: page.date,
+      modified: modified if modified,
+      author: author if author
     }
   }) %}
   <div class="govuk-grid-row">
