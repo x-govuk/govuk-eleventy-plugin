@@ -4,10 +4,10 @@
   {% call appMasthead({
     title: {
       classes: "govuk-heading-l",
-      html: title
+      html: title | noOrphans
     } if title,
     description: {
-      html: description | markdown
+      html: description | markdown | noOrphans
     } if description,
     startButton: startButton if startButton,
     image: image if image
