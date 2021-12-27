@@ -4,21 +4,25 @@
   h1:not([class]) {
     @extend %govuk-heading-xl;
     max-width: 40rem;
+    outline: 0;
   }
 
   h2:not([class]) {
     @extend %govuk-heading-l;
     max-width: 40rem;
+    outline: 0;
   }
 
   h3:not([class]) {
     @extend %govuk-heading-m;
     max-width: 40rem;
+    outline: 0;
   }
 
   h4:not([class]) {
     @extend %govuk-heading-s;
     max-width: 40rem;
+    outline: 0;
   }
 
   h5:not([class]) {
@@ -26,6 +30,7 @@
     @include govuk-responsive-margin(4, "bottom");
     color: $govuk-secondary-text-colour;
     margin-top: 0;
+    outline: 0;
   }
 
   h6:not([class]) {
@@ -33,6 +38,7 @@
     @include govuk-responsive-margin(4, "bottom");
     color: $govuk-secondary-text-colour;
     margin-top: 0;
+    outline: 0;
   }
 
   p:not([class]),
