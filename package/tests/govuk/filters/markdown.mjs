@@ -12,5 +12,3 @@ test('Converts Markdown string to HTML without paragraph wrap', t => {
 
   t.is(result, '<strong>this</strong> is <em>emphasis</em>');
 });
-
-

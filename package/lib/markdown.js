@@ -1,4 +1,5 @@
 const markdown = require('markdown-it')
+const anchor = require('markdown-it-anchor')
 
 module.exports = (() => {
   const opts = {
@@ -11,6 +12,9 @@ module.exports = (() => {
   const parser = markdown(opts)
 
   parser
+    .use(anchor, {
+      permalink: anchor.permalink.headerLink()
+    })
     .use(require('markdown-it-abbr'))
     .use(require('markdown-it-block-embed'), {
       containerClassName: 'embed',
