@@ -28,6 +28,7 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.addFilter('tokenize', require('./govuk/filters/tokenize.js'))
   eleventyConfig.addFilter('items', require('./govuk/filters/items.js'))
   eleventyConfig.addFilter('markdown', require('./govuk/filters/markdown.js'))
+  eleventyConfig.addFilter('noOrphans', require('./govuk/filters/no-orphans.js'))
   eleventyConfig.addFilter('pretty', require('./govuk/filters/pretty.js'))
 
   // Set default navigation key for home page
