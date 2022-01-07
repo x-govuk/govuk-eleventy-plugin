@@ -1,28 +1,28 @@
-$app-breadcrumbs-inverted-text-colour: govuk-colour("white");
-$app-breadcrumbs-inverted-border-colour: govuk-colour("light-blue");
+$app-breadcrumbs-inverse-text-colour: govuk-colour("white");
+$app-breadcrumbs-inverse-border-colour: govuk-colour("light-blue");
 
-.app-breadcrumbs--inverted {
+.app-breadcrumbs--inverse {
   @include govuk-responsive-margin(6, "bottom");
   margin-top: #{govuk-spacing(4) * - 1};
   padding: govuk-spacing(3) 0 govuk-spacing(2);
-  border-bottom: 1px solid $app-breadcrumbs-inverted-border-colour;
+  border-bottom: 1px solid $app-breadcrumbs-inverse-border-colour;
 
   @include mq ($from: tablet) {
     margin-top: #{govuk-spacing(6) * - 1};
   }
 
   .govuk-breadcrumbs__list-item:before {
-    border-color: $app-breadcrumbs-inverted-text-colour;
+    border-color: $app-breadcrumbs-inverse-text-colour;
   }
 
   a:link,
   a:visited {
-    color: $app-breadcrumbs-inverted-text-colour;
+    color: $app-breadcrumbs-inverse-text-colour;
   }
 
   a:hover,
   a:active {
-    color: $app-breadcrumbs-inverted-text-colour;
+    color: $app-breadcrumbs-inverse-text-colour;
   }
 
   a:focus {

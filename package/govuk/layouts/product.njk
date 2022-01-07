@@ -13,7 +13,7 @@
     image: image if image
   }) %}
     {{ govukBreadcrumbs({
-      classes: "app-breadcrumbs--inverted govuk-!-display-none-print",
+      classes: "app-breadcrumbs--inverse govuk-!-display-none-print",
       items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items
     }) if eleventyNavigation.parent }}
   {% endcall %}
