@@ -1,5 +1,3 @@
-@import "./button--inverted";
-
 .app-masthead {
   @include govuk-responsive-margin(6, "bottom");
   @include govuk-responsive-padding(6, "top");
@@ -7,33 +5,22 @@
   color: govuk-colour("white");
   background-color: $govuk-brand-colour;
   margin-top: govuk-spacing(-2);
-
-  // Override $govuk-global-styles
-  a,
-  p {
-    color: inherit;
-    font-size: inherit;
-  }
 }
 
 .app-masthead__title {
   @include govuk-font($size: 36, $weight: bold);
-  color: inherit;
   margin-top: 0;
-
-  .app-masthead--large & {
-    @include govuk-font($size: 48, $weight: "bold");
-  }
 }
 
-.app-masthead__description {
+.app-masthead__description,
+.app-masthead__description > * {
   @include govuk-font($size: 19);
   color: inherit;
   margin-bottom: 0;
+}
 
-  .app-masthead--large & {
-    @include govuk-font($size: 24);
-  }
+.app-masthead__description a {
+  color: inherit;
 }
 
 .app-masthead__image {
@@ -43,5 +30,16 @@
 
   @include govuk-media-query($until: desktop) {
     display: none;
+  }
+}
+
+.app-masthead--large {
+  .app-masthead__title {
+    @include govuk-font($size: 48, $weight: "bold");
+  }
+
+  .app-masthead__description,
+  .app-masthead__description > * {
+    @include govuk-font($size: 24);
   }
 }
