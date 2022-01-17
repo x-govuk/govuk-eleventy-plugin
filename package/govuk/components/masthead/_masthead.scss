@@ -8,6 +8,7 @@
 
 .app-masthead__title {
   @include govuk-font($size: 36, $weight: bold);
+  color: govuk-colour("white");
   margin-top: 0;
 }
 
