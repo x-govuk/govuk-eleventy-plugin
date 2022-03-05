@@ -21,7 +21,7 @@ Consumes [govuk-frontend](https://github.com/alphagov/govuk-frontend) with addit
 
 <hr class="govuk-section-break govuk-section-break--visible">
 
-{% from "govuk/components/document-list/macro.njk" import appDocumentList %}
+{% from "app/components/document-list/macro.njk" import appDocumentList %}
 <div class="govuk-grid-row">
   <section class="govuk-grid-column-one-third">
     <h2 class="govuk-heading-l govuk-!-font-size-27">Getting started</h2>

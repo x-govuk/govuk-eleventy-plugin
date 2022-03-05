@@ -16,7 +16,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'docs',
       output: 'public',
-      layouts: '../node_modules/govuk-eleventy-plugin/govuk/layouts'
+      layouts: '../node_modules/govuk-eleventy-plugin/app/layouts'
     },
     templateFormats: ['njk', 'md']
   }

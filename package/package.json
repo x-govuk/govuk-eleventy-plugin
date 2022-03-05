@@ -22,11 +22,11 @@
   "engines": {
     "node": "^16.0.0"
   },
-  "sass": "govuk/all.scss",
+  "sass": "app/all.scss",
   "main": ".eleventy.js",
   "scripts": {
     "test": "ava",
-    "lint": "standard && stylelint 'govuk/**/*.scss'"
+    "lint": "standard && stylelint 'app/**/*.scss'"
   },
   "dependencies": {
     "@11ty/eleventy-navigation": "^0.3.2",
@@ -69,7 +69,7 @@
     "access": "public"
   },
   "files": [
-    "govuk",
+    "app",
     "lib"
   ]
 }

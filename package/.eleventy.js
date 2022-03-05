@@ -31,12 +31,12 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.setLibrary('md', markdown)
 
   // Filters
-  eleventyConfig.addFilter('date', require('./govuk/filters/date.js'))
-  eleventyConfig.addFilter('tokenize', require('./govuk/filters/tokenize.js'))
-  eleventyConfig.addFilter('items', require('./govuk/filters/items.js'))
-  eleventyConfig.addFilter('markdown', require('./govuk/filters/markdown.js'))
-  eleventyConfig.addFilter('noOrphans', require('./govuk/filters/no-orphans.js'))
-  eleventyConfig.addFilter('pretty', require('./govuk/filters/pretty.js'))
+  eleventyConfig.addFilter('date', require('./app/filters/date.js'))
+  eleventyConfig.addFilter('tokenize', require('./app/filters/tokenize.js'))
+  eleventyConfig.addFilter('items', require('./app/filters/items.js'))
+  eleventyConfig.addFilter('markdown', require('./app/filters/markdown.js'))
+  eleventyConfig.addFilter('noOrphans', require('./app/filters/no-orphans.js'))
+  eleventyConfig.addFilter('pretty', require('./app/filters/pretty.js'))
 
   // Set default navigation key for home page
   eleventyConfig.addGlobalData('eleventyComputed', {
@@ -62,7 +62,7 @@ module.exports = function (eleventyConfig, options = {}) {
     // Generate CSS
     try {
       const cssFile = `${options.dir.output}/assets/govuk.css`
-      const result = sass.compile(path.join(__dirname, './govuk/all.scss'), {
+      const result = sass.compile(path.join(__dirname, './app/all.scss'), {
         loadPaths: [
           __dirname,
           path.join(__dirname, '../node_modules')
@@ -78,7 +78,7 @@ module.exports = function (eleventyConfig, options = {}) {
     try {
       const jsFile = `${options.dir.output}/assets/govuk.js`
       const bundle = await rollup.rollup({
-        input: path.join(__dirname, './govuk/all.js'),
+        input: path.join(__dirname, './app/all.js'),
         context: 'window',
         plugins: [
           nodeResolve(),

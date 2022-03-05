@@ -5,10 +5,7 @@ tags:
 - getting-started
 - search-index
 ---
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-{{ govukInsetText({
-  text: ("This Markdown demo is adapted from that used for <a href=\"https://markdown-it.github.io\">markdown-it</a>, the library used by Eleventy." | safe )
-}) }}
+> This Markdown demo is adapted from that used for [markdown-it](https://markdown-it.github.io), the library used by Eleventy.
 
 ## Headings
 

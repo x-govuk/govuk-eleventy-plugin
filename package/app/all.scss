@@ -12,7 +12,7 @@ $govuk-new-link-styles: true;
 @import "accessible-autocomplete/src/autocomplete";
 
 // Components
-@import "govuk/components/all";
+@import "app/components/all";
 
 // Vendor stylesheets
-@import "govuk/vendor/prismjs/prism";
+@import "app/vendor/prismjs/prism";
