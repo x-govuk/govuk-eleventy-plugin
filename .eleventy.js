@@ -1,6 +1,6 @@
 module.exports = function (eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(require('govuk-eleventy-plugin'), {
+  eleventyConfig.addPlugin(require('./index.js'), {
     dir: { output: 'public' },
     searchIndex: '/search.json',
   })
@@ -16,7 +16,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'docs',
       output: 'public',
-      layouts: '../node_modules/govuk-eleventy-plugin/app/layouts'
+      layouts: '../app/layouts'
     },
     templateFormats: ['njk', 'md']
   }
