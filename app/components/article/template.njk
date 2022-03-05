@@ -1,7 +1,12 @@
 <article class="app-article">
   {% if params.header %}
-  <header class="app-article__header govuk-!-width-two-thirds">
+  <header class="app-article__header">
     <h1 class="app-article__title govuk-heading-xl">{{ params.header.title }}</h1>
+    {% if params.header.description %}
+      <div class="govuk-body-l">
+        {{ params.header.description }}
+      </div>
+    {% endif %}
   </header>
   {% endif %}
 
