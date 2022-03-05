@@ -35,6 +35,7 @@
     "@rollup/plugin-node-resolve": "^13.1.1",
     "accessible-autocomplete": "^2.0.3",
     "govuk-frontend": "^4.0.0",
+    "govuk-prototype-components": "x-govuk/govuk-prototype-components",
     "luxon": "^2.1.1",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^8.4.1",

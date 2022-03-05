@@ -5,6 +5,9 @@ $govuk-new-link-styles: true;
 // GOV.UK Frontend
 @import "govuk-frontend/govuk/all";
 
+// GOV.UK Prototype components
+@import "govuk-prototype-components/x-govuk/all";
+
 // Accessible autocomplete
 @import "accessible-autocomplete/src/autocomplete";
 

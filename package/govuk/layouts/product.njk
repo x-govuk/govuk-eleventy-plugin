@@ -1,22 +1,21 @@
 {% extends "govuk/layouts/base.njk" %}
 
 {% block main %}
-  {% call appMasthead({
-    classes: "app-masthead--large",
+  {{ xGovukMasthead({
+    classes: "x-govuk-masthead--large",
     title: {
       html: title | noOrphans
     } if title,
     description: {
-      html: description | markdown | noOrphans
+      html: description | markdown("inline") | noOrphans
     } if description,
-    startButton: startButton if startButton,
-    image: image if image
-  }) %}
-    {{ govukBreadcrumbs({
-      classes: "app-breadcrumbs--inverse govuk-!-display-none-print",
+    startButton: startButton,
+    image: image,
+    breadcrumbs: {
+      classes: "govuk-!-display-none-print",
       items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items
-    }) if eleventyNavigation.parent }}
-  {% endcall %}
+    } if eleventyNavigation.parent
+  }) }}
 
   <div class="govuk-width-container">
     {% block beforeContent %}{% endblock %}

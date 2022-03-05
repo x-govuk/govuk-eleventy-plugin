@@ -13,7 +13,8 @@ module.exports = function (eleventyConfig, options = {}) {
   const pluginViews = [
     './',
     'node_modules/govuk-eleventy-plugin',
-    'node_modules/govuk-frontend'
+    'node_modules/govuk-frontend',
+    'node_modules/govuk-prototype-components'
   ]
   const views = pluginViews.concat(appViews)
   const nunjucksEnv = new Nunjucks.Environment(

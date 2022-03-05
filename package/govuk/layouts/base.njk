@@ -4,16 +4,17 @@
 {% set pageNumber = pagination.pageNumber + 1 %}
 {% set pageCount = pagination.pages | length %}
 
+{% from "x-govuk/components/masthead/macro.njk" import xGovukMasthead %}
+{% from "x-govuk/components/related-navigation/macro.njk" import xGovukRelatedNavigation %}
+{% from "x-govuk/components/side-navigation/macro.njk" import xGovukSideNavigation %}
+
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
-
 {% from "govuk/components/article/macro.njk" import appArticle %}
 {% from "govuk/components/document-list/macro.njk" import appDocumentList %}
 {% from "govuk/components/header/macro.njk" import appHeader %}
-{% from "govuk/components/masthead/macro.njk" import appMasthead %}
 {% from "govuk/components/prose/macro.njk" import appProse %}
 {% from "govuk/components/pagination/macro.njk" import appPagination %}
-{% from "govuk/components/related/macro.njk" import appRelated %}
 
 {% block head %}
   <link rel="stylesheet" href="/assets/govuk.css">

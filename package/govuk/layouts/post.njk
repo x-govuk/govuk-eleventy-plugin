@@ -27,9 +27,11 @@
 
     {% if related.items | length > 0 %}
     <div class="govuk-grid-column-one-third">
-      {{ appRelated({
-        title: related.title or "Related links",
-        items: related.items
+      {{ xGovukRelatedNavigation({
+        sections: [{
+          title: related.title or "Related links",
+          items: related.items
+        }]
       }) }}
     </div>
     {% endif %}
