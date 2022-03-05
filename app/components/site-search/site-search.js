@@ -80,16 +80,19 @@ Search.prototype.inputValueTemplate = function (result) {
 
 Search.prototype.resultTemplate = function (result) {
   if (result) {
-    const elem = document.createElement('span')
+    const element = document.createElement('span')
     const resultTitle = result.data.title
-    elem.textContent = resultTitle
+    element.textContent = resultTitle
 
-    const section = document.createElement('span')
-    section.className = 'app-site-search--section'
-    section.innerHTML = result.dateString
+    if (result.dateString || result.data.section) {
+      const section = document.createElement('span')
+      section.className = 'app-site-search--section'
+      section.innerHTML = result.dateString || result.data.section
 
-    elem.appendChild(section)
-    return elem.innerHTML
+      element.appendChild(section)
+    }
+
+    return element.innerHTML
   }
 }
 
