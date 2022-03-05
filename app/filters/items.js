@@ -1,24 +1,23 @@
 /**
  * Format Eleventy navigation to populate govukBreadcrumb component
  *
- * @param {Array} eleventyNavigationBreadcrumb Eleventy breadcrumb
+ * @param {Array} eleventyNavigation Eleventy navigation data
  * @param {string} pageUrl URL of current page
  */
-module.exports = (eleventyNavigationBreadcrumb, pageUrl) => {
+module.exports = (eleventyNavigation, pageUrl) => {
   const items = []
 
-  eleventyNavigationBreadcrumb.map(item => {
+  eleventyNavigation.map(item => {
     items.push({
       current: pageUrl && item.url === pageUrl,
       parent: pageUrl && pageUrl.startsWith(item.url),
       href: item.url,
       text: item.title,
-      theme: item.theme,
       children: item.children
         ? item.children.map(child => ({
           current: pageUrl && child.url === pageUrl,
           href: child.url,
-          text: child.title,
+          text: child.title
         }))
         : false
     })
