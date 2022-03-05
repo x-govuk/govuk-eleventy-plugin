@@ -16,7 +16,7 @@
 {% from "govuk/components/related/macro.njk" import appRelated %}
 
 {% block head %}
-  <link rel="stylesheet" href="/assets/govuk-eleventy.min.css">
+  <link rel="stylesheet" href="/assets/govuk.css">
   {% block styles %}{% endblock %}
 
   <meta property="og:title" content="{{ title }}">
@@ -40,7 +40,7 @@
 {% endblock %}
 
 {% block bodyEnd %}
-  <script src="/assets/govuk-eleventy.min.js"></script>
+  <script src="/assets/govuk.js"></script>
   <script>
     document.documentElement.classList.remove('no-js')
     const searchContainer = document.querySelector('[data-module="app-search"]')

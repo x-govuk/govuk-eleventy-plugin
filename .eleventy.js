@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('govuk-eleventy-plugin'), {
+    dir: { output: 'public' },
     searchIndex: '/search.json',
   })
 

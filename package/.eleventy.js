@@ -1,4 +1,10 @@
+const path = require('node:path')
+const { writeFile } = require('node:fs/promises')
 const Nunjucks = require('nunjucks')
+const rollup = require('rollup')
+const commonJs = require('@rollup/plugin-commonjs')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
+const sass = require('sass')
 const markdown = require('./lib/markdown.js')
 
 module.exports = function (eleventyConfig, options = {}) {
@@ -41,15 +47,49 @@ module.exports = function (eleventyConfig, options = {}) {
     }
   })
 
-  // Passthrough
+  // Pass through
   eleventyConfig.addPassthroughCopy({
     'node_modules/govuk-frontend/govuk/assets': 'assets'
-  })
-  eleventyConfig.addPassthroughCopy({
-    'node_modules/govuk-eleventy-plugin/govuk/assets': 'assets'
   })
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
+
+  // Events
+  eleventyConfig.on('eleventy.after', async () => {
+    // Generate CSS
+    try {
+      const cssFile = `${options.dir.output}/assets/govuk.css`
+      const result = sass.compile(path.join(__dirname, './govuk/all.scss'), {
+        loadPaths: [
+          __dirname,
+          path.join(__dirname, '../node_modules')
+        ],
+        quietDeps: true
+      });
+      writeFile(cssFile, result.css);
+    } catch (error) {
+      console.error(error);
+    }
+
+    // Bundle JavaScript
+    try {
+      const jsFile = `${options.dir.output}/assets/govuk.js`
+      const bundle = await rollup.rollup({
+        input: path.join(__dirname, './govuk/all.js'),
+        context: 'window',
+        plugins: [
+          nodeResolve(),
+          commonJs()
+        ]
+      })
+
+      const { output } = await bundle.generate({ format: 'iife' })
+      const { code } = output[0]
+      writeFile(jsFile, code);
+    } catch (error) {
+      console.error(error);
+    }
+  });
 }

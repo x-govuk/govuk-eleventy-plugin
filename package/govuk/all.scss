@@ -3,13 +3,13 @@ $govuk-global-styles: true;
 $govuk-new-link-styles: true;
 
 // GOV.UK Frontend
-@import "node_modules/govuk-frontend/govuk/all";
+@import "govuk-frontend/govuk/all";
 
 // Accessible autocomplete
-@import "node_modules/accessible-autocomplete/src/autocomplete";
+@import "accessible-autocomplete/src/autocomplete";
 
 // Components
-@import "components/all";
+@import "govuk/components/all";
 
 // Vendor stylesheets
-@import "vendor/prismjs/prism";
+@import "govuk/vendor/prismjs/prism";
