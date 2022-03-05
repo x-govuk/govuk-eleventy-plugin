@@ -13,6 +13,7 @@ module.exports = (eleventyNavigationBreadcrumb, pageUrl) => {
       parent: pageUrl && pageUrl.startsWith(item.url),
       href: item.url,
       text: item.title,
+      theme: item.theme,
       children: item.children
         ? item.children.map(child => ({
           current: pageUrl && child.url === pageUrl,

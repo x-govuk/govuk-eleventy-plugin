@@ -65,7 +65,7 @@ module.exports = function (eleventyConfig, options = {}) {
       const result = sass.compile(path.join(__dirname, './app/all.scss'), {
         loadPaths: [
           __dirname,
-          path.join(__dirname, './node_modules')
+          './node_modules'
         ],
         quietDeps: true
       });
