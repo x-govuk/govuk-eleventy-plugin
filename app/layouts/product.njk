@@ -4,7 +4,7 @@
   {{ xGovukMasthead({
     classes: "x-govuk-masthead--large",
     title: {
-      html: title | noOrphans
+      html: title
     } if title,
     description: {
       html: description | markdown("inline") | noOrphans
@@ -13,7 +13,7 @@
     image: image,
     breadcrumbs: {
       classes: "govuk-!-display-none-print",
-      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items
+      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) | items
     } if eleventyNavigation.parent
   }) }}
 

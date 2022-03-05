@@ -3,14 +3,14 @@
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     classes: "govuk-!-display-none-print",
-    items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items
+    items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) | items
   }) if eleventyNavigation.parent }}
 {% endblock %}
 
 {% block content %}
   {% call appArticle({
     header: {
-      title: title | noOrphans,
+      title: title,
       description: description
     }
   }) %}
