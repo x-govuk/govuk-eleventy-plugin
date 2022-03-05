@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Sitemap
-permalink: "/sitemap.html"
 eleventyExcludeFromCollections: true
 ---
 {% for item in collections.all | eleventyNavigation("home") %}
