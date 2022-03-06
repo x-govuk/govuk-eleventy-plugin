@@ -19,7 +19,7 @@ Consumes [govuk-frontend](https://github.com/alphagov/govuk-frontend) with addit
 
 <iframe src="https://ghbtns.com/github-btn.html?user=paulrobertlloyd&repo=govuk-eleventy&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
 
-<hr class="govuk-section-break govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 {% from "app/components/document-list/macro.njk" import appDocumentList %}
 <div class="govuk-grid-row">

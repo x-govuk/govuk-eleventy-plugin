@@ -18,9 +18,7 @@
     {% block beforeContent %}{% endblock %}
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {% block content %}
-      {{ appProse({
-        prose: content
-      }) if content }}
+      {{ content }}
       <div class="govuk-grid-row">
         <section class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-l govuk-!-font-size-27">Posts</h2>

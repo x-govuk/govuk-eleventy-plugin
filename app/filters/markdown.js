@@ -1,7 +1,9 @@
-const markdown = require('../../lib/markdown.js')
+const GovukHTMLRenderer = require('govuk-markdown')
+const { marked } = require('marked')
+const normalise = require('../../lib/nunjucks.js')
 
 /**
- * Convert Markdown string to HTML
+ * Convert Markdown into GOV.UK Frontend-compliant HTML
  *
  * @param {String} string Markdown
  * @param {String} value If `inline`, renders HTML without paragraph tags
@@ -9,11 +11,16 @@ const markdown = require('../../lib/markdown.js')
  *
  */
 module.exports = (string, value) => {
-  if (string) {
-    if (value === 'inline') {
-      return markdown.renderInline(string)
-    }
+  string = normalise(string, '')
 
-    return markdown.render(string)
+  marked.setOptions({
+    smartypants: true,
+    renderer: new GovukHTMLRenderer()
+  })
+
+  if (value === 'inline') {
+    return marked.parseInline(string)
   }
+
+  return marked.parse(string)
 }

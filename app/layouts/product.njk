@@ -21,9 +21,7 @@
     {% block beforeContent %}{% endblock %}
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {% block content %}
-      {{ appProse({
-        prose: content
-      }) }}
+      {{ content }}
     {% endblock %}
     </main>
   </div>

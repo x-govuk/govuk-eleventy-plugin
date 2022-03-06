@@ -6,6 +6,9 @@ $govuk-new-link-styles: true;
 @import "govuk-frontend/govuk/all";
 
 // GOV.UK Prototype components
+@import "govuk-markdown/x-govuk/all";
+
+// GOV.UK Prototype components
 @import "govuk-prototype-components/x-govuk/all";
 
 // Accessible autocomplete
@@ -13,6 +16,3 @@ $govuk-new-link-styles: true;
 
 // Components
 @import "app/components/all";
-
-// Vendor stylesheets
-@import "app/vendor/prismjs/prism";

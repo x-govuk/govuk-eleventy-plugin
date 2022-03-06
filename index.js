@@ -5,10 +5,9 @@ const rollup = require('rollup')
 const commonJs = require('@rollup/plugin-commonjs')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const sass = require('sass')
-const markdown = require('./lib/markdown.js')
 
 module.exports = function (eleventyConfig, options = {}) {
-  // Templates: Nunjucks and Markdown
+  // Libraries
   const appViews = options.views || []
   const pluginViews = [
     './',
@@ -28,7 +27,6 @@ module.exports = function (eleventyConfig, options = {}) {
   )
 
   eleventyConfig.setLibrary('njk', nunjucksEnv)
-  eleventyConfig.setLibrary('md', markdown)
 
   // Collections
   eleventyConfig.addCollection("orderedNavigation", collection => {
@@ -61,7 +59,6 @@ module.exports = function (eleventyConfig, options = {}) {
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
 
   // Events
   eleventyConfig.on('eleventy.after', async () => {
