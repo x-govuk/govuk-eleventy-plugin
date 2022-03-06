@@ -30,6 +30,11 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.setLibrary('njk', nunjucksEnv)
   eleventyConfig.setLibrary('md', markdown)
 
+  // Collections
+  eleventyConfig.addCollection("orderedNavigation", collection => {
+    return collection.getAll().sort((a, b) => a.data.order - b.data.order)
+  });
+
   // Filters
   eleventyConfig.addFilter('date', require('./app/filters/date.js'))
   eleventyConfig.addFilter('tokenize', require('./app/filters/tokenize.js'))
@@ -40,9 +45,10 @@ module.exports = function (eleventyConfig, options = {}) {
 
   // Set default navigation key for home page
   eleventyConfig.addGlobalData('eleventyComputed', {
+    homeKey: options.homeKey || 'Home',
     searchIndex: options.searchIndex,
     eleventyNavigation: {
-      key: data => data.title ? data.title : 'Home',
+      key: data => data.title ? data.title : data.homeKey,
       parent: data => data.parent ? data.parent : false,
       excerpt: data => data.description ? data.description : false
     }
