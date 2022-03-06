@@ -27,7 +27,6 @@ module.exports = function (eleventyConfig, options = {}) {
       watch: process.env === 'development'
     }
   )
-
   eleventyConfig.setLibrary('njk', nunjucks)
 
   // Extensions
@@ -49,16 +48,16 @@ module.exports = function (eleventyConfig, options = {}) {
       })
 
       return async (data) => {
-        let html = nunjucks.renderString(inputContent, data)
+        const html = nunjucks.renderString(inputContent, data)
         return marked.parse(html)
-      };
+      }
     }
-  });
+  })
 
   // Collections
-  eleventyConfig.addCollection("orderedNavigation", collection => {
+  eleventyConfig.addCollection('orderedNavigation', collection => {
     return collection.getAll().sort((a, b) => a.data.order - b.data.order)
-  });
+  })
 
   // Filters
   eleventyConfig.addFilter('date', require('./app/filters/date.js'))
@@ -68,12 +67,22 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.addFilter('noOrphans', require('./app/filters/no-orphans.js'))
   eleventyConfig.addFilter('pretty', require('./app/filters/pretty.js'))
 
-  // Set default navigation key for home page
+  // Global data
+  // Sensible defaults for eleventyNavigation
   eleventyConfig.addGlobalData('eleventyComputed', {
     eleventyNavigation: {
-      key: data => data.title ? data.title : data.homeKey,
-      // parent: data => data.parent ? data.parent : data.homeKey,
-      excerpt: data => data.description ? data.description : false
+      // Key: If homepage use `homeKey`, else navigation key or page title
+      key: data => (data.homepage)
+        ? data.homeKey
+        : data.eleventyNavigation.key || data.title,
+      // Parent: If homepage `false`, else if page not excluded from collections, navigation parent or `homeKey`
+      parent: data => (data.homepage)
+        ? false
+        : (!data.eleventyExcludeFromCollections)
+            ? data.eleventyNavigation.parent || data.homeKey
+            : false,
+      // Excerpt: Defined navigation excerpt or page description
+      excerpt: data => data.eleventyNavigation.excerpt || data.description
     }
   })
 
@@ -96,10 +105,10 @@ module.exports = function (eleventyConfig, options = {}) {
           './node_modules'
         ],
         quietDeps: true
-      });
-      writeFile(cssFile, result.css);
+      })
+      writeFile(cssFile, result.css)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
 
     // Bundle JavaScript
@@ -116,9 +125,9 @@ module.exports = function (eleventyConfig, options = {}) {
 
       const { output } = await bundle.generate({ format: 'iife' })
       const { code } = output[0]
-      writeFile(jsFile, code);
+      writeFile(jsFile, code)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  });
+  })
 }

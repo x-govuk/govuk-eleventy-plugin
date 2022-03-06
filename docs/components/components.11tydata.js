@@ -1,4 +1,7 @@
 module.exports = {
+  layout: 'page',
   tags: ['component', 'search-index'],
-  parent: 'Components'
+  eleventyNavigation: {
+    parent: 'Components'
+  }
 }

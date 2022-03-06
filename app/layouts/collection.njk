@@ -11,7 +11,7 @@
     breadcrumbs: {
       classes: "govuk-!-display-none-print",
       items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) | items
-    } if eleventyNavigation.parent
+    }
   }) }}
 
   <div class="govuk-width-container">

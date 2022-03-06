@@ -7,21 +7,19 @@
 module.exports = (eleventyNavigation, pageUrl) => {
   const items = []
 
-  eleventyNavigation.map(item => {
-    items.push({
-      current: pageUrl && item.url === pageUrl,
-      parent: pageUrl && pageUrl.startsWith(item.url),
-      href: item.url,
-      text: item.title,
-      children: item.children
-        ? item.children.map(child => ({
+  eleventyNavigation.map(item => items.push({
+    current: pageUrl && item.url === pageUrl,
+    parent: pageUrl && pageUrl.startsWith(item.url),
+    href: item.url,
+    text: item.title,
+    children: item.children
+      ? item.children.map(child => ({
           current: pageUrl && child.url === pageUrl,
           href: child.url,
           text: child.title
         }))
-        : false
-    })
-  })
+      : false
+  }))
 
   return items
 }

@@ -21,13 +21,13 @@ const eleventyNavigationBreadcrumb = [{
 }]
 
 test('Formats Eleventy navigation to populate govukBreadcrumb component', t => {
-  const result = items(eleventyNavigationBreadcrumb);
+  const result = items(eleventyNavigationBreadcrumb)
 
   t.deepEqual(result, [{
     href: '/',
-    text: 'Home',
+    text: 'Home'
   }, {
     href: '/layouts/',
-    text: 'Layouts',
-  }]);
-});
+    text: 'Layouts'
+  }])
+})

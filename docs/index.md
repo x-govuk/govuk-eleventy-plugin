@@ -1,13 +1,11 @@
 ---
+homepage: true
 layout: product
 title: Build static websites using GOV.UK styles, components and patterns
 description: The familiarity of the [GOV.UK Design System](https://design-system.service.gov.uk) combined with the simplicity of the [Eleventy](https://www.11ty.dev) static site generator.
 image:
   src: /images/homepage-illustration.png
   alt: The Eleventy mascot floating above a laptop.
-eleventyComputed:
-  eleventyNavigation:
-    key: Home
 ---
 {% from "govuk/components/tag/macro.njk" import govukTag %}
 {{ govukTag({
