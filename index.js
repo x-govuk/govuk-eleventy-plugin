@@ -1,5 +1,7 @@
 const path = require('node:path')
 const { writeFile } = require('node:fs/promises')
+const GovukHTMLRenderer = require('govuk-markdown')
+const { marked } = require('marked')
 const Nunjucks = require('nunjucks')
 const rollup = require('rollup')
 const commonJs = require('@rollup/plugin-commonjs')
@@ -16,7 +18,7 @@ module.exports = function (eleventyConfig, options = {}) {
     'node_modules/govuk-prototype-components'
   ]
   const views = pluginViews.concat(appViews)
-  const nunjucksEnv = new Nunjucks.Environment(
+  const nunjucks = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader(views), {
       autoescape: false,
       lstripBlocks: true,
@@ -26,7 +28,32 @@ module.exports = function (eleventyConfig, options = {}) {
     }
   )
 
-  eleventyConfig.setLibrary('njk', nunjucksEnv)
+  eleventyConfig.setLibrary('njk', nunjucks)
+
+  // Extensions
+  eleventyConfig.addExtension('md', {
+    getData: true,
+    getInstanceFromInputPath: (inputPath) => {
+      return {
+        eleventyDataKey: ['options'],
+        options: {
+          homeKey: options.homeKey || 'Home',
+          searchIndex: options.searchIndex || false
+        }
+      }
+    },
+    compile: async (inputContent, inputPath) => {
+      marked.setOptions({
+        renderer: new GovukHTMLRenderer(),
+        smartypants: true
+      })
+
+      return async (data) => {
+        let html = nunjucks.renderString(inputContent, data)
+        return marked.parse(html)
+      };
+    }
+  });
 
   // Collections
   eleventyConfig.addCollection("orderedNavigation", collection => {
@@ -43,11 +70,9 @@ module.exports = function (eleventyConfig, options = {}) {
 
   // Set default navigation key for home page
   eleventyConfig.addGlobalData('eleventyComputed', {
-    homeKey: options.homeKey || 'Home',
-    searchIndex: options.searchIndex,
     eleventyNavigation: {
       key: data => data.title ? data.title : data.homeKey,
-      parent: data => data.parent ? data.parent : false,
+      // parent: data => data.parent ? data.parent : data.homeKey,
       excerpt: data => data.description ? data.description : false
     }
   })

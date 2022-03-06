@@ -3,7 +3,7 @@ layout: page
 title: Sitemap
 eleventyExcludeFromCollections: true
 ---
-{% for item in collections.all | eleventyNavigation("home") %}
+{% for item in collections.all | eleventyNavigation(homeKey) %}
   <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
     <a href="{{ item.url | url | pretty }}">{{ item.title }}</a>
   </h2>

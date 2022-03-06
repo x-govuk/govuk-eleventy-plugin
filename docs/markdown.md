@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: side-navigation
 title: Using Markdown
 tags:
 - getting-started
