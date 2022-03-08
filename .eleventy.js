@@ -1,7 +1,6 @@
 module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
-    dir: { output: 'public' },
     searchIndex: '/search.json'
   })
 
