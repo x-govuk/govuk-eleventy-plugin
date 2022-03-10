@@ -3,12 +3,12 @@
 
 @include govuk-exports("app-header") {
   // Override the default 33% width on the logo in GOV.UK Frontend (prevents
-  // unnecessary wrapping of app.productName on smaller tablet / desktop
+  // unnecessary wrapping of product name on smaller tablet / desktop
   // viewports)
   .app-header__logo {
     width: auto;
 
-    // Remove right padding of app.productName as affects appearance on hover
+    // Remove right padding of product name as affects appearance on hover
     .govuk-header__product-name {
       padding-right: 0;
     }

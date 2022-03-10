@@ -26,15 +26,15 @@
 {% block pageTitle %}
   {{- title if title -}}
   {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
-  {{- " - " + (app.serviceName or app.productName) + " - GOV.UK" -}}
+  {{- " - " + (serviceName or productName) + " - GOV.UK" -}}
 {% endblock %}
 
 {% block header %}
   {{ appHeader({
-    homepageUrl: app.url or "/",
-    productName: app.productName,
-    serviceName: app.serviceName if not app.productName,
-    serviceUrl: app.serviceUrl if not app.productName,
+    homepageUrl: homepageUrl,
+    productName: productName,
+    serviceName: serviceName if not productName,
+    serviceUrl: serviceUrl if not productName,
     searchIndex: searchIndex
   }) }}
 {% endblock %}

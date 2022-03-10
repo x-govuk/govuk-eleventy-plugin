@@ -1,10 +1,11 @@
 module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
+    productName: 'Eleventy',
     searchIndex: '/search.json'
   })
 
-  // Passthrough
+  // Pass through
   eleventyConfig.addPassthroughCopy('./docs/images')
 
   // Config
