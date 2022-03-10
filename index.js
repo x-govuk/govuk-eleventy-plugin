@@ -1,6 +1,5 @@
 const path = require('node:path')
 const { writeFile } = require('node:fs/promises')
-const Nunjucks = require('nunjucks')
 const rollup = require('rollup')
 const commonJs = require('@rollup/plugin-commonjs')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
@@ -9,23 +8,7 @@ const { marked } = require('./lib/marked.js')
 
 module.exports = function (eleventyConfig, options = {}) {
   // Libraries
-  const appViews = options.views || []
-  const pluginViews = [
-    './',
-    'node_modules/govuk-eleventy-plugin',
-    'node_modules/govuk-frontend',
-    'node_modules/govuk-prototype-components'
-  ]
-  const views = pluginViews.concat(appViews)
-  const nunjucks = new Nunjucks.Environment(
-    new Nunjucks.FileSystemLoader(views), {
-      autoescape: false,
-      lstripBlocks: true,
-      trimBlocks: true,
-      noCache: process.env === 'development',
-      watch: process.env === 'development'
-    }
-  )
+  const nunjucks = require('./lib/nunjucks.js')(options.views)
   eleventyConfig.setLibrary('njk', nunjucks)
 
   // Extensions
@@ -54,12 +37,12 @@ module.exports = function (eleventyConfig, options = {}) {
   })
 
   // Filters
-  eleventyConfig.addFilter('date', require('./app/filters/date.js'))
-  eleventyConfig.addFilter('tokenize', require('./app/filters/tokenize.js'))
-  eleventyConfig.addFilter('items', require('./app/filters/items.js'))
-  eleventyConfig.addFilter('markdown', require('./app/filters/markdown.js'))
-  eleventyConfig.addFilter('noOrphans', require('./app/filters/no-orphans.js'))
-  eleventyConfig.addFilter('pretty', require('./app/filters/pretty.js'))
+  eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
+  eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
+  eleventyConfig.addFilter('items', require('./lib/filters/items.js'))
+  eleventyConfig.addFilter('markdown', require('./lib/filters/markdown.js'))
+  eleventyConfig.addFilter('noOrphans', require('./lib/filters/no-orphans.js'))
+  eleventyConfig.addFilter('pretty', require('./lib/filters/pretty.js'))
 
   // Global data
   // Sensible defaults for eleventyNavigation
