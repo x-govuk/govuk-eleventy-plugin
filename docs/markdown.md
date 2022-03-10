@@ -5,8 +5,6 @@ tags:
 - getting-started
 - search-index
 ---
-> This Markdown demo is adapted from that used for [markdown-it](https://markdown-it.github.io), the library used by Eleventy.
-
 ## Headings
 
 ```markdown
@@ -41,28 +39,6 @@ ___
 
 ***
 
-
-## Typographic replacements
-
-```markdown
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,,  -- ---
-
-"Smartypants, double quotes" and 'single quotes'
-```
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,,  -- ---
-
-"Smartypants, double quotes" and 'single quotes'
-
-
 ## Emphasis
 
 ```markdown
@@ -74,7 +50,7 @@ __This is bold text__
 
 _This is italic text_
 
-~~Strikethrough~~
+~~Strike-through~~
 ```
 
 **This is bold text**
@@ -85,7 +61,7 @@ __This is bold text__
 
 _This is italic text_
 
-~~Strikethrough~~
+~~Strike-through~~
 
 ## Blockquotes
 
@@ -101,7 +77,7 @@ _This is italic text_
 
 ## Lists
 
-Unordered
+### Unordered
 
 + Create a list by starting a line with `+`, `-`, or `*`
 + Sub-lists are made by indenting 2 spaces:
@@ -111,12 +87,11 @@ Unordered
     - Nulla volutpat aliquam velit
 + Very easy!
 
-Ordered
+### Ordered
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
-
 
 1. You can use sequential numbers...
 1. ...or keep all the numbers as `1.`
@@ -125,7 +100,6 @@ Start numbering with offset:
 
 57. foo
 1. bar
-
 
 ## Code
 
@@ -137,7 +111,6 @@ Indented code
     line 1 of code
     line 2 of code
     line 3 of code
-
 
 Block code "fences"
 
@@ -171,7 +144,6 @@ Right aligned columns
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
 
-
 ## Links
 
 [link text](http://dev.nodeca.com)
@@ -179,7 +151,6 @@ Right aligned columns
 [link with title](http://nodeca.github.io/pica/demo/ "title text!")
 
 Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
 
 ## Images
 
@@ -189,35 +160,54 @@ With caption:
 
 ![Larry the cat sat on the cabinet table](https://www.gov.uk/assets/government-frontend/history/buildings/larry-the-cat-a47549e08bdbc6cd0e3e042eea943f65b7a4590d95642586e51acb44bb2dcea2.jpg 'Larry the cat')
 
+## Markdown extensions
 
-## Plugins
+### Typographic replacements
 
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
+```markdown
+1/2 1/3 2/3 1/4 3/4
 
+4 x 2.4
 
-### [Embeds](https://www.npmjs.com/package/markdown-it-block-embed)
+<<Bonjour!>>
 
-@[youtube](https://www.youtube.com/watch?v=XnP6jaK7ZAY)
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
 
+"Smartypants, double quotes", 'single quotes',
+-- en-dash and --- em-dash
 
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
+And ellipses...
+```
+
+1/2 1/3 2/3 1/4 3/4
+
+1/2 x 3/4
+
+4 x 2.4
+
+<<Bonjour!>>
+
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+"Smartypants, double quotes", 'single quotes',
+-- en-dash and --- em-dash
+
+And ellipses...
+
+### Subscript
 
 - 19^th^
 - H~2~O
 
-
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
+### Inserted text
 
 ++Inserted text++
 
-
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
+### Marked text
 
 ==Marked text==
 
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
+### Footnotes
 
 Footnote 1 link[^first].
 
@@ -233,8 +223,7 @@ Duplicated footnote reference[^second].
 
 [^second]: Footnote text.
 
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
+### Definition lists
 
 Term 1
 
@@ -249,17 +238,7 @@ Term 2 with *inline markup*
 
     Third paragraph of definition 2.
 
-_Compact style:_
-
-Term 1
-  ~ Definition 1
-
-Term 2
-  ~ Definition 2a
-  ~ Definition 2b
-
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
+### Abbreviations
 
 This is HTML abbreviation example.
 
