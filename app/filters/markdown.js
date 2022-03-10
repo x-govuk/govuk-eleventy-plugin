@@ -1,6 +1,7 @@
 const GovukHTMLRenderer = require('govuk-markdown')
 const { marked } = require('marked')
 const normalise = require('../../lib/nunjucks.js')
+const typographer = require('../../lib/marked/typographer.js')
 
 /**
  * Convert Markdown into GOV.UK Frontend-compliant HTML
@@ -17,6 +18,8 @@ module.exports = (string, value) => {
     smartypants: true,
     renderer: new GovukHTMLRenderer()
   })
+
+  marked.use(typographer);
 
   if (value === 'inline') {
     return marked.parseInline(string)
