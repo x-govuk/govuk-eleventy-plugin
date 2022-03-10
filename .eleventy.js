@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
+    organisationLogo: 'crown',
     productName: 'Eleventy',
     searchIndex: '/search.json'
   })

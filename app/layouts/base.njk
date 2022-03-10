@@ -31,6 +31,8 @@
 
 {% block header %}
   {{ appHeader({
+    logotypeImage: organisationLogo,
+    logotypeText: organisationName,
     homepageUrl: homepageUrl,
     productName: productName,
     serviceName: serviceName if not productName,

@@ -13,4 +13,14 @@
       padding-right: 0;
     }
   }
+
+  .app-header__logotype-crest {
+    // Visually adjust placement of the crest
+    margin: -2px 0 -8px;
+
+    .govuk-header__link--homepage:hover & {
+      // Prevent link underline interfering with the crest
+      background-color: govuk-colour("black");
+    }
+  }
 }
