@@ -4,32 +4,17 @@ const rollup = require('rollup')
 const commonJs = require('@rollup/plugin-commonjs')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const sass = require('sass')
-const { marked } = require('./lib/marked.js')
+const markdown = require('./lib/extensions/md.js')
+const nunjucksEnv = require('./lib/nunjucks.js')
 
 module.exports = function (eleventyConfig, options = {}) {
+  const nunjucks = nunjucksEnv({ views: options.views })
+
   // Libraries
-  const nunjucks = require('./lib/nunjucks.js')(options.views)
   eleventyConfig.setLibrary('njk', nunjucks)
 
   // Extensions
-  eleventyConfig.addExtension('md', {
-    getData: true,
-    getInstanceFromInputPath: (inputPath) => {
-      return {
-        eleventyDataKey: ['options'],
-        options: {
-          homeKey: options.homeKey || 'Home',
-          searchIndex: options.searchIndex || false
-        }
-      }
-    },
-    compile: async (inputContent, inputPath) => {
-      return async (data) => {
-        const html = nunjucks.renderString(inputContent, data)
-        return marked.parse(html)
-      }
-    }
-  })
+  eleventyConfig.addExtension('md', markdown(nunjucks, options))
 
   // Collections
   eleventyConfig.addCollection('orderedNavigation', collection => {
