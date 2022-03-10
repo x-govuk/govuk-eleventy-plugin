@@ -1,12 +1,11 @@
 const path = require('node:path')
 const { writeFile } = require('node:fs/promises')
-const GovukHTMLRenderer = require('govuk-markdown')
-const { marked } = require('marked')
 const Nunjucks = require('nunjucks')
 const rollup = require('rollup')
 const commonJs = require('@rollup/plugin-commonjs')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const sass = require('sass')
+const { marked } = require('./lib/marked.js')
 
 module.exports = function (eleventyConfig, options = {}) {
   // Libraries
@@ -42,11 +41,6 @@ module.exports = function (eleventyConfig, options = {}) {
       }
     },
     compile: async (inputContent, inputPath) => {
-      marked.setOptions({
-        renderer: new GovukHTMLRenderer(),
-        smartypants: true
-      })
-
       return async (data) => {
         const html = nunjucks.renderString(inputContent, data)
         return marked.parse(html)
