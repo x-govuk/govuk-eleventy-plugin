@@ -146,19 +146,23 @@ Right aligned columns
 
 ## Links
 
-[link text](http://dev.nodeca.com)
+[link text](https://www.gov.uk)
 
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+[link with title](https://www.gov.uk "Visit GOV.UK")
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+Autolinked text: https://www.gov.uk
 
 ## Images
 
-![Larry the cat sat on the cabinet table](https://www.gov.uk/assets/government-frontend/history/buildings/larry-the-cat-a47549e08bdbc6cd0e3e042eea943f65b7a4590d95642586e51acb44bb2dcea2.jpg)
+![The GOV.UK logo](/assets/images/govuk-opengraph-image.png)
 
 With caption:
 
-![Larry the cat sat on the cabinet table](https://www.gov.uk/assets/government-frontend/history/buildings/larry-the-cat-a47549e08bdbc6cd0e3e042eea943f65b7a4590d95642586e51acb44bb2dcea2.jpg 'Larry the cat')
+![A crown icon above the words GOV.UK](/assets/images/govuk-opengraph-image.png "The GOV.UK logo")
+
+Linked:
+
+[![The GOV.UK logo](/assets/images/govuk-apple-touch-icon.png)](https://www.gov.uk)
 
 ## Markdown extensions
 

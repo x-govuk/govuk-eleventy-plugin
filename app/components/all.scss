@@ -5,6 +5,36 @@
 @import "pagination/pagination";
 @import "site-search/site-search";
 
+// Figures
+img {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+
+figure {
+  @include govuk-responsive-margin(4, "bottom");
+  margin: 0;
+  width: 100%;
+
+  .govuk-link & {
+    @include govuk-link-common;
+    @include govuk-link-style-default;
+  }
+
+  :focus & {
+    background-color: $govuk-focus-colour;
+  }
+}
+
+figcaption {
+  @include govuk-font($size: 14);
+
+  .govuk-body {
+    color: inherit;
+  }
+}
+
 // Distinguish inserted text from that inside links
 ins {
   text-decoration-style: double;

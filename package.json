@@ -45,13 +45,14 @@
     "@rollup/plugin-node-resolve": "^13.1.1",
     "accessible-autocomplete": "^2.0.3",
     "govuk-frontend": "^4.0.0",
-    "govuk-markdown": "^0.1.1",
+    "govuk-markdown": "^0.1.2",
     "govuk-prototype-components": "x-govuk/govuk-prototype-components",
-    "luxon": "^2.1.1",
-    "rollup": "^2.62.0",
-    "sass": "^1.45.1",
     "http-server": "^14.0.0",
-    "rimraf": "^3.0.2"
+    "luxon": "^2.1.1",
+    "marked": "^4.0.12",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.62.0",
+    "sass": "^1.45.1"
   },
   "devDependencies": {
     "ava": "^4.0.1",
