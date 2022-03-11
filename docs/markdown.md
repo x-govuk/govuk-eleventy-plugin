@@ -196,8 +196,11 @@ And ellipses...
 
 ### Subscript
 
-- 19^th^
 - H~2~O
+
+### Superscript
+
+- 19^th^
 
 ### Inserted text
 

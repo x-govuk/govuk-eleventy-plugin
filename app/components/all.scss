@@ -4,3 +4,13 @@
 @import "gallery/gallery";
 @import "pagination/pagination";
 @import "site-search/site-search";
+
+// Distinguish inserted text from that inside links
+ins {
+  text-decoration-style: double;
+}
+
+// Use GOV.UK yellow colour for highlighted text
+mark {
+  background-color: govuk-colour("yellow");
+}
