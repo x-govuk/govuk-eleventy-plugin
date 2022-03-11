@@ -101,6 +101,20 @@ Start numbering with offset:
 57. foo
 1. bar
 
+## Task list
+
+Task lists allow you to create a list of items with checkboxes. To create a checkbox, add brackets with a space (`[ ]`) at the start of a list item. To show a selected checkbox, add an `x` in between the brackets (`[x]`).
+
+```markdown
+1. [x] Write the press release
+2. [ ] Update the website
+3. [ ] Contact the media
+```
+
+1. [x] Write the press release
+2. [ ] Update the website
+3. [ ] Contact the media
+
 ## Code
 
 Inline `code`
