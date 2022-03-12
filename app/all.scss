@@ -11,8 +11,5 @@ $govuk-new-link-styles: true;
 // GOV.UK Prototype components
 @import "govuk-prototype-components/x-govuk/all";
 
-// Accessible autocomplete
-@import "accessible-autocomplete/src/autocomplete";
-
 // Components
 @import "app/components/all";
