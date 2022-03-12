@@ -230,19 +230,17 @@ And ellipses...
 
 ### Footnotes
 
-Footnote 1 link[^first].
+Here’s a simple footnote,[^1] and here’s a longer one.[^big note]
 
-Footnote 2 link[^second].
+[^1]: This is the first footnote.
 
-Inline footnote^[Text of inline footnote] definition.
+[^big note]: Here’s one with multiple paragraphs and code.
 
-Duplicated footnote reference[^second].
+    Indent paragraphs to include them in the footnote.
 
-[^first]: Footnotes **can have markup**
+        { my code }
 
-    and multiple paragraphs.
-
-[^second]: Footnote text.
+    Add as many paragraphs as you like.
 
 ### Definition lists
 
