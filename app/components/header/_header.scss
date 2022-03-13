@@ -14,12 +14,12 @@
     }
   }
 
-  .app-header__logotype-crest {
-    // Visually adjust placement of the crest
+  .app-header__logotype-royal-arms {
+    // Visually adjust placement of the royal arms
     margin: -2px 0 -8px;
 
     .govuk-header__link--homepage:hover & {
-      // Prevent link underline interfering with the crest
+      // Prevent link underline interfering with the royal arms
       background-color: govuk-colour("black");
     }
   }
