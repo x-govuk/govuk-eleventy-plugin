@@ -1,5 +1,5 @@
 import test from 'ava'
-import date from '../../../govuk/filters/date.js'
+import date from '../../../lib/filters/date.js'
 
 test('Formats a data using tokens', t => {
   const result = date(new Date('2021-12-27'), 'd LLLL yyyy')

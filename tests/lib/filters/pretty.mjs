@@ -1,5 +1,5 @@
 import test from 'ava'
-import pretty from '../../../govuk/filters/pretty.js'
+import pretty from '../../../lib/filters/pretty.js'
 
 test('Remove index.html from a string', t => {
   const result = pretty('/page/index.html')

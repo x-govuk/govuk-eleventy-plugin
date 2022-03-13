@@ -1,5 +1,5 @@
 import test from 'ava'
-import items from '../../../govuk/filters/items.js'
+import items from '../../../lib/filters/items.js'
 
 const eleventyNavigationBreadcrumb = [{
   key: 'Home',
@@ -13,21 +13,27 @@ const eleventyNavigationBreadcrumb = [{
   key: 'Layouts',
   parent: 'Home',
   excerpt: false,
-  url: '/layouts/',
+  url: '/page/',
   pluginType: 'eleventy-navigation',
   parentKey: 'Home',
-  title: 'Layouts',
+  title: 'Page',
   _isBreadcrumb: true
 }]
 
 test('Formats Eleventy navigation to populate govukBreadcrumb component', t => {
-  const result = items(eleventyNavigationBreadcrumb)
+  const result = items(eleventyNavigationBreadcrumb, '/page/')
 
   t.deepEqual(result, [{
     href: '/',
-    text: 'Home'
+    text: 'Home',
+    current: false,
+    parent: true,
+    children: false,
   }, {
-    href: '/layouts/',
-    text: 'Layouts'
+    href: '/page/',
+    text: 'Page',
+    current: true,
+    parent: true,
+    children: false,
   }])
 })
