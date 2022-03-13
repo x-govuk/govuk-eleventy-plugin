@@ -1,6 +1,6 @@
 ---
 layout: side-navigation
-order: 4
+order: 5
 title: Example layouts
 ---
 {% for page in collections["example-layout"] %}

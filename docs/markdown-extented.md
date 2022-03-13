@@ -1,6 +1,6 @@
 ---
 layout: side-navigation
-order: 3
+order: 4
 title: Extended Markdown syntax
 related:
   items:
