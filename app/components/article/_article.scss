@@ -13,6 +13,58 @@
   > *:last-child {
     margin-bottom: 0;
   }
+
+  // Distinguish inserted text from that inside links
+  ins {
+    text-decoration-style: double;
+  }
+
+  // Use GOV.UK yellow colour for highlighted text
+  mark {
+    background-color: govuk-tint($govuk-focus-colour, 50);
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+  }
+
+  figure {
+    @include govuk-responsive-margin(4, "bottom");
+    margin: 0;
+    width: 100%;
+
+    .govuk-link & {
+      @include govuk-link-common;
+      @include govuk-link-style-default;
+    }
+
+    :focus & {
+      background-color: $govuk-focus-colour;
+    }
+  }
+
+  figcaption {
+    @include govuk-font($size: 14);
+
+    .govuk-body {
+      color: inherit;
+    }
+  }
+
+  // Reverse the colour of code that uses shell highlighting
+  .x-govuk-code__language--shell {
+    background-color: govuk-colour("black");
+    border: $govuk-focus-width solid govuk-colour("white");
+    margin-left: $govuk-focus-width * -1;
+    margin-right: $govuk-focus-width * -1;
+    -webkit-font-smoothing: auto;
+
+    code {
+      filter: invert(100%);
+    }
+  }
 }
 
 .app-article__footer {
