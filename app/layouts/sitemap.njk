@@ -1,0 +1,23 @@
+{% extends "app/layouts/page.njk" %}
+
+{% block content %}
+  {% call appArticle({
+    header: {
+      title: title,
+      description: description
+    }
+  }) %}
+    {{ content }}
+    {% for item in collections["search-index"] | eleventyNavigation(homeKey) %}
+      <div class="govuk-!-margin-bottom-6">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          <a href="{{ item.url | url | pretty }}">{{ item.title }}</a>
+        </h2>
+        {% if item.excerpt %}<p class="govuk-body">{{ item.excerpt }}</p>{% endif %}
+        {{ collections["search-index"] | eleventyNavigation(item.key) | eleventyNavigationToHtml({
+          listClass: "govuk-list govuk-list--bullet"
+        }) | safe }}
+      </div>
+    {% endfor %}
+  {% endcall %}
+{% endblock %}
