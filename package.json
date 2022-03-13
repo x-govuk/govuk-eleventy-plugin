@@ -33,7 +33,8 @@
     "start": "http-server",
     "lint": "standard && stylelint 'app/**/*.scss'",
     "test": "ava",
-    "test:watch": "ava --watch"
+    "test:watch": "ava --watch",
+    "coverage": "c8 ava"
   },
   "publishConfig": {
     "access": "public"
