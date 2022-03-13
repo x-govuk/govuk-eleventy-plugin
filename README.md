@@ -1,4 +1,4 @@
-# GOV.UK Eleventy
+# GOV.UK Eleventy • [![test](https://github.com/x-govuk/govuk-eleventy-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/x-govuk/govuk-eleventy-plugin/actions/workflows/test.yml)
 
 Build websites using the [GOV.UK Design System](https://design-system.service.gov.uk) and the [Eleventy](https://www.11ty.dev) static site generator.
 
