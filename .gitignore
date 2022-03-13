@@ -1,3 +1,5 @@
-# Folders to ignore
-node_modules
+coverage
+node_modules/
 public
+npm-debug.log
+.DS_Store
