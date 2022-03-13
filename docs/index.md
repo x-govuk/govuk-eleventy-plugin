@@ -12,7 +12,7 @@ startButton:
 <div class="govuk-grid-row">
   <section class="govuk-grid-column-one-third">
     <h2 class="govuk-heading-m">About</h2>
-    {{ "GOV.UK Eleventy is a plugin for 11ty, a static site generator. It uses [govuk-frontend](https://github.com/alphagov/govuk-frontend) components and provides support for [Markdown formatted documents](/guides/markdown)." | markdown }}
+    {{ "GOV.UK Eleventy is a plugin for 11ty, a static site generator. It uses [govuk-frontend](https://github.com/alphagov/govuk-frontend) components and provides support for [Markdown formatted documents](/markdown)." | markdown }}
   </section>
 
   <section class="govuk-grid-column-one-third">
