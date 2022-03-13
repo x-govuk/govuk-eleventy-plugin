@@ -18,7 +18,9 @@ module.exports = function (eleventyConfig, options = {}) {
 
   // Collections
   eleventyConfig.addCollection('orderedNavigation', collection => {
-    return collection.getAll().sort((a, b) => a.data.order - b.data.order)
+    return collection.getAll().sort((a, b) => {
+      return (a.data.order || 0) - (b.data.order || 0)
+    })
   })
 
   // Filters
