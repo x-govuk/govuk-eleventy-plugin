@@ -58,9 +58,12 @@ module.exports = function (eleventyConfig, options = {}) {
 
   // Events
   eleventyConfig.on('eleventy.after', async () => {
+    // Default value for dir.output is not provided by eleventyConfig
+    const outputDir = eleventyConfig.dir.output || '_site'
+
     // Generate CSS
     try {
-      const cssFile = `${eleventyConfig.dir.output}/assets/govuk.css`
+      const cssFile = `${outputDir}/assets/govuk.css`
       const result = sass.compile(path.join(__dirname, './app/all.scss'), {
         loadPaths: [
           __dirname,
@@ -75,7 +78,7 @@ module.exports = function (eleventyConfig, options = {}) {
 
     // Bundle JavaScript
     try {
-      const jsFile = `${eleventyConfig.dir.output}/assets/govuk.js`
+      const jsFile = `${outputDir}/assets/govuk.js`
       const bundle = await rollup.rollup({
         input: path.join(__dirname, './app/all.js'),
         context: 'window',
