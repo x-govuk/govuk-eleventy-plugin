@@ -14,7 +14,7 @@
 {{- caller() if caller -}}
   </div>
 
-  {% if params.footer %}
+  {% if params.footer.date or params.footer.author %}
   <footer class="app-article__footer">
     {% if params.footer.date %}
       Published <time datetime="{{ params.footer.date | date }}">{{ params.footer.date | date("d LLLL y") }}</time><br>
