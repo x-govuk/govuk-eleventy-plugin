@@ -21,7 +21,7 @@
       {{ content }}
       <div class="govuk-grid-row">
         <section class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l govuk-!-font-size-27">Posts</h2>
+          <h2 class="govuk-heading-l govuk-!-font-size-27">{{ collection or "Posts" }}</h2>
           {{ appDocumentList({
             items: pagination.items
           }) }}
