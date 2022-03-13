@@ -33,10 +33,10 @@
   {{ appHeader({
     logotypeImage: organisationLogo,
     logotypeText: organisationName,
-    homepageUrl: homepageUrl,
+    homepageUrl: homepageUrl | url,
     productName: productName,
     serviceName: serviceName if not productName,
-    serviceUrl: serviceUrl if not productName,
+    serviceUrl: (serviceUrl | url) if not productName,
     searchIndex: searchIndex
   }) }}
 {% endblock %}
