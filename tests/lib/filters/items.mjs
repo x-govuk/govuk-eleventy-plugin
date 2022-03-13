@@ -28,12 +28,12 @@ test('Formats Eleventy navigation to populate govukBreadcrumb component', t => {
     text: 'Home',
     current: false,
     parent: true,
-    children: false,
+    children: false
   }, {
     href: '/page/',
     text: 'Page',
     current: true,
     parent: true,
-    children: false,
+    children: false
   }])
 })
