@@ -8,10 +8,10 @@
       {% if item.data.description %}
       <p class="app-document-list__item-description">{{ item.data.description | markdown("inline") | safe }}</p>
       {% endif %}
-      {% if item.date %}
+      {% if item.data.date %}
       <ul class="app-document-list__item-metadata">
         <li class="app-document-list__attribute">
-          <time datetime="{{ item.date | date }}">{{ item.date | date("d LLLL y") }}</time>
+          <time datetime="{{ item.data.date | date }}">{{ item.data.date | date("d LLLL y") }}</time>
         </li>
       </ul>
       {% endif %}
