@@ -95,3 +95,16 @@ ins {
 mark {
   background-color: govuk-tint($govuk-focus-colour, 50);
 }
+
+// Reverse the colour of code that uses shell highlighting
+.x-govuk-code__language--shell {
+  background-color: govuk-colour("black");
+  border: $govuk-focus-width solid white;
+  margin-left: $govuk-focus-width * -1;
+  margin-right: $govuk-focus-width * -1;
+  -webkit-font-smoothing: auto;
+
+  code {
+    filter: invert(100%);
+  }
+}
