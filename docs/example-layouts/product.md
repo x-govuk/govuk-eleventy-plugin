@@ -1,5 +1,6 @@
 ---
 layout: product
+order: 5
 title: Product
 description: A product page
 startButton: true
@@ -9,7 +10,7 @@ image:
 ---
 The `product` layout is designed for home and product pages, based on [Product Page Example](https://github.com/alphagov/product-page-example).
 
-## Frontmatter properties
+## Front matter properties
 
 ```yaml
 layout: product

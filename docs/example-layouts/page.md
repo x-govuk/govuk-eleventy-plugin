@@ -1,11 +1,12 @@
 ---
 layout: page
+order: 1
 title: Page
 description: A simple page
 ---
 The `page` layout is the simplest of layouts available. It is designed to allow maximum flexibility of the layout and type of page content.
 
-## Frontmatter properties
+## Front matter properties
 
 ```yaml
 layout: page

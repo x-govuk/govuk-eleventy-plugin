@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 2
 title: Post
 description: A date-based post
 date: 2011-11-11
@@ -15,7 +16,7 @@ related:
 ---
 The `post` layout is designed for date-based content, such as blog posts or news items, with the optional to link to related content.
 
-## Frontmatter properties
+## Front matter properties
 
 ```yaml
 layout: post

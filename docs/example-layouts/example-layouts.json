@@ -1,0 +1,6 @@
+{
+  "tags": ["example-layout"],
+  "eleventyNavigation": {
+    "parent": "Example layouts"
+  }
+}

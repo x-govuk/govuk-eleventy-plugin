@@ -1,162 +1,239 @@
 ---
-layout: page
+layout: side-navigation
+order: 3
 title: Using Markdown
-tags:
-- getting-started
-- search-index
+description: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
+related:
+  items:
+  - text: Markdown Guide
+    href: https://www.markdownguide.org
 ---
 ## Headings
 
-```markdown
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-```
+To create a heading, add number signs (`#`) in front of a word or phrase.
 
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+The number of number signs you use should correspond to the heading level. For example, to create a heading level three (`<h3>`), use three number signs (e.g., `### My Header`).
 
-## Horizontal Rules
+| Markdown | Rendered output |
+| - | - |
+| `# Heading level 1` | {{ "# Heading level 1" | markdown }} |
+| `## Heading level 2` | {{ "## Heading level 2" | markdown }} |
+| `### Heading level 3` | {{ "### Heading level 3" | markdown }} |
+| `#### Heading level 4` | {{ "#### Heading level 4" | markdown }} |
+| `##### Heading level 5` | {{ "##### Heading level 5" | markdown }} |
+| `###### Heading level 6` | {{ "###### Heading level 6" | markdown }} |
 
-```markdown
-___
+## Paragraphs
 
----
+To create paragraphs, use a blank line to separate one or more lines of text.
 
-***
-```
+| Markdown | Rendered output |
+| - | - |
+| <pre class="x-govuk-code x-govuk-code--block" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre> | {{ "This is the first paragraph.\n\nAnd this is the second one." | markdown }} |
 
-___
+## Line breaks
 
----
+To create a line break or new line (`<br>`), end a line with two or more spaces, and then type return.
 
-***
+| Markdown | Rendered output |
+| - | - |
+| <pre class="x-govuk-code x-govuk-code--block" tabindex="0">This is the first line.<br>And this is the second one.</pre> | {{ "This is the first line.<br>And this is the second one." | markdown }} |
 
 ## Emphasis
 
-```markdown
-**This is bold text**
+To emphasise text, add one asterisk or underscore before and after a word or phrase.
 
-__This is bold text__
+> The [GDS Style Guide recommends against the use of italics](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#italics), and the GDS Transport font doesn’t provide an italic style. Use ‘single quotation marks’ if referring to a document, scheme or initiative.
 
-*This is italic text*
+| Markdown | Rendered output |
+| - | - |
+| `This text is *emphasised*.` | {{ "This text is *emphasised*." | markdown }} |
+| `This text is _emphasised_.` | {{ "This text is _emphasised_." | markdown }} |
 
-_This is italic text_
+## Strong emphasis
 
-~~Strike-through~~
-```
+To bold text, add two asterisks or underscores before and after a word or phrase.
 
-**This is bold text**
+> The [GDS Style Guide recommends only using emboldened text when referring to text from interfaces](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold) in technical documentation or instructions.
 
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strike-through~~
+| Markdown | Rendered output |
+| - | - |
+| `This text is **strongly emphasised**.` | {{ "This text is **strongly emphasised**." | markdown }} |
+| `This text is __strongly emphasised__.` | {{ "This text is __strongly emphasised__." | markdown }} |
 
 ## Blockquotes
 
+To create a blockquote, add a `>` in front of a paragraph.
+
 ```markdown
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
+> Dorothy followed her through many of the beautiful rooms in her castle.
 ```
 
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
+The rendered output looks like this:
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+
+### Blockquotes with Multiple Paragraphs
+
+Blockquotes can contain multiple paragraphs. Add a `>` on the blank lines between the paragraphs.
+
+```markdown
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+The rendered output looks like this:
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+### Nested Blockquotes
+
+Blockquotes can be nested. Add a `>>` in front of the paragraph you want to nest.
+
+```markdown
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+>> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+The rendered output looks like this:
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+>> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+### Blockquotes with Other Elements
+
+Blockquotes can contain other Markdown formatted elements. Not all elements can be used — you'll need to experiment to see which ones work.
+
+```markdown
+> #### Quarterly results
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+> Everything is going according to **plan**.
+```
+
+The rendered output looks like this:
+
+> #### Quarterly results
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+> Everything is going according to **plan**.
 
 ## Lists
 
-### Unordered
+You can organize items into ordered and unordered lists.
 
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
+### Ordered lists
 
-### Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-## Task list
-
-Task lists allow you to create a list of items with checkboxes. To create a checkbox, add brackets with a space (`[ ]`) at the start of a list item. To show a selected checkbox, add an `x` in between the brackets (`[x]`).
+To create an ordered list, add line items with numbers followed by periods. The numbers don’t have to be in numerical order, but the list should start with the number one.
 
 ```markdown
-1. [x] Write the press release
-2. [ ] Update the website
-3. [ ] Contact the media
+1. First item
+2. Second item
+    1. Indented item
+    1. Indented item
+3. Third item
 ```
 
-1. [x] Write the press release
-2. [ ] Update the website
-3. [ ] Contact the media
+1. First item
+2. Second item
+   1. Indented item
+   1. Indented item
+3. Third item
+
+### Unordered lists
+
+To create an unordered list, add dashes (`-`), asterisks (`*`), or plus signs (`+`) in front of line items. Indent one or more items to create a nested list.
+
+```markdown
+- First item
+- Second item
+  * Indented item
+  * Indented item
+- Third item
+```
+
+- First item
+- Second item
+  * Indented item
+  * Indented item
+- Third item
+
+#### Nesting different list types
+
+You can also nest an unordered list in an ordered list, or vice versa.
+
+```markdown
+1. First item
+2. Second item
+   * Indented item
+   * Indented item
+3. Third item
+```
+
+1. First item
+2. Second item
+   * Indented item
+   * Indented item
+3. Third item
+
+#### Starting unordered list items with numbers
+
+If you need to start an unordered list item with a number followed by a period, you can use a backslash (`\`) to escape the period.
+
+```markdown
+- 1968\. A great year!
+- I think 1969 was second best.
+```
+
+- 1968\. A great year!
+- I think 1969 was second best.
 
 ## Code
 
-Inline `code`
+### Code spans
 
-Indented code
+To denote a word or phrase as code, enclose it in backticks (```).
 
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-Block code "fences"
-
-```
-Sample text here...
+```markdown
+At the command prompt, type `npm install`.
 ```
 
-Syntax highlighting
+At the command prompt, type `npm install`.
 
-``` js
-var foo = function (bar) {
-  return bar++;
-};
+### Code blocks
 
-console.log(foo(5));
+To create code blocks, indent every line of the block by at least four spaces or one tab.
+
+```markdown
+    console.log('Hello, world!')
 ```
 
-## Tables
+    console.log('Hello, world!')
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+## Horizontal rules
 
-Right aligned columns
+To create a horizontal rule, use three or more asterisks (`***`), dashes (`---`), or underscores (`___`) on a line by themselves.
 
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+```markdown
+___
+
+---
+
+***
+```
+
+The rendered output of all three looks identical:
+
+***
 
 ## Links
 
@@ -168,99 +245,24 @@ Autolinked text: https://www.gov.uk
 
 ## Images
 
-![The GOV.UK logo](/assets/images/govuk-opengraph-image.png)
+To add an image, add an exclamation mark (`!`), followed by alternative text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a caption in quotation marks after the path or URL.
 
-With caption:
+The rendered output looks like this:
+
+```markdown
+![A crown icon above the words GOV.UK](/assets/images/govuk-opengraph-image.png "The GOV.UK logo")
+```
 
 ![A crown icon above the words GOV.UK](/assets/images/govuk-opengraph-image.png "The GOV.UK logo")
 
-Linked:
+### Linking images
 
-[![The GOV.UK logo](/assets/images/govuk-apple-touch-icon.png)](https://www.gov.uk)
-
-## Markdown extensions
-
-### Typographic replacements
+To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
 
 ```markdown
-1/2 1/3 2/3 1/4 3/4
-
-4 x 2.4
-
-<<Bonjour!>>
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-"Smartypants, double quotes", 'single quotes',
--- en-dash and --- em-dash
-
-And ellipses...
+[![A crown icon above the words GOV.UK](/assets/images/govuk-apple-touch-icon-180x180.png "Visit GOV.UK")](https://www.gov.uk)
 ```
 
-1/2 1/3 2/3 1/4 3/4
+The rendered output looks like this:
 
-1/2 x 3/4
-
-4 x 2.4
-
-<<Bonjour!>>
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-"Smartypants, double quotes", 'single quotes',
--- en-dash and --- em-dash
-
-And ellipses...
-
-### Subscript
-
-- H~2~O
-
-### Superscript
-
-- 19^th^
-
-### Inserted text
-
-++Inserted text++
-
-### Marked text
-
-==Marked text==
-
-### Footnotes
-
-Here’s a simple footnote,[^1] and here’s a longer one.[^big note]
-
-[^1]: This is the first footnote.
-
-[^big note]: Here’s one with multiple paragraphs and code.
-
-    Indent paragraphs to include them in the footnote.
-
-        { my code }
-
-    Add as many paragraphs as you like.
-
-### Definition lists
-
-Term 1
-
-: Definition 1
-with lazy continuation.
-
-Term 2 with *inline markup*
-
-: Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-### Abbreviations
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-*[HTML]: Hyper Text Markup Language
+[![A crown icon above the words GOV.UK](/assets/images/govuk-apple-touch-icon-180x180.png "Visit GOV.UK")](https://www.gov.uk)

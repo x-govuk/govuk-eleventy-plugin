@@ -1,38 +1,29 @@
 ---
 homepage: true
 layout: product
-title: Build static websites using GOV.UK styles, components and patterns
+title: Build documentation websites using Markdown and GOV.UK styles
 description: The familiarity of the [GOV.UK Design System](https://design-system.service.gov.uk) combined with the simplicity of the [Eleventy](https://www.11ty.dev) static site generator.
 image:
   src: /images/homepage-illustration.png
   alt: The Eleventy mascot floating above a laptop.
+startButton:
+  href: /get-started
 ---
-Consumes [govuk-frontend](https://github.com/alphagov/govuk-frontend) with additional support for [Markdown formatted documents](/markdown).
-
-<iframe src="https://ghbtns.com/github-btn.html?user=paulrobertlloyd&repo=govuk-eleventy&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-{% from "app/components/document-list/macro.njk" import appDocumentList %}
 <div class="govuk-grid-row">
   <section class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-27">Getting started</h2>
-    {{ appDocumentList({
-      items: collections["getting-started"]
-    }) | safe }}
+    <h2 class="govuk-heading-m">About</h2>
+    {{ "GOV.UK Eleventy is a plugin for 11ty, a static site generator. It uses [govuk-frontend](https://github.com/alphagov/govuk-frontend) components and provides support for [Markdown formatted documents](/guides/markdown)." | markdown }}
   </section>
 
   <section class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-27">Layouts</h2>
-    {{ appDocumentList({
-      items: collections["layout"]
-    }) | safe }}
+    <h2 class="govuk-heading-m">Plugin options</h2>
+    <p class="govuk-body">The plugin provides several options that allow you to customise the appearance of your website.</p>
+    <p class="govuk-body"><a class="govuk-link govuk-!-font-weight-bold" href="/options">See the options</a></p>
   </section>
 
   <section class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-27">Components</h2>
-    {{ appDocumentList({
-      items: collections["component"]
-    }) | safe }}
+    <h2 class="govuk-heading-m">Layouts</h2>
+    <p class="govuk-body">The plugin provides {{ collections["example-layout"] | length }} different layouts.</p>
+    <p class="govuk-body"><a class="govuk-link govuk-!-font-weight-bold" href="/example-layouts">Browse layouts</a></p>
   </section>
 </div>

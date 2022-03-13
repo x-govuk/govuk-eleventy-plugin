@@ -1,11 +1,12 @@
 ---
 layout: side-navigation
-title: Side navigation
+order: 3
+title: Page with side navigation
 description: A page with side navigation
 ---
 The `side-navigation` layout is with navigation on the left side of the page.
 
-## Frontmatter properties
+## Front matter properties
 
 ```yaml
 layout: page
