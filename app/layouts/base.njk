@@ -26,7 +26,8 @@
 {% block pageTitle %}
   {{- title if title -}}
   {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
-  {{- " - " + (serviceName or productName) + " - GOV.UK" -}}
+  {{- " - " + (serviceName or productName) if serviceName or productName -}}
+  {{- " - GOV.UK" -}}
 {% endblock %}
 
 {% block header %}
