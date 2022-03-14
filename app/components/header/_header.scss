@@ -14,12 +14,15 @@
     }
   }
 
-  .app-header__logotype-royal-arms {
-    // Visually adjust placement of the royal arms
+  // Height of crown is 30px.
+  // Accept slightly larger icons with a height of 35px
+  .app-header__logotype--large {
+    // Visually adjust placement
     margin: -2px 0 -8px;
 
     .govuk-header__link--homepage:hover & {
-      // Prevent link underline interfering with the royal arms
+      // Prevent underline interfering with larger logo, whose height means
+      // it falls below the baseline
       background-color: govuk-colour("black");
     }
   }
