@@ -18,9 +18,9 @@
     {% block beforeContent %}{% endblock %}
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {% block content %}
-      {{ content }}
       <div class="govuk-grid-row">
         <section class="govuk-grid-column-two-thirds">
+          {{ content }}
           <h2 class="govuk-heading-l govuk-!-font-size-27">{{ collection or "Posts" }}</h2>
           {{ appDocumentList({
             items: pagination.items
@@ -41,9 +41,11 @@
 
         {% if related.items | length > 0 %}
         <div class="govuk-grid-column-one-third">
-          {{ appRelated({
-            title: related.title or "Related links",
-            items: related.items
+          {{ xGovukRelatedNavigation({
+            sections: [{
+              title: related.title or "Related links",
+              items: related.items
+            }]
           }) }}
         </div>
         {% endif %}

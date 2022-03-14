@@ -5,14 +5,11 @@ title: Post
 description: A date-based post
 date: 2011-11-11
 related:
-  title: Other layouts
   items:
-  - text: Page
-    href: /layouts/page
-  - text: Collection
-    href: /layouts/collection
-  - text: Product
-    href: /layouts/product
+  - text: Another page
+    href: "#"
+  - text: Yet another page
+    href: "#"
 ---
 The `post` layout is designed for date-based content, such as blog posts or news items, with the optional to link to related content.
 
@@ -26,6 +23,5 @@ date: # Optional. See: https://www.11ty.dev/docs/dates/
 related: # Optional. Related links appear in sidebar
   title: # Defaults to ‘Related links’
   - text: # Title of related link
-    description: # Optional. Description of link
     href: # URL for related link
 ```
