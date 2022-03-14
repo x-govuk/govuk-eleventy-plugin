@@ -16,12 +16,12 @@ The number of number signs you use should correspond to the heading level. For e
 
 | Markdown | Rendered output |
 | - | - |
-| `# Heading level 1` | {{ "# Heading level 1" | markdown }} |
-| `## Heading level 2` | {{ "## Heading level 2" | markdown }} |
-| `### Heading level 3` | {{ "### Heading level 3" | markdown }} |
-| `#### Heading level 4` | {{ "#### Heading level 4" | markdown }} |
-| `##### Heading level 5` | {{ "##### Heading level 5" | markdown }} |
-| `###### Heading level 6` | {{ "###### Heading level 6" | markdown }} |
+| `# Heading level 1` | <h1 class="govuk-heading-l">Heading level 1</h1> |
+| `## Heading level 2` | <h2 class="govuk-heading-m">Heading level 2</h2> |
+| `### Heading level 3` | <h3 class="govuk-heading-s">Heading level 3</h3> |
+| `#### Heading level 4` | <h4 class="govuk-heading-s">Heading level 4</h4> |
+| `##### Heading level 5` | <h5 class="govuk-heading-s">Heading level 5</h5> |
+| `###### Heading level 6` | <h6 class="govuk-heading-s">Heading level 6</h6> |
 
 ## Paragraphs
 
@@ -29,7 +29,7 @@ To create paragraphs, use a blank line to separate one or more lines of text.
 
 | Markdown | Rendered output |
 | - | - |
-| <pre class="x-govuk-code x-govuk-code--block" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre> | {{ "This is the first paragraph.\n\nAnd this is the second one." | markdown }} |
+| <pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre> | <p class="govuk-body">This is the first paragraph.</p><p class="govuk-body">And this is the second one.</p> |
 
 ## Line breaks
 
@@ -37,7 +37,7 @@ To create a line break or new line (`<br>`), end a line with two or more spaces,
 
 | Markdown | Rendered output |
 | - | - |
-| <pre class="x-govuk-code x-govuk-code--block" tabindex="0">This is the first line.<br>And this is the second one.</pre> | {{ "This is the first line.<br>And this is the second one." | markdown }} |
+| <pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0">This is the first line.<br>And this is the second one.</pre> | <p class="govuk-body">This is the first line.<br>And this is the second one.</p> |
 
 ## Emphasis
 
@@ -47,8 +47,8 @@ To emphasise text, add one asterisk or underscore before and after a word or phr
 
 | Markdown | Rendered output |
 | - | - |
-| `This text is *emphasised*.` | {{ "This text is *emphasised*." | markdown }} |
-| `This text is _emphasised_.` | {{ "This text is _emphasised_." | markdown }} |
+| `This text is *emphasised*.` | <p class="govuk-body">This text is <em>emphasised</em>.</p> |
+| `This text is _emphasised_.` | <p class="govuk-body">This text is <em>emphasised</em>.</p> |
 
 ## Strong emphasis
 
@@ -58,8 +58,8 @@ To bold text, add two asterisks or underscores before and after a word or phrase
 
 | Markdown | Rendered output |
 | - | - |
-| `This text is **strongly emphasised**.` | {{ "This text is **strongly emphasised**." | markdown }} |
-| `This text is __strongly emphasised__.` | {{ "This text is __strongly emphasised__." | markdown }} |
+| `This text is **strongly emphasised**.` | <p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p> |
+| `This text is __strongly emphasised__.` | <p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p> |
 
 ## Blockquotes
 
