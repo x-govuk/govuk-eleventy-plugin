@@ -8,7 +8,7 @@
     }
   }) %}
     {{ content }}
-    {% for item in collections["search-index"] | eleventyNavigation(homeKey) %}
+    {% for item in collections["search-index"] | eleventyNavigation(config.homeKey) %}
       <div class="govuk-!-margin-bottom-6">
         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
           <a href="{{ item.url | url | pretty }}">{{ item.title }}</a>

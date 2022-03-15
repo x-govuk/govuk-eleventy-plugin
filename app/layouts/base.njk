@@ -26,19 +26,19 @@
 {% block pageTitle %}
   {{- title if title -}}
   {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
-  {{- " - " + (serviceName or productName) if serviceName or productName -}}
-  {{- " - " + organisationName -}}
+  {{- " - " + (config.serviceName or config.productName) if config.serviceName or config.productName -}}
+  {{- " - " + config.organisationName -}}
 {% endblock %}
 
 {% block header %}
   {{ appHeader({
-    logotypeImage: organisationLogo,
-    logotypeText: organisationName,
-    homepageUrl: homepageUrl | url,
-    productName: productName,
-    serviceName: serviceName if not productName,
-    serviceUrl: (serviceUrl | url) if not productName,
-    searchIndex: searchIndex
+    logotypeImage: config.organisationLogo,
+    logotypeText: config.organisationName,
+    homepageUrl: config.homepageUrl | url,
+    productName: config.productName,
+    serviceName: config.serviceName if not config.productName,
+    serviceUrl: (config.serviceUrl | url) if not config.productName,
+    searchIndex: config.searchIndex
   }) }}
 {% endblock %}
 
