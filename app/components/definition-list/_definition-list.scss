@@ -1,0 +1,12 @@
+.app-definition-list {
+  @extend %govuk-list;
+
+  dt {
+    @include govuk-font($size: 19, $weight: bold);
+    margin-bottom: govuk-spacing(1);
+  }
+
+  dd {
+    margin-left: govuk-spacing(5);
+  }
+}
