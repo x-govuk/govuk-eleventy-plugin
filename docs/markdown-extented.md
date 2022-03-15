@@ -66,6 +66,10 @@ Right aligned columns
 ```markdown
 1/2 1/3 2/3 1/4 3/4
 
+1/2 x 3/4
+
+6 => 4, 2 <= 4
+
 4 x 2.4
 
 <<Bonjour!>>
@@ -81,6 +85,8 @@ And ellipses...
 1/2 1/3 2/3 1/4 3/4
 
 1/2 x 3/4
+
+6 => 4, 2 <= 4
 
 4 x 2.4
 
@@ -111,32 +117,37 @@ And ellipses...
 
 ## Footnotes
 
-Here’s a simple footnote,[^1] and here’s a longer one.[^big note]
+Here is a footnote reference,[^1] and another.[^longnote]
 
-[^1]: This is the first footnote.
+[^1]: Here is the footnote.
 
-[^big note]: Here’s one with multiple paragraphs and code.
+[^longnote]: Here’s one with multiple blocks.
 
-    Indent paragraphs to include them in the footnote.
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
 
-        { my code }
+        { some.code }
 
-    Add as many paragraphs as you like.
+    The whole paragraph can be indented, or just the first
+    line. In this way, multi-paragraph footnotes[^sub] work like
+    multi-paragraph list items.
+
+[^sub]: Footnotes can have footnotes, too.
+
+This paragraph won't be part of the note, because it isn't indented.
 
 ## Definition lists
 
 Term 1
-
 : Definition 1
 with lazy continuation.
 
 Term 2 with *inline markup*
-
 : Definition 2
 
         { some code, part of Definition 2 }
 
-    Third paragraph of definition 2.
+: Third paragraph of definition 2.
 
 ## Abbreviations
 
