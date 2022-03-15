@@ -1,26 +1,24 @@
 .app-gallery {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  @extend %govuk-list;
 }
 
 .app-gallery--layout-thumbnails {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   grid-gap: govuk-spacing(6);
+}
 
-  .app-figure {
-    @include govuk-responsive-margin(2, "bottom");
+.app-gallery__figure {
+  @include govuk-responsive-margin(2, "bottom");
 
-    a {
-      display: block;
-      min-height: 12rem;
-    }
+  a {
+    display: block;
+    min-height: 12rem;
+  }
 
-    img {
-      max-height: 12rem;
-      object-fit: cover;
-      object-position: top;
-    }
+  img {
+    max-height: 12rem;
+    object-fit: cover;
+    object-position: top;
   }
 }
