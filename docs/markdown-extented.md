@@ -7,6 +7,8 @@ related:
   - text: Markdown Guide
     href: https://www.markdownguide.org
 ---
+[[toc]]
+
 ## Strike-through
 
 ~~Strike-through~~
