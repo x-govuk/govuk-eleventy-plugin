@@ -2,7 +2,6 @@
 a[aria-describedby="footnotes-label"] {
   @include govuk-font(14, $tabular: true);
   @include govuk-link-style-no-visited-state;
-  vertical-align: super;
 }
 
 a[aria-describedby="footnotes-label"]:before {
@@ -16,12 +15,13 @@ a[aria-describedby="footnotes-label"]:after {
 }
 
 // Footnotes
-.app-list--footnotes {
+.app-footnotes-list {
+  @extend %govuk-list;
   counter-reset: footnotes;
 
   li {
     counter-increment: footnotes;
-    padding: govuk-spacing(4);
+    padding: govuk-spacing(3);
     padding-left: govuk-spacing(8);
     position: relative;
   }

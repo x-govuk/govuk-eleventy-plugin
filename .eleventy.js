@@ -12,6 +12,9 @@ module.exports = function (eleventyConfig) {
 
   // Config
   return {
+    dataTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
     dir: {
       input: 'docs',
       output: 'public',
