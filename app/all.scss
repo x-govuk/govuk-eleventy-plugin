@@ -4,11 +4,11 @@ $govuk-new-link-styles: true;
 // GOV.UK Frontend
 @import "govuk-frontend/govuk/all";
 
-// GOV.UK Markdown
-@import "govuk-markdown/x-govuk/all";
-
 // GOV.UK Prototype components
 @import "govuk-prototype-components/x-govuk/all";
+
+// GOV.UK fenced code highlighting
+@import "markdown-it-govuk/x-govuk/all";
 
 // Components
 @import "app/components/all";

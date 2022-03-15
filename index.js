@@ -4,17 +4,14 @@ const rollup = require('rollup')
 const commonJs = require('@rollup/plugin-commonjs')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const sass = require('sass')
-const markdown = require('./lib/extensions/md.js')
-const nunjucksEnv = require('./lib/nunjucks.js')
+const defaultConfig = require('./lib/config/defaults.js')
 
 module.exports = function (eleventyConfig, options = {}) {
-  const nunjucks = nunjucksEnv({ views: options.views })
-
   // Libraries
-  eleventyConfig.setLibrary('njk', nunjucks)
-
-  // Extensions
-  eleventyConfig.addExtension('md', markdown(nunjucks, options))
+  eleventyConfig.setLibrary('md', require('./lib/markdown-it.js'))
+  eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')({
+    views: options.views
+  }))
 
   // Collections
   eleventyConfig.addCollection('orderedNavigation', collection => {
@@ -35,18 +32,22 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.addFilter('pretty', require('./lib/filters/pretty.js'))
 
   // Global data
+  eleventyConfig.addGlobalData('config', {
+    ...defaultConfig, ...options
+  })
+
   // Sensible defaults for eleventyNavigation
   eleventyConfig.addGlobalData('eleventyComputed', {
     eleventyNavigation: {
-      // Key: If homepage use `homeKey`, else navigation key or page title
+      // Key: Use `config.homeKey` if home page, else navigation key or title
       key: data => (data.homepage)
-        ? data.homeKey
+        ? data.config.homeKey
         : data.eleventyNavigation.key || data.title,
-      // Parent: If homepage `false`, else if page not excluded from collections, navigation parent or `homeKey`
+      // Parent: If homepage `false`, else if page not excluded from collections, navigation parent or `config.homeKey`
       parent: data => (data.homepage)
         ? false
         : (!data.eleventyExcludeFromCollections)
-            ? data.eleventyNavigation.parent || data.homeKey
+            ? data.eleventyNavigation.parent || data.config.homeKey
             : false,
       // Excerpt: Defined navigation excerpt or page description
       excerpt: data => data.eleventyNavigation.excerpt || data.description
