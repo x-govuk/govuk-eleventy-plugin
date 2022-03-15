@@ -8,19 +8,21 @@
 {% endblock %}
 
 {% block content %}
-  {% call appArticle({
-    header: {
-      title: title
-    },
-    footer: {
-      date: date,
-      modified: modified if modified,
-      author: author if author
-    }
-  }) %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ content }}
+      {% call appArticle({
+        header: {
+          title: title
+        },
+        footer: {
+          date: date,
+          modified: modified,
+          author: author,
+          authors: authors
+        }
+      }) %}
+        {{ content }}
+      {% endcall %}
     </div>
 
     {% if related.items | length > 0 %}
@@ -34,5 +36,4 @@
     </div>
     {% endif %}
   </div>
-  {% endcall %}
 {% endblock %}
