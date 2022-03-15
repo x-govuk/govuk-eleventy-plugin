@@ -3,6 +3,7 @@ layout: post
 order: 2
 title: Post
 description: A date-based post
+author: Author name
 date: 2011-11-11
 related:
   items:

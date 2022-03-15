@@ -14,7 +14,7 @@
 {{- caller() if caller -}}
   </div>
 
-  {% if params.footer.date or params.footer.author %}
+  {% if params.footer.date or params.footer.author or params.footer.authors %}
   <footer class="app-article__footer">
     {% if params.footer.date %}
       Published <time datetime="{{ params.footer.date | date }}">{{ params.footer.date | date("d LLLL y") }}</time><br>
@@ -22,8 +22,16 @@
     {% if params.footer.modified %}
       Last updated <time datetime="{{ params.footer.modified | date }}">{{ params.footer.modified | date("d LLLL y") }}</time>
     {% endif %}
-    {% if params.footer.author %}
-      Written by {{ params.footer.author }}
+    {% if params.footer.author or params.footer.authors %}
+      Written by
+      {% if params.footer.author %}
+        {{ params.footer.author }}
+      {% else %}
+        {% set comma = joiner() %}
+        {% for author in params.footer.authors -%}
+          {{ comma() }} {{ author }}
+        {%- endfor %}
+      {% endif %}
     {% endif %}
   </footer>
   {% endif %}
