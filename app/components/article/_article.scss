@@ -35,9 +35,18 @@
     margin: 0;
     width: 100%;
 
-    .govuk-link & {
-      @include govuk-link-common;
-      @include govuk-link-style-default;
+    // Show outline around linked images within figures
+    > .govuk-link img {
+      display: block;
+      outline: 1px solid rgba($govuk-border-colour, .5);
+
+      &:hover {
+        outline-color: $govuk-link-hover-colour;
+      }
+
+      &:active {
+        outline-color: $govuk-link-active-colour;
+      }
     }
 
     :focus & {
