@@ -31,7 +31,7 @@
   }
 
   figure {
-    @include govuk-responsive-margin(4, "bottom");
+    @include govuk-responsive-margin(6, "bottom");
     margin: 0;
     width: 100%;
 
@@ -46,11 +46,9 @@
   }
 
   figcaption {
-    @include govuk-font($size: 14);
-
-    .govuk-body {
-      color: inherit;
-    }
+    @include govuk-font($size: 19);
+    color: $govuk-secondary-text-colour;
+    margin-top: govuk-spacing(1);
   }
 
   // Reverse the colour of code that uses shell highlighting
