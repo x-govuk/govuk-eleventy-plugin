@@ -16,7 +16,7 @@
 }
 
 .app-document-list__item-title {
-  @include govuk-font($size: 24, $weight: "bold");
+  @include govuk-font($size: 19, $weight: "bold");
   margin: 0 0 govuk-spacing(1);
 }
 
@@ -26,14 +26,28 @@
 }
 
 .app-document-list__item-description {
-  @include govuk-font($size: 19);
+  @include govuk-font($size: 16);
   margin: govuk-spacing(1) 0;
 }
 
 .app-document-list__attribute {
-  @include govuk-font($size: 16);
+  @include govuk-font($size: 14);
   color: $govuk-secondary-text-colour;
   display: inline-block;
   margin: 0;
   padding-right: govuk-spacing(4);
+}
+
+.app-document-list--large {
+  .app-document-list__item-title {
+    @include govuk-font($size: 24, $weight: "bold");
+  }
+
+  .app-document-list__item-description {
+    @include govuk-font($size: 19);
+  }
+
+  .app-document-list__attribute {
+    @include govuk-font($size: 16);
+  }
 }
