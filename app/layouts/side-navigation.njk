@@ -23,6 +23,13 @@
       }) %}
         {{ content }}
       {% endcall %}
+
+      {{ xGovukRelatedNavigation({
+        sections: [{
+          title: related.title or "Related links",
+          items: related.items
+        }]
+      }) if related.items | length > 0 }}
     </div>
   </div>
 {% endblock %}
