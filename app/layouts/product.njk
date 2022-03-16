@@ -16,8 +16,8 @@
     } if image,
     breadcrumbs: {
       classes: "govuk-!-display-none-print",
-      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) | items(page.url, config.pathPrefix)
-    } if eleventyNavigation.parent
+      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items(page.url, config.pathPrefix)
+    } if eleventyNavigation.parent and eleventyNavigation.parent != config.homeKey
   }) }}
 
   <div class="govuk-width-container">
