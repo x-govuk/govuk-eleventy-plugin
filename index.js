@@ -60,6 +60,7 @@ module.exports = function (eleventyConfig, options = {}) {
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'))
 
   // Events
   eleventyConfig.on('eleventy.after', async () => {

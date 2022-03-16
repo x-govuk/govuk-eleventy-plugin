@@ -42,6 +42,7 @@
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "accessible-autocomplete": "^2.0.3",
@@ -49,6 +50,7 @@
     "govuk-frontend": "^4.0.0",
     "govuk-prototype-components": "x-govuk/govuk-prototype-components",
     "http-server": "^14.0.0",
+    "install": "^0.13.0",
     "luxon": "^2.1.1",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^8.4.1",
@@ -61,6 +63,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-table-of-contents": "^0.6.0",
+    "npm": "^8.5.4",
     "rimraf": "^3.0.2",
     "rollup": "^2.62.0",
     "sass": "^1.45.1"

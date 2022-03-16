@@ -1,10 +1,16 @@
 module.exports = function (eleventyConfig) {
-  const pathPrefix = process.env.GITHUB_ACTIONS ? '/govuk-eleventy-plugin' : '/'
+  const url = process.env.GITHUB_ACTIONS
+    ? 'https://x-govuk.github.io/govuk-eleventy-plugin/'
+    : '/'
+  const pathPrefix = process.env.GITHUB_ACTIONS
+    ? '/govuk-eleventy-plugin'
+    : '/'
 
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
     homeKey: 'GOV.UK Eleventy',
     pathPrefix,
+    url,
     header: {
       organisationLogo: 'crown',
       productName: 'Eleventy',
