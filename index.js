@@ -25,13 +25,13 @@ module.exports = function (eleventyConfig, options = {}) {
   })
 
   // Filters
-  eleventyConfig.addFilter('collectionToItems', require('./lib/filters/collection-to-items.js'))
   eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
-  eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
-  eleventyConfig.addFilter('items', require('./lib/filters/items.js'))
+  eleventyConfig.addFilter('itemsFromCollection', require('./lib/filters/items-from-collection.js'))
+  eleventyConfig.addFilter('itemsFromNavigation', require('./lib/filters/items-from-navigation.js'))
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown.js'))
   eleventyConfig.addFilter('noOrphans', require('./lib/filters/no-orphans.js'))
   eleventyConfig.addFilter('pretty', require('./lib/filters/pretty.js'))
+  eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
 
   // Global data
   eleventyConfig.addGlobalData('config', deepmerge(defaultConfig, options))

@@ -3,7 +3,7 @@
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     classes: "govuk-!-display-none-print",
-    items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | items(page.url, config.pathPrefix)
+    items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | itemsFromNavigation(page.url, config.pathPrefix)
   }) if eleventyNavigation.parent and eleventyNavigation.parent != config.homeKey }}
 {% endblock %}
 
