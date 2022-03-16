@@ -68,66 +68,60 @@ To bold text, add two asterisks or underscores before and after a word or phrase
 To create a blockquote, add a `>` in front of a paragraph.
 
 ```markdown
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
 ```
 
 The rendered output looks like this:
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
 
-### Blockquotes with Multiple Paragraphs
+### Blockquotes with multiple paragraphs
 
 Blockquotes can contain multiple paragraphs. Add a `>` on the blank lines between the paragraphs.
 
 ```markdown
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
 >
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+> Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 ```
 
 The rendered output looks like this:
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
 >
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+> Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 
-### Nested Blockquotes
+### Nested blockquotes
 
 Blockquotes can be nested. Add a `>>` in front of the paragraph you want to nest.
 
 ```markdown
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
 >
->> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+>> Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 ```
 
 The rendered output looks like this:
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
 >
->> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+>> Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 
-### Blockquotes with Other Elements
+### Blockquotes with other elements
 
 Blockquotes can contain other Markdown formatted elements. Not all elements can be used — you'll need to experiment to see which ones work.
 
 ```markdown
-> #### Quarterly results
+> #### Check the MOT status of a vehicle
 >
-> - Revenue was off the chart.
-> - Profits were higher than ever.
->
-> Everything is going according to **plan**.
+> If your vehicle is new, you must [get an MOT test](https://www.gov.uk/getting-an-mot) by the third anniversary of its registration.
 ```
 
 The rendered output looks like this:
 
-> #### Quarterly results
+> #### Check the MOT status of a vehicle
 >
-> - Revenue was off the chart.
-> - Profits were higher than ever.
->
-> Everything is going according to **plan**.
+> If your vehicle is new, you must [get an MOT test](https://www.gov.uk/getting-an-mot) by the third anniversary of its registration.
 
 ## Lists
 
@@ -192,18 +186,18 @@ You can also nest an unordered list in an ordered list, or vice versa.
 If you need to start an unordered list item with a number followed by a period, you can use a backslash (`\`) to escape the period.
 
 ```markdown
-- 1968\. A great year!
-- I think 1969 was second best.
+- 2012\. A great year!
+- I think 2009 was second best.
 ```
 
-- 1968\. A great year!
-- I think 1969 was second best.
+- 2012\. A great year!
+- I think 2009 was second best.
 
 ## Code
 
 ### Code spans
 
-To denote a word or phrase as code, enclose it in backticks (```).
+To denote a word or phrase as code, enclose it in backticks (`` ` ``).
 
 ```markdown
 At the command prompt, type `npm install`.
@@ -220,6 +214,8 @@ To create code blocks, indent every line of the block by at least four spaces or
 ```
 
     console.log('Hello, world!')
+
+To use syntax highlighting, used [fenced code blocks](/markdown-extended/#fenced-code).
 
 ## Horizontal rules
 
@@ -239,11 +235,43 @@ The rendered output of all three looks identical:
 
 ## Links
 
-[link text](https://www.gov.uk)
+To create a link, enclose the link text in brackets (e.g., `[GOV.UK]`) and then follow it immediately with the URL in parentheses (e.g., `(https://www.gov.uk)`).
 
-[link with title](https://www.gov.uk "Visit GOV.UK")
+```markdown
+Visit [GOV.UK](https://www.gov.uk).
+```
 
-Autolinked text: https://www.gov.uk
+The rendered output looks like this:
+
+Visit [GOV.UK](https://www.gov.uk).
+
+### URLs and email addresses
+
+To quickly turn a URL or email address into a link, enclose it in angle brackets.
+
+```markdown
+<https://www.gov.uk>  
+<mailbox@example.org>
+```
+
+The rendered output looks like this:
+
+<https://www.gov.uk>  
+<mailbox@example.org>
+
+### Formatting links
+
+To [emphasize](#emphasis) links, add asterisks before and after the brackets and parentheses. To denote links as [code](#code), add backticks in the brackets.
+
+```markdown
+Visit the **[Markdown Guide](https://www.markdownguide.org)**.  
+See the section on [`code`](#code).
+```
+
+The rendered output looks like this:
+
+Visit the **[Markdown Guide](https://www.markdownguide.org)**.  
+See the section on [`code`](#code).
 
 ## Images
 
