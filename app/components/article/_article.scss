@@ -67,8 +67,6 @@
 
 .app-article__footer {
   @include govuk-font($size: 16, $line-height: 1.5);
-  @include govuk-responsive-padding(4, "top");
-  border-top: 1px solid $govuk-border-colour;
 
   .govuk-body-s {
     color: $govuk-secondary-text-colour;

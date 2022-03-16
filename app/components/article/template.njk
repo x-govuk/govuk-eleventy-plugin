@@ -20,10 +20,6 @@
   </header>
   {% endif %}
 
-  <div class="app-article__body">
-{{- caller() if caller -}}
-  </div>
-
   {% if params.footer.date or params.footer.author %}
   <footer class="app-article__footer">
     <p class="govuk-body-s">
@@ -46,4 +42,16 @@
     </p>
   </footer>
   {% endif %}
+
+  <div class="app-article__body">
+    {% if params.image -%}
+    <figure>
+      <img src="{{ params.image.src }}" alt="{{ params.image.alt }}">
+      {% if params.image.caption -%}
+      <figcaption>{{ params.image.caption }}</figcaption>
+      {% endif -%}
+    </figure>
+    {%- endif %}
+{{- caller() if caller -}}
+  </div>
 </article>

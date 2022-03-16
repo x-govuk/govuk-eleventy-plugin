@@ -22,6 +22,8 @@
 
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
+  {% if image.src %}<meta property="og:image" content="{{ image.src | url }}">{% endif %}
+  {% if image.alt %}<meta property="og:image:alt" content="{{ image.alt }}">{% endif %}
 {% endblock %}
 
 {% block pageTitle %}

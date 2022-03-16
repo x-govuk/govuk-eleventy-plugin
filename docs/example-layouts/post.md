@@ -4,6 +4,10 @@ order: 2
 title: Post
 description: A date-based post
 date: 2011-11-11
+image:
+  src: /assets/images/govuk-opengraph-image.png
+  alt: A crown icon above the words GOV.UK.
+  caption: The GOV.UK logo
 authors:
   - name: William Ewart Gladstone
     url: https://www.gov.uk/government/history/past-prime-ministers/william-ewart-gladstone
@@ -26,8 +30,12 @@ layout: post
 title: # Appears at the top of the page and in the <title>
 description: # Appears below page title and in page <meta>
 date: # Optional. See: https://www.11ty.dev/docs/dates/
-author: # Author name
-author:
+image: # Optional.
+  src: # Image shown above the post and in Open Graph image
+  alt: # Alternative text for image
+  caption: # Caption for image
+author: # Optional.Author name
+author: # Optional.
   - name: # Author name
     url: # Author url
 authors:
