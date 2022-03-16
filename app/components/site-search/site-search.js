@@ -39,7 +39,7 @@ Search.prototype.fetchSearchIndex = function (indexUrl, callback) {
 Search.prototype.findResults = function (searchQuery, searchIndex) {
   return searchIndex.filter(item => {
     const regex = new RegExp(searchQuery, 'gi')
-    return item.data.title.match(regex) || item.templateContent.match(regex)
+    return item.title.match(regex) || item.templateContent.match(regex)
   })
 }
 
@@ -74,20 +74,20 @@ Search.prototype.handleOnConfirm = function (result) {
 
 Search.prototype.inputValueTemplate = function (result) {
   if (result) {
-    return result.data.title
+    return result.title
   }
 }
 
 Search.prototype.resultTemplate = function (result) {
   if (result) {
     const element = document.createElement('span')
-    const resultTitle = result.data.title
+    const resultTitle = result.title
     element.textContent = resultTitle
 
-    if (result.dateString || result.data.section) {
+    if (result.dateString || result.section) {
       const section = document.createElement('span')
       section.className = 'app-site-search--section'
-      section.innerHTML = result.dateString || result.data.section
+      section.innerHTML = result.dateString || result.section
 
       element.appendChild(section)
     }
@@ -102,8 +102,9 @@ Search.prototype.init = function () {
     return
   }
 
-  // The Accessible Autocomplete only works in IE9+ so we can use newer JavaScript features here
-  // but need to check for browsers that do not have these features and force the fallback by returning early.
+  // The Accessible Autocomplete only works in IE9+ so we can use newer
+  // JavaScript features here but need to check for browsers that do not have
+  // these features and force the fallback by returning early.
   // http://responsivenews.co.uk/post/18948466399/cutting-the-mustard
   const featuresNeeded = (
     'querySelector' in document &&
