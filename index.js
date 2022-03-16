@@ -25,6 +25,7 @@ module.exports = function (eleventyConfig, options = {}) {
   })
 
   // Filters
+  eleventyConfig.addFilter('collectionToItems', require('./lib/filters/collection-to-items.js'))
   eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
   eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
   eleventyConfig.addFilter('items', require('./lib/filters/items.js'))
