@@ -1,12 +1,16 @@
+{% set headingLevel = params.headingLevel or 2 %}
+
 {% if params.items.length > 0 %}
   <ol class="app-document-list{%- if params.classes %} {{ params.classes }}{% endif %}">
   {% for item in params.items %}
     <li class="app-document-list__item">
-      <h2 class="app-document-list__item-title">
+      <h{{ headingLevel }} class="app-document-list__item-title">
         <a class="govuk-link" href="{{ item.url | url | pretty }}">{{ item.data.title }}</a>
-      </h2>
+      </h{{ headingLevel }}>
       {% if item.data.description %}
-      <p class="app-document-list__item-description">{{ item.data.description | markdown("inline") | safe }}</p>
+      <p class="app-document-list__item-description">
+        {{ item.data.description | markdown("inline") | safe }}
+      </p>
       {% endif %}
       {% if item.data.date %}
       <ul class="app-document-list__item-metadata">
