@@ -1,12 +1,13 @@
 [class^="govuk-heading"][tabindex] {
-  padding: govuk-spacing(3);
-  margin-left: govuk-spacing(-3);
-  margin-right: govuk-spacing(-3);
+  outline: none;
 }
 
 [class^="govuk-heading"]:target {
-  background-color: govuk-tint($govuk-focus-colour, 75);
-  outline: none;
+  a {
+    background-color: govuk-tint($govuk-focus-colour, 75);
+    display: block;
+    outline: govuk-spacing(3) solid govuk-tint($govuk-focus-colour, 75);
+  }
 }
 
 // Based on the GOV.UK ‘Contents list’ component
