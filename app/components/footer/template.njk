@@ -1,0 +1,74 @@
+<footer class="govuk-footer app-footer {{ params.classes if params.classes }}" role="contentinfo"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <div class="govuk-width-container {{ params.containerClasses if params.containerClasses }}">
+    {% if params.navigation | length %}
+      <div class="govuk-footer__navigation">
+        {% for nav in params.navigation %}
+          <div class="govuk-footer__section govuk-grid-column-{{ nav.width | default("full") }}">
+            <h2 class="govuk-footer__heading govuk-heading-m">{{ nav.title }}</h2>
+            {% if nav.items | length %}
+              {% set listClasses %}
+                {% if nav.columns %}
+                  govuk-footer__list--columns-{{ nav.columns }}
+                {% endif %}
+              {% endset %}
+              <ul class="govuk-footer__list {{ listClasses | trim }}">
+                {% for item in nav.items %}
+                  {% if item.href and item.text %}
+                    <li class="govuk-footer__list-item">
+                      <a class="govuk-footer__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                        {{ item.text }}
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      <hr class="govuk-footer__section-break">
+    {% endif %}
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        {% if params.meta %}
+          <h2 class="govuk-visually-hidden">{{ params.meta.visuallyHiddenTitle | default("Support links") }}</h2>
+          {% if params.meta.items | length %}
+            <ul class="govuk-footer__inline-list">
+              {% for item in params.meta.items %}
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                    {{ item.text }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          {% if params.meta.text or params.meta.html %}
+            <div class="govuk-footer__meta-custom">
+              {{ params.meta.html | safe if params.meta.html else params.meta.text }}
+            </div>
+          {% endif %}
+        {% endif %}
+        {% if params.licence == "ogl" %}
+          <span class="govuk-footer__licence-description">
+            {% include "./_ogl.svg" %}
+            All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        {% elif params.licence %}
+          <span class="govuk-footer__licence-description">
+            {{ params.licence | markdown("inline") | replace("govuk-link", "govuk-footer__link") }}
+          </span>
+        {% endif %}
+      </div>
+      <div class="govuk-footer__meta-item">
+      {% if params.copyright == "crown" %}
+        <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+      {% elif params.copyright %}
+        {{ params.copyright | markdown("inline") | replace("govuk-link", "govuk-footer__link") }}
+      {% else %}
+        © {{ "now" | date("yyyy") }}
+      {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>

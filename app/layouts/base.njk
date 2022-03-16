@@ -12,6 +12,7 @@
 
 {% from "app/components/article/macro.njk" import appArticle %}
 {% from "app/components/document-list/macro.njk" import appDocumentList %}
+{% from "app/components/footer/macro.njk" import appFooter %}
 {% from "app/components/header/macro.njk" import appHeader %}
 {% from "app/components/pagination/macro.njk" import appPagination %}
 
@@ -32,6 +33,10 @@
 
 {% block header %}
   {{ appHeader(config.header) }}
+{% endblock %}
+
+{% block footer %}
+  {{ appFooter(config.footer) }}
 {% endblock %}
 
 {% block bodyEnd %}

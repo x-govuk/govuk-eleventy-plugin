@@ -6,6 +6,10 @@ module.exports = function (eleventyConfig) {
       organisationLogo: 'crown',
       productName: 'Eleventy',
       searchIndex: '/search.json'
+    },
+    footer: {
+      copyright: '© X-GOVUK',
+      licence: 'Licensed under the [MIT Licence](https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt), except where otherwise stated'
     }
   })
 
