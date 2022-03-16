@@ -29,11 +29,13 @@
         {{- " and " if loop.last else (", " if not loop.first) -}}
         {{- _authorLink(author) -}}
       {%- endfor -%}
+      <span aria-hidden="true"> · </span>
     {% elif params.footer.author %}
         {{- _authorLink(params.footer.author) -}}
+        <span aria-hidden="true"> · </span>
     {% endif %}
     {% if params.footer.date %}
-      <span aria-hidden="true"> · </span><span class="govuk-visually-hidden">Posted on: </span><time datetime="{{ params.footer.date | date }}">{{ params.footer.date | date("d LLLL y") }}</time>
+      <span class="govuk-visually-hidden">Posted on: </span><time datetime="{{ params.footer.date | date }}">{{ params.footer.date | date("d LLLL y") }}</time>
     {% endif %}
     {% if params.footer.modified %}
       <span aria-hidden="true">•</span>
