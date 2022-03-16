@@ -3,7 +3,7 @@
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     classes: "govuk-!-display-none-print",
-    items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) | items
+    items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) | items(page.url, config.pathPrefix)
   }) }}
 {% endblock %}
 
@@ -11,7 +11,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
       {{ xGovukSideNavigation({
-        items: collections.orderedNavigation | eleventyNavigation(config.homeKey) | items(page.url)
+        items: collections.orderedNavigation | eleventyNavigation(config.homeKey) | items(page.url, config.pathPrefix)
       }) }}
     </div>
     <div class="govuk-grid-column-three-quarters">

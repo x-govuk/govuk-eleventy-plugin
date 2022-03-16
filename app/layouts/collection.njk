@@ -10,7 +10,7 @@
     } if description,
     breadcrumbs: {
       classes: "govuk-!-display-none-print",
-      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) | items
+      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) | items(page.url, config.pathPrefix)
     }
   }) }}
 
