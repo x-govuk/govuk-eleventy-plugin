@@ -1,7 +1,7 @@
 // Import GOV.UK Frontend
 import GOVUKFrontend from 'govuk-frontend'
 
-// Import GOV.UK Prototype Rig
+// Import components
 import { components as GOVUK11ty } from './components/all.js'
 
 // Initiate scripts on page load
