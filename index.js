@@ -3,6 +3,7 @@ const { writeFile } = require('node:fs/promises')
 const rollup = require('rollup')
 const commonJs = require('@rollup/plugin-commonjs')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
+const deepmerge = require('deepmerge')
 const sass = require('sass')
 const defaultConfig = require('./lib/config/defaults.js')
 
@@ -32,9 +33,7 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.addFilter('pretty', require('./lib/filters/pretty.js'))
 
   // Global data
-  eleventyConfig.addGlobalData('config', {
-    ...defaultConfig, ...options
-  })
+  eleventyConfig.addGlobalData('config', deepmerge(defaultConfig, options))
 
   // Sensible defaults for eleventyNavigation
   eleventyConfig.addGlobalData('eleventyComputed', {

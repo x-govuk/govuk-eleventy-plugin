@@ -2,9 +2,11 @@ module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
     homeKey: 'GOV.UK Eleventy',
-    organisationLogo: 'crown',
-    productName: 'Eleventy',
-    searchIndex: '/search.json'
+    header: {
+      organisationLogo: 'crown',
+      productName: 'Eleventy',
+      searchIndex: '/search.json'
+    }
   })
 
   // Pass through

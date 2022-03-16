@@ -2,17 +2,17 @@
 <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
-      <a href="{{ params.homepageUrl | default("/") }}" class="govuk-header__link govuk-header__link--homepage">
+      <a href="{{ params.homepageUrl | default("/") | url }}" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
-          {% if params.logotypeImage == "crown" %}
+          {% if params.organisationLogo == "crown" %}
             {% include "./_crown.svg" %}
-          {% elif params.logotypeImage == "royal-arms" %}
+          {% elif params.organisationLogo == "royal-arms" %}
             {% include "./_royal-arms.svg" %}
-          {% elif params.logotypeImage %}
-            {{ params.logotypeImage | safe }}
+          {% elif params.organisationLogo %}
+            {{ params.organisationLogo | safe }}
           {% endif %}
           <span class="govuk-header__logotype-text">
-            {{ params.logotypeText | default("GOV.UK") }}
+            {{ params.organisationName | default("GOV.UK") }}
           </span>
         </span>
         {% if params.productName %}

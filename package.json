@@ -45,6 +45,7 @@
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "accessible-autocomplete": "^2.0.3",
+    "deepmerge": "^4.2.2",
     "govuk-frontend": "^4.0.0",
     "govuk-prototype-components": "x-govuk/govuk-prototype-components",
     "http-server": "^14.0.0",

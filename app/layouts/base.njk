@@ -26,20 +26,12 @@
 {% block pageTitle %}
   {{- title if title -}}
   {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
-  {{- " - " + (config.serviceName or config.productName) if config.serviceName or config.productName -}}
-  {{- " - " + config.organisationName -}}
+  {{- " - " + config.header.productName if config.header.productName -}}
+  {{- " - " + config.header.organisationName -}}
 {% endblock %}
 
 {% block header %}
-  {{ appHeader({
-    logotypeImage: config.organisationLogo,
-    logotypeText: config.organisationName,
-    homepageUrl: config.homepageUrl | url,
-    productName: config.productName,
-    serviceName: config.serviceName if not config.productName,
-    serviceUrl: (config.serviceUrl | url) if not config.productName,
-    searchIndex: config.searchIndex
-  }) }}
+  {{ appHeader(config.header) }}
 {% endblock %}
 
 {% block bodyEnd %}
