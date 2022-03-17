@@ -7,7 +7,8 @@ title: Get started
 GOV.UK Eleventy is a plugin for Eleventy, a static site generator. It uses `govuk-frontend` components and provides support for Markdown formatted documents.
 
 * Sets [Nunjucks](https://mozilla.github.io/nunjucks/) as the template language
-* Uses [marked.js](https://marked.js.org) to render Markdown, with [govuk-markdown](https://github.com/x-govuk/govuk-markdown) extensions to ensure text shares the same styles as those used on GOV.UK
+* Uses [markdown-it](https://github.com/markdown-it/markdown-it) to and the [markdown-it-govuk](https://github.com/x-govuk/markdown-it-govuk) plugin to ensure text shares the same styles as those used on GOV.UK
+* Provides a collection of [layout templates](/example-layouts)
 * Adds search feature
 * Generates assets
 
@@ -36,6 +37,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin)
 
   return {
+    dataTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
     dir: {
       // Use layouts from the plugin
       layouts: 'node_modules/govuk-eleventy-plugin/app/layouts'
