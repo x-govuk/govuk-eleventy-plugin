@@ -1,7 +1,7 @@
 import test from 'ava'
 import date from '../../../lib/filters/date.js'
 
-test('Formats a data using tokens', t => {
+test('Formats a date using tokens', t => {
   const result = date(new Date('2021-12-27'), 'd LLLL yyyy')
 
   t.is(result, '27 December 2021')
