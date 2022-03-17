@@ -1,7 +1,7 @@
 ---
 layout: side-navigation
 order: 3
-title: Basic Markdown syntax
+title: Using Markdown
 description: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
 related:
   items:
@@ -14,7 +14,7 @@ related:
 
 To create a heading, add number signs (`#`) in front of a word or phrase.
 
-The number of number signs you use should correspond to the heading level. For example, to create a heading level three (`<h3>`), use three number signs (e.g., `### My Header`).
+The number of number signs you use should correspond to the heading level. For example, to create a heading level 3 (`<h3>`), use 3 number signs (e.g., `### My Header`).
 
 | Markdown | Rendered output |
 | - | - |
@@ -35,7 +35,7 @@ To create paragraphs, use a blank line to separate one or more lines of text.
 
 ## Line breaks
 
-To create a line break or new line (`<br>`), end a line with two or more spaces, and then type return.
+To create a line break or new line (`<br>`), end a line with 2 or more spaces, and then type return.
 
 | Markdown | Rendered output |
 | - | - |
@@ -54,7 +54,7 @@ To emphasise text, add one asterisk or underscore before and after a word or phr
 
 ## Strong emphasis
 
-To bold text, add two asterisks or underscores before and after a word or phrase.
+To bold text, add 2 asterisks or underscores before and after a word or phrase.
 
 > The [GDS Style Guide recommends only using emboldened text when referring to text from interfaces](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold) in technical documentation or instructions.
 
@@ -207,7 +207,7 @@ At the command prompt, type `npm install`.
 
 ### Code blocks
 
-To create code blocks, indent every line of the block by at least four spaces or one tab.
+To create code blocks, indent every line of the block by at least 4 spaces or one tab.
 
 ```markdown
     console.log('Hello, world!')
@@ -215,11 +215,11 @@ To create code blocks, indent every line of the block by at least four spaces or
 
     console.log('Hello, world!')
 
-To use syntax highlighting, used [fenced code blocks](/markdown-extended/#fenced-code).
+To use syntax highlighting, used [fenced code blocks](/markdown-advanced/#fenced-code).
 
 ## Horizontal rules
 
-To create a horizontal rule, use three or more asterisks (`***`), dashes (`---`), or underscores (`___`) on a line by themselves.
+To create a horizontal rule, use 3 or more asterisks (`***`), dashes (`---`), or underscores (`___`) on a line by themselves.
 
 ```markdown
 ___
@@ -229,7 +229,7 @@ ___
 ***
 ```
 
-The rendered output of all three looks identical:
+The rendered output of all 3 looks identical:
 
 ***
 
@@ -296,3 +296,23 @@ To add a link to an image, enclose the Markdown for the image in brackets, and t
 The rendered output looks like this:
 
 [![A crown icon above the words GOV.UK](/assets/images/govuk-apple-touch-icon-180x180.png "Visit GOV.UK")](https://www.gov.uk)
+
+## Typographic replacements
+
+| Description | Text | Rendered output |
+| - | - | - |
+| En dash | `--` | -- |
+| Em dash | `---` | --- |
+| Ellipsis | `...` | ... |
+| Single quotes | `'single'` | 'single' |
+| Double quotes | `"double"` | "double" |
+| Simple fractions | `1/2 1/3 2/3 1/4 3/4` | 1/2 1/3 2/3 1/4 3/4 |
+| Multiplication | `2 x 3` | 2 x 3 |
+| Greater than | `2 => 1` | 2 => 1 |
+| Less than | `1 <= 2` | 1 <= 2 |
+| Plus-minus | `2.4 +-1` | 2.4 +-1 |
+| Guillemets | `<<Bonjour!>>` | <<Bonjour!>> |
+| Copyright | `(C)` `(c)` | (C) |
+| Registered trademark | `(R)` `(r)` | (R) |
+| Trademark | `(TM)` `(tm)` | (TM) |
+| Section | `(P)` `(p)` | (P) |
