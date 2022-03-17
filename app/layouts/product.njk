@@ -9,7 +9,10 @@
     description: {
       html: description | markdown("inline") | noOrphans
     } if description,
-    startButton: startButton,
+    startButton: {
+      href: startButton.href | url,
+      text: startButton.text
+    } if startButton,
     image: {
       alt: image.alt,
       src: image.src | url
