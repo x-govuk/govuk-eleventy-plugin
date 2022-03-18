@@ -10,11 +10,11 @@
   {% if params.header %}
   <header class="app-article__header">
     <h1 class="app-article__title govuk-heading-xl">
-      {{ params.header.title }}
+      {{ params.header.title | markdown("inline") }}
     </h1>
     {% if params.header.description %}
       <div class="govuk-body-l">
-        {{ params.header.description }}
+        {{ params.header.description | markdown("inline") }}
       </div>
     {% endif %}
   </header>
