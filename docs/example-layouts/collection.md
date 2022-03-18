@@ -2,13 +2,20 @@
 layout: collection
 order: 4
 title: Collection
-description: A collection of pages
+description: A collection of pages.
 related:
-  items:
-  - text: Another page
-    href: "#"
-  - text: Yet another page
-    href: "#"
+  sections:
+    - title: Related links
+      items:
+        - text: Example layouts
+          href: /example-layouts
+        - text: Customisation
+          href: /options
+      subsections:
+        - title: Eleventy documentation
+          items:
+          - text: Front matter data
+            href: https://www.11ty.dev/docs/data-frontmatter/
 ---
 The `collection` layout is designed for listing documents.
 
@@ -16,14 +23,24 @@ The `collection` layout is designed for listing documents.
 
 ```yaml
 layout: collection
+order: # Adjust position of page in side navigation
 title: # Appears at the top of the page and in the <title>
 description: # Appears below page title and in page <meta>
-related: # Optional. Related links appear in sidebar
-  title: # Defaults to ‘Related links’
-  - text: # Title of related link
-    href: # URL for related link
-collection: # Name of collection. Defaults is ‘Posts’
-pagination:
-  data: # Collection to show
-  size: # Number of items to show on each page
+collection: # Name of collection. Default is ‘Posts’
+pagination: # Required. See https://www.11ty.dev/docs/pagination/
+  data: # Required. Collection to show
+  size: # Required. Number of items to show on each page
+related: # Related links (appears within sidebar)
+  sections:
+    - title: # Default is ‘Related content’
+      items:
+        - text: # Title of related link
+          href: # URL for related link
+      subsections:
+        - title: # Title for subsection
+          items:
+          - text: # Title of link in subsection
+            href: # URL for link in subsection
 ```
+
+View [the source for this page]({{ viewSource }}) on GitHub
