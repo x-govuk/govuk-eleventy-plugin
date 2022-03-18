@@ -2,15 +2,24 @@
 layout: side-navigation
 order: 1
 title: Get started
+description: GOV.UK Eleventy is a plugin for [Eleventy](https://11ty.dev), a static site generator.
 ---
 
-GOV.UK Eleventy is a plugin for Eleventy, a static site generator. It uses `govuk-frontend` components and provides support for Markdown formatted documents.
+By providing a set of sensible defaults, you can start writing documentation rather than spend time building a website.
 
-* Sets [Nunjucks](https://mozilla.github.io/nunjucks/) as the template language
-* Uses [markdown-it](https://github.com/markdown-it/markdown-it) to and the [markdown-it-govuk](https://github.com/x-govuk/markdown-it-govuk) plugin to ensure text shares the same styles as those used on GOV.UK
-* Provides a collection of [layout templates](/example-layouts)
-* Adds search feature
-* Generates assets
+## Features
+
+This plugin includes the following features:
+
+* a set of [layouts](/example-layouts) that use [`govuk-frontend`](https://github.com/alphagov/govuk-frontend) components and styles
+
+* uses [`markdown-it-govuk`](https://github.com/x-govuk/markdown-it-govuk), to ensure your pages use the same typography and styles as those used on GOV.UK
+
+* support for an [extended Markdown syntax](/markdown-advanced)
+
+* [full configuration](/options) of your website’s header and footer
+
+* site search
 
 ## Requirements
 
@@ -21,13 +30,13 @@ GOV.UK Eleventy is a plugin for Eleventy, a static site generator. It uses `govu
 
 ## Installation
 
-First, install Eleventy and this plugin:
+To install both Eleventy and this plugin, in your terminal type:
 
 ```shell
 npm install @11ty/eleventy govuk-eleventy-plugin --save
 ```
 
-Next, add an `.eleventy.js` file to the root directory of your project. This file is used to configure Eleventy.
+Next, add an `.eleventy.js` file to the root directory of your project. This file is used to [configure Eleventy](https://www.11ty.dev/docs/config/).
 
 ```js
 const govukEleventyPlugin = require('govuk-eleventy-plugin')
@@ -48,15 +57,26 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-To generate a site, use the following command:
+To generate a site, type the following command:
 
 ```shell
 npx eleventy --serve
 ```
 
-Once all the files have been generated, a URL will be shown which you can enter into your browser’s address bar (usually this is <http://localhost:8080>).
+Once all the files have been generated, 2 preview URLs will be shown, either of which you can enter into your browser’s address bar:
 
-Whenever you add a new page, or edit an existing page, the browser will automatically refresh with any of your changes applied.
+```shell
+[11ty] Copied 14 files / Wrote 0 files in 1.11 seconds (v1.0.0)
+[11ty] Watching…
+[Browsersync] Access URLs:
+ ------------------------------------
+    Local: http://localhost:8080
+ External: http://192.168.178.29:8080
+ ------------------------------------
+[Browsersync] Serving files from: public
+```
+
+Whenever you add a new page, or edit an existing one, the browser will automatically refresh with any of your changes applied.
 
 ## Create your first page
 
@@ -76,11 +96,11 @@ This is my first page, built using Eleventy and `govuk-eleventy-plugin`.
 
 Create a file named `index.md` file to the root directory of your project, and add the above content.
 
-Visit <http://localhost:8080> to see your page appearing using GOV.UK-style page.
+Open the preview URL in your browser to see this new page appear using GOV.UK styles.
 
 ## Choose a layout
 
-The plugin provides {{ collections["example-layout"] | length }} different layouts:
+This plugin provides {{ collections["example-layout"] | length }} different layouts, each with different options you can provide in the front matter:
 
 {% for page in collections["example-layout"] %}
 * [{{ page.data.title }}]({{ page.url }}) – {{ page.data.description }}
