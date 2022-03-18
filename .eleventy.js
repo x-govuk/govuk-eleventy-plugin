@@ -14,7 +14,10 @@ module.exports = function (eleventyConfig) {
     header: {
       organisationLogo: 'crown',
       productName: 'Eleventy',
-      searchIndex: '/search.json'
+      search: {
+        indexPath: '/search.json',
+        sitemapPath: '/sitemap'
+      }
     },
     footer: {
       copyright: '© X-GOVUK',

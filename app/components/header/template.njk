@@ -22,9 +22,6 @@
         {% endif %}
       </a>
     </div>
-    {{ appSiteSearch({
-      label: "Search site",
-      searchIndex: params.searchIndex
-    }) if params.searchIndex | indent(4) | trim }}
+    {{ appSiteSearch(params.search) if params.search.indexPath | indent(4) }}
   </div>
 </header>
