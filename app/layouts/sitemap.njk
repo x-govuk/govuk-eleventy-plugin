@@ -1,23 +1,29 @@
 {% extends "app/layouts/page.njk" %}
 
 {% block content %}
-  {% call appArticle({
-    header: {
-      title: title,
-      description: description
-    }
-  }) %}
-    {{ content }}
-    {% for item in collections["search-index"] | eleventyNavigation(config.homeKey) %}
-      <div class="govuk-!-margin-bottom-6">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
-          <a href="{{ item.url | url | pretty }}">{{ item.title }}</a>
-        </h2>
-        {% if item.excerpt %}<p class="govuk-body">{{ item.excerpt }}</p>{% endif %}
-        {{ collections["search-index"] | eleventyNavigation(item.key) | eleventyNavigationToHtml({
-          listClass: "govuk-list govuk-list--bullet"
-        }) | safe }}
-      </div>
-    {% endfor %}
-  {% endcall %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% call appArticle({
+      header: {
+        title: title,
+        description: description
+      }
+    }) %}
+      {{ content }}
+      {% for item in collections["search-index"] | eleventyNavigation(config.homeKey) %}
+        <div class="govuk-!-margin-bottom-4">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+            <a class="govuk-link" href="{{ item.url | url | pretty }}">{{ item.title }}</a>
+          </h2>
+          {% if item.excerpt %}
+            <p class="govuk-body">{{ item.excerpt | markdown("inline") | striptags(true) }}</p>
+          {% endif %}
+          {{ collections["search-index"] | eleventyNavigation(item.key) | eleventyNavigationToHtml({
+            listClass: "app-contents-list"
+          }) | safe }}
+        </div>
+      {% endfor %}
+    {% endcall %}
+  </div>
+</div>
 {% endblock %}
