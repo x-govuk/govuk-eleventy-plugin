@@ -29,6 +29,8 @@
     {% block content %}
       {{ content }}
     {% endblock %}
+
+    {{ xGovukRelatedNavigation(related) if related.sections[0].items | length > 0 }}
     </main>
   </div>
 {% endblock %}
