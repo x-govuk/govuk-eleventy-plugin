@@ -1,6 +1,7 @@
 ---
 homepage: true
 layout: product
+includeInBreadcrumbs: true
 title: Build documentation websites using Markdown and GOV.UK styles
 description: The familiarity of the [GOV.UK Design System](https://design-system.service.gov.uk) combined with the simplicity of the [Eleventy](https://www.11ty.dev) static site generator.
 image:

@@ -1,5 +1,7 @@
 {% extends "app/layouts/base.njk" %}
 
+{% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs }) | itemsFromNavigation(page.url, config) %}
+
 {% block main %}
   {{ xGovukMasthead({
     classes: "x-govuk-masthead--large",
@@ -19,8 +21,8 @@
     } if image,
     breadcrumbs: {
       classes: "govuk-!-display-none-print",
-      items: collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | itemsFromNavigation(page.url, config.pathPrefix)
-    } if eleventyNavigation.parent and eleventyNavigation.parent != config.homeKey
+      items: breadcrumbItems
+    } if breadcrumbItems | length > 1
   }) }}
 
   <div class="govuk-width-container">

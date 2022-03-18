@@ -13,7 +13,7 @@ const collectionData = [{
   }
 }]
 
-test('Converts collection data to GOV.UK frontend component items array', t => {
+test('Converts collection data to items array', t => {
   const result = itemsFromCollection(collectionData)
 
   t.deepEqual(result, [{

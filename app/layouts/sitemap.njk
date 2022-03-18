@@ -1,4 +1,18 @@
-{% extends "app/layouts/page.njk" %}
+{% extends "app/layouts/base.njk" %}
+
+{# Create breadcrumbs manually as sitemap should be excluded from collections data #}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-display-none-print",
+    items: [{
+      href: config.parentSite.url,
+      text: config.parentSite.name
+    }, {
+      href: config.pathPrefix,
+      text: config.homeKey
+    }]
+  }) if config.parentSite }}
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">

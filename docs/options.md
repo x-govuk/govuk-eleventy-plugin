@@ -26,6 +26,9 @@ module.exports = function(eleventyConfig) {
 | Name | Type | Description | Default |
 | :--- | :--- | :---------- | :------ |
 | **homeKey** | string | Label to use for first item in pagination and key to use when referring to the home page for `eleventyNavigation.parent`. | `'Home'`. |
+| **parentSite** | object | Website to show as first item in breadcrumbs. | `false` |
+| **parentSite.url** | string | URL for parent site. | |
+| **parentSite.name** | string | Name of parent site. | |
 | **pathPrefix** | string | If your site lives in a different subdirectory (particularly useful with GitHub pages), use `pathPrefix` to specify this. It's used by the `url` filter and inserted at the beginning of all absolute URLs. Used in conjunction with [Eleventy’s own `pathPrefix` option](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix). | `'/'`
 | **url** | string | The URL where your website will be hosted. Used to provide canonical URLs used in Open Graph meta data. | `false` |
 | **header** | object | See [header](#options-for-header). | |

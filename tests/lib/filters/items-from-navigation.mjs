@@ -30,7 +30,7 @@ const eleventyNavigationBreadcrumb = [{
   }]
 }]
 
-test('Converts navigation data to GOV.UK frontend component items array', t => {
+test('Converts navigation data to items array', t => {
   const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/')
 
   t.deepEqual(result, [{
@@ -52,7 +52,7 @@ test('Converts navigation data to GOV.UK frontend component items array', t => {
   }])
 })
 
-test('Converts navigation data to GOV.UK frontend component items array without page URL', t => {
+test('Converts navigation data to items array without page URL', t => {
   const result = itemsFromNavigation(eleventyNavigationBreadcrumb)
 
   t.deepEqual(result, [{
@@ -68,6 +68,94 @@ test('Converts navigation data to GOV.UK frontend component items array without 
     parent: false,
     children: [{
       href: '/parent/child/',
+      text: 'Child page',
+      current: false
+    }]
+  }])
+})
+
+test('Converts navigation data to items array using path prefix', t => {
+  const config = {
+    pathPrefix: '/prefix/'
+  }
+  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/', config)
+
+  t.deepEqual(result, [{
+    href: '/prefix/',
+    text: 'Home',
+    current: false,
+    parent: true,
+    children: false
+  }, {
+    href: '/prefix/parent/',
+    text: 'Parent page',
+    current: true,
+    parent: true,
+    children: [{
+      href: '/prefix/parent/child/',
+      text: 'Child page',
+      current: false
+    }]
+  }])
+})
+
+test('Converts navigation data to items array adding parent site', t => {
+  const config = {
+    parentSite: {
+      url: 'https://example.org',
+      name: 'Example'
+    }
+  }
+  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/', config)
+
+  t.deepEqual(result, [{
+    href: 'https://example.org',
+    text: 'Example'
+  }, {
+    href: '/',
+    text: 'Home',
+    current: false,
+    parent: true,
+    children: false
+  }, {
+    href: '/parent/',
+    text: 'Parent page',
+    current: true,
+    parent: true,
+    children: [{
+      href: '/parent/child/',
+      text: 'Child page',
+      current: false
+    }]
+  }])
+})
+
+test('Converts navigation data to items array adding parent site and using path prefix', t => {
+  const config = {
+    parentSite: {
+      url: 'https://example.org',
+      name: 'Example'
+    },
+    pathPrefix: '/prefix/'
+  }
+  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/', config)
+
+  t.deepEqual(result, [{
+    href: 'https://example.org',
+    text: 'Example'
+  }, {
+    href: '/prefix/',
+    text: 'Home',
+    current: false,
+    parent: true,
+    children: false
+  }, {
+    href: '/prefix/parent/',
+    text: 'Parent page',
+    current: true,
+    parent: true,
+    children: [{
+      href: '/prefix/parent/child/',
       text: 'Child page',
       current: false
     }]

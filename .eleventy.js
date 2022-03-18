@@ -9,6 +9,10 @@ module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
     homeKey: 'GOV.UK Eleventy',
+    parentSite: {
+      url: 'https://x-govuk.github.io',
+      name: 'X-GOVUK shared projects'
+    },
     pathPrefix,
     url,
     header: {

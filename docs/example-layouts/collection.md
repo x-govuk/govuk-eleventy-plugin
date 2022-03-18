@@ -23,6 +23,7 @@ The `collection` layout is designed for listing documents.
 
 ```yaml
 layout: collection
+includeInBreadcrumbs: # Show link to page in any breadcrumbs. Default is `false`
 order: # Adjust position of page in side navigation
 title: # Appears at the top of the page and in the <title>
 description: # Appears below page title and in page <meta>
