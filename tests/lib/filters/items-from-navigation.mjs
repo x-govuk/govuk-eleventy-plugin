@@ -51,3 +51,25 @@ test('Converts navigation data to GOV.UK frontend component items array', t => {
     }]
   }])
 })
+
+test('Converts navigation data to GOV.UK frontend component items array without page URL', t => {
+  const result = itemsFromNavigation(eleventyNavigationBreadcrumb)
+
+  t.deepEqual(result, [{
+    href: '/',
+    text: 'Home',
+    current: false,
+    parent: false,
+    children: false
+  }, {
+    href: '/parent/',
+    text: 'Parent page',
+    current: false,
+    parent: false,
+    children: [{
+      href: '/parent/child/',
+      text: 'Child page',
+      current: false
+    }]
+  }])
+})
