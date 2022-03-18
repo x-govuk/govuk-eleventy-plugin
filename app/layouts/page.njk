@@ -17,10 +17,5 @@
     {{ content }}
   {% endcall %}
 
-  {{ xGovukRelatedNavigation({
-    sections: [{
-      title: related.title or "Related links",
-      items: related.items
-    }]
-  }) if related.items | length > 0 }}
+  {{ xGovukRelatedNavigation(related) if related.sections[0].items | length > 0 }}
 {% endblock %}
