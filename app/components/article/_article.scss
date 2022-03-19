@@ -67,6 +67,41 @@
     margin-top: govuk-spacing(1);
   }
 
+  // Responsive tables
+  table {
+    display: block;
+    overflow-x: auto;
+    scrollbar-color: $govuk-border-colour govuk-colour("light-grey");
+
+    &::-webkit-scrollbar {
+      height: govuk-spacing(1);
+      width: govuk-spacing(1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $govuk-border-colour;
+    }
+
+    &:focus {
+      box-shadow:
+        0 0 0 #{$govuk-focus-width * 3} govuk-colour("black"),
+        0 0 0 #{$govuk-focus-width * 4} $govuk-focus-colour;
+      outline: #{$govuk-focus-width * 2} solid govuk-colour("white");
+    }
+
+    &:focus:not(:focus-visible) {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &:focus-visible {
+      box-shadow:
+        0 0 0 #{$govuk-focus-width * 3} govuk-colour("black"),
+        0 0 0 #{$govuk-focus-width * 4} $govuk-focus-colour;
+      outline: #{$govuk-focus-width * 2} solid govuk-colour("white");
+    }
+  }
+
   // Reverse the colour of code that uses shell highlighting
   .x-govuk-code__language--shell {
     background-color: govuk-colour("black");
