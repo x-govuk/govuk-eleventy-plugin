@@ -1,5 +1,3 @@
-const fs = require('node:fs')
-
 module.exports = function (eleventyConfig) {
   const url = process.env.GITHUB_ACTIONS
     ? 'https://x-govuk.github.io/govuk-eleventy-plugin/'
@@ -20,7 +18,7 @@ module.exports = function (eleventyConfig) {
     pathPrefix,
     url,
     header: {
-      organisationLogo: fs.readFileSync('./docs/assets/logo.svg', 'utf8'),
+      organisationLogo: 'x-govuk',
       organisationName: 'X-GOVUK',
       productName: 'Eleventy Plugin',
       search: {

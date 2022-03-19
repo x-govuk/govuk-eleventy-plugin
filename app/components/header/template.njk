@@ -8,6 +8,8 @@
             {% include "./_crown.svg" %}
           {% elif params.organisationLogo == "royal-arms" %}
             {% include "./_royal-arms.svg" %}
+          {% elif params.organisationLogo == "x-govuk" %}
+            {% include "./_x-govuk.svg" %}
           {% elif params.organisationLogo %}
             {{ params.organisationLogo | safe }}
           {% endif %}
