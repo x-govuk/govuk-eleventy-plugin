@@ -2,12 +2,10 @@
 layout: side-navigation
 order: 1
 title: Get started
-description: GOV.UK Eleventy is a plugin for [Eleventy](https://11ty.dev), a static site generator.
+description: With the GOV.UK Eleventy Plugin, start writing documentation rather than spend time building a website.
 ---
 
-By providing a set of sensible defaults, you can start writing documentation rather than spend time building a website.
-
-## Features
+You can use this plugin to create and publish documentation and other simple websites for users in government.
 
 This plugin includes the following features:
 
@@ -88,13 +86,14 @@ A front matter starts and ends with `---` and is written using a key/value data 
 
 ```yaml
 ---
+homepage: true
 layout: page
 title: My first page
 ---
 This is my first page, built using Eleventy and `govuk-eleventy-plugin`.
 ```
 
-Create a file named `index.md` file to the root directory of your project, and add the above content.
+Create a file named `index.md` file to the root directory of your project, and add the above content. Only one page in your site should have a `homepage` value set to `true`.
 
 Open the preview URL in your browser to see this new page appear using GOV.UK styles.
 

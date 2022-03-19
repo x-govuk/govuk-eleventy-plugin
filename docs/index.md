@@ -2,29 +2,28 @@
 homepage: true
 layout: product
 includeInBreadcrumbs: true
-title: Build documentation websites using Markdown and GOV.UK styles
-description: The familiarity of the [GOV.UK Design System](https://design-system.service.gov.uk) combined with the simplicity of the [Eleventy](https://www.11ty.dev) static site generator.
+description: Use this plugin for [Eleventy](https://www.11ty.dev) to spend time writing documentation, not building a website for it.
 image:
-  src: /images/homepage-illustration.png
+  src: /assets/homepage-illustration.png
   alt: The Eleventy mascot floating above a laptop.
 startButton:
   href: /get-started
+eleventyComputed:
+  title: "{{ pkg.description }}"
 ---
 <div class="govuk-grid-row">
-  <section class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m">About</h2>
-    {{ "GOV.UK Eleventy is a plugin for 11ty, a static site generator. It uses GOV.UK styles, and provides support for Markdown formatted documents." | markdown }}
+{% for item in collections["homepage"] %}
+  <section class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
+    <h2 class="govuk-heading-m govuk-!-font-size-27">{{ item.data.title }}</h2>
+    <p class="govuk-body">{{ item.data.description | markdown("inline") }}</p>
+    <p class="govuk-body"><a class="govuk-link govuk-!-font-weight-bold" href="{{ item.url | url }}">Learn about {{ item.data.title | lower }}</a></p>
   </section>
-
-  <section class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m">Plugin options</h2>
-    <p class="govuk-body">The plugin provides several options that allow you to customise the appearance of your website.</p>
-    <p class="govuk-body"><a class="govuk-link govuk-!-font-weight-bold" href="{{ '/options' | url }}">See the options</a></p>
-  </section>
-
-  <section class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m">Layouts</h2>
-    <p class="govuk-body">The plugin provides {{ collections["example-layout"] | length }} different layouts.</p>
-    <p class="govuk-body"><a class="govuk-link govuk-!-font-weight-bold" href="{{ '/example-layouts' | url }}">Browse layouts</a></p>
+{% endfor %}
+  <section class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl govuk-!-margin-top-0">
+    <h2 class="govuk-heading-m govuk-!-font-size-27">Contribute</h2>
+    <p class="govuk-body">The project repository is public and we welcome contributions from anyone.</p>
+    <p class="govuk-body"><a class="govuk-link govuk-!-font-weight-bold" href="{{ pkg.repository.url | replace(".git", "") }}">View this project on GitHub</a></p>
   </section>
 </div>
+

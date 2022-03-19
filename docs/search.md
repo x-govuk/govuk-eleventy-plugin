@@ -1,11 +1,11 @@
 ---
 layout: side-navigation
-order: 3
-title: Adding site search
+order: 4
+title: Adding a site search
 description: Make it easier for readers to find content on your site.
 ---
 
-GOV.UK Eleventy makes it easy to add search functionality to your website. Follow these instructions to enable this feature.
+The GOV.UK Eleventy Plugin makes it easy to add search functionality to your website. Follow these instructions to enable this feature.
 
 ## Create a search index
 
@@ -40,7 +40,7 @@ permalink: /sitemap
 
 You can see an [example of a sitemap](/sitemap) on this website.
 
-## Enable the search feature
+## Add a search input to the site header
 
 Add the `permalink` values to the corresponding plugin options for `header.search`. For example:
 

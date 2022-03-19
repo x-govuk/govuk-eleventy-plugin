@@ -1,13 +1,15 @@
 ---
 layout: side-navigation
 order: 2
-title: Customisation
-description: Customise the appearance of your website.
+title: Options
+description: The GOV.UK Eleventy Plugin has a number of options that allow you to customise the appearance of your website.
+tags:
+  - homepage
 ---
 
-GOV.UK Eleventy has a number of options allowing you to customise the appearance of your website.
+You can add options to the second parameter of the `addPlugin` function in Eleventy config file.
 
-You can add these options in the second parameter of the `addPlugin` function in your config file. For example, to add a product name  to the right of the GOV.UK text in the header, you would add the following:
+For example, to add a product name  to the right of the GOV.UK text in the header, you would add the following:
 
 ```js
 const govukEleventyPlugin = require('govuk-eleventy-plugin')
@@ -48,7 +50,7 @@ In addition to the [options available for the header component](https://design-s
 
 ### Options for header.search
 
-Options for site search. See [Adding site search](/search).
+Options for site search. See [adding a site search](/search).
 
 | Name | Type | Description | Default |
 | :--- | :--- | :---------- | :------ |
