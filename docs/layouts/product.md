@@ -1,19 +1,19 @@
 ---
 layout: product
 order: 5
-title: Product
-description: A product page.
+title: Product page
+description: Layout for a product or marketing page.
 startButton: true
 image:
-  src: /images/homepage-illustration.png
+  src: /assets/homepage-illustration.png
   alt: The Eleventy mascot floating above a laptop.
 related:
   sections:
     - title: Related links
       items:
-        - text: Example layouts
-          href: /example-layouts
-        - text: Customisation
+        - text: Layouts
+          href: /layouts
+        - text: Options
           href: /options
       subsections:
         - title: Eleventy documentation

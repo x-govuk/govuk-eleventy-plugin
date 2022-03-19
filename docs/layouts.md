@@ -6,8 +6,10 @@ description: Choose a layout to match the type of content you want write.
 tags:
   - homepage
 ---
-{% for page in collections["example-layout"] %}
+{% for page in collections["layout"] %}
+
 * [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
+
 {% endfor %}
 
 ## Overriding layouts

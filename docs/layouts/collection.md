@@ -2,14 +2,14 @@
 layout: collection
 order: 4
 title: Collection
-description: A collection of pages.
+description: Layout for a collection of pages.
 related:
   sections:
     - title: Related links
       items:
-        - text: Example layouts
-          href: /example-layouts
-        - text: Customisation
+        - text: Layouts
+          href: /layouts
+        - text: Options
           href: /options
       subsections:
         - title: Eleventy documentation

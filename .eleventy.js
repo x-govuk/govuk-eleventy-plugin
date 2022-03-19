@@ -32,7 +32,13 @@ module.exports = function (eleventyConfig) {
     }
   })
 
-  // Pass through
+  // Collections
+  eleventyConfig.addCollection('layout', collection =>
+    collection.getFilteredByTag('layout')
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  )
+
+  // Passthrough
   eleventyConfig.addPassthroughCopy('./docs/assets')
 
   // Config

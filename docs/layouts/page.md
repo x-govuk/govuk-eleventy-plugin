@@ -2,14 +2,14 @@
 layout: page
 order: 1
 title: Page
-description: A simple page.
+description: Layout for a simple page.
 related:
   sections:
     - title: Related links
       items:
-        - text: Example layouts
-          href: /example-layouts
-        - text: Customisation
+        - text: Layouts
+          href: /layouts
+        - text: Options
           href: /options
       subsections:
         - title: Eleventy documentation

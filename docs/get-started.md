@@ -9,7 +9,7 @@ You can use this plugin to create and publish documentation and other simple web
 
 This plugin includes the following features:
 
-* a set of [layouts](/example-layouts) that use [`govuk-frontend`](https://github.com/alphagov/govuk-frontend) components and styles
+* a set of [layouts](/layouts) that use [`govuk-frontend`](https://github.com/alphagov/govuk-frontend) components and styles
 
 * uses [`markdown-it-govuk`](https://github.com/x-govuk/markdown-it-govuk), to ensure your pages use the same typography and styles as those used on GOV.UK
 
@@ -99,8 +99,10 @@ Open the preview URL in your browser to see this new page appear using GOV.UK st
 
 ## Choose a layout
 
-This plugin provides {{ collections["example-layout"] | length }} different layouts, each with different options you can provide in the front matter:
+This plugin provides {{ collections["layout"] | length }} different layouts, each with different options you can provide in the front matter:
 
-{% for page in collections["example-layout"] %}
+{% for page in collections["layout"] %}
+
 * [{{ page.data.title }}]({{ page.url }}) – {{ page.data.description }}
+
 {% endfor %}

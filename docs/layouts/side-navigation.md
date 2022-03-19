@@ -2,14 +2,14 @@
 layout: side-navigation
 order: 2
 title: Page with side navigation
-description: A page with side navigation.
+description: Layout for a page with side navigation.
 related:
   sections:
     - title: Related links
       items:
-        - text: Example layouts
-          href: /example-layouts
-        - text: Customisation
+        - text: Layouts
+          href: /layouts
+        - text: Options
           href: /options
       subsections:
         - title: Eleventy documentation

@@ -2,7 +2,7 @@
 layout: post
 order: 3
 title: Post
-description: A date-based post.
+description: Layout for a date-based post.
 date: 2011-11-11
 image:
   src: /assets/images/govuk-opengraph-image.png
@@ -17,9 +17,9 @@ related:
   sections:
     - title: Related links
       items:
-        - text: Example layouts
-          href: /example-layouts
-        - text: Customisation
+        - text: Layouts
+          href: /layouts
+        - text: Options
           href: /options
       subsections:
         - title: Eleventy documentation
