@@ -20,6 +20,10 @@ module.exports = function (eleventyConfig, options = {}) {
     collection.getAll()
   )
 
+  // Extensions and template formats
+  eleventyConfig.addExtension('scss', require('./lib/extensions/scss.js'))
+  eleventyConfig.addTemplateFormats('scss')
+
   // Filters
   eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
   eleventyConfig.addFilter('itemsFromCollection', require('./lib/filters/items-from-collection.js'))
