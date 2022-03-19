@@ -18,7 +18,9 @@
 
 {% block head %}
   <link rel="stylesheet" href="{{ '/assets/govuk.css' | url }}">
-  {% block styles %}{% endblock %}
+  {% for stylesheet in config.stylesheets %}
+  <link rel="stylesheet" href="{{ stylesheet | url }}">
+  {% endfor %}
 
   <meta property="og:url" content="{{ config.url | url | absoluteUrl(config.url) }}">
   <meta property="og:title" content="{{ title }}">

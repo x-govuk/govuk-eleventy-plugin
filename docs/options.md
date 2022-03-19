@@ -32,6 +32,7 @@ module.exports = function(eleventyConfig) {
 | **parentSite.url** | string | URL for parent site. | |
 | **parentSite.name** | string | Name of parent site. | |
 | **pathPrefix** | string | If your site lives in a different subdirectory (particularly useful with GitHub pages), use `pathPrefix` to specify this. It's used by the `url` filter and inserted at the beginning of all absolute URLs. Used in conjunction with [Eleventy’s own `pathPrefix` option](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix). | `'/'`
+| **stylesheets** | Array | Additional stylesheets to load after application styles. | `[]` |
 | **url** | string | The URL where your website will be hosted. Used to provide canonical URLs used in Open Graph meta data. | `false` |
 | **header** | object | See [header](#options-for-header). | |
 | **footer** | object | See [footer](#options-for-footer). | |
