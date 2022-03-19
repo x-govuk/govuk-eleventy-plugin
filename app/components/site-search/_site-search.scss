@@ -29,7 +29,7 @@ $icon-size: 40px;
     .no-js & {
       display: none;
 
-      @include govuk-media-query($from: tablet) {
+      @include govuk-media-query($from: 900px) {
         display: block;
       }
 
@@ -42,22 +42,18 @@ $icon-size: 40px;
   .app-site-search__wrapper {
     display: block;
     position: relative;
-    height: $icon-size;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='#{encode-hex(govuk-colour("dark-grey"))}'%3E%3C/path%3E%3C/svg%3E") govuk-colour("white") no-repeat top left;
-    background-size: $icon-size $icon-size;
   }
 
   .app-site-search__hint,
   .app-site-search__input {
     box-sizing: border-box;
     width: 100%;
-    height: $icon-size;
+    height: govuk-px-to-rem($icon-size);
     margin-bottom: 0; // BUG: Safari 10 on macOS seems to add an implicit margin.
     padding: govuk-spacing(1);
     padding-left: $icon-size - govuk-spacing(1);
-    border: 2px solid govuk-colour("white");
+    border: $govuk-border-width-form-element solid govuk-colour("white");
     border-radius: 0; // Safari 10 on iOS adds implicit border rounding.
-    background: transparent;
     -webkit-appearance: none;
   }
 
@@ -68,11 +64,21 @@ $icon-size: 40px;
 
   .app-site-search__input {
     position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='#{encode-hex(govuk-colour("dark-grey"))}'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center left -2px;
+    background-size: $icon-size $icon-size;
+
+    &::placeholder {
+      color: govuk-colour("dark-grey");
+    }
   }
 
   .app-site-search__input--focused {
-    outline: 3px solid $govuk-focus-colour;
-    outline-offset: -2px;
+    border-color: $govuk-focus-text-colour;
+    outline: $govuk-focus-width solid $govuk-focus-colour;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 $govuk-border-width-form-element;
   }
 
   .app-site-search__input--show-all-values {
@@ -150,7 +156,9 @@ $icon-size: 40px;
   .app-site-search__option--focused,
   .app-site-search__option:hover {
     border-color: govuk-colour("blue");
-    outline: none;
+    // Add a transparent outline for when users change their colours.
+    outline: 3px solid transparent;
+    outline-offset: -3px;
     color: govuk-colour("white");
     background-color: govuk-colour("blue");
 
@@ -175,17 +183,14 @@ $icon-size: 40px;
     display: none;
 
     .no-js & {
-      @include govuk-media-query($from: tablet) {
+      @include govuk-media-query($from: 900px) {
         display: inline-block;
+        margin-top: 10px;
         color: govuk-colour("white");
 
         &:focus {
           color: govuk-colour("black");
         }
-      }
-
-      @include govuk-media-query($from: 900px) {
-        margin-top: 10px;
       }
     }
   }
