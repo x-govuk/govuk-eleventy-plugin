@@ -7,7 +7,15 @@ module.exports = function (eleventyConfig, options = {}) {
 
   // Collections
   eleventyConfig.addCollection('all', collection =>
-    collection.getAll().sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+    collection.getAll().sort((a, b) => {
+      if (a.data.order && b.data.order) { // Sort by order value, if given
+        return (a.data.order || 0) - (b.data.order || 0)
+      } else { // Sort by title
+        if (a.data.title < b.data.title) return -1
+        else if (a.data.title > b.data.title) return 1
+        else return 0
+      }
+    })
   )
 
   // Extensions and template formats
