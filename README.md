@@ -1,6 +1,13 @@
-# GOV.UK Eleventy • [![test](https://github.com/x-govuk/govuk-eleventy-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/x-govuk/govuk-eleventy-plugin/actions/workflows/test.yml)
+# GOV.UK Eleventy Plugin • [![test](https://github.com/x-govuk/govuk-eleventy-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/x-govuk/govuk-eleventy-plugin/actions/workflows/test.yml)
 
-Build websites using the [GOV.UK Design System](https://design-system.service.gov.uk) and the [Eleventy](https://www.11ty.dev) static site generator.
+Build documentation websites using Markdown and GOV.UK styles.
+
+You’re welcome to use the plugin even if your service isn’t considered part of GOV.UK, but your site or service must not:
+
+* identify itself as being part of GOV.UK
+* use the crown or GOV.UK logotype in the header
+* use the GDS Transport typeface
+* suggest that it’s an official UK government website if it’s not
 
 ## Requirements
 
