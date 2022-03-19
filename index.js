@@ -3,9 +3,7 @@ const { writeFile } = require('node:fs/promises')
 const rollup = require('rollup')
 const commonJs = require('@rollup/plugin-commonjs')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
-const deepmerge = require('deepmerge')
 const sass = require('sass')
-const defaultConfig = require('./lib/config/defaults.js')
 
 module.exports = function (eleventyConfig, options = {}) {
   // Libraries
@@ -34,25 +32,8 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
 
   // Global data
-  eleventyConfig.addGlobalData('config', deepmerge(defaultConfig, options))
-
-  // Sensible defaults for eleventyNavigation
-  eleventyConfig.addGlobalData('eleventyComputed', {
-    eleventyNavigation: {
-      // Key: Use `config.homeKey` if home page, else navigation key or title
-      key: data => (data.homepage)
-        ? data.config.homeKey
-        : data.eleventyNavigation.key || data.title,
-      // Parent: If homepage `false`, else if page not excluded from collections, navigation parent or `config.homeKey`
-      parent: data => (data.homepage)
-        ? false
-        : (!data.eleventyExcludeFromCollections)
-            ? data.eleventyNavigation.parent || data.config.homeKey
-            : false,
-      // Excerpt: Defined navigation excerpt or page description
-      excerpt: data => data.eleventyNavigation.excerpt || data.description
-    }
-  })
+  eleventyConfig.addGlobalData('config', require('./lib/data/config.js')(options))
+  eleventyConfig.addGlobalData('eleventyComputed', require('./lib/data/eleventy-computed.js'))
 
   // Pass through
   eleventyConfig.addPassthroughCopy({
