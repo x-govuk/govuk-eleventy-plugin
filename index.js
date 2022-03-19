@@ -38,6 +38,6 @@ module.exports = function (eleventyConfig, options = {}) {
 
   // Events
   eleventyConfig.on('eleventy.after', async () => {
-    require('./lib/events/generate-govuk-assets.js')(eleventyConfig)
+    require('./lib/events/generate-govuk-assets.js')(eleventyConfig, options)
   })
 }

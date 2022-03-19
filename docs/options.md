@@ -27,7 +27,9 @@ module.exports = function(eleventyConfig) {
 
 | Name | Type | Description | Default |
 | :--- | :--- | :---------- | :------ |
-| **homeKey** | string | Label to use for first item in pagination and key to use when referring to the home page for `eleventyNavigation.parent`. | `'Home'`. |
+| **brandColour** | string | Override the default value for `$govuk-brand-colour`. Must be a hex value (i.e. `#1d70b8`). | `false` |
+| **fontFamily** | string | Override the default value for `$govuk-font-family`. Must be a list of one or more font family names (i.e. `"GDS Transport", arial, sans-serif`). | `false` |
+| **homeKey** | string | Label to use for first item in pagination and key to use when referring to the home page for `eleventyNavigation.parent`. | `'Home'` |
 | **parentSite** | object | Website to show as first item in breadcrumbs. | `false` |
 | **parentSite.url** | string | URL for parent site. | |
 | **parentSite.name** | string | Name of parent site. | |

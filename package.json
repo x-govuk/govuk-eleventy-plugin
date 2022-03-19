@@ -12,10 +12,12 @@
   "bugs": {
     "url": "https://github.com/x-govuk/govuk-eleventy-plugin/issues"
   },
-  "contributors": [{
-    "name": "Paul Robert Lloyd",
-    "url": "https://paulrobertlloyd.com"
-  }],
+  "contributors": [
+    {
+      "name": "Paul Robert Lloyd",
+      "url": "https://paulrobertlloyd.com"
+    }
+  ],
   "license": "MIT",
   "files": [
     "app",
@@ -48,7 +50,7 @@
     "@rollup/plugin-node-resolve": "^13.1.1",
     "deepmerge": "^4.2.2",
     "govuk-frontend": "^4.0.0",
-    "govuk-prototype-components": "^0.1.4",
+    "govuk-prototype-components": "^0.1.5",
     "luxon": "^2.1.1",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^8.4.1",
