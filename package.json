@@ -1,18 +1,21 @@
 {
   "name": "govuk-eleventy-plugin",
   "version": "1.0.5",
-  "description": "Build websites using the GOV.UK design system and the Eleventy static site generator",
+  "description": "Write documentation using Markdown and publish it using GOV.UK styles",
   "keywords": [
     "govuk",
     "government",
     "eleventy",
     "eleventy-plugin"
   ],
-  "homepage": "https://govuk-eleventy.herokuapp.com",
+  "homepage": "https://x-govuk.github.io/govuk-eleventy-plugin/",
   "bugs": {
-    "url": "https://github.com/paulrobertlloyd/govuk-eleventy/issues"
+    "url": "https://github.com/x-govuk/govuk-eleventy-plugin/issues"
   },
-  "author": "Paul Robert Lloyd",
+  "contributors": [{
+    "name": "Paul Robert Lloyd",
+    "url": "https://paulrobertlloyd.com"
+  }],
   "license": "MIT",
   "files": [
     "app",
@@ -22,7 +25,7 @@
   "sass": "app/all.scss",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paulrobertlloyd/govuk-eleventy.git"
+    "url": "https://github.com/x-govuk/govuk-eleventy-plugin.git"
   },
   "scripts": {
     "prebuild": "rimraf public",
