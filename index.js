@@ -13,14 +13,12 @@ module.exports = function (eleventyConfig, options = {}) {
   }))
 
   // Collections
-  eleventyConfig.addCollection('orderedNavigation', collection => {
-    return collection.getAll().sort((a, b) => {
-      return (a.data.order || 0) - (b.data.order || 0)
-    })
-  })
-  eleventyConfig.addCollection('search-index', collection => {
-    return collection.getAll()
-  })
+  eleventyConfig.addCollection('ordered', collection =>
+    collection.getAll().sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  )
+  eleventyConfig.addCollection('search-index', collection =>
+    collection.getAll()
+  )
 
   // Filters
   eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
