@@ -17,6 +17,13 @@ module.exports = function (eleventyConfig, options = {}) {
       }
     })
   )
+  eleventyConfig.addCollection('sitemap', collection =>
+    collection.getAllSorted().filter((item) => {
+      // Only return content that was originally a Markdown file
+      const extension = item.inputPath.split('.').pop()
+      return extension === 'md'
+    })
+  )
 
   // Extensions and template formats
   eleventyConfig.addExtension('scss', require('./lib/extensions/scss.js'))

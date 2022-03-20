@@ -24,7 +24,7 @@
       }
     }) %}
       {{ content }}
-      {% for item in collections.all | eleventyNavigation(config.homeKey) %}
+      {% for item in collections.sitemap | eleventyNavigation(config.homeKey) %}
         <div class="govuk-!-margin-bottom-4">
           <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
             <a class="govuk-link" href="{{ item.url | url | pretty }}">{{ item.title }}</a>
@@ -32,7 +32,7 @@
           {% if item.excerpt %}
             <p class="govuk-body">{{ item.excerpt | markdown("inline") | striptags(true) }}</p>
           {% endif %}
-          {{ collections.all | eleventyNavigation(item.key) | eleventyNavigationToHtml({
+          {{ collections.sitemap | eleventyNavigation(item.key) | eleventyNavigationToHtml({
             listClass: "app-contents-list govuk-!-margin-left-4"
           }) | safe }}
         </div>

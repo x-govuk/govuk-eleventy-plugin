@@ -1,4 +1,4 @@
-[{% for item in collections.all %}
+[{% for item in collections.sitemap %}
   {
     "title": {{ item.data.title | dump | safe }},
     {% if item.data.description %}"description": {{ item.data.description | dump | safe }},{% endif %}
