@@ -1,6 +1,7 @@
 {% extends "govuk/template.njk" %}
 
 {% set htmlClasses = "no-js" %}
+{% set themeColor = config.themeColour %}
 
 {# Pagination #}
 {% set pageNumber = pagination.pageNumber + 1 %}
@@ -22,6 +23,12 @@
 {% from "app/components/footer/macro.njk" import appFooter %}
 {% from "app/components/header/macro.njk" import appHeader %}
 {% from "app/components/pagination/macro.njk" import appPagination %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ config.icons.shortcut | url }}" type="image/x-icon">
+  <link rel="mask-icon" href="{{ config.icons.mask | url }}" color="{{ themeColor }}">
+  <link rel="apple-touch-icon" href="{{ config.icons.touch | url }}">
+{% endblock %}
 
 {% block head %}
   <link rel="stylesheet" href="{{ '/assets/govuk.css' | url }}">

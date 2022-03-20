@@ -10,6 +10,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require('./index.js'), {
     brandColour: '#28a',
     fontFamily: 'system-ui, sans-serif',
+    icons: {
+      mask: '/assets/images/x-govuk-mask-icon.svg',
+      shortcut: '/assets/images/x-govuk-favicon.ico',
+      touch: '/assets/images/x-govuk-apple-touch-icon.png'
+    },
     homeKey: 'GOV.UK Eleventy Plugin',
     parentSite: {
       url: 'https://x-govuk.github.io',
