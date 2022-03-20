@@ -28,7 +28,16 @@ module.exports = function (eleventyConfig) {
     },
     footer: {
       copyright: '© X-GOVUK',
-      licence: 'Licensed under the [MIT Licence](https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt), except where otherwise stated'
+      licence: 'Licensed under the [MIT Licence](https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt), except where otherwise stated',
+      meta: {
+        items: [{
+          href: 'https://www.11ty.dev',
+          text: 'Documentation for Eleventy (opens in a new tab)',
+          attributes: {
+            target: '_blank'
+          }
+        }]
+      }
     }
   })
 
