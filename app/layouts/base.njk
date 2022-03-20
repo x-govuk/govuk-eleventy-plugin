@@ -1,9 +1,16 @@
 {% extends "govuk/template.njk" %}
 
 {% set htmlClasses = "no-js" %}
+
+{# Pagination #}
 {% set pageNumber = pagination.pageNumber + 1 %}
 {% set pageCount = pagination.pages | length %}
 
+{# Navigation #}
+{% set breadcrumbItems = collections.sitemap | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs }) | itemsFromNavigation(page.url, config) if eleventyNavigation.key %}
+{% set showBreadcrumbs = breadcrumbItems | length > 1 %}
+
+{# Components #}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% from "x-govuk/components/masthead/macro.njk" import xGovukMasthead %}
