@@ -43,10 +43,12 @@
     width: 100%;
 
     // Show outline around linked images within figures
-    > .govuk-link img {
+    img {
       display: block;
       outline: 1px solid rgba($govuk-border-colour, .5);
+    }
 
+    > .govuk-link img {
       &:hover {
         outline-color: $govuk-link-hover-colour;
       }
