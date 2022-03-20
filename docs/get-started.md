@@ -103,6 +103,6 @@ This plugin provides {{ collections["layout"] | length }} different layouts, eac
 
 {% for page in collections["layout"] %}
 
-* [{{ page.data.title }}]({{ page.url }}) – {{ page.data.description }}
+* [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
 
 {% endfor %}
