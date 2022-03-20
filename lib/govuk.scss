@@ -10,5 +10,5 @@ $govuk-new-link-styles: true;
 // GOV.UK fenced code highlighting
 @import "markdown-it-govuk/x-govuk/all";
 
-// Components
-@import "app/components/all";
+// Plugin components
+@import "components/all";

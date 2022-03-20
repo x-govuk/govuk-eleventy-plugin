@@ -20,11 +20,12 @@
   ],
   "license": "MIT",
   "files": [
-    "app",
+    "components",
+    "layouts",
     "lib"
   ],
   "main": "index.js",
-  "sass": "app/all.scss",
+  "sass": "lib/govuk.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/x-govuk/govuk-eleventy-plugin.git"

@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {
-      layouts: 'node_modules/govuk-eleventy-plugin/app/layouts'
+      layouts: 'node_modules/govuk-eleventy-plugin/layouts'
     }
   }
 };
@@ -38,8 +38,8 @@ If you want to use your own layouts, remove this value and set a value for [`dir
 You can use layouts provided by this plugin as a basis for your own. For example, to show a notification banner at the top of a page, extend the `page` layout:
 
 ```njk
-{% raw %}{# Plugin layouts can be loaded from "app/layouts" #}
-{% extends "app/layouts/page.njk" %}
+{% raw %}{# Plugin layouts can be loaded from "layouts" #}
+{% extends "layouts/page.njk" %}
 
 {# Load any GOV.UK Frontend components #}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}

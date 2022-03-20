@@ -67,7 +67,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'docs',
       output: 'public',
-      layouts: '../app/layouts'
+      layouts: '../layouts'
     },
     pathPrefix
   }
