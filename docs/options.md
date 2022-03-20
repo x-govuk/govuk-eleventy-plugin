@@ -29,13 +29,17 @@ module.exports = function(eleventyConfig) {
 | :--- | :--- | :---------- | :------ |
 | **brandColour** | string | Override the default value for `$govuk-brand-colour`. Must be a hex value (i.e. `#1d70b8`). | `false` |
 | **fontFamily** | string | Override the default value for `$govuk-font-family`. Must be a list of one or more font family names (i.e. `"GDS Transport", arial, sans-serif`). | `false` |
+| **icons.mask** | string | Override the default GOV.UK SVG mask icon. | `false` |
+| **icons.shortcut** | string | Override the default GOV.UK favicon. | `false` |
+| **icons.touch** | string | Override the default GOV.UK touch icon. | `false` |
+| **themeColour** | string | Browser theme colour. Must be a hex value (i.e. `#1d70b8`). | `#0b0c0c` |
 | **homeKey** | string | Label to use for first item in pagination and key to use when referring to the home page for `eleventyNavigation.parent`. | `'Home'` |
 | **parentSite** | object | Website to show as first item in breadcrumbs. | `false` |
 | **parentSite.url** | string | URL for parent site. | |
 | **parentSite.name** | string | Name of parent site. | |
 | **pathPrefix** | string | If your site lives in a different subdirectory (particularly useful with GitHub pages), use `pathPrefix` to specify this. It's used by the `url` filter and inserted at the beginning of all absolute URLs. Used in conjunction with [Eleventy’s own `pathPrefix` option](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix). | `'/'`
 | **stylesheets** | Array | Additional stylesheets to load after application styles. | `[]` |
-| **url** | string | The URL where your website will be hosted. Used to provide canonical URLs used in Open Graph meta data. | `false` |
+| **url** | string | The URL of your website. Optional, but required for valid canonical URLs in Open Graph meta data. | `false` |
 | **header** | object | See [header](#options-for-header). | |
 | **footer** | object | See [footer](#options-for-footer). | |
 
