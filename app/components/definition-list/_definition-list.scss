@@ -6,6 +6,10 @@
     margin-bottom: govuk-spacing(1);
   }
 
+  dd + dt {
+    margin-top: govuk-spacing(4);
+  }
+
   dd {
     margin-left: govuk-spacing(5);
   }
