@@ -1,9 +1,7 @@
 module.exports = function (eleventyConfig, options = {}) {
   // Libraries
   eleventyConfig.setLibrary('md', require('./lib/markdown-it.js'))
-  eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')({
-    views: options.views
-  }))
+  eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')(eleventyConfig))
 
   // Collections
   eleventyConfig.addCollection('all', collection =>
