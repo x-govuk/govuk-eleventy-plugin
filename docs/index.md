@@ -26,4 +26,3 @@ eleventyComputed:
     <p class="govuk-body"><a class="govuk-link govuk-!-font-weight-bold" href="{{ pkg.repository.url | replace(".git", "") }}">View this project on GitHub</a></p>
   </section>
 </div>
-

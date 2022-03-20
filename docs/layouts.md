@@ -2,7 +2,7 @@
 layout: side-navigation
 order: 3
 title: Layouts
-description: Choose a layout to match the type of content you want write.
+description: The plugin offers a number of layouts to match the type of content you want write.
 tags:
   - homepage
 ---

@@ -2,7 +2,7 @@
 layout: side-navigation
 order: 2
 title: Options
-description: The GOV.UK Eleventy Plugin has a number of options that allow you to customise the appearance of your website.
+description: The plugin has a number of options that allow you to customise the appearance of your website.
 tags:
   - homepage
 ---

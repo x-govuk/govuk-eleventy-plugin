@@ -2,7 +2,7 @@
 layout: side-navigation
 order: 5
 title: Markdown
-description: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
+description: A lightweight markup language that allows you to add formatting to plaintext text documents.
 related:
   items:
   - text: Markdown Guide
