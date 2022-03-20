@@ -1,12 +1,10 @@
 {% extends "app/layouts/base.njk" %}
 
-{% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs }) | itemsFromNavigation(page.url, config) %}
-
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     classes: "govuk-!-display-none-print",
     items: breadcrumbItems
-  }) if breadcrumbItems | length > 1 }}
+  }) if showBreadcrumbs }}
 {% endblock %}
 
 {% block content %}
