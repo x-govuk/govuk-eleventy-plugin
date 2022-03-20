@@ -62,9 +62,9 @@ The basic Markdown syntax allows you to create [code blocks](/markdown#code-bloc
 ~~~markdown
 ```
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+  "firstName": "William",
+  "lastName": "Pitt",
+  "age": 24
 }
 ```
 ~~~
@@ -73,9 +73,9 @@ The rendered output looks like this:
 
 ```text
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+  "firstName": "William",
+  "lastName": "Pitt",
+  "age": 24
 }
 ```
 
@@ -86,9 +86,9 @@ This feature allows you to add color highlighting for whatever language your cod
 ~~~markdown
 ```json
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+  "firstName": "William",
+  "lastName": "Pitt",
+  "age": 24
 }
 ```
 ~~~
@@ -97,9 +97,9 @@ The rendered output looks like this:
 
 ```json
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+  "firstName": "William",
+  "lastName": "Pitt",
+  "age": 24
 }
 ```
 
@@ -113,7 +113,7 @@ To create a footnote reference, add a caret and an identifier inside brackets (`
 
 Identifiers can be numbers or words, but they can't contain spaces or tabs. Identifiers only correlate the footnote reference with the footnote itself — in the output, footnotes are numbered sequentially.
 
-Add the footnote using another caret and number inside brackets with a colon and text (`[^1]: My footnote.`). 
+Add the footnote using another caret and number inside brackets with a colon and text (`[^1]: My footnote.`).
 
 You don't have to put footnotes at the end of the document. You can put them anywhere except inside other elements like lists, block quotes, and tables.
 
@@ -147,7 +147,7 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 ## Abbreviations and acronyms
 
-> The [first time you use an abbreviation or acronym explain it in full](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#abbreviations-and-acronyms) on each page unless it’s well known, like UK, DVLA, US, EU, VAT and MP. This includes government departments or schemes. Then refer to it by initials, and use the Markdown syntax below so the full explanation is available as hover text.
+> The [first time you use an abbreviation or acronym explain it in full](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#abbreviations-and-acronyms) on each page unless it's well known, like UK, DVLA, US, EU, VAT and MP. This includes government departments or schemes. Then refer to it by initials, and use the syntax below so the full explanation is available as hover text.
 
 To create an abbreviation, add an asterisk followed by brackets around the abbreviation and a colon, followed by the explanation (`*[UC]: Universal Credit`).
 
