@@ -18,9 +18,9 @@
   // Accept slightly larger icons with a height of 35px
   .app-header__logotype--large {
     // Visually adjust placement
-    margin: -3px 0 -7px;
+    margin: -3px 0 -8px;
 
-    .govuk-header__link--homepage:hover & {
+    .govuk-header__link--homepage:not(:focus):hover & {
       // Prevent underline interfering with larger logo, whose height means
       // it falls below the baseline
       background-color: govuk-colour("black");
