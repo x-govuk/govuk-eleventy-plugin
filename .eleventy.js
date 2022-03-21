@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
     },
     homeKey: 'GOV.UK Eleventy Plugin',
     parentSite: {
-      url: 'https://x-govuk.github.io',
+      url: 'https://x-govuk.github.io/#shared-projects',
       name: 'X-GOVUK shared projects'
     },
     pathPrefix,
