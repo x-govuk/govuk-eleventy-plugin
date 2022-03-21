@@ -27,7 +27,7 @@
 
   // Use GOV.UK yellow colour for highlighted text
   mark {
-    background-color: govuk-tint($govuk-focus-colour, 50);
+    background-color: govuk-tint($govuk-focus-colour, 50%);
   }
 
   img {

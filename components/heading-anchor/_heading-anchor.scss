@@ -19,9 +19,9 @@
   }
 
   :target & {
-    background-color: govuk-tint($govuk-focus-colour, 75);
+    background-color: govuk-tint($govuk-focus-colour, 75%);
     display: block;
-    outline: govuk-spacing(3) solid govuk-tint($govuk-focus-colour, 75);
+    outline: govuk-spacing(3) solid govuk-tint($govuk-focus-colour, 75%);
   }
 }
 
