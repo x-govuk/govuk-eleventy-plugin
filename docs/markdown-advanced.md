@@ -4,9 +4,10 @@ order: 6
 title: Advanced Markdown
 description: Additional Markdown syntax is supported to ensure pages can contain additional elements like tables, code blocks and footnotes.
 related:
-  items:
-  - text: Markdown Guide
-    href: https://www.markdownguide.org
+  sections:
+    - items:
+      - text: Markdown Guide
+        href: https://www.markdownguide.org
 ---
 [[toc]]
 

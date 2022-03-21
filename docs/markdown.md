@@ -4,9 +4,10 @@ order: 5
 title: Markdown
 description: A lightweight markup language that allows you to add formatting to plaintext text documents.
 related:
-  items:
-  - text: Markdown Guide
-    href: https://www.markdownguide.org
+  sections:
+    - items:
+      - text: Markdown Guide
+        href: https://www.markdownguide.org
 tags:
   - homepage
 ---
