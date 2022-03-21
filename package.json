@@ -40,9 +40,6 @@
     "test:watch": "ava --watch",
     "coverage": "c8 ava"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
@@ -78,6 +75,9 @@
   },
   "engines": {
     "node": "^16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "c8": {
     "reporter": [
