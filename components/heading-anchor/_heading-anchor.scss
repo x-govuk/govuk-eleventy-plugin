@@ -1,0 +1,30 @@
+.app-heading-anchor {
+  @include govuk-link-common;
+  @include govuk-link-style-text;
+  @include govuk-link-style-no-underline;
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover:after {
+    color: govuk-colour("dark-grey");
+    content: "#";
+    font-variant: all-small-caps;
+    font-weight: normal;
+    margin-left: govuk-spacing(1);
+    opacity: .5;
+    position: absolute;
+  }
+
+  :target & {
+    background-color: govuk-tint($govuk-focus-colour, 75);
+    display: block;
+    outline: govuk-spacing(3) solid govuk-tint($govuk-focus-colour, 75);
+  }
+}
+
+[class^="govuk-heading"][tabindex] {
+  outline: none;
+}
