@@ -11,13 +11,15 @@ This plugin includes the following features:
 
 * a set of [layouts](/layouts) that use [`govuk-frontend`](https://github.com/alphagov/govuk-frontend) components and styles
 
-* uses [`markdown-it-govuk`](https://github.com/x-govuk/markdown-it-govuk), to ensure your pages use the same typography and styles as those used on GOV.UK
+* includes [`markdown-it-govuk`](https://github.com/x-govuk/markdown-it-govuk) to ensure pages uses the same typography and styles as those used on GOV.UK
 
 * support for an [extended Markdown syntax](/markdown-advanced)
 
 * [full configuration](/options) of your website’s header and footer
 
 * site search
+
+* SCSS compilation (for any files with the `.scss` extension)
 
 ## Requirements
 
@@ -93,7 +95,17 @@ title: My first page
 This is my first page, built using Eleventy and `govuk-eleventy-plugin`.
 ```
 
-Create a file named `index.md` file to the root directory of your project, and add the above content. Only one page in your site should have a `homepage` value set to `true`.
+Create a file named `index.md` file to the root directory of your project, and add the above content.
+
+The first page in your site should also have a `homepage` value set to `true`[^1]. This is used to work out the structure of your site if it has [nested pages](https://www.11ty.dev/docs/plugins/navigation/).
+
+[^1]: Using `homepage: true` is equivalent to writing the following:
+
+      ```yaml
+      eleventyComputed:
+        eleventyNavigation:
+          key: "{% raw %}{{ config.homeKey }}{% endraw %}"
+      ```
 
 Open the preview URL in your browser to see this new page appear using GOV.UK styles.
 
