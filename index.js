@@ -4,7 +4,7 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')(eleventyConfig))
 
   // Collections
-  eleventyConfig.addCollection('all', collection =>
+  eleventyConfig.addCollection('ordered', collection =>
     collection.getAll().sort((a, b) => {
       if (a.data.order && b.data.order) { // Sort by order value, if given
         return (a.data.order || 0) - (b.data.order || 0)
