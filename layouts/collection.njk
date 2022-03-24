@@ -20,9 +20,11 @@
     {% block content %}
       <div class="govuk-grid-row">
         <section class="govuk-grid-column-two-thirds">
-          {% call appArticle() %}
-            {{ content }}
-          {% endcall %}
+          {% if content %}
+            {% call appArticle() %}
+              {{ content }}
+            {% endcall %}
+          {% endif %}
           <h2 class="govuk-heading-l govuk-!-font-size-27">
             {{ collection or "Posts" }}
           </h2>
