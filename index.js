@@ -4,24 +4,8 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')(eleventyConfig))
 
   // Collections
-  eleventyConfig.addCollection('ordered', collection =>
-    collection.getAll().sort((a, b) => {
-      if (a.data.order && b.data.order) { // Sort by order value, if given
-        return (a.data.order || 0) - (b.data.order || 0)
-      } else { // Sort by title
-        if (a.data.title < b.data.title) return -1
-        else if (a.data.title > b.data.title) return 1
-        else return 0
-      }
-    })
-  )
-  eleventyConfig.addCollection('sitemap', collection =>
-    collection.getAllSorted().filter((item) => {
-      // Only return content that was originally a Markdown file
-      const extension = item.inputPath.split('.').pop()
-      return extension === 'md'
-    })
-  )
+  eleventyConfig.addCollection('ordered', require('./lib/collections/ordered.js'))
+  eleventyConfig.addCollection('sitemap', require('./lib/collections/sitemap.js'))
 
   // Extensions and template formats
   eleventyConfig.addExtension('scss', require('./lib/extensions/scss.js'))
