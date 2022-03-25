@@ -35,14 +35,18 @@ The `post` layout is designed for date-based content, such as blog posts or news
 ```yaml
 layout: post
 includeInBreadcrumbs: # Show link to page in any breadcrumbs. Default is `false`
-order: # Adjust position of page in side navigation
+order: # Number. Adjust position of page in side navigation
 title: # Appears at the top of the page and in the <title>
 description: # Appears below page title and in page <meta>
-date: # See https://www.11ty.dev/docs/dates/
+date: # Date. See https://www.11ty.dev/docs/dates/
 image:
-  src: # Image shown above the post and in Open Graph image
+  src: # Image shown above post content
   alt: # Alternative text for image
   caption: # Caption for image
+  ogImage: # Boolean. Whether to use image as share image as well
+ogImage: # Open Graph image. Overrides image (if image.ogImage is true)
+  src: # Image shown when sharing post
+  alt: # Alternative text for share image
 author: # Author name
 authors: # Author names (supersedes `author` value)
   - name: # Author name
