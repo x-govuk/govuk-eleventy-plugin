@@ -1,5 +1,6 @@
 {% extends "govuk/template.njk" %}
 
+{% set assetUrl = assetPath | absoluteUrl(config.url) %}
 {% set htmlClasses = "no-js" %}
 {% set themeColor = config.themeColour %}
 
