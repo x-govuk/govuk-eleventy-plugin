@@ -40,8 +40,9 @@
   <meta property="og:url" content="{{ config.url | url | absoluteUrl(config.url) }}">
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
-  {% if image.src %}<meta property="og:image" content="{{ image.src | url | absoluteUrl(config.url) }}">{% endif %}
-  {% if image.alt %}<meta property="og:image:alt" content="{{ image.alt }}">{% endif %}
+  {% set ogImage = image if image.ogImage else igImage %}
+  {% if ogImage.src %}<meta property="og:image" content="{{ ogImage.src | url | absoluteUrl(config.url) }}">{% endif %}
+  {% if ogImage.alt %}<meta property="og:image:alt" content="{{ ogImage.alt }}">{% endif %}
 {% endblock %}
 
 {% block pageTitle %}

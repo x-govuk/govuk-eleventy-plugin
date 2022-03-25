@@ -37,6 +37,10 @@ startButton: # Optional
 image:
   src: # Image source path for hero image.
   alt: # Textual alternative for hero image.
+  ogImage: # Boolean. Whether to use image as share image as well
+ogImage: # Open Graph image. Overrides image (if image.ogImage is true)
+  src: # Image shown when sharing post
+  alt: # Alternative text for share image
 related: # Related links (appears below content)
   sections:
     - title: # Default is ‘Related content’
