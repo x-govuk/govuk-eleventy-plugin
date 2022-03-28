@@ -5,12 +5,12 @@ a[aria-describedby="footnotes-label"] {
 }
 
 a[aria-describedby="footnotes-label"]:before {
-  color: currentColor;
+  color: currentcolor;
   content: "[";
 }
 
 a[aria-describedby="footnotes-label"]:after {
-  color: currentColor;
+  color: currentcolor;
   content: "]";
 }
 
@@ -28,7 +28,7 @@ a[aria-describedby="footnotes-label"]:after {
 
   li:before {
     @include govuk-font(19, $tabular: true);
-    content: counter(footnotes) '.';
+    content: counter(footnotes) ".";
     position: absolute;
     left: govuk-spacing(4);
   }
