@@ -2,7 +2,7 @@
 layout: post
 order: 3
 title: Post
-description: Layout for a date-based post.
+description: Layout for date-based content, such as blog posts or news items.
 date: 2011-11-11
 image:
   src: /assets/images/govuk-opengraph-image.png
@@ -27,43 +27,60 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
+Use front matter options to customise the appearance, content and behaviour of this layout.
 
-The `post` layout is designed for date-based content, such as blog posts or news items, with the optional to link to related content.
-
-## Front matter properties
+For example, this page has the following options:
 
 ```yaml
 layout: post
-includeInBreadcrumbs: # Show link to page in any breadcrumbs. Default is `false`
-order: # Number. Adjust position of page in side navigation
-title: # Appears at the top of the page and in the <title>
-description: # Appears below page title and in page <meta>
-date: # Date. See https://www.11ty.dev/docs/dates/
+order: 3
+title: Post
+description: Layout for date-based content, such as blog posts or news items.
+date: 2011-11-11
 image:
-  src: # Image shown above post content
-  alt: # Alternative text for image
-  caption: # Caption for image
-  ogImage: # Boolean. Whether to use image as share image as well
-ogImage: # Open Graph image. Overrides image (if image.ogImage is true)
-  src: # Image shown when sharing post
-  alt: # Alternative text for share image
-author: # Author name
-authors: # Author names (supersedes `author` value)
-  - name: # Author name
-    url: # Author url
-  - name: # Author name
-    url: # Author url
-related: # Related links (appears within sidebar)
+  src: /assets/images/govuk-opengraph-image.png
+  alt: A crown icon above the words GOV.UK.
+  caption: The GOV.UK logo
+authors:
+  - name: William Ewart Gladstone
+    url: https://www.gov.uk/government/history/past-prime-ministers/william-ewart-gladstone
+  - name: Benjamin Disraeli
+    url: https://www.gov.uk/government/history/past-prime-ministers/benjamin-disraeli-the-earl-of-beaconsfield
+related:
   sections:
-    - title: # Default is ‘Related content’
+    - title: Related links
       items:
-        - text: # Title of related link
-          href: # URL for related link
+        - text: Layouts
+          href: ../../layouts
+        - text: Options
+          href: ../../options
       subsections:
-        - title: # Title for subsection
+        - title: Eleventy documentation
           items:
-          - text: # Title of link in subsection
-            href: # URL for link in subsection
+          - text: Front matter data
+            href: https://www.11ty.dev/docs/data-frontmatter/
 ```
 
-View [the source for this page]({{ viewSource }}) on GitHub
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set detailsText %}{% include "../includes/front-matter-options.md" %}{% endset %}
+{{ govukDetails({
+  summaryText: "Common front matter options",
+  html: detailsText
+}) }}
+
+In addition to the common front matter options, this layout also accepts the following options:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| **author** | string&nbsp;or&nbsp;object | Post author. |
+| **author.name** | string | Name of post author. Overrides any single value given for author. |
+| **author.url** | string | URL for website of post author. |
+| **authors** | array | Post authors. Overrides any value(s) given for author. |
+| **authors.name** | string | Name of post author. |
+| **authors.url** | string | URL for website of post author. |
+| **date** | string | Date post was published. Use [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601), for example `{{ "now" | date("yyyy-MM-dd") }}`. |
+| **image** | object | Image shown above post content. |
+| **image.src** | string | Path to post image. |
+| **image.alt** | string | Alternative text for post image. |
+| **image.caption** | string | Caption shown below post image. |
+| **image.ogImage** | boolean | Whether image should also be used as the page’s Open Graph share image. |

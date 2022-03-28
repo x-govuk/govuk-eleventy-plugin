@@ -2,7 +2,7 @@
 layout: page
 order: 1
 title: Page
-description: Layout for a simple page.
+description: Simple layout designed for maximum flexibility of content.
 related:
   sections:
     - title: Related links
@@ -17,30 +17,33 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
-The `page` layout is the simplest of layouts available. It is designed to allow maximum flexibility of the layout and type of page content.
+Use front matter options to customise the appearance, content and behaviour of this layout.
 
-## Front matter properties
+For example, this page has the following options:
 
 ```yaml
 layout: page
-includeInBreadcrumbs: # Show link to page in any breadcrumbs. Default is `false`
-order: # Adjust position of page in side navigation
-title: # Appears at the top of the page and in the <title>
-description: # Appears below page title and in page <meta>
-ogImage: # Open Graph image
-  src: # Image shown when sharing post
-  alt: # Alternative text for share image
-related: # Related links (appears below content)
+order: 1
+title: Page
+description: Simple layout designed for maximum flexibility of content.
+related:
   sections:
-    - title: # Default is ‘Related content’
+    - title: Related links
       items:
-        - text: # Title of related link
-          href: # URL for related link
+        - text: Layouts
+          href: ../../layouts
+        - text: Options
+          href: ../../options
       subsections:
-        - title: # Title for subsection
+        - title: Eleventy documentation
           items:
-          - text: # Title of link in subsection
-            href: # URL for link in subsection
+          - text: Front matter data
+            href: https://www.11ty.dev/docs/data-frontmatter/
 ```
 
-View [the source for this page]({{ viewSource }}) on GitHub
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set detailsText %}{% include "../includes/front-matter-options.md" %}{% endset %}
+{{ govukDetails({
+  summaryText: "Common front matter options",
+  html: detailsText
+}) }}

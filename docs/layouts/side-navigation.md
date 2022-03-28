@@ -2,7 +2,7 @@
 layout: side-navigation
 order: 2
 title: Page with side navigation
-description: Layout for a page with side navigation.
+description: Layout with side navigation.
 related:
   sections:
     - title: Related links
@@ -17,30 +17,35 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
-The `side-navigation` layout is with navigation on the left side of the page.
+The `side-navigation` layout offers a page with navigation to the left of its content.
 
-## Front matter properties
+Use front matter options to customise the appearance, content and behaviour of this layout.
+
+For example, this page has the following options:
 
 ```yaml
-layout: page
-includeInBreadcrumbs: # Show link to page in any breadcrumbs. Default is `false`
-order: # Adjust position of page in side navigation
-title: # Appears at the top of the page and in the <title>
-description: # Appears below page title and in page <meta>
-ogImage: # Open Graph image
-  src: # Image shown when sharing post
-  alt: # Alternative text for share image
-related: # Related links (appears below content)
+layout: side-navigation
+order: 2
+title: Page with side navigation
+description: Layout with side navigation.
+related:
   sections:
-    - title: # Default is ‘Related content’
+    - title: Related links
       items:
-        - text: # Title of related link
-          href: # URL for related link
+        - text: Layouts
+          href: ../../layouts
+        - text: Options
+          href: ../../options
       subsections:
-        - title: # Title for subsection
+        - title: Eleventy documentation
           items:
-          - text: # Title of link in subsection
-            href: # URL for link in subsection
+          - text: Front matter data
+            href: https://www.11ty.dev/docs/data-frontmatter/
 ```
 
-View [the source for this page]({{ viewSource }}) on GitHub
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set detailsText %}{% include "../includes/front-matter-options.md" %}{% endset %}
+{{ govukDetails({
+  summaryText: "Common front matter options",
+  html: detailsText
+}) }}
