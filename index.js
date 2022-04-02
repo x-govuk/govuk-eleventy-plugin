@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
 
   // Global data
-  eleventyConfig.addGlobalData('config', require('./lib/data/config.js')(options))
+  eleventyConfig.addGlobalData('options', require('./lib/data/options.js')(options))
   eleventyConfig.addGlobalData('eleventyComputed', require('./lib/data/eleventy-computed.js'))
 
   // Passthrough

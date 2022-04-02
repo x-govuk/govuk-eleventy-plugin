@@ -1,15 +1,15 @@
 {% extends "govuk/template.njk" %}
 
-{% set assetUrl = assetPath | absoluteUrl(config.url) %}
+{% set assetUrl = assetPath | absoluteUrl(options.url) %}
 {% set htmlClasses = "no-js" %}
-{% set themeColor = config.themeColour %}
+{% set themeColor = options.themeColour %}
 
 {# Pagination #}
 {% set pageNumber = pagination.pageNumber + 1 %}
 {% set pageCount = pagination.pages | length %}
 
 {# Navigation #}
-{% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs }) | itemsFromNavigation(page.url, config) if eleventyNavigation.key %}
+{% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs }) | itemsFromNavigation(page.url, options) if eleventyNavigation.key %}
 {% set showBreadcrumbs = breadcrumbItems | length > 1 %}
 
 {# Components #}
@@ -26,38 +26,38 @@
 {% from "components/pagination/macro.njk" import appPagination %}
 
 {% block headIcons %}
-  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ config.icons.shortcut | url }}" type="image/x-icon">
-  <link rel="mask-icon" href="{{ config.icons.mask | url }}" color="{{ themeColor }}">
-  <link rel="apple-touch-icon" href="{{ config.icons.touch | url }}">
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ options.icons.shortcut | url }}" type="image/x-icon">
+  <link rel="mask-icon" href="{{ options.icons.mask | url }}" color="{{ themeColor }}">
+  <link rel="apple-touch-icon" href="{{ options.icons.touch | url }}">
 {% endblock %}
 
 {% block head %}
   <link rel="stylesheet" href="{{ '/assets/govuk.css' | url }}">
-  {% for stylesheet in config.stylesheets %}
+  {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | url }}">
   {% endfor %}
 
-  <meta property="og:url" content="{{ config.url | url | absoluteUrl(config.url) }}">
+  <meta property="og:url" content="{{ options.url | url | absoluteUrl(options.url) }}">
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
   {% set ogImage = image if image.ogImage else igImage %}
-  {% if ogImage.src %}<meta property="og:image" content="{{ ogImage.src | url | absoluteUrl(config.url) }}">{% endif %}
+  {% if ogImage.src %}<meta property="og:image" content="{{ ogImage.src | url | absoluteUrl(options.url) }}">{% endif %}
   {% if ogImage.alt %}<meta property="og:image:alt" content="{{ ogImage.alt }}">{% endif %}
 {% endblock %}
 
 {% block pageTitle %}
   {{- title if title -}}
   {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
-  {{- " - " + config.header.productName if config.header.productName -}}
-  {{- " - " + config.header.organisationName -}}
+  {{- " - " + options.header.productName if options.header.productName -}}
+  {{- " - " + options.header.organisationName -}}
 {% endblock %}
 
 {% block header %}
-  {{ appHeader(config.header) }}
+  {{ appHeader(options.header) }}
 {% endblock %}
 
 {% block footer %}
-  {{ appFooter(config.footer) }}
+  {{ appFooter(options.footer) }}
 {% endblock %}
 
 {% block bodyEnd %}

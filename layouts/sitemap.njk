@@ -5,13 +5,13 @@
   {{ govukBreadcrumbs({
     classes: "govuk-!-display-none-print",
     items: [{
-      href: config.parentSite.url,
-      text: config.parentSite.name
+      href: options.parentSite.url,
+      text: options.parentSite.name
     }, {
-      href: config.pathPrefix,
-      text: config.homeKey
+      href: options.pathPrefix,
+      text: options.homeKey
     }]
-  }) if config.parentSite }}
+  }) if options.parentSite }}
 {% endblock %}
 
 {% block content %}
@@ -24,7 +24,7 @@
       }
     }) %}
       {{ content }}
-      {% for item in collections.sitemap | eleventyNavigation(config.homeKey) %}
+      {% for item in collections.sitemap | eleventyNavigation(options.homeKey) %}
         <div class="govuk-!-margin-bottom-4">
           <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
             <a class="govuk-link" href="{{ item.url | url | pretty }}">{{ item.title }}</a>
