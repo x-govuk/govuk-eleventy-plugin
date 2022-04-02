@@ -32,6 +32,7 @@ module.exports = function (eleventyConfig) {
         sitemapPath: '/sitemap'
       }
     },
+    headingPermalinks: true,
     footer: {
       copyright: '© X-GOVUK',
       licence: 'Licensed under the [MIT Licence](https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt), except where otherwise stated',
