@@ -6,11 +6,12 @@ description: A lightweight markup language that allows you to add formatting to 
 related:
   sections:
     - items:
-      - text: Markdown Guide
-        href: https://www.markdownguide.org
+        - text: Markdown Guide
+          href: https://www.markdownguide.org
 tags:
   - homepage
 ---
+
 [[toc]]
 
 ## Headings
@@ -19,29 +20,29 @@ To create a heading, add number signs (`#`) in front of a word or phrase.
 
 The number of number signs you use should correspond to the heading level. For example, to create a heading level 3 (`<h3>`), use 3 number signs (e.g., `### My Header`).
 
-| Markdown | Rendered output |
-| - | - |
-| `# Heading level 1` | <h1 class="govuk-heading-l">Heading level 1</h1> |
-| `## Heading level 2` | <h2 class="govuk-heading-m">Heading level 2</h2> |
-| `### Heading level 3` | <h3 class="govuk-heading-s">Heading level 3</h3> |
-| `#### Heading level 4` | <h4 class="govuk-heading-s">Heading level 4</h4> |
-| `##### Heading level 5` | <h5 class="govuk-heading-s">Heading level 5</h5> |
+| Markdown                 | Rendered output                                  |
+| ------------------------ | ------------------------------------------------ |
+| `# Heading level 1`      | <h1 class="govuk-heading-l">Heading level 1</h1> |
+| `## Heading level 2`     | <h2 class="govuk-heading-m">Heading level 2</h2> |
+| `### Heading level 3`    | <h3 class="govuk-heading-s">Heading level 3</h3> |
+| `#### Heading level 4`   | <h4 class="govuk-heading-s">Heading level 4</h4> |
+| `##### Heading level 5`  | <h5 class="govuk-heading-s">Heading level 5</h5> |
 | `###### Heading level 6` | <h6 class="govuk-heading-s">Heading level 6</h6> |
 
 ## Paragraphs
 
 To create paragraphs, use a blank line to separate one or more lines of text.
 
-| Markdown | Rendered output |
-| - | - |
+| Markdown                                                                                                                                          | Rendered output                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | <pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre> | <p class="govuk-body">This is the first paragraph.</p><p class="govuk-body">And this is the second one.</p> |
 
 ## Line breaks
 
 To create a line break or new line (`<br>`), end a line with 2 or more spaces, and then type return.
 
-| Markdown | Rendered output |
-| - | - |
+| Markdown                                                                                                                                 | Rendered output                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | <pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0">This is the first line.<br>And this is the second one.</pre> | <p class="govuk-body">This is the first line.<br>And this is the second one.</p> |
 
 ## Emphasis
@@ -50,8 +51,8 @@ To emphasise text, add one asterisk or underscore before and after a word or phr
 
 > The [GDS Style Guide recommends against the use of italics](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#italics), and the GDS Transport font doesn’t provide an italic style. Use ‘single quotation marks’ if referring to a document, scheme or initiative.
 
-| Markdown | Rendered output |
-| - | - |
+| Markdown                     | Rendered output                                             |
+| ---------------------------- | ----------------------------------------------------------- |
 | `This text is *emphasised*.` | <p class="govuk-body">This text is <em>emphasised</em>.</p> |
 | `This text is _emphasised_.` | <p class="govuk-body">This text is <em>emphasised</em>.</p> |
 
@@ -61,8 +62,8 @@ To bold text, add 2 asterisks or underscores before and after a word or phrase.
 
 > The [GDS Style Guide recommends only using emboldened text when referring to text from interfaces](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold) in technical documentation or instructions.
 
-| Markdown | Rendered output |
-| - | - |
+| Markdown                                | Rendered output                                                              |
+| --------------------------------------- | ---------------------------------------------------------------------------- |
 | `This text is **strongly emphasised**.` | <p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p> |
 | `This text is __strongly emphasised__.` | <p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p> |
 
@@ -101,14 +102,14 @@ Blockquotes can be nested. Add a `>>` in front of the paragraph you want to nest
 ```markdown
 > Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
 >
->> Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
+> > Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 ```
 
 The rendered output looks like this:
 
 > Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
 >
->> Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
+> > Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 
 ### Blockquotes with other elements
 
@@ -137,8 +138,8 @@ To create an ordered list, add line items with numbers followed by periods. The 
 ```markdown
 1. First item
 2. Second item
-    1. Indented item
-    1. Indented item
+   1. Indented item
+   1. Indented item
 3. Third item
 ```
 
@@ -155,15 +156,15 @@ To create an unordered list, add dashes (`-`), asterisks (`*`), or plus signs (`
 ```markdown
 - First item
 - Second item
-  * Indented item
-  * Indented item
+  - Indented item
+  - Indented item
 - Third item
 ```
 
 - First item
 - Second item
-  * Indented item
-  * Indented item
+  - Indented item
+  - Indented item
 - Third item
 
 #### Nesting different list types
@@ -173,15 +174,15 @@ You can also nest an unordered list in an ordered list, or vice versa.
 ```markdown
 1. First item
 2. Second item
-   * Indented item
-   * Indented item
+   - Indented item
+   - Indented item
 3. Third item
 ```
 
 1. First item
 2. Second item
-   * Indented item
-   * Indented item
+   - Indented item
+   - Indented item
 3. Third item
 
 #### Starting unordered list items with numbers
@@ -225,16 +226,15 @@ To use syntax highlighting, used [fenced code blocks](/markdown-advanced/#fenced
 To create a horizontal rule, use 3 or more asterisks (`***`), dashes (`---`), or underscores (`___`) on a line by themselves.
 
 ```markdown
-___
-
+---
 ---
 
-***
+---
 ```
 
 The rendered output of all 3 looks identical:
 
-***
+---
 
 ## Links
 
@@ -302,20 +302,20 @@ The rendered output looks like this:
 
 ## Typographic replacements
 
-| Description | Text | Rendered output |
-| - | - | - |
-| En dash | `--` | -- |
-| Em dash | `---` | --- |
-| Ellipsis | `...` | ... |
-| Single quotes | `'single'` | 'single' |
-| Double quotes | `"double"` | "double" |
-| Simple fractions | `1/2 1/3 2/3 1/4 3/4` | 1/2 1/3 2/3 1/4 3/4 |
-| Multiplication | `2 x 3` | 2 x 3 |
-| Greater than | `2 => 1` | 2 => 1 |
-| Less than | `1 <= 2` | 1 <= 2 |
-| Plus-minus | `2.4 +-1` | 2.4 +-1 |
-| Guillemets | `<<Bonjour!>>` | <<Bonjour!>> |
-| Copyright | `(C)` `(c)` | (C) |
-| Registered trademark | `(R)` `(r)` | (R) |
-| Trademark | `(TM)` `(tm)` | (TM) |
-| Section | `(P)` `(p)` | (P) |
+| Description          | Text                  | Rendered output     |
+| -------------------- | --------------------- | ------------------- |
+| En dash              | `--`                  | --                  |
+| Em dash              | `---`                 | ---                 |
+| Ellipsis             | `...`                 | ...                 |
+| Single quotes        | `'single'`            | 'single'            |
+| Double quotes        | `"double"`            | "double"            |
+| Simple fractions     | `1/2 1/3 2/3 1/4 3/4` | 1/2 1/3 2/3 1/4 3/4 |
+| Multiplication       | `2 x 3`               | 2 x 3               |
+| Greater than         | `2 => 1`              | 2 => 1              |
+| Less than            | `1 <= 2`              | 1 <= 2              |
+| Plus-minus           | `2.4 +-1`             | 2.4 +-1             |
+| Guillemets           | `<<Bonjour!>>`        | <<Bonjour!>>        |
+| Copyright            | `(C)` `(c)`           | (C)                 |
+| Registered trademark | `(R)` `(r)`           | (R)                 |
+| Trademark            | `(TM)` `(tm)`         | (TM)                |
+| Section              | `(P)` `(p)`           | (P)                 |
