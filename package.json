@@ -34,6 +34,7 @@
     "prebuild": "rimraf public",
     "build": "eleventy --quiet",
     "predev": "rimraf public",
+    "dev": "eleventy --serve --watch",
     "start": "eleventy --serve --quiet",
     "lint": "standard && stylelint '**/*.scss'",
     "test": "ava",
