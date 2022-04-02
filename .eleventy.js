@@ -60,6 +60,10 @@ module.exports = function (eleventyConfig) {
   // Passthrough
   eleventyConfig.addPassthroughCopy('./docs/assets')
 
+  // Watch
+  eleventyConfig.addWatchTarget('./components/')
+  eleventyConfig.addWatchTarget('./lib/')
+
   // Config
   return {
     dataTemplateEngine: 'njk',
