@@ -16,12 +16,6 @@
     margin-left: govuk-spacing(1);
     opacity: .5;
   }
-
-  :target & {
-    background-color: govuk-tint($govuk-focus-colour, 75%);
-    display: block;
-    outline: govuk-spacing(3) solid govuk-tint($govuk-focus-colour, 75%);
-  }
 }
 
 [class^="govuk-heading"][tabindex] {
