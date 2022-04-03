@@ -219,7 +219,7 @@ To create code blocks, indent every line of the block by at least 4 spaces or on
 
     console.log('Hello, world!')
 
-To use syntax highlighting, used [fenced code blocks](/markdown-advanced/#fenced-code).
+To use syntax highlighting, used [fenced code blocks](markdown-advanced/#fenced-code).
 
 ## Horizontal rules
 
@@ -264,17 +264,17 @@ The rendered output looks like this:
 
 ### Formatting links
 
-To [emphasize](#emphasis) links, add asterisks before and after the brackets and parentheses. To denote links as [code](#code), add backticks in the brackets.
+To [emphasize](markdown#emphasis) links, add asterisks before and after the brackets and parentheses. To denote links as [code](markdown#code), add backticks in the brackets.
 
 ```markdown
 Visit the **[Markdown Guide](https://www.markdownguide.org)**.  
-See the section on [`code`](#code).
+See the section on [`code`](markdown#code).
 ```
 
 The rendered output looks like this:
 
 Visit the **[Markdown Guide](https://www.markdownguide.org)**.  
-See the section on [`code`](#code).
+See the section on [`code`](markdown#code).
 
 ## Images
 

@@ -38,7 +38,7 @@ permalink: /sitemap
 ---
 ```
 
-You can see an [example of a sitemap](/sitemap) on this website.
+You can see an [example of a sitemap](sitemap) on this website.
 
 ## Add a search input to the site header
 

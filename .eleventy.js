@@ -3,7 +3,7 @@ module.exports = function (eleventyConfig) {
     ? 'https://x-govuk.github.io/govuk-eleventy-plugin/'
     : '/'
   const pathPrefix = process.env.GITHUB_ACTIONS
-    ? '/govuk-eleventy-plugin'
+    ? '/govuk-eleventy-plugin/'
     : '/'
 
   // Plugins
