@@ -2,8 +2,10 @@
 layout: product
 order: 5
 title: Product page
-description: Layout for a product or marketing page.
-startButton: true
+description: Layout for a product or marketing page based on the [Product Page Example](https://github.com/alphagov/product-page-example).
+startButton:
+  href: "#"
+  text: Start button
 image:
   src: /assets/homepage-illustration.png
   alt: The Eleventy mascot floating above a laptop.
@@ -21,37 +23,52 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
-The `product` layout is designed for home and product pages, based on [Product Page Example](https://github.com/alphagov/product-page-example).
+Use front matter options to customise the appearance, content and behaviour of this layout.
 
-## Front matter properties
+For example, this page has the following options:
 
 ```yaml
 layout: product
-includeInBreadcrumbs: # Show link to page in any breadcrumbs. Default is `false`
-order: # Adjust position of page in side navigation
-title: # Appears at the top of the page and in the <title>
-description: # Appears below page title and in page <meta>
-startButton: # Optional
-  text: # Label for start button
-  href: # Link for start button
+order: 5
+title: Product page
+description: Layout for a product or marketing page based on the [Product Page Example](https://github.com/alphagov/product-page-example).
+startButton:
+  href: "#"
+  text: Start button
 image:
-  src: # Image source path for hero image.
-  alt: # Textual alternative for hero image.
-  ogImage: # Boolean. Whether to use image as share image as well
-ogImage: # Open Graph image. Overrides image (if image.ogImage is true)
-  src: # Image shown when sharing post
-  alt: # Alternative text for share image
-related: # Related links (appears below content)
+  src: /assets/homepage-illustration.png
+  alt: Eleventy’s possum mascot hanging on a red balloon and floating above a laptop.
+related:
   sections:
-    - title: # Default is ‘Related content’
+    - title: Related links
       items:
-        - text: # Title of related link
-          href: # URL for related link
+        - text: Layouts
+          href: ../../layouts
+        - text: Options
+          href: ../../options
       subsections:
-        - title: # Title for subsection
+        - title: Eleventy documentation
           items:
-          - text: # Title of link in subsection
-            href: # URL for link in subsection
+          - text: Front matter data
+            href: https://www.11ty.dev/docs/data-frontmatter/
 ```
 
-View [the source for this page]({{ viewSource }}) on GitHub
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set detailsText %}{% include "../includes/front-matter-options.md" %}{% endset %}
+{{ govukDetails({
+  summaryText: "Common front matter options",
+  html: detailsText
+}) }}
+
+### Additional front matter options
+
+In addition to the common front matter options, this layout also has the following options:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| **startButton** | string | Start button. Appears below the title and any description. |
+| **startButton.text** | string | Text for the start button. Default is `'Get started'`. |
+| **startButton.href** | string | The URL that the start button should link to. |
+| **image** | object | Product image. Appears to the right of the page title, and is hidden on mobile. |
+| **image.src** | string | Path to product image. |
+| **image.alt** | string | Alternative text for product image. |
