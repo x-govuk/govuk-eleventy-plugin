@@ -42,8 +42,8 @@ module.exports = function(eleventyConfig) {
 | **pathPrefix** | string | If your site lives in a different subdirectory (particularly useful with GitHub pages), use `pathPrefix` to specify this. It's used by the `url` filter and inserted at the beginning of all absolute URLs. Used in conjunction with [Eleventy’s own `pathPrefix` option](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix). | `'/'`
 | **stylesheets** | Array | Additional stylesheets to load after application styles. | `[]` |
 | **url** | string | The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data. | `false` |
-| **header** | object | See [header](options#options-for-header). | |
-| **footer** | object | See [footer](options#options-for-footer). | |
+| **header** | object | See [header](#options-for-header). | |
+| **footer** | object | See [footer](#options-for-footer). | |
 
 ### Options for header
 
@@ -55,11 +55,11 @@ In addition to the [options available for the header component](https://design-s
 | **organisationLogo** | string | Logo that appears before the organisation name. If set to `crown` the GOV.UK logo is shown. If set to `royal-arms`, the Royal Coat of Arms is shown. | `'crown'` |
 | **organisationName** | string | Organisation name. | `'GOV.UK'` |
 | **productName** | string | Product name that appears after the organisation name. Default is `false`. | `false` |
-| **search** | object | See [header.search](options#options-for-header.search). | `false` |
+| **search** | object | See [header.search](#options-for-header.search). | `false` |
 
 ### Options for header.search
 
-Options for site search. See [adding a site search](search).
+Options for site search. See [adding a site search](../search).
 
 | Name | Type | Description | Default |
 | :--- | :--- | :---------- | :------ |

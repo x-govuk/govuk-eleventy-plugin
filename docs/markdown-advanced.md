@@ -58,7 +58,7 @@ The rendered output looks like this:
 
 ## Fenced code
 
-The basic Markdown syntax allows you to create [code blocks](markdown#code-blocks) by indenting lines by 4 spaces or one tab. If you find that inconvenient, try using fenced code blocks. You can use 3 backticks (` ``` `) or 3 tildes (`~~~`) on the lines before and after the code block.
+The basic Markdown syntax allows you to create [code blocks](../markdown#code-blocks) by indenting lines by 4 spaces or one tab. If you find that inconvenient, try using fenced code blocks. You can use 3 backticks (` ``` `) or 3 tildes (`~~~`) on the lines before and after the code block.
 
 ~~~markdown
 ```
@@ -230,7 +230,7 @@ I need to highlight these ==very important words==.
 
 ## Inserted text
 
-To indicate inserted text, use 2 plus signs (`++`) before and after the words. You can use this alongside the syntax for [strike-though](markdown-advanced#strike-through).
+To indicate inserted text, use 2 plus signs (`++`) before and after the words. You can use this alongside the syntax for [strike-though](../markdown-advanced#strike-through).
 
 ```text
 I need to ~~remove~~ ++insert++ a word.

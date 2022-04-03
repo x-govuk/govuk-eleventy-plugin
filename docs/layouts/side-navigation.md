@@ -8,9 +8,9 @@ related:
     - title: Related links
       items:
         - text: Layouts
-          href: /layouts
+          href: ../../layouts
         - text: Options
-          href: /options
+          href: ../../options
       subsections:
         - title: Eleventy documentation
           items:
