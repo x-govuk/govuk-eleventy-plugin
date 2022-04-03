@@ -32,10 +32,10 @@
   },
   "scripts": {
     "prebuild": "rimraf public",
-    "build": "eleventy --quiet",
+    "build": "eleventy",
     "predev": "rimraf public",
     "dev": "eleventy --serve --watch",
-    "start": "eleventy --serve --quiet",
+    "start": "eleventy --serve",
     "lint": "standard && stylelint '**/*.scss'",
     "test": "ava",
     "test:watch": "ava --watch",
