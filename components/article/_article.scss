@@ -30,6 +30,22 @@
     background-color: govuk-tint($govuk-focus-colour, 50%);
   }
 
+  // Ensure sub- and superscript doesn’t disrupt vertical rhythm
+  sub,
+  sup {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sup {
+    top: -.4em;
+  }
+
+  sub {
+    bottom: -.4em;
+  }
+
   img {
     height: auto;
     max-width: 100%;
