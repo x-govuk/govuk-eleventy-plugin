@@ -42,6 +42,7 @@
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
   {% set ogImage = image if image.ogImage else igImage %}
+  {% if ogImage %}<meta name="twitter:card" content="summary_large_image">{% endif %}
   {% if ogImage.src %}<meta property="og:image" content="{{ ogImage.src | url | absoluteUrl(options.url) }}">{% endif %}
   {% if ogImage.alt %}<meta property="og:image:alt" content="{{ ogImage.alt }}">{% endif %}
 {% endblock %}
