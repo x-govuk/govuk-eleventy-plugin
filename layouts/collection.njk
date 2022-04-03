@@ -25,10 +25,13 @@
               {{ content }}
             {% endcall %}
           {% endif %}
-          <h2 class="govuk-heading-l govuk-!-font-size-27">
-            {{ collection or "Posts" }}
-          </h2>
+          {% if paginationHeading %}
+            <h2 class="govuk-heading-l govuk-!-font-size-27">
+              {{ paginationHeading }}
+            </h2>
+          {% endif %}
           {{ appDocumentList({
+            headingLevel: 3 if paginationHeading else 2,
             classes: "app-document-list--large",
             items: pagination.items
           }) }}

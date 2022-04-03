@@ -3,10 +3,10 @@ layout: collection
 order: 4
 title: Collection
 description: Layout for a paginated list of pages.
+paginationHeading: Example collection
 pagination:
   data: example
   size: 10
-collection: Example collection
 example:
   - url: "#"
     data:
@@ -41,10 +41,10 @@ layout: collection
 order: 4
 title: Collection
 description: Layout for a paginated list of pages.
+paginationHeading: Example collection
 pagination:
   data: example
   size: 10
-collection: Example collection
 example:
   - url: "#"
     data:
@@ -82,5 +82,5 @@ In addition to the common front matter options, this layout also accepts the fol
 
 | Name | Type | Description |
 | :--- | :--- | :---------- |
-| **collection** | string | Title that appears above the list of documents. Default is `'Posts'`. |
-| **pagination** | object | Pages to show in the paginated list. Learn more about [pagination](https://www.11ty.dev/docs/pagination/) in the documentation for Eleventy. |
+| **paginationHeading** | string | Heading for the list of paginated pages. |
+| **pagination** | object | **Required.** Pages to show in the paginated list. Learn more about [pagination](https://www.11ty.dev/docs/pagination/) in the documentation for Eleventy. |
