@@ -34,7 +34,7 @@
 {% block head %}
   <link rel="stylesheet" href="{{ '/assets/govuk.css' | url | absoluteUrl(options.url) }}">
   {% for stylesheet in options.stylesheets %}
-  <link rel="stylesheet" href="{{ stylesheet | url }}">
+  <link rel="stylesheet" href="{{ stylesheet | url | absoluteUrl(options.url) }}">
   {% endfor %}
 
   <meta property="og:url" content="{{ options.url | url | absoluteUrl(options.url) }}">
