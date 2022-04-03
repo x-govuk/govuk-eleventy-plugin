@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
       shortcut: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-favicon.ico',
       touch: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png'
     },
-    ogImage: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-opengraph-image.png',
+    ogImage: '/assets/opengraph-image.png',
     homeKey: 'GOV.UK Eleventy Plugin',
     parentSite: {
       url: 'https://x-govuk.github.io/#shared-projects',
