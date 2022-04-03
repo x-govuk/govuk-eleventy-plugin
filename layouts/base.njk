@@ -32,7 +32,6 @@
 {% endblock %}
 
 {% block head %}
-  <base href="{{ options.pathPrefix }}">
   <link rel="stylesheet" href="{{ '/assets/govuk.css' | url | absoluteUrl(options.url) }}">
   {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | url }}">
