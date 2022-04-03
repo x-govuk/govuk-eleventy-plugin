@@ -1,4 +1,6 @@
-module.exports = function (eleventyConfig, options = {}) {
+module.exports = function (eleventyConfig, pluginOptions = {}) {
+  const options = require('./lib/data/options.js')(pluginOptions)
+
   // Libraries
   eleventyConfig.setLibrary('md', require('./lib/markdown-it.js')(options))
   eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')(eleventyConfig))
@@ -21,7 +23,7 @@ module.exports = function (eleventyConfig, options = {}) {
   eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
 
   // Global data
-  eleventyConfig.addGlobalData('options', require('./lib/data/options.js')(options))
+  eleventyConfig.addGlobalData('options', options)
   eleventyConfig.addGlobalData('eleventyComputed', require('./lib/data/eleventy-computed.js'))
 
   // Passthrough
