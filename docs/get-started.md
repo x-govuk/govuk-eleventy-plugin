@@ -33,7 +33,7 @@ This plugin includes the following features:
 To install both Eleventy and this plugin, in your terminal type:
 
 ```shell
-npm install @11ty/eleventy govuk-eleventy-plugin@beta --save
+npm install @11ty/eleventy govuk-eleventy-plugin --save
 ```
 
 Next, add an `.eleventy.js` file to the root directory of your project. This file is used to [configure Eleventy](https://www.11ty.dev/docs/config/).
