@@ -86,7 +86,7 @@
   }
 
   // Responsive tables
-  table {
+  .govuk-table {
     display: block;
     overflow-x: auto;
     scrollbar-color: $govuk-border-colour govuk-colour("light-grey");
@@ -118,6 +118,12 @@
         0 0 0 #{$govuk-focus-width * 4} $govuk-focus-colour;
       outline: #{$govuk-focus-width * 2} solid govuk-colour("white");
     }
+  }
+
+  // Allow space for focus ring around code blocks
+  .govuk-table__cell,
+  .govuk-table__header {
+    padding-left: #{$govuk-focus-width * 2};
   }
 
   // Reverse the colour of code that uses shell highlighting
