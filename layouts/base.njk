@@ -63,10 +63,6 @@
 
 {% block bodyEnd %}
   <script src="{{ '/assets/govuk.js' | url }}"></script>
-  <script>
-    document.documentElement.classList.remove('no-js')
-    const searchContainer = document.querySelector('[data-module="app-search"]')
-    new GOVUK11ty.SiteSearch(searchContainer).init()
-  </script>
+  <script>document.documentElement.classList.remove('no-js')</script>
   {% block scripts %}{% endblock %}
 {% endblock %}
