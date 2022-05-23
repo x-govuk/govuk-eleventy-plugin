@@ -3,6 +3,10 @@ layout: side-navigation
 order: 2
 title: Page with side navigation
 description: Layout with side navigation.
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links
@@ -28,6 +32,10 @@ layout: side-navigation
 order: 2
 title: Page with side navigation
 description: Layout with side navigation.
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links

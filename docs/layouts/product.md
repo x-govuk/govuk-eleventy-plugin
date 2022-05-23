@@ -9,6 +9,10 @@ startButton:
 image:
   src: /assets/homepage-illustration.png
   alt: The Eleventy mascot floating above a laptop.
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links
@@ -38,6 +42,10 @@ startButton:
 image:
   src: /assets/homepage-illustration.png
   alt: Eleventy’s possum mascot hanging on a red balloon and floating above a laptop.
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links

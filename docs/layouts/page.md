@@ -3,6 +3,10 @@ layout: page
 order: 1
 title: Page
 description: Simple layout designed for maximum flexibility of content.
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links
@@ -26,6 +30,10 @@ layout: page
 order: 1
 title: Page
 description: Simple layout designed for maximum flexibility of content.
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links

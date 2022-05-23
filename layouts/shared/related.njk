@@ -1,3 +1,5 @@
+{{ appAside(aside) if aside }}
+
 {#- Related items may contain many sections or none -#}
 {%- set sections = related.sections or [related] -%}
 {{ xGovukRelatedNavigation({

@@ -10,6 +10,9 @@ Use these options to customise the appearance, content and behaviour of any layo
 | **ogImage** | object | Open Graph image that appears on social media networks. |
 | **ogImage.src** | string | Path to Open Graph image. Can be a relative or absolute URL. |
 | **ogImage.alt** | string | Alternative text for Open Graph image. |
+| **aside** | object | Small portion of content that is indirectly related to the main content. |
+| **aside.title** | string | Title for aside. |
+| **aside.content** | string | Content for aside. Accepts Markdown. |
 | **related** | object | Related links. See [related](#options-for-related). |
 
 ### Options for related

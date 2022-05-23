@@ -13,6 +13,10 @@ authors:
     url: https://www.gov.uk/government/history/past-prime-ministers/william-ewart-gladstone
   - name: Benjamin Disraeli
     url: https://www.gov.uk/government/history/past-prime-ministers/benjamin-disraeli-the-earl-of-beaconsfield
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links
@@ -46,6 +50,10 @@ authors:
     url: https://www.gov.uk/government/history/past-prime-ministers/william-ewart-gladstone
   - name: Benjamin Disraeli
     url: https://www.gov.uk/government/history/past-prime-ministers/benjamin-disraeli-the-earl-of-beaconsfield
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links
