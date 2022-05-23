@@ -14,14 +14,21 @@ Use these options to customise the appearance, content and behaviour of any layo
 
 ### Options for related
 
+With one section:
+
 | Name | Type | Description |
 | :--- | :--- | :---------- |
-| **sections** | array | |
-| **sections.title** | string | Title for group of related links. Default is `'Related content'`. |
-| **sections.items** | array | See [items](#options-for-items). |
-| **sections.subsections** | array | Title for sub-group of related links. |
-| **sections.subsections.title** | string | |
-| **sections.subsections.items** | array | See [items](#options-for-items). |
+| **title** | string | Title for group of related links. Default is `'Related content'`. |
+| **items** | array | See [items](#options-for-items). |
+| **subsections** | array | Title for sub-group of related links. |
+| **subsections.title** | string | |
+| **subsections.items** | array | See [items](#options-for-items). |
+
+With multiple sections:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| **sections** | array | See [items](#options-for-related). |
 
 ### Options for items
 

@@ -26,9 +26,13 @@
       {% endcall %}
     </div>
 
-    {% if related.sections[0].items | length > 0 %}
+    {#- Related items may contain many sections or none -#}
+    {%- set sections = related.sections or [related] -%}
+    {% if related.sections or related.items | length > 0 %}
     <div class="govuk-grid-column-one-third">
-      {{ xGovukRelatedNavigation(related) }}
+      {{ xGovukRelatedNavigation({
+        sections: sections
+      }) }}
     </div>
     {% endif %}
   </div>
