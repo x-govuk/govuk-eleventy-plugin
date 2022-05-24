@@ -17,5 +17,5 @@
     {{ content }}
   {% endcall %}
 
-  {{ xGovukRelatedNavigation(related) if related.sections[0].items | length > 0 }}
+  {% include "shared/related.njk" %}
 {% endblock %}

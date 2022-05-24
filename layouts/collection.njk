@@ -49,9 +49,8 @@
           }) }}
         </section>
 
-        {% if related.sections[0].items | length > 0 %}
         <div class="govuk-grid-column-one-third">
-          {{ xGovukRelatedNavigation(related) }}
+          {% include "shared/related.njk" %}
         </div>
         {% endif %}
       </div>
