@@ -26,17 +26,13 @@
   <div class="govuk-width-container">
     {% block beforeContent %}{% endblock %}
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
-    {% block content %}
-      {% call appArticle() %}
-        {{ content }}
-      {% endcall %}
-    {% endblock %}
+      {% block content %}
+        {% call appArticle() %}
+          {{ content }}
+        {% endcall %}
+      {% endblock %}
 
-    {#- Related items may contain many sections or none -#}
-    {%- set sections = related.sections or [related] -%}
-    {{ xGovukRelatedNavigation({
-      sections: sections
-    }) if related.sections or related.items | length > 0 }}
+      {% include "shared/related.njk" %}
     </main>
   </div>
 {% endblock %}

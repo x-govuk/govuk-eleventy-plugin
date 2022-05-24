@@ -24,11 +24,7 @@
         {{ content }}
       {% endcall %}
 
-      {#- Related items may contain many sections or none -#}
-      {%- set sections = related.sections or [related] -%}
-      {{ xGovukRelatedNavigation({
-        sections: sections
-      }) if related.sections or related.items | length > 0 }}
+      {% include "shared/related.njk" %}
     </div>
   </div>
 {% endblock %}

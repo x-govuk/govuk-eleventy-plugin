@@ -26,13 +26,8 @@
       {% endcall %}
     </div>
 
-    {#- Related items may contain many sections or none -#}
-    {%- set sections = related.sections or [related] -%}
-    {% if related.sections or related.items | length > 0 %}
     <div class="govuk-grid-column-one-third">
-      {{ xGovukRelatedNavigation({
-        sections: sections
-      }) }}
+      {% include "shared/related.njk" %}
     </div>
     {% endif %}
   </div>
