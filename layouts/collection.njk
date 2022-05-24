@@ -49,9 +49,10 @@
           }) }}
         </section>
 
-        <div class="govuk-grid-column-one-third">
-          {% include "shared/related.njk" %}
-        </div>
+        {% if aside or related %}
+          <div class="govuk-grid-column-one-third">
+            {% include "shared/related.njk" %}
+          </div>
         {% endif %}
       </div>
     {% endblock %}

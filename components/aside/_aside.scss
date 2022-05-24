@@ -1,0 +1,17 @@
+.app-aside {
+  @include govuk-responsive-margin(6, "bottom");
+  @include govuk-text-colour;
+  border-top: 2px solid $govuk-brand-colour;
+}
+
+.app-aside__heading {
+  @include govuk-font(19, $weight: bold);
+  margin-top: govuk-spacing(3);
+  margin-bottom: govuk-spacing(2);
+}
+
+.app-aside__body {
+  > * {
+    @include govuk-font(16);
+  }
+}

@@ -1,0 +1,13 @@
+{% set headingLevel = params.headingLevel or 2 %}
+
+<aside class="app-aside">
+  {% if params.title %}
+  <h{{ headingLevel }} class="app-aside__heading">
+    {{ params.title }}
+  </h{{ headingLevel }}>
+  {% endif %}
+
+  <div class="app-aside__body">
+    {{ params.content | markdown }}
+  </div>
+</aside>

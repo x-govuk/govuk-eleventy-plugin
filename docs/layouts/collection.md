@@ -18,6 +18,10 @@ example:
       date: 2021-09-08
       title: Helping users better find our service
       description: Reviewing the user onboarding journey.
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links
@@ -56,6 +60,10 @@ example:
       date: 2021-09-08
       title: Helping users better find our service
       description: Reviewing the user onboarding journey.
+aside:
+  title: Aside
+  content: | 
+    A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
     - title: Related links
