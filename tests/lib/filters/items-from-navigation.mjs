@@ -28,10 +28,20 @@ const eleventyNavigationBreadcrumb = [{
     title: 'Child page',
     _isBreadcrumb: true
   }]
+}, {
+  key: 'child',
+  parent: 'parent',
+  excerpt: false,
+  url: '/parent/child',
+  pluginType: 'eleventy-navigation',
+  parentKey: 'parent',
+  title: 'Child page',
+  _isBreadcrumb: true,
+  children: false
 }]
 
 test('Converts navigation data to items array', t => {
-  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/')
+  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/child')
 
   t.deepEqual(result, [{
     href: '/',
@@ -42,13 +52,18 @@ test('Converts navigation data to items array', t => {
   }, {
     href: '/parent/',
     text: 'Parent page',
-    current: true,
+    current: false,
     parent: true,
     children: [{
       href: '/parent/child/',
       text: 'Child page',
       current: false
     }]
+  }, {
+    text: 'Child page',
+    current: true,
+    parent: true,
+    children: false
   }])
 })
 
@@ -71,6 +86,12 @@ test('Converts navigation data to items array without page URL', t => {
       text: 'Child page',
       current: false
     }]
+  }, {
+    href: '/parent/child',
+    text: 'Child page',
+    current: false,
+    parent: false,
+    children: false
   }])
 })
 
@@ -78,7 +99,7 @@ test('Converts navigation data to items array using path prefix', t => {
   const config = {
     pathPrefix: '/prefix/'
   }
-  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/', config)
+  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/child', config)
 
   t.deepEqual(result, [{
     href: '/prefix/',
@@ -89,13 +110,18 @@ test('Converts navigation data to items array using path prefix', t => {
   }, {
     href: '/prefix/parent/',
     text: 'Parent page',
-    current: true,
+    current: false,
     parent: true,
     children: [{
       href: '/prefix/parent/child/',
       text: 'Child page',
       current: false
     }]
+  }, {
+    text: 'Child page',
+    current: true,
+    parent: true,
+    children: false
   }])
 })
 
@@ -106,7 +132,7 @@ test('Converts navigation data to items array adding parent site', t => {
       name: 'Example'
     }
   }
-  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/', config)
+  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/child', config)
 
   t.deepEqual(result, [{
     href: 'https://example.org',
@@ -120,13 +146,18 @@ test('Converts navigation data to items array adding parent site', t => {
   }, {
     href: '/parent/',
     text: 'Parent page',
-    current: true,
+    current: false,
     parent: true,
     children: [{
       href: '/parent/child/',
       text: 'Child page',
       current: false
     }]
+  }, {
+    text: 'Child page',
+    current: true,
+    parent: true,
+    children: false
   }])
 })
 
@@ -138,7 +169,7 @@ test('Converts navigation data to items array adding parent site and using path 
     },
     pathPrefix: '/prefix/'
   }
-  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/', config)
+  const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/child', config)
 
   t.deepEqual(result, [{
     href: 'https://example.org',
@@ -152,12 +183,17 @@ test('Converts navigation data to items array adding parent site and using path 
   }, {
     href: '/prefix/parent/',
     text: 'Parent page',
-    current: true,
+    current: false,
     parent: true,
     children: [{
       href: '/prefix/parent/child/',
       text: 'Child page',
       current: false
     }]
+  }, {
+    text: 'Child page',
+    current: true,
+    parent: true,
+    children: false
   }])
 })
