@@ -1,6 +1,5 @@
 .app-document-list {
-  list-style: none;
-  padding: 0;
+  @extend %govuk-list;
 }
 
 .app-document-list__item {
