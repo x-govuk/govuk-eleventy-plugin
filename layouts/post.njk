@@ -9,19 +9,30 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% call appArticle({
-        header: {
-          title: title
-        },
-        footer: {
-          date: date,
-          modified: modified,
-          author: author,
-          authors: authors
-        },
-        image: image
-      }) %}
+    <div class="govuk-grid-column-full">
+      {{ appDocumentHeader({
+        title: title
+      }) }}
+
+      {{ appDocumentFooter({
+        date: date,
+        modified: modified,
+        author: author,
+        authors: authors
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      {% call appProseScope() %}
+        {% if image -%}
+          <figure>
+            <img src="{{ image.src }}" alt="{{ image.alt }}">
+            {% if image.caption -%}
+            <figcaption>{{ image.caption }}</figcaption>
+            {% endif -%}
+          </figure>
+        {%- endif %}
+
         {{ content }}
       {% endcall %}
     </div>

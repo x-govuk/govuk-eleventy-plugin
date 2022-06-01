@@ -1,14 +1,9 @@
-.app-article__description {
-  color: $govuk-secondary-text-colour;
-  margin: 0 0 govuk-spacing(2);
-}
-
-.app-article__header {
-  max-width: 45em;
-}
-
-.app-article__body {
+.app-prose-scope {
   @include govuk-responsive-margin(8, "bottom");
+
+  > *:first-child {
+    margin-top: 0;
+  }
 
   > *:last-child {
     margin-bottom: 0;
@@ -137,13 +132,5 @@
     code {
       filter: invert(100%);
     }
-  }
-}
-
-.app-article__footer {
-  @include govuk-font($size: 16, $line-height: 1.5);
-
-  .govuk-body-s {
-    color: $govuk-secondary-text-colour;
   }
 }

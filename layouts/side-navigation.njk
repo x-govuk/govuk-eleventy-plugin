@@ -15,14 +15,12 @@
       }) }}
     </div>
     <div class="govuk-grid-column-three-quarters">
-      {% call appArticle({
-        header: {
-          title: title,
-          description: description
-        }
-      }) %}
-        {{ content }}
-      {% endcall %}
+      {{ appDocumentHeader({
+        title: title,
+        description: description
+      }) }}
+
+      {{ appProseScope(content) if content }}
 
       {% include "layouts/shared/related.njk" %}
     </div>

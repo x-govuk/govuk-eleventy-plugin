@@ -1,0 +1,4 @@
+.app-document-footer__metadata {
+  @include govuk-font($size: 16, $line-height: 1.5);
+  color: $govuk-secondary-text-colour;
+}

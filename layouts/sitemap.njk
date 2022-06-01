@@ -17,27 +17,26 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% call appArticle({
-      header: {
-        title: title,
-        description: description
-      }
-    }) %}
-      {{ content }}
-      {% for item in collections.sitemap | eleventyNavigation(options.homeKey) %}
-        <div class="govuk-!-margin-bottom-4">
-          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-            <a class="govuk-link" href="{{ item.url | url | pretty }}">{{ item.title }}</a>
-          </h2>
-          {% if item.excerpt %}
-            <p class="govuk-body">{{ item.excerpt | markdown("inline") | striptags(true) }}</p>
-          {% endif %}
-          {{ collections.sitemap | eleventyNavigation(item.key) | eleventyNavigationToHtml({
-            listClass: "app-contents-list govuk-!-margin-left-4"
-          }) | safe }}
-        </div>
-      {% endfor %}
-    {% endcall %}
+    {{ appDocumentHeader({
+      title: title,
+      description: description
+    }) }}
+
+    {{ appProseScope(content) if content }}
+
+    {% for item in collections.sitemap | eleventyNavigation(options.homeKey) %}
+      <div class="govuk-!-margin-bottom-4">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+          <a class="govuk-link" href="{{ item.url | url | pretty }}">{{ item.title }}</a>
+        </h2>
+        {% if item.excerpt %}
+          <p class="govuk-body">{{ item.excerpt | markdown("inline") | striptags(true) }}</p>
+        {% endif %}
+        {{ collections.sitemap | eleventyNavigation(item.key) | eleventyNavigationToHtml({
+          listClass: "app-contents-list govuk-!-margin-left-4"
+        }) | safe }}
+      </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

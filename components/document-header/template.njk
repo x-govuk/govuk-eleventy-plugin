@@ -1,0 +1,11 @@
+<header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    {{ params.title | markdown("inline") }}
+  </h1>
+  {% if params.description %}
+    <p class="app-document-header__description govuk-body-l">
+      {{ params.description | markdown("inline") }}
+    </p>
+  {% endif %}
+</header>
+

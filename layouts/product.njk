@@ -27,9 +27,7 @@
     {% block beforeContent %}{% endblock %}
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
       {% block content %}
-        {% call appArticle() %}
-          {{ content }}
-        {% endcall %}
+        {{ appProseScope(content) if content }}
       {% endblock %}
 
       {% include "layouts/shared/related.njk" %}
