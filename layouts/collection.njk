@@ -19,7 +19,7 @@
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {% block content %}
       <div class="govuk-grid-row">
-        <section class="govuk-grid-column-two-thirds">
+        <section class="govuk-grid-column-two-thirds-from-desktop">
           {{ appProseScope(content) if content }}
 
           {% if paginationHeading %}
@@ -49,7 +49,7 @@
         </section>
 
         {% if aside or related %}
-          <div class="govuk-grid-column-one-third">
+          <div class="govuk-grid-column-one-third-from-desktop">
             {% include "layouts/shared/related.njk" %}
           </div>
         {% endif %}
