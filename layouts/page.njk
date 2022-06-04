@@ -8,14 +8,12 @@
 {% endblock %}
 
 {% block content %}
-  {% call appArticle({
-    header: {
-      title: title,
-      description: description
-    }
-  }) %}
-    {{ content }}
-  {% endcall %}
+  {{ appDocumentHeader({
+    title: title,
+    description: description
+  }) }}
+
+  {{ appProseScope(content) if content }}
 
   {% include "layouts/shared/related.njk" %}
 {% endblock %}

@@ -21,10 +21,13 @@
 
 {% from "components/article/macro.njk" import appArticle %}
 {% from "components/aside/macro.njk" import appAside %}
+{% from "components/document-footer/macro.njk" import appDocumentFooter %}
+{% from "components/document-header/macro.njk" import appDocumentHeader %}
 {% from "components/document-list/macro.njk" import appDocumentList %}
 {% from "components/footer/macro.njk" import appFooter %}
 {% from "components/header/macro.njk" import appHeader %}
 {% from "components/pagination/macro.njk" import appPagination %}
+{% from "components/prose-scope/macro.njk" import appProseScope %}
 
 {% block headIcons %}
   <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ options.icons.shortcut | url }}" type="image/x-icon">

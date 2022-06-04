@@ -1,59 +1,16 @@
-{%- macro _authorLink(author) -%}
-  {%- if author.url -%}
-    <a class="govuk-link" href="{{ author.url }}">{{ author.name }}</a>
-  {%- else -%}
-    {{- author.name or author -}}
-  {%- endif -%}
-{% endmacro -%}
-
-<article class="app-article">
-  {% if params.header %}
-  <header class="app-article__header">
-    <h1 class="app-article__title govuk-heading-xl">
-      {{ params.header.title | markdown("inline") }}
-    </h1>
-    {% if params.header.description %}
-      <div class="govuk-body-l">
-        {{ params.header.description | markdown("inline") }}
-      </div>
-    {% endif %}
-  </header>
-  {% endif %}
-
-  {% if params.footer.date or params.footer.author %}
-  <footer class="app-article__footer">
-    <p class="govuk-body-s">
-    {% if params.footer.authors %}
-      <span class="govuk-visually-hidden">Posted by: </span>
-      {%- for author in params.footer.authors -%}
-        {{- " and " if loop.last else (", " if not loop.first) -}}
-        {{- _authorLink(author) -}}
-      {%- endfor -%}
-      <span aria-hidden="true"> · </span>
-    {% elif params.footer.author %}
-        {{- _authorLink(params.footer.author) -}}
-        <span aria-hidden="true"> · </span>
-    {% endif %}
-    {% if params.footer.date %}
-      <span class="govuk-visually-hidden">Posted on: </span><time datetime="{{ params.footer.date | date }}">{{ params.footer.date | date("d LLLL y") }}</time>
-    {% endif %}
-    {% if params.footer.modified %}
-      <span aria-hidden="true">•</span>
-      Last updated <time datetime="{{ params.footer.modified | date }}">{{ params.footer.modified | date("d LLLL y") }}</time>
-    {% endif %}
-    </p>
-  </footer>
-  {% endif %}
-
-  <div class="app-article__body">
-    {% if params.image -%}
+{%- from "../document-footer/macro.njk" import appDocumentFooter -%}
+{%- from "../document-header/macro.njk" import appDocumentHeader -%}
+{%- from "../prose-scope/macro.njk" import appProseScope -%}
+{{ appDocumentHeader(params.header) if params.header }}
+{% call appProseScope() %}
+  {% if params.image -%}
     <figure>
       <img src="{{ params.image.src }}" alt="{{ params.image.alt }}">
       {% if params.image.caption -%}
       <figcaption>{{ params.image.caption }}</figcaption>
       {% endif -%}
     </figure>
-    {%- endif %}
-{{- caller() if caller -}}
-  </div>
-</article>
+  {%- endif %}
+  {{- caller() if caller -}}
+{% endcall %}
+{{ appDocumentFooter(params.footer) if params.footer }}
