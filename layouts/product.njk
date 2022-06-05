@@ -28,9 +28,9 @@
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
       {% block content %}
         {{ appProseScope(content) if content }}
-      {% endblock %}
 
-      {% include "layouts/shared/related.njk" %}
+        {% include "layouts/shared/related.njk" %}
+      {% endblock %}
     </main>
   </div>
 {% endblock %}
