@@ -1,9 +1,5 @@
 .app-pagination {
   @include govuk-media-query($from: desktop) {
-    // Alignment adjustments
-    margin-left: - govuk-spacing(1);
-    margin-right: - govuk-spacing(1);
-
     // Trick to remove the need for floats
     text-align: justify;
 
@@ -16,9 +12,11 @@
 }
 
 .app-pagination__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  @extend %govuk-list;
+  border-top: 1px solid $govuk-border-colour;
+  padding-top: govuk-spacing(2);
+  width: 100%;
+
   @include govuk-media-query($from: desktop) {
     display: inline-block;
     margin-bottom: 0;
