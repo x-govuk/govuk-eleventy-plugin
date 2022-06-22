@@ -10,7 +10,9 @@
 
 {# Navigation #}
 {% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs }) | itemsFromNavigation(page.url, options) if eleventyNavigation.key %}
-{% set showBreadcrumbs = breadcrumbItems | length > 1 %}
+{% set minimumItemsInBreadcrumbs = 0 %}
+{% set minimumItemsInBreadcrumbs = 1 if options.parentSite %}
+{% set showBreadcrumbs = breadcrumbItems | length > minimumItemsInBreadcrumbs %}
 
 {# Components #}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
