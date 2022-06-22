@@ -23,6 +23,10 @@ module.exports = function (eleventyConfig) {
     },
     pathPrefix,
     url,
+    collections: [
+      'layout',
+      'homepage'
+    ],
     header: {
       organisationLogo: 'x-govuk',
       organisationName: 'X-GOVUK',
@@ -47,16 +51,6 @@ module.exports = function (eleventyConfig) {
       }
     }
   })
-
-  // Collections
-  eleventyConfig.addCollection('layout', collection =>
-    collection.getFilteredByTag('layout')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
-  )
-  eleventyConfig.addCollection('homepage', collection =>
-    collection.getFilteredByTag('homepage')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
-  )
 
   // Passthrough
   eleventyConfig.addPassthroughCopy('./docs/assets')

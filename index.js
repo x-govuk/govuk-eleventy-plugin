@@ -38,6 +38,14 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   // Transforms
   eleventyConfig.addTransform('replaceGovukOpenGraphImage', require('./lib/transforms/replace-govuk-open-graph-image.js')(options))
 
+  // Collections
+  ;(options.collections || []).forEach(collectionName => {
+    eleventyConfig.addCollection(collectionName, collection =>
+      collection.getFilteredByTag(collectionName)
+        .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+    )
+  })
+
   // Events
   eleventyConfig.on('eleventy.after', async () => {
     require('./lib/events/generate-govuk-assets.js')(eleventyConfig, options)
