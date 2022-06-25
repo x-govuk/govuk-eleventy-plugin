@@ -10,7 +10,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter-from-desktop">
-      {{ xGovukSideNavigation({
+      {{ xGovukSubNavigation({
         items: collections.ordered | eleventyNavigation(options.homeKey) | itemsFromNavigation(page.url, { pathPrefix: options.pathPrefix })
       }) }}
     </div>
