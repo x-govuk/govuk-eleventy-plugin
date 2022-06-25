@@ -3,13 +3,13 @@ $govuk-new-link-styles: true;
 $govuk-global-styles: true;
 
 // GOV.UK Frontend
-@import "govuk-frontend/govuk/all";
+@import "node_modules/govuk-frontend/govuk/all";
 
 // GOV.UK Prototype components
-@import "govuk-prototype-components/x-govuk/all";
+@import "node_modules/govuk-prototype-components/x-govuk/all";
 
 // GOV.UK fenced code highlighting
-@import "markdown-it-govuk/x-govuk/all";
+@import "node_modules/markdown-it-govuk/x-govuk/all";
 
 // Plugin components
 @import "components/all";
