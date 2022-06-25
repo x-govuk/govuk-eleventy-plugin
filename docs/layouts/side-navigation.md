@@ -1,8 +1,8 @@
 ---
-layout: side-navigation
+layout: sub-navigation
 order: 2
-title: Page with side navigation
-description: Layout with side navigation.
+title: Page with sub navigation
+description: Layout with sub navigation.
 aside:
   title: Aside
   content: | 
@@ -21,17 +21,17 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
-The `side-navigation` layout offers a page with navigation to the left of its content.
+The `sub-navigation` layout offers a page with sub navigation, appearing to the left of content on wider viewports, and above on narrower ones.
 
 Use front matter options to customise the appearance, content and behaviour of this layout.
 
 For example, this page has the following options:
 
 ```yaml
-layout: side-navigation
+layout: sub-navigation
 order: 2
-title: Page with side navigation
-description: Layout with side navigation.
+title: Page with sub navigation
+description: Layout with sub navigation.
 aside:
   title: Aside
   content: | 
