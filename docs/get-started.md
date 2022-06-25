@@ -1,5 +1,5 @@
 ---
-layout: side-navigation
+layout: sub-navigation
 order: 1
 title: Get started
 description: With the GOV.UK Eleventy Plugin, start writing documentation rather than spend time building a website.

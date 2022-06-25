@@ -1,5 +1,5 @@
 ---
-layout: side-navigation
+layout: sub-navigation
 order: 2
 title: Options
 description: The plugin has a number of options that allow you to customise the appearance of your website.
