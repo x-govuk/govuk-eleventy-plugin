@@ -48,7 +48,7 @@
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "deepmerge": "^4.2.2",
-    "govuk-frontend": "^4.1.0",
+    "govuk-frontend": "^4.2.0",
     "govuk-prototype-components": "^0.4.0",
     "luxon": "^2.1.1",
     "markdown-it-abbr": "^1.0.4",
