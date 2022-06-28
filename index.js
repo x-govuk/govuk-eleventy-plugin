@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   // Filters
   eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
   eleventyConfig.addFilter('itemsFromCollection', require('./lib/filters/items-from-collection.js'))
+  eleventyConfig.addFilter('itemsFromPagination', require('./lib/filters/items-from-pagination.js'))
   eleventyConfig.addFilter('itemsFromNavigation', require('./lib/filters/items-from-navigation.js'))
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown.js'))
   eleventyConfig.addFilter('noOrphans', require('./lib/filters/no-orphans.js'))
