@@ -42,7 +42,7 @@
               href: pagination.href.next
             },
             items: pagination | itemsFromPagination
-          }) }}
+          }) if pagination.pages.length > 1 }}
         </section>
 
         {% if aside or related %}
