@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown.js'))
   eleventyConfig.addFilter('noOrphans', require('./lib/filters/no-orphans.js'))
   eleventyConfig.addFilter('pretty', require('./lib/filters/pretty.js'))
+  eleventyConfig.addFilter('smart', require('./lib/filters/smart.js'))
   eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
 
   // Layouts aliases
