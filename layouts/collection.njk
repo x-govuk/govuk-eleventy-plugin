@@ -3,7 +3,7 @@
 {% block main %}
   {{ xGovukMasthead({
     title: {
-      html: title
+      html: title | smart
     } if title,
     description: {
       html: description | markdown("inline") | noOrphans

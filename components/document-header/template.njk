@@ -1,6 +1,6 @@
 <header class="app-document-header">
   <h1 class="app-document-header__title govuk-heading-xl">
-    {{ params.title | markdown("inline") }}
+    {{ params.title | smart }}
   </h1>
   {% if params.description %}
     <p class="app-document-header__description govuk-body-l">
