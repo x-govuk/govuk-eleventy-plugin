@@ -56,7 +56,7 @@
           </span>
         {% elif params.licence %}
           <span class="govuk-footer__licence-description">
-            {{ params.licence | smart | replace("govuk-link", "govuk-footer__link") }}
+            {{ params.licence | markdown("inline") | replace("govuk-link", "govuk-footer__link") }}
           </span>
         {% endif %}
       </div>
