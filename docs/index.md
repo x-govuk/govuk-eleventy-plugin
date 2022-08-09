@@ -10,8 +10,6 @@ startButton:
   href: /get-started
 eleventyComputed:
   title: "{{ pkg.description }}"
-  ogImage:
-    alt: "{{ options.homeKey }}"
 ---
 <div class="govuk-grid-row">
 {% for item in collections["homepage"] %}
