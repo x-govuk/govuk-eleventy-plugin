@@ -49,24 +49,22 @@
             </div>
           {% endif %}
         {% endif %}
-        {% if params.licence == "ogl" %}
+        {% if params.contentLicence.html or params.contentLicence.text %}
+          <span class="govuk-footer__licence-description">
+            {{ params.contentLicence.html | safe if params.contentLicence.html else params.contentLicence.text }}
+          </span>
+        {% else %}
           {% include "./_ogl.svg" %}
           <span class="govuk-footer__licence-description">
             All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
           </span>
-        {% elif params.licence %}
-          <span class="govuk-footer__licence-description">
-            {{ params.licence | markdown("inline") | replace("govuk-link", "govuk-footer__link") }}
-          </span>
         {% endif %}
       </div>
       <div class="govuk-footer__meta-item">
-      {% if params.copyright == "crown" %}
-        <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">©&nbsp;Crown copyright</a>
-      {% elif params.copyright %}
-        {{ params.copyright | markdown("inline") | replace("govuk-link", "govuk-footer__link") }}
+      {%- if params.copyright.html or params.copyright.text -%}
+        {{ params.copyright.html | safe if params.copyright.html else params.copyright.text }}
       {% else %}
-        ©&nbsp;{{ "now" | date("yyyy") }}
+        <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">©&nbsp;Crown copyright</a>
       {% endif %}
       </div>
     </div>
