@@ -41,9 +41,6 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'))
 
-  // Transforms
-  eleventyConfig.addTransform('replaceGovukOpenGraphImage', require('./lib/transforms/replace-govuk-open-graph-image.js')(options))
-
   // Events
   eleventyConfig.on('eleventy.after', async () => {
     require('./lib/events/generate-govuk-assets.js')(eleventyConfig, options)
