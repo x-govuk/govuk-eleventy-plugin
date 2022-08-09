@@ -32,7 +32,7 @@ module.exports = function(eleventyConfig) {
 | **icons.mask** | string | Override the default GOV.UK SVG mask icon. | `false` |
 | **icons.shortcut** | string | Override the default GOV.UK favicon. | `false` |
 | **icons.touch** | string | Override the default GOV.UK touch icon. | `false` |
-| **ogImage** | string | Override the default GOV.UK Open Graph share image. | `false` |
+| **opengraphImageUrl** | string | URL for default Open Graph share image. | `false` |
 | **themeColour** | string | Browser theme colour. Must be a hex value. | `#0b0c0c` |
 | **headingPermalinks** | boolean | Add links to headings, making it easier to share sections of a page. | `false` |
 | **homeKey** | string | Label to use for first item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/). | `'Home'` |

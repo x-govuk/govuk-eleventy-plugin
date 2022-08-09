@@ -91,4 +91,4 @@ In addition to the common front matter options, this layout also accepts the fol
 | **image.src** | string | Path to post image. |
 | **image.alt** | string | Alternative text for post image. |
 | **image.caption** | string | Caption shown below post image. |
-| **image.ogImage** | boolean | Whether image should also be used as the page’s Open Graph share image. |
+| **image.opengraphImage** | boolean | Whether image should also be used as the page’s Open Graph share image. |

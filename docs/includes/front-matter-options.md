@@ -7,9 +7,9 @@ Use these options to customise the appearance, content and behaviour of any layo
 | **order** | number | Ranking of page in navigation. Lower numbers appear before pages with a higher number. |
 | **title** | string | Page title. |
 | **description** | string | Page description. |
-| **ogImage** | object | Open Graph image that appears on social media networks. |
-| **ogImage.src** | string | Path to Open Graph image. Can be a relative or absolute URL. |
-| **ogImage.alt** | string | Alternative text for Open Graph image. |
+| **opengraphImage** | object | Open Graph image that appears on social media networks. |
+| **opengraphImage.src** | string | Path to Open Graph image. Can be a relative or absolute URL. This value overrides `opengraphImageUrl` in plugin options. |
+| **opengraphImage.alt** | string | Alternative text for Open Graph image. |
 | **aside** | object | Small portion of content that is indirectly related to the main content. |
 | **aside.title** | string | Title for aside. |
 | **aside.content** | string | Content for aside. Accepts Markdown. |
