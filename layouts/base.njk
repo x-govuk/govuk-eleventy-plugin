@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="{{ stylesheet | url | absoluteUrl(options.url) }}">
   {% endfor %}
 
-  <meta property="og:url" content="{{ options.url | url | absoluteUrl(options.url) }}">
+  <meta property="og:url" content="{{ page.url | url | absoluteUrl(options.url) }}">
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
   {% set ogImage = image if image.ogImage else ogImage %}
