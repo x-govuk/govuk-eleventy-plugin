@@ -4,6 +4,10 @@
 {% set htmlClasses = "no-js" %}
 {% set themeColor = options.themeColour %}
 
+{# Only show default Open Graph image if document does not provide its own #}
+{% set opengraphImage = image if image.opengraphImage else opengraphImage %}
+{% set opengraphImageUrl = options.opengraphImageUrl if not opengraphImage %}
+
 {# Pagination #}
 {% set pageNumber = pagination.pageNumber + 1 %}
 {% set pageCount = pagination.pages | length %}
@@ -46,10 +50,9 @@
   <meta property="og:url" content="{{ options.url | url | absoluteUrl(options.url) }}">
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
-  {% set ogImage = image if image.ogImage else ogImage %}
-  {% if ogImage %}<meta name="twitter:card" content="summary_large_image">{% endif %}
-  {% if ogImage.src %}<meta property="og:image" content="{{ ogImage.src | url | absoluteUrl(options.url) }}">{% endif %}
-  {% if ogImage.alt %}<meta property="og:image:alt" content="{{ ogImage.alt }}">{% endif %}
+  {% if opengraphImage %}<meta name="twitter:card" content="summary_large_image">{% endif %}
+  {% if opengraphImage.src %}<meta property="og:image" content="{{ opengraphImage.src | url | absoluteUrl(options.url) }}">{% endif %}
+  {% if opengraphImage.alt %}<meta property="og:image:alt" content="{{ opengraphImage.alt }}">{% endif %}
 {% endblock %}
 
 {% block pageTitle %}
