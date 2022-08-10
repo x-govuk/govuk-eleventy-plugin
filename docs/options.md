@@ -71,7 +71,11 @@ Options for site search. See [adding a site search](../search).
 
 In addition to the [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can also be set:
 
-| Name | Type | Description | Default |
-| :--- | :--- | :---------- | :------ |
-| **copyright** | string | Copyright statement. Can contain inline Markdown. If set to `'crown'`, `© Crown copyright` is displayed below an image of the Royal Coat of Arms. If set to `false`, the current year is shown (i.e. `© {{ "now" | date("yyyy") }}`). | `'crown'` |
-| **licence** | string | Licence description. Can contain inline Markdown. If set to `'ogl'`, the OGL logo is shown alongside the words `All content is available under the Open Government Licence v3.0, except where otherwise stated`. | `'ogl'` |
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| **contentLicence** | object | Licence description. If no value is provided, the OGL logo is shown alongside the words `All content is available under the Open Government Licence v3.0, except where otherwise stated`. |
+| **contentLicence.text** | string | If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored. |
+| **contentLicence.html** | string | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored. |
+| **copyright** | object | Copyright statement. If no value is provided, `© Crown copyright` is displayed below an image of the Royal Coat of Arms. |
+| **copyright.text** | string | If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored. |
+| **copyright.html** | string | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored. |
