@@ -24,10 +24,6 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addFilter('smart', require('./lib/filters/smart.js'))
   eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
 
-  // Layouts aliases
-  // NOTE: Deprecated layout `side-navigation`. Alias will be removed in v3.0.0
-  eleventyConfig.addLayoutAlias('side-navigation', 'sub-navigation.njk')
-
   // Global data
   eleventyConfig.addGlobalData('options', options)
   eleventyConfig.addGlobalData('eleventyComputed', require('./lib/data/eleventy-computed.js'))

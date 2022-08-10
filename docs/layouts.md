@@ -51,12 +51,11 @@ You can use layouts provided by this plugin as a basis for your own. For example
     It needs to be reviewed again on " + (reviewAgain | date("d LLLL y")) + "."
   }) if reviewed and reviewAgain }}
 
-  {% call appArticle({
-    header: {
-      title: title | noOrphans
-    }
-  }) %}
-    {{ content }}
-  {% endcall %}
+  {{ appDocumentHeader({
+    title: title,
+    description: description
+  }) }}
+
+  {{ appProseScope(content) if content }}
 {% endblock %}{% endraw %}
 ```
