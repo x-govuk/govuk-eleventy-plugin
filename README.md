@@ -16,9 +16,7 @@ You’re welcome to use the plugin even if your service isn’t considered part 
 
 ## Installation
 
-`npm install govuk-eleventy-plugin --save`
-
-This will install v2.0.0 of the plugin, which is the version that has been documented and more thoroughly tested.
+`npm install govuk-eleventy-plugin`
 
 ## Usage
 
@@ -29,3 +27,5 @@ eleventyConfig.addPlugin(govukEleventyPlugin, {
   // Options
 })
 ```
+
+Learn more about how to [get started](https://x-govuk.github.io/govuk-eleventy-plugin/get-started/) and which [options you can provide](https://x-govuk.github.io/govuk-eleventy-plugin/options/).
