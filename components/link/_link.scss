@@ -1,5 +1,4 @@
-.app-heading-anchor {
-  @include govuk-link-common;
+.govuk-link.app-link--heading {
   @include govuk-link-style-text;
   @include govuk-link-style-no-underline;
 
