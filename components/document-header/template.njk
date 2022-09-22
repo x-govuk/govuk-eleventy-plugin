@@ -1,3 +1,11 @@
+{%- macro _authorLink(author) -%}
+  {%- if author.url -%}
+    <a class="govuk-link" href="{{ author.url }}">{{ author.name }}</a>
+  {%- else -%}
+    {{- author.name or author -}}
+  {%- endif -%}
+{% endmacro -%}
+
 <header class="app-document-header">
   <h1 class="app-document-header__title govuk-heading-xl">
     {{ params.title | smart }}
@@ -7,5 +15,29 @@
       {{ params.description | markdown("inline") }}
     </p>
   {% endif %}
+
+  {% if params.date or params.modified or params.authors or params.author %}
+    <p class="app-document-header__metadata">
+      {% if params.authors %}
+        <span class="govuk-visually-hidden">Posted by: </span>
+        {%- for author in params.authors -%}
+          {{- " and " if loop.last else (", " if not loop.first) -}}
+          {{- _authorLink(author) -}}
+        {%- endfor -%}
+        <span aria-hidden="true"> · </span>
+      {% elif params.author %}
+          {{- _authorLink(params.author) -}}
+          <span aria-hidden="true"> · </span>
+      {% endif %}
+      {% if params.date %}
+        <span class="govuk-visually-hidden">Posted on: </span><time datetime="{{ params.date | date }}">{{ params.date | date("d LLLL y") }}</time>
+      {% endif %}
+      {% if params.modified %}
+        <span aria-hidden="true">•</span>
+        Last updated <time datetime="{{ params.modified | date }}">{{ params.modified | date("d LLLL y") }}</time>
+      {% endif %}
+    </p>
+  {% endif %}
+
 </header>
 
