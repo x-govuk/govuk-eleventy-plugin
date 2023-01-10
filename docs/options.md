@@ -25,47 +25,50 @@ module.exports = function(eleventyConfig) {
 
 ## Plugin options
 
-| Name | Type | Description | Default |
-| :--- | :--- | :---------- | :------ |
-| **brandColour** | string | Override the default value for `$govuk-brand-colour`. Must be a hex value (i.e. `#1d70b8`). | `false` |
-| **fontFamily** | string | Override the default value for `$govuk-font-family`. Must be a list of one or more font family names (i.e. `"GDS Transport", arial, sans-serif`). | `false` |
-| **icons.mask** | string | Override the default GOV.UK SVG mask icon. | `false` |
-| **icons.shortcut** | string | Override the default GOV.UK favicon. | `false` |
-| **icons.touch** | string | Override the default GOV.UK touch icon. | `false` |
-| **opengraphImageUrl** | string | URL for default Open Graph share image. | `false` |
-| **themeColour** | string | Browser theme colour. Must be a hex value. | `#0b0c0c` |
-| **headingPermalinks** | boolean | Add links to headings, making it easier to share sections of a page. | `false` |
-| **homeKey** | string | Label to use for first item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/). | `'Home'` |
-| **parentSite** | object | Website to show as first item in breadcrumbs. | `false` |
-| **parentSite.url** | string | URL for parent site. | |
-| **parentSite.name** | string | Name of parent site. | |
-| **pathPrefix** | string | If your site lives in a different subdirectory (particularly useful with GitHub pages), use `pathPrefix` to specify this. It's used by the `url` filter and inserted at the beginning of all absolute URLs. Used in conjunction with [Eleventy’s own `pathPrefix` option](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix). | `'/'`
-| **stylesheets** | Array | Additional stylesheets to load after application styles. | `[]` |
-| **url** | string | The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data. | `false` |
-| **header** | object | See [header](#options-for-header). | |
-| **footer** | object | See [footer](#options-for-footer). | |
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| **brandColour** | string | Override default value for `$govuk-brand-colour`. Must be a hex value (i.e. `#1d70b8`). |
+| **fontFamily** | string | Override default value for `$govuk-font-family`. Must be a list of one or more font family names (i.e. `"GDS Transport", arial, sans-serif`).
+| **assetsPath** | string | Override default value for `$govuk-assets-path`. |
+| **fontsPath** | string | Override default value for `$govuk-fonts-path`. |
+| **imagesPath** | string | Override default value for `$govuk-images-path`. |
+| **icons.mask** | string | Override default GOV.UK SVG mask icon. |
+| **icons.shortcut** | string | Override default GOV.UK favicon. |
+| **icons.touch** | string | Override default GOV.UK touch icon. |
+| **opengraphImageUrl** | string | URL for default Open Graph share image. |
+| **themeColour** | string | Browser theme colour. Must be a hex value, i.e. `#0b0c0c` |
+| **headingPermalinks** | boolean | Add links to headings, making it easier to share sections of a page. |
+| **homeKey** | string | Label to use for first item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/). Default is `'Home'` |
+| **parentSite** | object | Website to show as first item in breadcrumbs. |
+| **parentSite.url** | string | URL for parent site. |
+| **parentSite.name** | string | Name of parent site. |
+| **pathPrefix** | string | If your site lives in a different subdirectory (particularly useful with GitHub pages), use `pathPrefix` to specify this. It's used by the `url` filter and inserted at the beginning of all absolute URLs. Used in conjunction with [Eleventy’s own `pathPrefix` option](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix). |
+| **stylesheets** | Array | Additional stylesheets to load after application styles. |
+| **url** | string | The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data. |
+| **header** | object | See [header](#options-for-header). |
+| **footer** | object | See [footer](#options-for-footer). |
 
 ### Options for header
 
 In addition to the [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can also be set:
 
-| Name | Type | Description | Default |
-| :--- | :--- | :---------- | :------ |
-| **homepageUrl** | string | URL organisation name is linked to. | `'/'` |
-| **organisationLogo** | string | Logo that appears before the organisation name. If set to `crown` the GOV.UK logo is shown. If set to `royal-arms`, the Royal Coat of Arms is shown. | `'crown'` |
-| **organisationName** | string | Organisation name. | `'GOV.UK'` |
-| **productName** | string | Product name that appears after the organisation name. Default is `false`. | `false` |
-| **search** | object | See [header.search](#options-for-header.search). | `false` |
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| **homepageUrl** | string | URL organisation name is linked to. Default is `'/'` |
+| **organisationLogo** | string | Logo that appears before the organisation name. If set to `crown` the GOV.UK logo is shown. If set to `royal-arms`, the Royal Coat of Arms is shown. Default is `'crown'` |
+| **organisationName** | string | Organisation name. Default is `'GOV.UK'` |
+| **productName** | string | Product name that appears after the organisation name. Default is `false`. |
+| **search** | object | See [header.search](#options-for-header.search). |
 
 ### Options for header.search
 
 Options for site search. See [adding a site search](../search).
 
-| Name | Type | Description | Default |
-| :--- | :--- | :---------- | :------ |
-| **label** | string | Text to show in the search field. | `'Search site'` |
-| **indexPath** | string | Path to search index file. If set, a search input will be shown in the header. | `false` |
-| **sitemapPath** | string | Path to sitemap page. | `false` |
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| **label** | string | Text to show in the search field. Default is `'Search site'` |
+| **indexPath** | string | Path to search index file. If set, a search input will be shown in the header. |
+| **sitemapPath** | string | Path to sitemap page. |
 
 ### Options for footer
 
