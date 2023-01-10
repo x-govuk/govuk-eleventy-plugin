@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 6
+order: 5
 title: Advanced Markdown
 description: Additional Markdown syntax is supported to ensure pages can contain additional elements like tables, code blocks and footnotes.
 related:

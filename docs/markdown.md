@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 5
+order: 4
 title: Markdown
 description: A lightweight markup language that allows you to add formatting to plain text text documents.
 related:
