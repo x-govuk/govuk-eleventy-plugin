@@ -1,5 +1,5 @@
 coverage
 node_modules/
-public
+_site
 npm-debug.log
 .DS_Store
