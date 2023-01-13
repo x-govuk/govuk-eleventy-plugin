@@ -3,7 +3,8 @@ layout: post
 order: 3
 title: Post
 description: Layout for date-based content, such as blog posts or news items.
-date: 2011-11-11
+date: 2011-12-21
+modified: 2012-12-22
 image:
   src: /assets/images/govuk-opengraph-image.png
   alt: A crown icon above the words GOV.UK.
@@ -30,6 +31,8 @@ related:
           items:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
+tags:
+  - example tag
 ---
 Use front matter options to customise the appearance, content and behaviour of this layout.
 
@@ -40,7 +43,8 @@ layout: post
 order: 3
 title: Post
 description: Layout for date-based content, such as blog posts or news items.
-date: 2011-11-11
+date: 2011-12-21
+modified: 2012-12-22
 image:
   src: /assets/images/govuk-opengraph-image.png
   alt: A crown icon above the words GOV.UK.
@@ -67,6 +71,8 @@ related:
           items:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
+tags:
+  - example tag
 ```
 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
@@ -92,3 +98,5 @@ In addition to the common front matter options, this layout also accepts the fol
 | **image.alt** | string | Alternative text for post image. |
 | **image.caption** | string | Caption shown below post image. |
 | **image.opengraphImage** | boolean | Whether image should also be used as the page’s Open Graph share image. |
+| **modified** | string | Date post was updated. Use [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601), for example `{{ "now" | date("yyyy-MM-dd") }}`. |
+| **tags** | Array | List of tags post relates to |
