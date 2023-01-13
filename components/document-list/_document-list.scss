@@ -30,7 +30,10 @@
   color: $govuk-secondary-text-colour;
   display: inline-block;
   margin: 0;
-  padding-right: govuk-spacing(4);
+
+  & + .app-document-list__attribute:before {
+    content: "\2002•\2002";
+  }
 }
 
 .app-document-list--large {

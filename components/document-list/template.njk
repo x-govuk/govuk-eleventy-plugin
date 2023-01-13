@@ -12,11 +12,18 @@
         {{ item.data.description | markdown("inline") | safe }}
       </p>
       {% endif %}
-      {% if item.data.date %}
+      {% if item.data.date or item.data.tags %}
       <ul class="app-document-list__item-metadata">
+        {% if item.data.date %}
         <li class="app-document-list__attribute">
           <time datetime="{{ item.data.date | date }}">{{ item.data.date | date("d LLLL y") }}</time>
         </li>
+        {% endif %}
+        {% if item.data.tags %}
+        <li class="app-document-list__attribute">
+          Tags: {{ item.data.tags | join(", ") }}
+        </li>
+        {% endif %}
       </ul>
       {% endif %}
     </li>

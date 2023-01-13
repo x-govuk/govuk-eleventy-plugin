@@ -1,0 +1,27 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-display-none-print",
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ appDocumentHeader({
+      title: title or "Tags"
+    }) }}
+
+    <ul class="govuk-list govuk-list--bullet">
+      {% for item in collections.tagPages %}
+      <li>
+        <a href="{{ item.url }}">{{ item.data.tag }}</a>
+        ({{ collections[item.data.tag] | length }})
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}
