@@ -11,7 +11,7 @@ The GOV.UK Eleventy Plugin makes it easy to add search functionality to your web
 
 The site search needs an index of your pages and the key words and phrases they contain.
 
-Create the search index by creating a page that uses the `search-index` template:
+Create the search index by creating a page that uses the `search-index` layout:
 
 ```yaml
 ---
@@ -27,13 +27,12 @@ The `permalink` value is the location of the generated file.
 
 The search feature only works if JavaScript is available, but falls back to a link to a sitemap.
 
-Create the search index by creating a page that uses the `sitemap` template:
+Create the search index by creating a page that uses the `sitemap` layout:
 
 ```yaml
 ---
 eleventyExcludeFromCollections: true
 layout: sitemap
-title: Sitemap
 permalink: /sitemap
 ---
 ```
