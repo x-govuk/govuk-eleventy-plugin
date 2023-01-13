@@ -62,7 +62,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-table-of-contents": "^0.6.0",
-    "rimraf": "^3.0.2",
+    "rimraf": "^4.0.4",
     "rollup": "^3.9.0",
     "sass": "^1.45.1",
     "smartypants": "^0.1.6"
