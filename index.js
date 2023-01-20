@@ -41,7 +41,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'))
 
   // Events
-  eleventyConfig.on('eleventy.after', async () => {
-    require('./lib/events/generate-govuk-assets.js')(eleventyConfig, options)
+  eleventyConfig.on('eleventy.after', async ({ dir }) => {
+    require('./lib/events/generate-govuk-assets.js')(dir, options)
   })
 }
