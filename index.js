@@ -8,6 +8,8 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   // Collections
   eleventyConfig.addCollection('ordered', require('./lib/collections/ordered.js'))
   eleventyConfig.addCollection('sitemap', require('./lib/collections/sitemap.js'))
+  eleventyConfig.addCollection('tags', require('./lib/collections/tags.js'))
+  eleventyConfig.addCollection('tagPages', require('./lib/collections/tag-pages.js'))
 
   // Extensions and template formats
   eleventyConfig.addExtension('scss', require('./lib/extensions/scss.js'))
@@ -15,6 +17,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
 
   // Filters
   eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
+  eleventyConfig.addFilter('includes', require('./lib/filters/includes.js'))
   eleventyConfig.addFilter('itemsFromCollection', require('./lib/filters/items-from-collection.js'))
   eleventyConfig.addFilter('itemsFromPagination', require('./lib/filters/items-from-pagination.js'))
   eleventyConfig.addFilter('itemsFromNavigation', require('./lib/filters/items-from-navigation.js'))
