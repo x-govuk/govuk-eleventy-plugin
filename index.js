@@ -1,5 +1,8 @@
 module.exports = function (eleventyConfig, pluginOptions = {}) {
-  const options = require('./lib/data/options.js')(pluginOptions)
+  const { pathPrefix } = eleventyConfig
+
+  // Plugin options
+  const options = require('./lib/data/options.js')(pluginOptions, pathPrefix)
 
   // Libraries
   eleventyConfig.setLibrary('md', require('./lib/markdown-it.js')(options))
@@ -42,6 +45,6 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
 
   // Events
   eleventyConfig.on('eleventy.after', async ({ dir }) => {
-    require('./lib/events/generate-govuk-assets.js')(dir, options)
+    require('./lib/events/generate-govuk-assets.js')(dir, pathPrefix, options)
   })
 }

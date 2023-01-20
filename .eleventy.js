@@ -1,11 +1,4 @@
 module.exports = function (eleventyConfig) {
-  const url = process.env.GITHUB_ACTIONS
-    ? 'https://x-govuk.github.io/govuk-eleventy-plugin/'
-    : '/'
-  const pathPrefix = process.env.GITHUB_ACTIONS
-    ? '/govuk-eleventy-plugin/'
-    : '/'
-
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
     brandColour: '#28a',
@@ -21,8 +14,9 @@ module.exports = function (eleventyConfig) {
       url: 'https://x-govuk.github.io/#shared-projects',
       name: 'X-GOVUK shared projects'
     },
-    pathPrefix,
-    url,
+    url: process.env.GITHUB_ACTIONS
+      ? 'https://x-govuk.github.io/govuk-eleventy-plugin/'
+      : '/',
     header: {
       organisationLogo: 'x-govuk',
       organisationName: 'X-GOVUK',
@@ -78,6 +72,8 @@ module.exports = function (eleventyConfig) {
       input: 'docs',
       layouts: '../layouts'
     },
-    pathPrefix
+    pathPrefix: process.env.GITHUB_ACTIONS
+      ? '/govuk-eleventy-plugin/'
+      : '/'
   }
 }
