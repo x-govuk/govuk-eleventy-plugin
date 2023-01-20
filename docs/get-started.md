@@ -24,7 +24,7 @@ This plugin includes the following features:
 ## Requirements
 
 * [Node.js](https://nodejs.org/en/) v16
-* [Eleventy](https://www.11ty.dev) v1.0.0 or above
+* [Eleventy](https://www.11ty.dev) v2.0.0 or above
 
 [Node version manager](https://github.com/nvm-sh/nvm) is recommended if you are working across multiple projects that use different versions of Node.js.
 
@@ -63,17 +63,12 @@ To generate a site, type the following command:
 npx eleventy --serve
 ```
 
-Once all the files have been generated, 2 preview URLs will be shown, either of which you can enter into your browser’s address bar:
+Once all the files have been generated, a preview URL will be shown which you can enter into your browser’s address bar:
 
 ```shell
-[11ty] Copied 14 files / Wrote 0 files in 1.11 seconds (v1.0.0)
+[11ty] Copied 14 files / Wrote 0 files in 1.11 seconds (v2.0.0)
 [11ty] Watching…
-[Browsersync] Access URLs:
- ------------------------------------
-    Local: http://localhost:8080
- External: http://192.168.178.29:8080
- ------------------------------------
-[Browsersync] Serving files from: public
+[11ty] Server at http://localhost:8080/
 ```
 
 Whenever you add a new page, or edit an existing one, the browser will automatically refresh with any of your changes applied.
