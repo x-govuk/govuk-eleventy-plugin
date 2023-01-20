@@ -87,11 +87,6 @@
       "lcovonly"
     ]
   },
-  "standard": {
-    "ignore": [
-      "!.eleventy.js"
-    ]
-  },
   "stylelint": {
     "extends": "stylelint-config-gds/scss"
   }

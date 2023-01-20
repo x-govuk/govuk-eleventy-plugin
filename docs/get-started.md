@@ -36,7 +36,7 @@ To install both Eleventy and this plugin, in your terminal type:
 npm install @11ty/eleventy govuk-eleventy-plugin --save
 ```
 
-Next, add an `.eleventy.js` file to the root directory of your project. This file is used to [configure Eleventy](https://www.11ty.dev/docs/config/).
+Next, add an `eleventy.config.js` file to the root directory of your project. This file is used to [configure Eleventy](https://www.11ty.dev/docs/config/).
 
 ```js
 const govukEleventyPlugin = require('govuk-eleventy-plugin')
