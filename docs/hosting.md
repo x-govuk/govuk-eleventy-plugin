@@ -71,10 +71,7 @@ Then, in your repository’s settings, under ‘Pages’, set ‘Source’ to �
 
 By default, Eleventy assumes that a website is hosted on the root path of a domain, but you may want to host a website on a subpath, for example `https://<organisation>.github.io/<reponame>`.
 
-To make sure navigation links point to the correct pages, and static assets like images and fonts can be loaded, set the following 2 options:
-
-* `pathPrefix`: Set this to the name of the sub-folder your website is being hosted at. This needs to be set both for the plugin, and Eleventy.
-* `assetPath`: Set this to the name of the sub-folder your website is being hosted at, plus `/assets`.
+To make sure navigation links point to the correct pages, and static assets like images and fonts can be loaded, set [Eleventy’s `pathPrefix` option](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix) to the name of the sub-folder your website is being hosted at.
 
 For example, if the URL of your website is `https://juggling.github.io/api-docs`, add the following values to your Eleventy configuration:
 
@@ -83,10 +80,7 @@ const govukEleventyPlugin = require('govuk-eleventy-plugin')
 
 module.exports = function(eleventyConfig) {
   // Register the plugin
-  eleventyConfig.addPlugin(govukEleventyPlugin, {
-    assetPath: "/api-docs/assets/",
-    pathPrefix: "/api-docs/"
-  })
+  eleventyConfig.addPlugin(govukEleventyPlugin)
 
   return {
     dataTemplateEngine: 'njk',
@@ -111,15 +105,9 @@ If you are hosting a site using GitHub Pages and deploying it using GitHub Actio
 const process = require('node:process')
 const govukEleventyPlugin = require('govuk-eleventy-plugin')
 
-const assetPath: process.env.GITHUB_ACTIONS ? '/api-docs/assets/' : '/assets/'
-const pathPrefix: process.env.GITHUB_ACTIONS ? '/api-docs/' : '/'
-
 module.exports = function(eleventyConfig) {
   // Register the plugin
-  eleventyConfig.addPlugin(govukEleventyPlugin, {
-    assetPath,
-    pathPrefix
-  })
+  eleventyConfig.addPlugin(govukEleventyPlugin)
 
   return {
     dataTemplateEngine: 'njk',
@@ -129,7 +117,7 @@ module.exports = function(eleventyConfig) {
       // Use layouts from the plugin
       layouts: 'node_modules/govuk-eleventy-plugin/layouts'
     },
-    pathPrefix
+    pathPrefix: process.env.GITHUB_ACTIONS ? '/api-docs/' : '/'
   }
 };
 ```
