@@ -76,7 +76,7 @@ To make sure navigation links point to the correct pages, and static assets like
 For example, if the URL of your website is `https://juggling.github.io/api-docs`, add the following values to your Eleventy configuration:
 
 ```js
-const govukEleventyPlugin = require('govuk-eleventy-plugin')
+const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 
 module.exports = function(eleventyConfig) {
   // Register the plugin
@@ -88,7 +88,7 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: 'njk',
     dir: {
       // Use layouts from the plugin
-      layouts: 'node_modules/govuk-eleventy-plugin/layouts'
+      layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
     },
     pathPrefix: "/api-docs/"
   }
@@ -103,7 +103,7 @@ If you are hosting a site using GitHub Pages and deploying it using GitHub Actio
 
 ```js
 const process = require('node:process')
-const govukEleventyPlugin = require('govuk-eleventy-plugin')
+const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 
 module.exports = function(eleventyConfig) {
   // Register the plugin
@@ -115,7 +115,7 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: 'njk',
     dir: {
       // Use layouts from the plugin
-      layouts: 'node_modules/govuk-eleventy-plugin/layouts'
+      layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
     },
     pathPrefix: process.env.GITHUB_ACTIONS ? '/api-docs/' : '/'
   }

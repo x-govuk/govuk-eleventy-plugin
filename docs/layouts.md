@@ -17,7 +17,7 @@ tags:
 Layouts are registered with Eleventy by setting the `dir.layouts` key to point to the layout files installed in the package directory:
 
 ```js
-const govukEleventyPlugin = require('govuk-eleventy-plugin')
+const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin)
@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {
-      layouts: 'node_modules/govuk-eleventy-plugin/layouts'
+      layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
     }
   }
 };

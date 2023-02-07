@@ -16,12 +16,12 @@ You’re welcome to use the plugin even if your service isn’t considered part 
 
 ## Installation
 
-`npm install govuk-eleventy-plugin`
+`npm install @x-govuk/govuk-eleventy-plugin`
 
 ## Usage
 
 ```js
-const govukEleventyPlugin = require('govuk-eleventy-plugin')
+const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 
 eleventyConfig.addPlugin(govukEleventyPlugin, {
   // Options

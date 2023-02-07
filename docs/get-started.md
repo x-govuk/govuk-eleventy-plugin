@@ -33,13 +33,13 @@ This plugin includes the following features:
 To install both Eleventy and this plugin, in your terminal type:
 
 ```shell
-npm install @11ty/eleventy govuk-eleventy-plugin --save
+npm install @11ty/eleventy @x-govuk/govuk-eleventy-plugin
 ```
 
 Next, add an `eleventy.config.js` file to the root directory of your project. This file is used to [configure Eleventy](https://www.11ty.dev/docs/config/).
 
 ```js
-const govukEleventyPlugin = require('govuk-eleventy-plugin')
+const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 
 module.exports = function(eleventyConfig) {
   // Register the plugin
@@ -51,7 +51,7 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: 'njk',
     dir: {
       // Use layouts from the plugin
-      layouts: 'node_modules/govuk-eleventy-plugin/layouts'
+      layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
     }
   }
 };
@@ -87,7 +87,7 @@ homepage: true
 layout: page
 title: My first page
 ---
-This is my first page, built using Eleventy and `govuk-eleventy-plugin`.
+This is my first page, built using Eleventy and `@x-govuk/govuk-eleventy-plugin`.
 ```
 
 Create a file named `index.md` file to the root directory of your project, and add the above content.
