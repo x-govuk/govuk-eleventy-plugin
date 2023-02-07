@@ -1,5 +1,5 @@
 {
-  "name": "govuk-eleventy-plugin",
+  "name": "@x-govuk/govuk-eleventy-plugin",
   "version": "4.0.0",
   "description": "Write documentation using Markdown and publish it using GOV.UK styles",
   "keywords": [
@@ -68,9 +68,9 @@
     "smartypants": "^0.1.6"
   },
   "devDependencies": {
+    "@x-govuk/govuk-eleventy-plugin": "file:./",
     "ava": "^5.1.0",
     "c8": "^7.11.0",
-    "govuk-eleventy-plugin": "file:./",
     "standard": "^17.0.0",
     "stylelint": "^ 14.6.1",
     "stylelint-config-gds": "^0.2.0"
