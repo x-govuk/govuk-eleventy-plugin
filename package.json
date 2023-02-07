@@ -42,7 +42,7 @@
     "coverage": "c8 ava"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0-beta.2",
+    "@11ty/eleventy": "^2.0.0-beta.3",
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@rollup/plugin-commonjs": "^24.0.0",
