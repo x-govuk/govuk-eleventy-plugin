@@ -211,15 +211,9 @@ At the command prompt, type `npm install`.
 
 ### Code blocks
 
-To create code blocks, indent every line of the block by at least 4 spaces or one tab.
+By default, [Eleventy doesn’t support the Markdown syntax for indented code blocks](https://www.11ty.dev/docs/languages/markdown/#indented-code-blocks) because pages can get rendered incorrectly should a layout or component include indented markup.
 
-```markdown
-    console.log('Hello, world!')
-```
-
-    console.log('Hello, world!')
-
-To use syntax highlighting, used [fenced code blocks](../markdown-advanced/#fenced-code).
+To include code blocks in your documentation, use [fenced code blocks](../markdown-advanced/#fenced-code).
 
 ## Horizontal rules
 
