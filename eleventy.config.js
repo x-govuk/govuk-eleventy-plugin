@@ -1,3 +1,5 @@
+const process = require('node:process')
+
 module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
