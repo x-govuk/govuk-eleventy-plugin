@@ -9,6 +9,7 @@ image:
   src: /assets/images/govuk-opengraph-image.png
   alt: A crown icon above the words GOV.UK.
   caption: The GOV.UK logo
+  opengraphImage: true
 authors:
   - name: William Ewart Gladstone
     url: https://www.gov.uk/government/history/past-prime-ministers/william-ewart-gladstone
