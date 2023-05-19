@@ -4,8 +4,8 @@
     {% if item.data.description %}"description": {{ item.data.description | dump | safe }},{% endif %}
     {% if item.data.eleventyNavigation.parent %}"section": {{ item.data.eleventyNavigation.parent | dump | safe }},{% endif %}
     "layout": {{ item.data.layout | dump | safe }},
-    {% if item.data.page.date %}"date": {{ item.data.page.date | date | dump | safe }},
-    "dateString": {{ item.data.page.date  | date("d LLLL y") | dump | safe }},{% endif %}
+    "hasFrontmatterDate": {{ item.data.date !== undefined }},
+    "date": {{ item.date | date("d LLLL y") | dump | safe }},
     "templateContent": {{ item.templateContent | tokenize | dump | safe }},
     "url": {{ item.url | url | pretty | dump | safe }}
   }{% if not loop.last %},{% endif %}

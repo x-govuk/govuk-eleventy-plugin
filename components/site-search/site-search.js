@@ -84,10 +84,15 @@ Search.prototype.resultTemplate = function (result) {
     const resultTitle = result.title
     element.textContent = resultTitle
 
-    if (result.dateString || result.section) {
+    if (result.hasFrontmatterDate || result.section) {
       const section = document.createElement('span')
       section.className = 'app-site-search--section'
-      section.innerHTML = result.dateString || result.section
+
+      if (result.hasFrontmatterDate && result.section) {
+        section.innerHTML = `${result.section}<br>${result.date}`
+      } else {
+        section.innerHTML = result.section || result.date
+      }
 
       element.appendChild(section)
     }
