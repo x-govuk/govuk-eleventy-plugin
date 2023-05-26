@@ -15,6 +15,7 @@ To include a list of all tags used on your website, create a page that uses the 
 ---
 layout: tags
 title: Tags
+permalink: "/tags/"
 ---
 ```
 
@@ -34,7 +35,7 @@ pagination:
   size: 1
 permalink: "/tags/{% raw %}{{ tag | slug }}{% endraw %}/"
 eleventyComputed:
-  title: "Posts tagged ‘{{ tag }}’"
+  title: "Posts tagged ‘{% raw %}{{ tag }}{% endraw %}’"
 eleventyNavigation:
   parent: Tags
 ---
