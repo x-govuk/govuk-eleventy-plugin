@@ -17,7 +17,7 @@
     <ul class="govuk-list govuk-list--bullet">
       {% for item in collections.tagPages %}
       <li>
-        <a href="{{ item.url }}">{{ item.data.tag }}</a>
+        <a href="{{ item.url | url }}">{{ item.data.tag }}</a>
         ({{ collections[item.data.tag] | length }})
       </li>
       {% endfor %}
