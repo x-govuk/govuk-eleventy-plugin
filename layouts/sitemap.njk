@@ -2,16 +2,18 @@
 
 {# Create breadcrumbs manually as sitemap should be excluded from collections #}
 {% block beforeContent %}
-  {{ govukBreadcrumbs({
-    classes: "govuk-!-display-none-print",
-    items: [{
-      href: options.parentSite.url,
-      text: options.parentSite.name
-    }, {
-      href: options.pathPrefix,
-      text: options.homeKey
-    }]
-  }) if options.parentSite }}
+  <nav>
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-display-none-print",
+      items: [{
+        href: options.parentSite.url,
+        text: options.parentSite.name
+      }, {
+        href: options.pathPrefix,
+        text: options.homeKey
+      }]
+    }) if options.parentSite }}
+  </nav>
 {% endblock %}
 
 {% block content %}
