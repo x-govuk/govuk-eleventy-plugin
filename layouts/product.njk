@@ -1,36 +1,38 @@
 {% extends "layouts/base.njk" %}
 
 {% block main %}
-  {{ xGovukMasthead({
-    classes: "x-govuk-masthead--large",
-    title: {
-      html: title | smart
-    } if title,
-    description: {
-      html: description | markdown("inline") | noOrphans
-    } if description,
-    startButton: {
-      href: startButton.href | url,
-      text: startButton.text
-    } if startButton,
-    image: {
-      alt: image.alt,
-      src: image.src | url
-    } if image,
-    breadcrumbs: {
-      classes: "govuk-!-display-none-print govuk-!-margin-bottom-0",
-      items: breadcrumbItems
-    } if showBreadcrumbs
-  }) }}
+  <main>
+    {{ xGovukMasthead({
+      classes: "x-govuk-masthead--large",
+      title: {
+        html: title | smart
+      } if title,
+      description: {
+        html: description | markdown("inline") | noOrphans
+      } if description,
+      startButton: {
+        href: startButton.href | url,
+        text: startButton.text
+      } if startButton,
+      image: {
+        alt: image.alt,
+        src: image.src | url
+      } if image,
+      breadcrumbs: {
+        classes: "govuk-!-display-none-print govuk-!-margin-bottom-0",
+        items: breadcrumbItems
+      } if showBreadcrumbs
+    }) }}
 
-  <div class="govuk-width-container">
-    {% block beforeContent %}{% endblock %}
-    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
-      {% block content %}
-        {{ appProseScope(content) if content }}
+    <div class="govuk-width-container">
+      {% block beforeContent %}{% endblock %}
+      <div class="govuk-main-wrapper {{ mainClasses }}" id="main-content" {% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        {% block content %}
+          {{ appProseScope(content) if content }}
 
-        {% include "layouts/shared/related.njk" %}
-      {% endblock %}
-    </main>
-  </div>
+          {% include "layouts/shared/related.njk" %}
+        {% endblock %}
+      </div>
+    </div>
+  </main>
 {% endblock %}
