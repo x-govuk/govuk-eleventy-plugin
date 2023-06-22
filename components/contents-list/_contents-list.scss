@@ -35,14 +35,6 @@
       position: absolute;
       width: govuk-spacing(4);
     }
-
-    // Focus styles on IE8 and older include the left margin, creating an odd
-    // white box with yellow border around the em dash.
-    // https://github.com/alphagov/government-frontend/pull/420#issuecomment-320632386
-    @include govuk-if-ie8 {
-      display: inline-block;
-      vertical-align: top;
-    }
   }
 
   a {
