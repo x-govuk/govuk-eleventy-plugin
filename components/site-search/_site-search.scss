@@ -12,32 +12,31 @@
 
 $icon-size: 40px;
 
-@include govuk-not-ie8 {
-  .app-site-search {
-    position: relative;
-    width: 100%;
-    margin-bottom: govuk-spacing(2);
-    float: left;
+.app-site-search {
+  position: relative;
+  width: 100%;
+  margin-bottom: govuk-spacing(2);
+  float: left;
+
+  @include govuk-media-query($from: 900px) {
+    float: right;
+    margin: 0;
+    margin-top: -5px; // Negative margin to vertically align search in header
+    width: 300px;
+  }
+
+  .no-js & {
+    display: none;
 
     @include govuk-media-query($from: 900px) {
-      float: right;
-      margin: 0;
-      margin-top: -5px; // Negative margin to vertically align search in header
-      width: 300px;
+      display: block;
     }
 
-    .no-js & {
-      display: none;
-
-      @include govuk-media-query($from: 900px) {
-        display: block;
-      }
-
-      @include govuk-media-query($from: 900px) {
-        text-align: right;
-      }
+    @include govuk-media-query($from: 900px) {
+      text-align: right;
     }
   }
+
 
   .app-site-search__wrapper {
     display: block;
@@ -217,27 +216,5 @@ $icon-size: 40px;
     display: inline-block;
     margin-right: govuk-spacing(1);
     margin-left: govuk-spacing(1);
-  }
-}
-
-// on IE8 we show the sitemap link as Accessible autocomplete
-// does not support it
-@include govuk-if-ie8 {
-  .app-site-search {
-    width: 300px;
-    margin: 0;
-    margin-top: -6px;
-    float: right;
-    text-align: right;
-  }
-
-  .app-site-search__link:link {
-    display: inline-block;
-    margin-top: 10px;
-    color: govuk-colour("white");
-
-    &:focus {
-      color: govuk-colour("black");
-    }
   }
 }
