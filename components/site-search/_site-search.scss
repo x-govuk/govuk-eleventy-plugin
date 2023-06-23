@@ -179,18 +179,6 @@ $icon-size: 40px;
 
   .app-site-search__link {
     display: none;
-
-    .no-js & {
-      @include govuk-media-query($from: 900px) {
-        display: inline-block;
-        margin-top: 10px;
-        color: govuk-colour("white");
-
-        &:focus {
-          color: govuk-colour("black");
-        }
-      }
-    }
   }
 
   .app-site-search--section {
@@ -215,5 +203,22 @@ $icon-size: 40px;
     display: inline-block;
     margin-right: govuk-spacing(1);
     margin-left: govuk-spacing(1);
+  }
+}
+
+// No javascript fallback styles
+.no-js .app-site-search__link {
+  display: none;
+
+  @include govuk-media-query($from: 900px) {
+    display: inline-block;
+    margin-top: 10px;
+    color: govuk-colour("white");
+  }
+}
+
+.no-js .app-site-search__link:focus {
+  @include govuk-media-query($from: 900px) {
+    color: govuk-colour("black");
   }
 }
