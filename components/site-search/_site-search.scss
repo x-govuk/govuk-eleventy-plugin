@@ -13,10 +13,10 @@
 $icon-size: 40px;
 
 .app-site-search {
+  float: left;
+  margin-bottom: govuk-spacing(2);
   position: relative;
   width: 100%;
-  margin-bottom: govuk-spacing(2);
-  float: left;
 
   @include govuk-media-query($from: 900px) {
     float: right;
@@ -36,184 +36,183 @@ $icon-size: 40px;
       text-align: right;
     }
   }
+}
 
-  .app-site-search__wrapper {
-    display: block;
-    position: relative;
-  }
+.app-site-search__wrapper {
+  display: block;
+  position: relative;
+}
 
-  .app-site-search__hint,
-  .app-site-search__input {
-    box-sizing: border-box;
-    width: 100%;
-    height: govuk-px-to-rem($icon-size);
-    margin-bottom: 0; // BUG: Safari 10 on macOS seems to add an implicit margin.
-    padding: govuk-spacing(1);
-    padding-left: $icon-size - govuk-spacing(1);
-    border: $govuk-border-width-form-element solid govuk-colour("white");
-    border-radius: 0; // Safari 10 on iOS adds implicit border rounding.
-    -webkit-appearance: none;
-  }
+.app-site-search__hint,
+.app-site-search__input {
+  border: $govuk-border-width-form-element solid govuk-colour("white");
+  border-radius: 0; // Safari 10 on iOS adds implicit border rounding.
+  box-sizing: border-box;
+  height: govuk-px-to-rem($icon-size);
+  margin-bottom: 0; // BUG: Safari 10 on macOS seems to add an implicit margin.
+  padding: govuk-spacing(1);
+  padding-left: $icon-size - govuk-spacing(1);
+  width: 100%;
+  -webkit-appearance: none;
+}
 
-  .app-site-search__hint {
-    position: absolute;
-    color: govuk-colour("mid-grey");
-  }
+.app-site-search__hint {
+  position: absolute;
+  color: govuk-colour("mid-grey");
+}
 
-  .app-site-search__input {
-    position: relative;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='#{encode-hex(govuk-colour("dark-grey"))}'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center left -2px;
-    background-size: $icon-size $icon-size;
+.app-site-search__input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='#{encode-hex(govuk-colour("dark-grey"))}'%3E%3C/path%3E%3C/svg%3E");
+  background-position: center left -2px;
+  background-repeat: no-repeat;
+  background-size: $icon-size $icon-size;
+  position: relative;
 
-    &::placeholder {
-      color: govuk-colour("dark-grey");
-    }
-  }
-
-  .app-site-search__input--focused {
-    border-color: $govuk-focus-text-colour;
-    outline: $govuk-focus-width solid $govuk-focus-colour;
-    outline-offset: 0;
-    box-shadow: inset 0 0 0 $govuk-border-width-form-element;
-  }
-
-  .app-site-search__input--show-all-values {
-    padding: govuk-spacing(1) 34px govuk-spacing(1) govuk-spacing(1);
-    cursor: pointer;
-  }
-
-  .app-site-search__dropdown-arrow-down {
-    display: inline-block;
-    position: absolute;
-    z-index: -1;
-    top: govuk-spacing(2);
-    right: 8px;
-    width: 24px;
-    height: 24px;
-  }
-
-  .app-site-search__menu {
-    width: 100%;
-    max-height: 342px;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    border-top: 0;
-    color: govuk-colour("black");
-    background-color: govuk-colour("white");
-  }
-
-  .app-site-search__menu--visible {
-    display: block;
-  }
-
-  .app-site-search__menu--hidden {
-    display: none;
-  }
-
-  .app-site-search__menu--overlay {
-    position: absolute;
-    z-index: 100;
-    top: 100%;
-    left: 0;
-    box-shadow: rgba(govuk-colour("black"), .25) 0 2px 6px;
-  }
-
-  .app-site-search__menu--inline {
-    position: relative;
-  }
-
-  .app-site-search__option {
-    display: block;
-    position: relative;
-    padding: govuk-spacing(2);
-    border-bottom: solid govuk-colour("mid-grey");
-    border-width: 1px 0;
-    cursor: pointer;
-  }
-
-  .app-site-search__option > * {
-    pointer-events: none;
-  }
-
-  .app-site-search__option:first-of-type {
-    border-top-width: 0;
-  }
-
-  .app-site-search__option:last-of-type {
-    border-bottom-width: 0;
-  }
-
-  .app-site-search__option--odd {
-    $_app-site-search-option-background-color: #fafafa;
-    background-color: $_app-site-search-option-background-color;
-  }
-
-  .app-site-search__option--focused,
-  .app-site-search__option:hover {
-    border-color: govuk-colour("blue");
-    // Add a transparent outline for when users change their colours.
-    outline: 3px solid transparent;
-    outline-offset: -3px;
-    color: govuk-colour("white");
-    background-color: govuk-colour("blue");
-
-    .app-site-search--section {
-      color: inherit;
-    }
-  }
-
-  .app-site-search__option--no-results {
+  &::placeholder {
     color: govuk-colour("dark-grey");
-    background-color: govuk-colour("white");
-    cursor: not-allowed;
-  }
-
-  .app-site-search__hint,
-  .app-site-search__input,
-  .app-site-search__option {
-    @include govuk-font($size: 19);
-  }
-
-  .app-site-search__link {
-    display: none;
-  }
-
-  .app-site-search--section {
-    display: block;
-    @include govuk-font($size: 16);
-    color: $govuk-secondary-text-colour;
-  }
-
-  .app-site-search__aliases {
-    margin-left: govuk-spacing(1);
-
-    &:before {
-      content: "(";
-    }
-
-    &:after {
-      content: ")";
-    }
-  }
-
-  .app-site-search__separator {
-    display: inline-block;
-    margin-right: govuk-spacing(1);
-    margin-left: govuk-spacing(1);
   }
 }
 
-// No javascript fallback styles
+.app-site-search__input--focused {
+  border-color: $govuk-focus-text-colour;
+  box-shadow: inset 0 0 0 $govuk-border-width-form-element;
+  outline: $govuk-focus-width solid $govuk-focus-colour;
+  outline-offset: 0;
+}
+
+.app-site-search__input--show-all-values {
+  cursor: pointer;
+  padding: govuk-spacing(1) 34px govuk-spacing(1) govuk-spacing(1);
+}
+
+.app-site-search__dropdown-arrow-down {
+  display: inline-block;
+  height: 24px;
+  position: absolute;
+  right: 8px;
+  top: govuk-spacing(2);
+  width: 24px;
+  z-index: -1;
+}
+
+.app-site-search__menu {
+  background-color: govuk-colour("white");
+  border-top: 0;
+  color: govuk-colour("black");
+  margin: 0;
+  max-height: 342px;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.app-site-search__menu--visible {
+  display: block;
+}
+
+.app-site-search__menu--hidden {
+  display: none;
+}
+
+.app-site-search__menu--overlay {
+  box-shadow: rgba(govuk-colour("black"), .25) 0 2px 6px;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+}
+
+.app-site-search__menu--inline {
+  position: relative;
+}
+
+.app-site-search__option {
+  border-bottom: solid govuk-colour("mid-grey");
+  border-width: 1px 0;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: govuk-spacing(2);
+
+  &:first-of-type {
+    border-top-width: 0;
+  }
+
+  &:last-of-type {
+    border-bottom-width: 0;
+  }
+
+  & > * {
+    pointer-events: none;
+  }
+}
+
+.app-site-search__option--odd {
+  background-color: #fafafa;
+}
+
+.app-site-search__option--focused,
+.app-site-search__option:hover {
+  background-color: govuk-colour("blue");
+  border-color: govuk-colour("blue");
+  color: govuk-colour("white");
+  // Add a transparent outline for when users change their colours.
+  outline: 3px solid transparent;
+  outline-offset: -3px;
+
+  .app-site-search--section {
+    color: inherit;
+  }
+}
+
+.app-site-search__option--no-results {
+  background-color: govuk-colour("white");
+  color: govuk-colour("dark-grey");
+  cursor: not-allowed;
+}
+
+.app-site-search__hint,
+.app-site-search__input,
+.app-site-search__option {
+  @include govuk-font($size: 19);
+}
+
+.app-site-search__link {
+  display: none;
+}
+
+.app-site-search--section {
+  @include govuk-font($size: 16);
+  color: $govuk-secondary-text-colour;
+  display: block;
+}
+
+.app-site-search__aliases {
+  margin-left: govuk-spacing(1);
+
+  &:before {
+    content: "(";
+  }
+
+  &:after {
+    content: ")";
+  }
+}
+
+.app-site-search__separator {
+  display: inline-block;
+  margin-right: govuk-spacing(1);
+  margin-left: govuk-spacing(1);
+}
+
+// No JavaScript fallback styles
 .no-js .app-site-search__link {
   display: none;
 
   @include govuk-media-query($from: 900px) {
+    color: govuk-colour("white");
     display: inline-block;
     margin-top: 10px;
-    color: govuk-colour("white");
   }
 }
 
