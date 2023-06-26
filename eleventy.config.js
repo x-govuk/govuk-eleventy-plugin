@@ -13,8 +13,8 @@ module.exports = function (eleventyConfig) {
     opengraphImageUrl: 'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
     homeKey: 'GOV.UK Eleventy Plugin',
     parentSite: {
-      url: 'https://x-govuk.github.io/#shared-projects',
-      name: 'X-GOVUK shared projects'
+      url: 'https://x-govuk.github.io/#projects',
+      name: 'X-GOVUK projects'
     },
     url: process.env.GITHUB_ACTIONS
       ? 'https://x-govuk.github.io/govuk-eleventy-plugin/'
