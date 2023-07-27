@@ -28,6 +28,7 @@ module.exports = function(eleventyConfig) {
 | Name | Type | Description |
 | :--- | :--- | :---------- |
 | **brandColour** | string | Override default value for `$govuk-brand-colour`. Must be a hex value (i.e. `#1d70b8`). |
+| **inverseTextColour** | string | Override default value for `$govuk-inverse-text-colour`. Must be a hex value (i.e. `#fff`). |
 | **fontFamily** | string | Override default value for `$govuk-font-family`. Must be a list of one or more font family names (i.e. `"GDS Transport", arial, sans-serif`).
 | **assetsPath** | string | Override default value for `$govuk-assets-path`. |
 | **fontsPath** | string | Override default value for `$govuk-fonts-path`. |
