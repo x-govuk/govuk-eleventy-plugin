@@ -34,11 +34,11 @@
   }
 
   sup {
-    top: -.4em;
+    top: -0.4em;
   }
 
   sub {
-    bottom: -.4em;
+    bottom: -0.4em;
   }
 
   img {
@@ -56,7 +56,7 @@
     // Show outline around linked images within figures
     img {
       display: block;
-      outline: 1px solid rgba($govuk-border-colour, .5);
+      outline: 1px solid rgba($govuk-border-colour, 0.5);
     }
 
     > .govuk-link img {
