@@ -31,7 +31,7 @@
   display: inline-block;
   margin: 0;
 
-  & + .app-document-list__attribute:before {
+  & + .app-document-list__attribute::before {
     content: "\2002•\2002";
   }
 }
