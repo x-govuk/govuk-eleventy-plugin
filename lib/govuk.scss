@@ -3,7 +3,7 @@ $govuk-new-link-styles: true;
 $govuk-global-styles: true;
 
 // GOV.UK Frontend
-@import "node_modules/govuk-frontend/govuk/all";
+@import "node_modules/govuk-frontend/dist/govuk/all";
 
 // GOV.UK Prototype components
 @import "node_modules/@x-govuk/govuk-prototype-components/x-govuk/all";
