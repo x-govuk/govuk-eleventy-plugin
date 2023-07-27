@@ -6,9 +6,10 @@ description: The plugin offers a number of layouts to match the type of content 
 tags:
   - homepage
 ---
+
 {% for page in collections["layout"] %}
 
-* [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
+- [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
 
 {% endfor %}
 
@@ -33,7 +34,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-If you want to use your own layouts, remove this value and set a value for [`dir.includes`](https://www.11ty.dev/docs/config/#directory-for-includes) (and optionally [`dir.layouts`](https://www.11ty.dev/docs/config/#directory-for-layouts-(optional))).
+If you want to use your own layouts, remove this value and set a value for [`dir.includes`](https://www.11ty.dev/docs/config/#directory-for-includes) (and optionally [`dir.layouts`](<https://www.11ty.dev/docs/config/#directory-for-layouts-(optional)>)).
 
 You can use layouts provided by this plugin as a basis for your own. For example, to show a notification banner at the top of a page, extend the `page` layout:
 
@@ -47,7 +48,7 @@ You can use layouts provided by this plugin as a basis for your own. For example
 {% block content %}
   {# Templates can include front matter data #}
   {{ govukNotificationBanner({
-    text: "This page was last reviewed on " + (reviewed | date("d LLLL y")) + ".  
+    text: "This page was last reviewed on " + (reviewed | date("d LLLL y")) + ".
     It needs to be reviewed again on " + (reviewAgain | date("d LLLL y")) + "."
   }) if reviewed and reviewAgain }}
 

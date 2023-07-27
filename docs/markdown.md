@@ -247,7 +247,7 @@ Visit [GOV.UK](https://www.gov.uk).
 To quickly turn a URL or email address into a link, enclose it in angle brackets.
 
 ```markdown
-<https://www.gov.uk>  
+<https://www.gov.uk>
 <mailbox@example.org>
 ```
 
@@ -261,7 +261,7 @@ The rendered output looks like this:
 To [emphasize](../markdown#emphasis) links, add asterisks before and after the brackets and parentheses. To denote links as [code](../markdown#code), add backticks in the brackets.
 
 ```markdown
-Visit the **[Markdown Guide](https://www.markdownguide.org)**.  
+Visit the **[Markdown Guide](https://www.markdownguide.org)**.
 See the section on [`code`](../markdown#code).
 ```
 

@@ -46,6 +46,7 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
+
 Use front matter options to customise the appearance, content and behaviour of this layout.
 
 For example, this page has the following options:
@@ -82,7 +83,7 @@ example:
       description: What we learnt from our first round of user research.
 aside:
   title: Aside
-  content: | 
+  content: |
     A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
@@ -108,7 +109,7 @@ related:
 
 In addition to the common front matter options, this layout also accepts the following options:
 
-| Name | Type | Description |
-| :--- | :--- | :---------- |
-| **paginationHeading** | string | Heading for the list of paginated pages. |
-| **pagination** | object | **Required.** Pages to show in the paginated list. Learn more about [pagination](https://www.11ty.dev/docs/pagination/) in the documentation for Eleventy. |
+| Name                  | Type   | Description                                                                                                                                                |
+| :-------------------- | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **paginationHeading** | string | Heading for the list of paginated pages.                                                                                                                   |
+| **pagination**        | object | **Required.** Pages to show in the paginated list. Learn more about [pagination](https://www.11ty.dev/docs/pagination/) in the documentation for Eleventy. |

@@ -9,23 +9,23 @@ You can use this plugin to create and publish documentation and other simple web
 
 This plugin includes the following features:
 
-* a set of [layouts](../layouts) that use [`govuk-frontend`](https://github.com/alphagov/govuk-frontend) components and styles
+- a set of [layouts](../layouts) that use [`govuk-frontend`](https://github.com/alphagov/govuk-frontend) components and styles
 
-* includes [`markdown-it-govuk`](https://github.com/x-govuk/markdown-it-govuk) to ensure pages uses the same typography and styles as those used on GOV.UK
+- includes [`markdown-it-govuk`](https://github.com/x-govuk/markdown-it-govuk) to ensure pages uses the same typography and styles as those used on GOV.UK
 
-* support for an [extended Markdown syntax](../markdown-advanced)
+- support for an [extended Markdown syntax](../markdown-advanced)
 
-* [full configuration](../options) of your website’s header and footer
+- [full configuration](../options) of your website’s header and footer
 
-* site search
+- site search
 
-* SCSS compilation (for any files with the `.scss` extension)
+- SCSS compilation (for any files with the `.scss` extension)
 
 ## Requirements
 
-* [Node.js](https://nodejs.org/en/) v16.0.0 or above
-* [npm CLI](https://docs.npmjs.com/cli) v8.0.0 or above
-* [Eleventy](https://www.11ty.dev) v2.0.0 or above
+- [Node.js](https://nodejs.org/en/) v16.0.0 or above
+- [npm CLI](https://docs.npmjs.com/cli) v8.0.0 or above
+- [Eleventy](https://www.11ty.dev) v2.0.0 or above
 
 [Node version manager](https://github.com/nvm-sh/nvm) is recommended if you are working across multiple projects that use different versions of Node.js.
 
@@ -97,11 +97,11 @@ The first page in your site should also have a `homepage` value set to `true`[^1
 
 [^1]: Using `homepage: true` is equivalent to writing the following:
 
-      ```yaml
-      eleventyComputed:
-        eleventyNavigation:
-          key: "{% raw %}{{ config.homeKey }}{% endraw %}"
-      ```
+    ```yaml
+    eleventyComputed:
+      eleventyNavigation:
+        key: "{% raw %}{{ config.homeKey }}{% endraw %}"
+    ```
 
 Open the preview URL in your browser to see this new page appear using GOV.UK styles.
 
@@ -111,6 +111,6 @@ This plugin provides {{ collections["layout"] | length }} different layouts, eac
 
 {% for page in collections["layout"] %}
 
-* [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
+- [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
 
 {% endfor %}
