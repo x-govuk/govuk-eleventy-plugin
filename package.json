@@ -36,7 +36,7 @@
     "predev": "rimraf _site",
     "dev": "eleventy --serve --watch",
     "start": "eleventy --serve",
-    "lint": "standard && stylelint '**/*.scss'",
+    "lint": "prettier . --check && standard && stylelint '**/*.scss'",
     "test": "ava",
     "test:watch": "ava --watch",
     "coverage": "c8 ava"
@@ -71,6 +71,7 @@
     "@x-govuk/govuk-eleventy-plugin": "file:./",
     "ava": "^5.1.0",
     "c8": "^8.0.0",
+    "prettier": "^3.0.0",
     "standard": "^17.0.0",
     "stylelint": "^ 15.0.0",
     "stylelint-config-gds": "^1.0.0"
@@ -86,6 +87,26 @@
     "reporter": [
       "text",
       "lcovonly"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "overrides": [
+      {
+        "files": "*.md",
+        "options": {
+          "embeddedLanguageFormatting": "off",
+          "singleQuote": false
+        }
+      },
+      {
+        "files": "*.scss",
+        "options": {
+          "singleQuote": false
+        }
+      }
     ]
   },
   "stylelint": {
