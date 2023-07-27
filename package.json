@@ -72,8 +72,8 @@
     "ava": "^5.1.0",
     "c8": "^8.0.0",
     "standard": "^17.0.0",
-    "stylelint": "^ 14.6.1",
-    "stylelint-config-gds": "^0.3.0"
+    "stylelint": "^ 15.0.0",
+    "stylelint-config-gds": "^1.0.0"
   },
   "engines": {
     "node": "^16.0.0 || ^18.0.0",
