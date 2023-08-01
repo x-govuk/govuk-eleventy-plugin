@@ -32,7 +32,7 @@ jobs:
     - name: Build with Eleventy
       run: npm run-script build
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v2
 
   deploy:
     environment:
