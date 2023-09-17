@@ -47,7 +47,7 @@
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
-    "@x-govuk/govuk-prototype-components": "^2.0.0",
+    "@x-govuk/govuk-prototype-components": "^2.0.2",
     "deepmerge": "^4.2.2",
     "govuk-frontend": "^4.3.0",
     "luxon": "^3.0.1",
