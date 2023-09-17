@@ -6,8 +6,8 @@
     text-decoration: none;
   }
 
-  &:hover:after,
-  :target &:after {
+  &:hover::after,
+  :target &::after {
     color: govuk-colour("dark-grey");
     content: "#";
     font-variant: all-small-caps;

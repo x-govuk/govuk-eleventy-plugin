@@ -4,12 +4,12 @@ a[aria-describedby="footnotes-label"] {
   @include govuk-link-style-no-visited-state;
 }
 
-a[aria-describedby="footnotes-label"]:before {
+a[aria-describedby="footnotes-label"]::before {
   color: currentcolor;
   content: "[";
 }
 
-a[aria-describedby="footnotes-label"]:after {
+a[aria-describedby="footnotes-label"]::after {
   color: currentcolor;
   content: "]";
 }
@@ -26,7 +26,7 @@ a[aria-describedby="footnotes-label"]:after {
     position: relative;
   }
 
-  li:before {
+  li::before {
     @include govuk-font(19, $tabular: true);
     content: counter(footnotes) ".";
     position: absolute;
