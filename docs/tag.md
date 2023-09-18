@@ -1,7 +1,6 @@
 ---
 layout: tag
 pagination:
-  addAllPagesToCollections: true
   alias: tag
   data: collections.tags
   size: 1
@@ -10,4 +9,5 @@ eleventyComputed:
   title: "Pages tagged ‘{{ tag }}’"
 eleventyNavigation:
   parent: "Tags"
+eleventyExcludeFromCollections: true  
 ---

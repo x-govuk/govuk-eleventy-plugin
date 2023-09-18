@@ -38,8 +38,7 @@
       {%- if params.tags | length > 0 -%}
         <span aria-hidden="true">&ensp;•&ensp;</span>Tags:
         {%- for tag in params.tags %}
-          {% set item = params.tagPages | includes("data.tag", tag) | first %}
-          <a href="{{ item.url }}" class="govuk-link">{{ item.data.tag }}</a>
+          <a href="/tags/{{ tag | slug }}" class="govuk-link">{{ tag }}</a>
           {%- if not loop.last %}, {% endif %}
         {%- endfor -%}
       {%- endif -%}
