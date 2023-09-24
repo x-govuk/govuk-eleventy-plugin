@@ -15,10 +15,10 @@
     }) }}
 
     <ul class="govuk-list govuk-list--bullet">
-      {% for item in collections.tagPages %}
+      {% for tag in collections.tags %}
       <li>
-        <a href="{{ item.url | url }}">{{ item.data.tag }}</a>
-        ({{ collections[item.data.tag] | length }})
+        <a href="/tags/{{ tag | slug }}">{{ tag }}</a>
+        ({{ collections[tag] | length }})
       </li>
       {% endfor %}
     </ul>
