@@ -107,9 +107,9 @@ Open the preview URL in your browser to see this new page appear using GOV.UK st
 
 ## Choose a layout
 
-This plugin provides {{ collections["layout"] | length }} different layouts, each with different options you can provide in the front matter:
+This plugin provides {{ collections.layout | length }} different layouts, each with different options you can provide in the front matter:
 
-{% for page in collections["layout"] %}
+{% for page in collections.layout %}
 
 * [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
 
