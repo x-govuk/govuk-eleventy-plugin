@@ -4,16 +4,16 @@ Build documentation websites using Markdown and GOV.UK styles.
 
 You’re welcome to use the plugin even if your service isn’t considered part of GOV.UK, but your site or service must not:
 
-* identify itself as being part of GOV.UK
-* use the crown or GOV.UK logotype in the header
-* use the GDS Transport typeface
-* suggest that it’s an official UK government website if it’s not
+- identify itself as being part of GOV.UK
+- use the crown or GOV.UK logotype in the header
+- use the GDS Transport typeface
+- suggest that it’s an official UK government website if it’s not
 
 ## Requirements
 
-* [Node.js](https://nodejs.org) v16.0.0 or above
-* [npm CLI](https://docs.npmjs.com/cli) v8.0.0 or above
-* [Eleventy](https://www.11ty.dev) v2.0.0 or above
+- [Node.js](https://nodejs.org) v16.0.0 or above
+- [npm CLI](https://docs.npmjs.com/cli) v8.0.0 or above
+- [Eleventy](https://www.11ty.dev) v2.0.0 or above
 
 ## Installation
 

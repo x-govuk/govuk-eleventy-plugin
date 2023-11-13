@@ -21,6 +21,7 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
+
 The `sub-navigation` layout offers a page with sub navigation, appearing to the left of content on wider viewports, and above on narrower ones.
 
 Use front matter options to customise the appearance, content and behaviour of this layout.
@@ -34,7 +35,7 @@ title: Page with sub navigation
 description: Layout with sub navigation.
 aside:
   title: Aside
-  content: | 
+  content: |
     A small portion of content that is **indirectly** related to the main content.
 related:
   sections:

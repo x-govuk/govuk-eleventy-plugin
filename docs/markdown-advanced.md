@@ -9,6 +9,7 @@ related:
       - text: Markdown Guide
         href: https://www.markdownguide.org
 ---
+
 [[toc]]
 
 ## Tables
@@ -51,16 +52,16 @@ You can align text in the columns to the left, right, or center by adding a colo
 
 The rendered output looks like this:
 
-| Syntax    | Description | Test Text   |
+| Syntax    | Description |   Test Text |
 | :-------- | :---------: | ----------: |
-| Header    | Title       | Here's this |
-| Paragraph | Text        | And more    |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
 
 ## Fenced code
 
 The basic Markdown syntax allows you to create [code blocks](../markdown#code-blocks) by indenting lines by 4 spaces or one tab. If you find that inconvenient, try using fenced code blocks. You can use 3 backticks (` ``` `) or 3 tildes (`~~~`) on the lines before and after the code block.
 
-~~~markdown
+````markdown
 ```
 {
   "firstName": "William",
@@ -68,7 +69,7 @@ The basic Markdown syntax allows you to create [code blocks](../markdown#code-bl
   "age": 24
 }
 ```
-~~~
+````
 
 The rendered output looks like this:
 
@@ -84,7 +85,7 @@ The rendered output looks like this:
 
 This feature allows you to add color highlighting for whatever language your code was written in. To add syntax highlighting, specify a language next to the backticks before the fenced code block.
 
-~~~markdown
+````markdown
 ```json
 {
   "firstName": "William",
@@ -92,7 +93,7 @@ This feature allows you to add color highlighting for whatever language your cod
   "age": 24
 }
 ```
-~~~
+````
 
 The rendered output looks like this:
 
@@ -137,7 +138,6 @@ The rendered output looks like this:
 Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 [^1]: This is the first footnote.
-
 [^bignote]: Here's one with multiple paragraphs and code.
 
     Indent paragraphs to include them in the footnote.
@@ -162,11 +162,11 @@ This policy is the responsibility of the DWP.
 
 This policy is the responsibility of the DWP.
 
-*[DWP]: Department for Work and Pensions
+\*[DWP]: Department for Work and Pensions
 
 ## Definition lists
 
-To create a definition list, type the term on the first line. On the next line, type a colon followed by a space and the definition.  
+To create a definition list, type the term on the first line. On the next line, type a colon followed by a space and the definition.
 
 ```markdown
 First Term

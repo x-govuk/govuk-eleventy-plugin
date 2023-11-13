@@ -27,6 +27,7 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
+
 Use front matter options to customise the appearance, content and behaviour of this layout.
 
 For example, this page has the following options:
@@ -44,7 +45,7 @@ image:
   alt: Eleventy’s possum mascot hanging on a red balloon and floating above a laptop.
 aside:
   title: Aside
-  content: | 
+  content: |
     A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
@@ -72,11 +73,11 @@ related:
 
 In addition to the common front matter options, this layout also has the following options:
 
-| Name | Type | Description |
-| :--- | :--- | :---------- |
-| **startButton** | string | Start button. Appears below the title and any description. |
-| **startButton.text** | string | Text for the start button. Default is `'Get started'`. |
-| **startButton.href** | string | The URL that the start button should link to. |
-| **image** | object | Product image. Appears to the right of the page title, and is hidden on mobile. |
-| **image.src** | string | Path to product image. |
-| **image.alt** | string | Alternative text for product image. |
+| Name                 | Type   | Description                                                                     |
+| :------------------- | :----- | :------------------------------------------------------------------------------ |
+| **startButton**      | string | Start button. Appears below the title and any description.                      |
+| **startButton.text** | string | Text for the start button. Default is `'Get started'`.                          |
+| **startButton.href** | string | The URL that the start button should link to.                                   |
+| **image**            | object | Product image. Appears to the right of the page title, and is hidden on mobile. |
+| **image.src**        | string | Path to product image.                                                          |
+| **image.alt**        | string | Alternative text for product image.                                             |
