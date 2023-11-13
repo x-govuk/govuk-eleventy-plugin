@@ -12,7 +12,6 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addCollection('ordered', require('./lib/collections/ordered.js'))
   eleventyConfig.addCollection('sitemap', require('./lib/collections/sitemap.js'))
   eleventyConfig.addCollection('tags', require('./lib/collections/tags.js'))
-  eleventyConfig.addCollection('tagPages', require('./lib/collections/tag-pages.js'))
 
   // Extensions and template formats
   eleventyConfig.addExtension('scss', require('./lib/extensions/scss.js'))

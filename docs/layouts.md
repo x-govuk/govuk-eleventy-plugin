@@ -3,11 +3,8 @@ layout: sub-navigation
 order: 3
 title: Layouts
 description: The plugin offers a number of layouts to match the type of content you want write.
-tags:
-  - homepage
 ---
-
-{% for page in collections["layout"] %}
+{% for page in collections.layout %}
 
 - [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
 

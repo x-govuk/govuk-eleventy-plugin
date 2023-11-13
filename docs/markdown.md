@@ -8,8 +8,6 @@ related:
     - items:
         - text: Markdown Guide
           href: https://www.markdownguide.org
-tags:
-  - homepage
 ---
 
 [[toc]]

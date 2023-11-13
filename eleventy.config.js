@@ -50,12 +50,16 @@ module.exports = function (eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection('layout', collection =>
-    collection.getFilteredByTag('layout')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+    collection.getFilteredByGlob([
+      'docs/layouts/*.md'
+    ]).sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   )
   eleventyConfig.addCollection('homepage', collection =>
-    collection.getFilteredByTag('homepage')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+    collection.getFilteredByGlob([
+      'docs/options.md',
+      'docs/layouts.md',
+      'docs/markdown.md'
+    ]).sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   )
 
   // Passthrough
