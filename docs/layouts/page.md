@@ -21,6 +21,7 @@ related:
           - text: Front matter data
             href: https://www.11ty.dev/docs/data-frontmatter/
 ---
+
 Use front matter options to customise the appearance, content and behaviour of this layout.
 
 For example, this page has the following options:
@@ -32,7 +33,7 @@ title: Page
 description: Simple layout designed for maximum flexibility of content.
 aside:
   title: Aside
-  content: | 
+  content: |
     A small portion of content that is **indirectly** related to the main content.
 related:
   sections:
