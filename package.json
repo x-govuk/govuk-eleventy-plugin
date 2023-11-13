@@ -73,7 +73,7 @@
     "c8": "^8.0.0",
     "prettier": "^3.0.0",
     "standard": "^17.0.0",
-    "stylelint": "^ 15.10.3",>>>>>>> main
+    "stylelint": "^ 15.10.3",
     "stylelint-config-gds": "^1.0.0"
   },
   "engines": {
