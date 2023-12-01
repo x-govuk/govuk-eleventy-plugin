@@ -72,7 +72,7 @@
     "@x-govuk/govuk-eleventy-plugin": "file:./",
     "ava": "^5.1.0",
     "c8": "^8.0.0",
-    "np": "^8.0.4",
+    "np": "^9.0.0",
     "prettier": "^3.0.0",
     "standard": "^17.0.0",
     "stylelint": "^ 15.10.3",
