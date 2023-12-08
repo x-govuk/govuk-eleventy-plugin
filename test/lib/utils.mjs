@@ -8,6 +8,15 @@ describe('Utility', () => {
     assert.equal(ensureSlash('path/'), 'path/')
   })
 
+  it('Throws error ensuring anything not a string ends with a slash', () => {
+    assert.throws(() => {
+      ensureSlash({})
+    }, {
+      name: 'TypeError',
+      message: 'Input must be a string'
+    })
+  })
+
   it('Normalises value provided to a filter', () => {
     const usesValue = normalise('Dollars', 'Pounds')
     const usesDefault = normalise(undefined, 'Pounds')
