@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
 
   // Passthrough
   eleventyConfig.addPassthroughCopy({
-    'node_modules/govuk-frontend/govuk/assets': 'assets'
+    'node_modules/govuk-frontend/dist/govuk/assets': 'assets'
   })
 
   // Plugins

@@ -3,20 +3,15 @@
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
       <a href="{{ params.homepageUrl | default("/") | url }}" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          {% if params.organisationLogo == "crown" %}
-            {% include "./_crown.svg" %}
-          {% elif params.organisationLogo == "royal-arms" %}
-            {% include "./_royal-arms.svg" %}
-          {% elif params.organisationLogo == "x-govuk" %}
-            {% include "./_x-govuk.svg" %}
-          {% elif params.organisationLogo %}
-            {{ params.organisationLogo | safe }}
-          {% endif %}
-          <span class="govuk-header__logotype-text">
-            {{ params.organisationName | default("GOV.UK") }}
-          </span>
-        </span>
+        {% if params.logotype == "x-govuk" %}
+          {% include "./_x-govuk.svg" %}
+        {% elif params.logotype.html %}
+          {{ params.logotype.html }}
+        {% elif params.logotype.text %}
+          <span class="app-header__logotype">{{ params.logotype.text }}</span>
+        {% else %}
+          {% include "./_govuk.svg" %}
+        {% endif %}
         {% if params.productName %}
         <span class="govuk-header__product-name">
           {{ params.productName }}
