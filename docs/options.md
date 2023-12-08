@@ -49,13 +49,14 @@ module.exports = function(eleventyConfig) {
 
 In addition to the [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can also be set:
 
-| Name                 | Type   | Description                                                                                                                                                               |
-| :------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **homepageUrl**      | string | URL organisation name is linked to. Default is `'/'`                                                                                                                      |
-| **organisationLogo** | string | Logo that appears before the organisation name. If set to `crown` the GOV.UK logo is shown. If set to `royal-arms`, the Royal Coat of Arms is shown. Default is `'crown'` |
-| **organisationName** | string | Organisation name. Default is `'GOV.UK'`                                                                                                                                  |
-| **productName**      | string | Product name that appears after the organisation name. Default is `false`.                                                                                                |
-| **search**           | object | See [header.search](#options-for-header.search).                                                                                                                          |
+| Name              | Type   | Description                                                                                                                                                            |
+| :---------------- | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **homepageUrl**   | string | URL organisation name is linked to. Default is `'/'`                                                                                                                   |
+| **logotype**      | object | Logo that appears in the header. If no value is provided, the GOV.UK logo is shown.                                                                                    |
+| **logotype.text** | string | Text to show instead of the GOV.UK logo. This text will appear bold. If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored. |
+| **logotype.html** | string | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                      |
+| **productName**   | string | Product name that appears after the organisation name. Default is `false`.                                                                                             |
+| **search**        | object | See [header.search](#options-for-header.search).                                                                                                                       |
 
 ### Options for header.search
 

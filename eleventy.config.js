@@ -20,8 +20,7 @@ module.exports = function (eleventyConfig) {
       ? 'https://x-govuk.github.io/govuk-eleventy-plugin/'
       : '/',
     header: {
-      organisationLogo: 'x-govuk',
-      organisationName: 'X-GOVUK',
+      logotype: 'x-govuk',
       productName: 'Eleventy Plugin',
       search: {
         indexPath: '/search.json',

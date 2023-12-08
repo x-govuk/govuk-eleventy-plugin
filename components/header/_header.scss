@@ -14,11 +14,14 @@
     }
   }
 
-  // Height of crown is 30px.
-  // Visually adjust placement to accept larger icons with a height of 35px
-  .app-header__logotype--large {
-    margin-bottom: -10px;
-    position: relative;
-    top: -3px;
+  // Visually adjust placement of X-GOVUK logo which has a height of 35px
+  .x-govuk-header__logotype {
+    margin-bottom: -5px;
+  }
+
+  // Visually adjust placement of logotype text
+  .app-header__logotype {
+    font-weight: bold;
+    top: 0;
   }
 }
