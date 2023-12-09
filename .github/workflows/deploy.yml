@@ -28,7 +28,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install dependencies
-        run: npm ci
+        # Can’t use `npm ci` due to https://github.com/npm/cli/issues/4828
+        run: |
+          npm i --package-lock=false
       - name: Build with Eleventy
         run: npm run-script build
       - name: Upload artifact
