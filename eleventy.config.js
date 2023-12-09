@@ -3,8 +3,6 @@ const process = require('node:process')
 module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('./index.js'), {
-    brandColour: '#28a',
-    fontFamily: 'system-ui, sans-serif',
     icons: {
       mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
       shortcut: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-favicon.ico',
