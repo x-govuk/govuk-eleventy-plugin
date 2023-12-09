@@ -62,6 +62,7 @@ describe('itemsFromNavigation filter', () => {
         current: false
       }]
     }, {
+      href: '/parent/child',
       text: 'Child page',
       current: true,
       parent: true,
@@ -120,6 +121,7 @@ describe('itemsFromNavigation filter', () => {
         current: false
       }]
     }, {
+      href: '/prefix/parent/child',
       text: 'Child page',
       current: true,
       parent: true,
@@ -156,6 +158,7 @@ describe('itemsFromNavigation filter', () => {
         current: false
       }]
     }, {
+      href: '/parent/child',
       text: 'Child page',
       current: true,
       parent: true,
@@ -193,6 +196,7 @@ describe('itemsFromNavigation filter', () => {
         current: false
       }]
     }, {
+      href: '/prefix/parent/child',
       text: 'Child page',
       current: true,
       parent: true,
