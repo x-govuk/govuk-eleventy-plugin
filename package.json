@@ -82,12 +82,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "c8": {
-    "reporter": [
-      "text",
-      "lcovonly"
-    ]
-  },
   "prettier": {
     "semi": false,
     "singleQuote": true,
