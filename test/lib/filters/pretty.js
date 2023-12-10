@@ -1,6 +1,6 @@
-import { strict as assert } from 'node:assert'
-import { describe, it } from 'node:test'
-import pretty from '../../../lib/filters/pretty.js'
+const assert = require('assert/strict')
+const { describe, it } = require('node:test')
+const pretty = require('../../../lib/filters/pretty.js')
 
 describe('pretty filter', () => {
   it('Removes index.html from a string', () => {

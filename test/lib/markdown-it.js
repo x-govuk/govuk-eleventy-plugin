@@ -1,6 +1,6 @@
-import { strict as assert } from 'node:assert'
-import { describe, it } from 'node:test'
-import md from '../../lib/markdown-it.js'
+const assert = require('assert/strict')
+const { describe, it } = require('node:test')
+const md = require('../../lib/markdown-it.js')
 
 describe('markdown-it', () => {
   it('Returns configured markdown-it parser', () => {

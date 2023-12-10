@@ -1,6 +1,6 @@
-import { strict as assert } from 'node:assert'
-import { describe, it } from 'node:test'
-import itemsFromNavigation from '../../../lib/filters/items-from-navigation.js'
+const assert = require('assert/strict')
+const { describe, it } = require('node:test')
+const itemsFromNavigation = require('../../../lib/filters/items-from-navigation.js')
 
 const eleventyNavigationBreadcrumb = [{
   key: 'Home',

@@ -1,6 +1,6 @@
-import { strict as assert } from 'node:assert'
-import { describe, it } from 'node:test'
-import { ensureSlash, normalise } from '../../lib/utils.js'
+const assert = require('assert/strict')
+const { describe, it } = require('node:test')
+const { ensureSlash, normalise } = require('../../lib/utils.js')
 
 describe('Utility', () => {
   it('Ensures string ends with a slash', () => {

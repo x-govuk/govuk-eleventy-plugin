@@ -1,6 +1,6 @@
-import { strict as assert } from 'node:assert'
-import { describe, it } from 'node:test'
-import smart from '../../../lib/filters/smart.js'
+const assert = require('assert/strict')
+const { describe, it } = require('node:test')
+const smart = require('../../../lib/filters/smart.js')
 
 describe('smart filter', () => {
   it('Converts plain ASCII quotes into ‘smart’ typographic quotes', t => {

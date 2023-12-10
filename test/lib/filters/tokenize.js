@@ -1,6 +1,6 @@
-import { strict as assert } from 'node:assert'
-import { describe, it } from 'node:test'
-import tokenize from '../../../lib/filters/tokenize.js'
+const assert = require('assert/strict')
+const { describe, it } = require('node:test')
+const tokenize = require('../../../lib/filters/tokenize.js')
 
 describe('tokenize filter', () => {
   it('Reduces size of a string by removing duplicate and common words', () => {
