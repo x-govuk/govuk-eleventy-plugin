@@ -36,7 +36,8 @@
     "predev": "rimraf _site",
     "dev": "eleventy --serve --watch",
     "start": "eleventy --serve",
-    "lint": "prettier . --check && standard && stylelint '**/*.scss'",
+    "prelint": "prettier . --check",
+    "lint": "eslint '**/*.js' && stylelint '**/*.scss'",
     "test": "node --test",
     "coverage": "node --test --experimental-test-coverage",
     "release": "np"
@@ -69,9 +70,12 @@
   },
   "devDependencies": {
     "@x-govuk/govuk-eleventy-plugin": "file:./",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-jsdoc": "^46.9.0",
     "np": "^9.0.0",
     "prettier": "^3.0.0",
-    "standard": "^17.0.0",
     "stylelint": "^ 15.10.3",
     "stylelint-config-gds": "^1.0.0"
   },
@@ -100,6 +104,19 @@
           "singleQuote": false
         }
       }
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:jsdoc/recommended",
+      "standard",
+      "prettier"
+    ],
+    "ignorePatterns": [
+      "_site/**/*.js"
     ]
   },
   "stylelint": {
