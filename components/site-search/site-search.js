@@ -11,6 +11,10 @@ let searchQuery = ''
 let searchCallback = function () {}
 let searchResults = []
 
+/**
+ * Get module
+ * @param {string} $module - Module name
+ */
 export function Search ($module) {
   this.$module = $module
 }
