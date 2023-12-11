@@ -1,151 +1,133 @@
-/* global XMLHttpRequest */
 import accessibleAutocomplete from 'accessible-autocomplete/dist/accessible-autocomplete.min.js'
 
-// CONSTANTS
-const TIMEOUT = 10 // Time to wait before giving up fetching the search index
-const STATE_DONE = 4 // XHR client readyState DONE
+export class SiteSearchElement extends HTMLElement {
+  constructor () {
+    super()
 
-let searchIndex = null
-let statusMessage = null
-let searchQuery = ''
-let searchCallback = function () {}
-let searchResults = []
-
-/**
- * Get module
- * @param {string} $module - Module name
- */
-export function Search ($module) {
-  this.$module = $module
-}
-
-Search.prototype.fetchSearchIndex = function (indexUrl, callback) {
-  const request = new XMLHttpRequest()
-  request.open('GET', indexUrl, true)
-  request.timeout = TIMEOUT * 1000
-  statusMessage = 'Loading search index'
-  request.onreadystatechange = function () {
-    if (request.readyState === STATE_DONE) {
-      if (request.status === 200) {
-        const response = request.responseText
-        const json = JSON.parse(response)
-        statusMessage = 'No results found'
-        searchIndex = json
-        callback(json)
-      } else {
-        statusMessage = 'Failed to load the search index'
-      }
-    }
-  }
-  request.send()
-}
-
-Search.prototype.findResults = function (searchQuery, searchIndex) {
-  return searchIndex.filter(item => {
-    const regex = new RegExp(searchQuery, 'gi')
-    return item.title.match(regex) || item.templateContent.match(regex)
-  })
-}
-
-Search.prototype.renderResults = function () {
-  if (!searchIndex) {
-    return searchCallback(searchResults)
+    this.statusMessage = null
+    this.searchInputId = 'app-site-search__input'
+    this.searchIndex = null
+    this.searchIndexUrl = this.getAttribute('index')
+    this.searchLabel = this.getAttribute('label')
+    this.searchResults = []
+    this.searchTimeout = 10
+    this.sitemapLink = this.querySelector('.app-site-search__link')
   }
 
-  const resultsArray = this.findResults(searchQuery, searchIndex).reverse()
+  async fetchSearchIndex (indexUrl) {
+    this.statusMessage = 'Loading search index'
 
-  searchResults = resultsArray.map(function (result) {
-    return result
-  })
+    try {
+      const response = await fetch(indexUrl, {
+        signal: AbortSignal.timeout(this.searchTimeout * 1000)
+      })
 
-  searchCallback(searchResults)
-}
-
-Search.prototype.handleSearchQuery = function (query, callback) {
-  searchQuery = query
-  searchCallback = callback
-
-  this.renderResults()
-}
-
-Search.prototype.handleOnConfirm = function (result) {
-  const path = result.url
-  if (!path) {
-    return
-  }
-  window.location.href = path
-}
-
-Search.prototype.inputValueTemplate = function (result) {
-  if (result) {
-    return result.title
-  }
-}
-
-Search.prototype.resultTemplate = function (result) {
-  if (result) {
-    const element = document.createElement('span')
-    const resultTitle = result.title
-    element.textContent = resultTitle
-
-    if (result.hasFrontmatterDate || result.section) {
-      const section = document.createElement('span')
-      section.className = 'app-site-search--section'
-
-      if (result.hasFrontmatterDate && result.section) {
-        section.innerHTML = `${result.section}<br>${result.date}`
-      } else {
-        section.innerHTML = result.section || result.date
+      if (!response.ok) {
+        throw Error('Search index not found')
       }
 
-      element.appendChild(section)
+      const json = await response.json()
+      this.statusMessage = 'No results found'
+      this.searchIndex = json
+    } catch (error) {
+      this.statusMessage = 'Failed to load search index'
+      console.error(this.statusMessage, error.message)
+    }
+  }
+
+  findResults (searchQuery, searchIndex) {
+    return searchIndex.filter(item => {
+      const regex = new RegExp(searchQuery, 'gi')
+      return item.title.match(regex) || item.templateContent.match(regex)
+    })
+  }
+
+  renderResults (query, populateResults) {
+    if (!this.searchIndex) {
+      return populateResults(this.searchResults)
     }
 
-    return element.innerHTML
+    this.searchResults = this.findResults(query, this.searchIndex).reverse()
+
+    populateResults(this.searchResults)
+  }
+
+  handleOnConfirm (result) {
+    const path = result.url
+    if (!path) {
+      return
+    }
+
+    window.location.href = path
+  }
+
+  handleNoResults () {
+    return this.statusMessage
+  }
+
+  inputValueTemplate (result) {
+    if (result) {
+      return result.title
+    }
+  }
+
+  searchLabelTemplate () {
+    const element = document.createElement('label')
+    element.classList.add('govuk-visually-hidden')
+    element.htmlFor = this.searchInputId
+    element.textContent = this.searchLabel
+
+    return element
+  }
+
+  resultTemplate (result) {
+    if (result) {
+      const element = document.createElement('span')
+      element.textContent = result.title
+
+      if (result.hasFrontmatterDate || result.section) {
+        const section = document.createElement('span')
+        section.className = 'app-site-search--section'
+
+        section.innerHTML = (result.hasFrontmatterDate && result.section)
+          ? `${result.section}<br>${result.date}`
+          : result.section || result.date
+
+        element.appendChild(section)
+      }
+
+      return element.innerHTML
+    }
+  }
+
+  async connectedCallback() {
+    await this.fetchSearchIndex(this.searchIndexUrl)
+
+    // Remove fallback link to sitemap
+    if (this.sitemapLink) {
+      this.sitemapLink.remove()
+    }
+
+    // Add label for search input
+    const label = this.searchLabelTemplate()
+    this.append(label)
+
+    accessibleAutocomplete({
+      element: this,
+      id: this.searchInputId,
+      cssNamespace: 'app-site-search',
+      displayMenu: 'overlay',
+      minLength: 2,
+      placeholder: this.searchLabel,
+      confirmOnBlur: false,
+      autoselect: true,
+      source: this.renderResults.bind(this),
+      onConfirm: this.handleOnConfirm,
+      templates: {
+        inputValue: this.inputValueTemplate,
+        suggestion: this.resultTemplate
+      },
+      tNoResults: this.handleNoResults.bind(this)
+    })
   }
 }
-
-Search.prototype.init = function () {
-  const $module = this.$module
-  if (!$module) {
-    return
-  }
-
-  // The Accessible Autocomplete only works in IE9+ so we can use newer
-  // JavaScript features here but need to check for browsers that do not have
-  // these features and force the fallback by returning early.
-  // http://responsivenews.co.uk/post/18948466399/cutting-the-mustard
-  const featuresNeeded = (
-    'querySelector' in document &&
-    'addEventListener' in window &&
-    !!(Array.prototype && Array.prototype.forEach)
-  )
-
-  if (!featuresNeeded) {
-    return
-  }
-
-  accessibleAutocomplete({
-    element: $module,
-    id: 'app-site-search__input',
-    cssNamespace: 'app-site-search',
-    displayMenu: 'overlay',
-    placeholder: $module.querySelector('[for=app-site-search__input]').innerText,
-    confirmOnBlur: false,
-    autoselect: true,
-    source: this.handleSearchQuery.bind(this),
-    onConfirm: this.handleOnConfirm,
-    templates: {
-      inputValue: this.inputValueTemplate,
-      suggestion: this.resultTemplate
-    },
-    tNoResults: function () { return statusMessage }
-  })
-
-  const searchIndexUrl = $module.getAttribute('data-search-index')
-  this.fetchSearchIndex(searchIndexUrl, function () {
-    this.renderResults()
-  }.bind(this))
-}
-
-export default Search

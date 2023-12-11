@@ -1,4 +1,5 @@
-<div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="{{ params.indexPath }}">
-  <label class="govuk-visually-hidden" for="app-site-search__input">{{ params.label | default("Search site") }}</label>
-  <a class="app-site-search__link govuk-link-no-visited" href="{{ params.sitemapPath }}">Sitemap</a>
-</div>
+<site-search class="app-site-search govuk-!-display-none-print" index="{{ params.indexPath }}" label="{{ params.label | default("Search site") }}">
+{%- if params.sitemapPath -%}
+  <a class="app-site-search__link" href="{{ params.sitemapPath }}">Sitemap</a>
+{%- endif -%}
+</site-search>

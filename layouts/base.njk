@@ -1,7 +1,6 @@
 {% extends "govuk/template.njk" %}
 
 {% set assetUrl = assetPath | absoluteUrl(options.url) %}
-{% set htmlClasses = "no-js" %}
 {% set themeColor = options.themeColour %}
 
 {# Only show default Open Graph image if document does not provide its own #}
@@ -71,6 +70,5 @@
 
 {% block bodyEnd %}
   <script src="/assets/govuk.js" type="module"></script>
-  <script>document.documentElement.classList.remove('no-js')</script>
   {% block scripts %}{% endblock %}
 {% endblock %}
