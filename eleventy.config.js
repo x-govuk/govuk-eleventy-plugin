@@ -66,6 +66,11 @@ module.exports = function (eleventyConfig) {
       ])
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   )
+  eleventyConfig.addCollection('upgrading', (collection) =>
+    collection
+      .getFilteredByGlob(['docs/upgrading/*.md'])
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  )
 
   // Passthrough
   eleventyConfig.addPassthroughCopy('./docs/assets')

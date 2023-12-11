@@ -1,100 +1,12 @@
 ---
 layout: sub-navigation
 order: 10
-title: Upgrading from v2 to v3
-description: v3.0.0 contains a number of breaking changes.
+title: Upgrading
+description: Guides for upgrading to major releases with breaking changes
 ---
 
-## Side navigation layout
+{% for page in collections.upgrading %}
 
-The `side-navigation` layout has been renamed `sub-navigation`, so use this new name wherever you call this layout. For example, in a document’s front matter:
+- [{{ page.data.title }}]({{ page.url | url }})
 
-```diff
-- layout: side-navigation
-+ layout: sub-navigation
-  title: My post
-```
-
-## Open Graph images
-
-Plugin and front matter option names have been updated to match names [introduced in `govuk-frontend` v4.3.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.3.0).
-
-### Setting a default Open Graph image
-
-Within plugin options, `ogImage` has been renamed `opengraphImageUrl`. A complete URL is also now required for this value.
-
-Example:
-
-```diff
-  eleventyConfig.addPlugin(govukEleventyPlugin, {
--   ogImage: '/assets/opengraph-image.png',
-+   opengraphImageUrl: 'https://example.org/assets/opengraph-image.png',
-  })
-```
-
-### Using a post image as Open Graph image
-
-Within front matter options, `image.ogImage` has been renamed `image.opengraphImage`. For example:
-
-```diff
-  image:
-    src: "/assets/post-image.png"
-    alt: "Post image"
--   ogImage: true
-+   opengraphImage: true
-```
-
-### Adding an Open Graph image to a document
-
-Within front matter options, `ogImage` has been renamed `opengraphImage`. For example:
-
-```diff
-- ogImage:
-+ opengraphImage:
-    src: "/assets/another-opengraph-image.png"
-    alt: "Another Open Graph image"
-```
-
-## Footer options
-
-Plugin options have been updated to better align with the changes to the footer component [introduced in `govuk-frontend` v4.3.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.3.0).
-
-### Setting a custom content licence
-
-You can now change the content licence in the footer using the `footer.contentLicence` option. This replaces `footer.licence`.
-
-`footer.contentLicence` takes either a `text` or `html` value, and no longer parses Markdown. Unlike the component in the Design System, using this option will prevent the OGL logo from appearing to the left of the content licence.
-
-Example:
-
-```diff
-  eleventyConfig.addPlugin(govukEleventyPlugin, {
-    footer: {
--     licence: 'Licensed under the MIT Licence'
-+     contentLicence: {
-+       text: 'Licensed under the MIT Licence'
-+     }
-    }
-  })
-```
-
-### Setting a custom copyright statement
-
-`footer.copyright` takes either a `text` or `html` value, and no longer parses Markdown. Unlike the component in the Design System, using this option prevents the Royal Coat of Arms from appearing above the copyright statement.
-
-Example:
-
-```diff
-  eleventyConfig.addPlugin(govukEleventyPlugin, {
-    footer: {
--     copyright: '© 2022 My Organistion'
-+     copyright: {
-+       text: '© 2022 My Organistion'
-+     }
-    }
-  })
-```
-
-## Article component
-
-If you were [overriding a layout](https://x-govuk.github.io/govuk-eleventy-plugin/layouts/#overriding-layouts) and using the `appArticle` component, this has been removed and replaced with separate `appDocumentHeader` and `appDocumentFooter` components.
+{% endfor %}
