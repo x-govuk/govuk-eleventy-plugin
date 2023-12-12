@@ -27,7 +27,7 @@
     {% for item in collections.sitemap | eleventyNavigation(options.homeKey) %}
       <div class="govuk-!-margin-bottom-4">
         <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="{{ item.url | url | pretty }}">{{ item.title | smart }}</a>
+          <a class="govuk-link" href="{{ item.url | pretty }}">{{ item.title | smart }}</a>
         </h2>
         {% if item.excerpt %}
           <p class="govuk-body">{{ item.excerpt | markdown("inline") | striptags(true) }}</p>
