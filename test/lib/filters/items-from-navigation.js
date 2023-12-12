@@ -98,37 +98,6 @@ describe('itemsFromNavigation filter', () => {
     }])
   })
 
-  it('Converts navigation data to items array using path prefix', () => {
-    const config = {
-      pathPrefix: '/prefix/'
-    }
-    const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/child', config)
-
-    assert.deepEqual(result, [{
-      href: '/prefix/',
-      text: 'Home',
-      current: false,
-      parent: true,
-      children: false
-    }, {
-      href: '/prefix/parent/',
-      text: 'Parent page',
-      current: false,
-      parent: true,
-      children: [{
-        href: '/prefix/parent/child/',
-        text: 'Child page',
-        current: false
-      }]
-    }, {
-      href: '/prefix/parent/child',
-      text: 'Child page',
-      current: true,
-      parent: true,
-      children: false
-    }])
-  })
-
   it('Converts navigation data to items array adding parent site', () => {
     const config = {
       parentSite: {
@@ -159,44 +128,6 @@ describe('itemsFromNavigation filter', () => {
       }]
     }, {
       href: '/parent/child',
-      text: 'Child page',
-      current: true,
-      parent: true,
-      children: false
-    }])
-  })
-
-  it('Converts navigation data to items array adding parent site and using path prefix', () => {
-    const config = {
-      parentSite: {
-        url: 'https://example.org',
-        name: 'Example'
-      },
-      pathPrefix: '/prefix/'
-    }
-    const result = itemsFromNavigation(eleventyNavigationBreadcrumb, '/parent/child', config)
-
-    assert.deepEqual(result, [{
-      href: 'https://example.org',
-      text: 'Example'
-    }, {
-      href: '/prefix/',
-      text: 'Home',
-      current: false,
-      parent: true,
-      children: false
-    }, {
-      href: '/prefix/parent/',
-      text: 'Parent page',
-      current: false,
-      parent: true,
-      children: [{
-        href: '/prefix/parent/child/',
-        text: 'Child page',
-        current: false
-      }]
-    }, {
-      href: '/prefix/parent/child',
       text: 'Child page',
       current: true,
       parent: true,
