@@ -7,7 +7,7 @@ description: The plugin offers a number of layouts to match the type of content 
 
 {% for page in collections.layout %}
 
-- [{{ page.data.title }}]({{ page.url | url }}) – {{ page.data.description }}
+- [{{ page.data.title }}]({{ page.url }}) – {{ page.data.description }}
 
 {% endfor %}
 

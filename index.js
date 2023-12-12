@@ -1,3 +1,5 @@
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy")
+
 module.exports = function (eleventyConfig, pluginOptions = {}) {
   const { pathPrefix } = eleventyConfig
 
@@ -39,6 +41,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   })
 
   // Plugins
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'))
 

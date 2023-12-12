@@ -5,7 +5,7 @@
   {% for item in params.items %}
     <li class="app-document-list__item">
       <h{{ headingLevel }} class="app-document-list__item-title">
-        <a class="govuk-link" href="{{ item.url | url | pretty }}">{{ item.data.title | smart }}</a>
+        <a class="govuk-link" href="{{ item.url | pretty }}">{{ item.data.title | smart }}</a>
       </h{{ headingLevel }}>
       {% if item.data.description %}
       <p class="app-document-list__item-description">
