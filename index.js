@@ -27,6 +27,10 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
 
   // Filters
   eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
+  eleventyConfig.addFilter(
+    'currentPage',
+    require('./lib/filters/current-page.js')
+  )
   eleventyConfig.addFilter('includes', require('./lib/filters/includes.js'))
   eleventyConfig.addFilter(
     'itemsFromCollection',
