@@ -36,11 +36,16 @@
     "predev": "rimraf _site",
     "dev": "eleventy --serve --watch",
     "start": "eleventy --serve",
-    "prelint": "prettier . --check",
-    "lint": "eslint '**/*.js' && stylelint '**/*.scss'",
+    "lint:prettier": "prettier . --check",
+    "lint:js": "eslint '**/*.js'",
+    "lint:scss": "stylelint '**/*.scss'",
+    "lint": "npm run lint:prettier && npm run lint:js && npm run lint:scss",
     "test": "node --test",
     "coverage": "node --test --experimental-test-coverage",
     "release": "np"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
@@ -73,54 +78,18 @@
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsdoc": "^46.9.0",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.0",
     "np": "^9.0.0",
-    "prettier": "^3.0.0",
-    "stylelint": "^ 15.10.3",
+    "prettier": "^3.1.0",
+    "stylelint": "^15.0.0",
     "stylelint-config-gds": "^1.0.0"
   },
   "engines": {
     "node": "^16 || ^18 || ^20",
     "npm": ">=8.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "overrides": [
-      {
-        "files": "*.md",
-        "options": {
-          "embeddedLanguageFormatting": "off",
-          "singleQuote": false
-        }
-      },
-      {
-        "files": "*.scss",
-        "options": {
-          "singleQuote": false
-        }
-      }
-    ]
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "extends": [
-      "plugin:jsdoc/recommended",
-      "standard",
-      "prettier"
-    ],
-    "ignorePatterns": [
-      "_site/**/*.js"
-    ]
-  },
-  "stylelint": {
-    "extends": "stylelint-config-gds/scss"
   }
 }

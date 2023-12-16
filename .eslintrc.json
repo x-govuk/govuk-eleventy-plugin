@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["plugin:jsdoc/recommended", "standard", "prettier"],
+  "ignorePatterns": ["_site"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["jsdoc", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error"]
+  }
+}
