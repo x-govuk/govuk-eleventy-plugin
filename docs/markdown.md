@@ -278,7 +278,7 @@ The rendered output looks like this:
 ![A crown icon above the words GOV.UK](/assets/images/govuk-opengraph-image.png "The GOV.UK logo")
 ```
 
-![A crown icon above the words GOV.UK](/assets/images/govuk-opengraph-image.png "The GOV.UK logo")
+![A crown icon above the words GOV.UK](/assets/images/govuk-opengraph-image.png 'The GOV.UK logo')
 
 ### Linking images
 
@@ -290,7 +290,7 @@ To add a link to an image, enclose the Markdown for the image in brackets, and t
 
 The rendered output looks like this:
 
-[![A crown icon above the words GOV.UK](/assets/images/govuk-apple-touch-icon-180x180.png "Visit GOV.UK")](https://www.gov.uk)
+[![A crown icon above the words GOV.UK](/assets/images/govuk-apple-touch-icon-180x180.png 'Visit GOV.UK')](https://www.gov.uk)
 
 ## Typographic replacements
 
