@@ -23,9 +23,8 @@ This plugin includes the following features:
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/en/) v16.0.0 or above
-- [npm CLI](https://docs.npmjs.com/cli) v8.0.0 or above
-- [Eleventy](https://www.11ty.dev) v2.0.0 or above
+- [Node.js](https://nodejs.org) v18 or later
+- [Eleventy](https://www.11ty.dev) v2.0.0 or later
 
 [Node version manager](https://github.com/nvm-sh/nvm) is recommended if you are working across multiple projects that use different versions of Node.js.
 

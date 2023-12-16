@@ -11,9 +11,8 @@ You’re welcome to use the plugin even if your service isn’t considered part 
 
 ## Requirements
 
-- [Node.js](https://nodejs.org) v16.0.0 or above
-- [npm CLI](https://docs.npmjs.com/cli) v8.0.0 or above
-- [Eleventy](https://www.11ty.dev) v2.0.0 or above
+- [Node.js](https://nodejs.org) v18 or later
+- [Eleventy](https://www.11ty.dev) v2 or later
 
 ## Installation
 

@@ -89,7 +89,6 @@
     "stylelint-config-gds": "^1.0.0"
   },
   "engines": {
-    "node": "^16 || ^18 || ^20",
-    "npm": ">=8.0.0"
+    "node": ">=18"
   }
 }
