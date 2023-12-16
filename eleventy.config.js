@@ -5,10 +5,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require('./index.js'), {
     icons: {
       mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
-      shortcut: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-favicon.ico',
-      touch: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png'
+      shortcut:
+        'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-favicon.ico',
+      touch:
+        'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png'
     },
-    opengraphImageUrl: 'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
+    opengraphImageUrl:
+      'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
     homeKey: 'GOV.UK Eleventy Plugin',
     parentSite: {
       url: 'https://x-govuk.github.io/#projects',
@@ -34,29 +37,33 @@ module.exports = function (eleventyConfig) {
         text: '© X-GOVUK'
       },
       meta: {
-        items: [{
-          href: 'https://www.11ty.dev',
-          text: 'Documentation for Eleventy (opens in a new tab)',
-          attributes: {
-            target: '_blank'
+        items: [
+          {
+            href: 'https://www.11ty.dev',
+            text: 'Documentation for Eleventy (opens in a new tab)',
+            attributes: {
+              target: '_blank'
+            }
           }
-        }]
+        ]
       }
     }
   })
 
   // Collections
-  eleventyConfig.addCollection('layout', collection =>
-    collection.getFilteredByGlob([
-      'docs/layouts/*.md'
-    ]).sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  eleventyConfig.addCollection('layout', (collection) =>
+    collection
+      .getFilteredByGlob(['docs/layouts/*.md'])
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   )
-  eleventyConfig.addCollection('homepage', collection =>
-    collection.getFilteredByGlob([
-      'docs/options.md',
-      'docs/layouts.md',
-      'docs/markdown.md'
-    ]).sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  eleventyConfig.addCollection('homepage', (collection) =>
+    collection
+      .getFilteredByGlob([
+        'docs/options.md',
+        'docs/layouts.md',
+        'docs/markdown.md'
+      ])
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   )
 
   // Passthrough
@@ -75,8 +82,6 @@ module.exports = function (eleventyConfig) {
       input: 'docs',
       layouts: '../layouts'
     },
-    pathPrefix: process.env.GITHUB_ACTIONS
-      ? '/govuk-eleventy-plugin/'
-      : '/'
+    pathPrefix: process.env.GITHUB_ACTIONS ? '/govuk-eleventy-plugin/' : '/'
   }
 }

@@ -1,7 +1,7 @@
 import accessibleAutocomplete from 'accessible-autocomplete/dist/accessible-autocomplete.min.js'
 
 export class SiteSearchElement extends HTMLElement {
-  constructor () {
+  constructor() {
     super()
 
     this.statusMessage = null
@@ -14,7 +14,7 @@ export class SiteSearchElement extends HTMLElement {
     this.sitemapLink = this.querySelector('.app-site-search__link')
   }
 
-  async fetchSearchIndex (indexUrl) {
+  async fetchSearchIndex(indexUrl) {
     this.statusMessage = 'Loading search index'
 
     try {
@@ -35,14 +35,14 @@ export class SiteSearchElement extends HTMLElement {
     }
   }
 
-  findResults (searchQuery, searchIndex) {
-    return searchIndex.filter(item => {
+  findResults(searchQuery, searchIndex) {
+    return searchIndex.filter((item) => {
       const regex = new RegExp(searchQuery, 'gi')
       return item.title.match(regex) || item.templateContent.match(regex)
     })
   }
 
-  renderResults (query, populateResults) {
+  renderResults(query, populateResults) {
     if (!this.searchIndex) {
       return populateResults(this.searchResults)
     }
@@ -52,7 +52,7 @@ export class SiteSearchElement extends HTMLElement {
     populateResults(this.searchResults)
   }
 
-  handleOnConfirm (result) {
+  handleOnConfirm(result) {
     const path = result.url
     if (!path) {
       return
@@ -61,17 +61,17 @@ export class SiteSearchElement extends HTMLElement {
     window.location.href = path
   }
 
-  handleNoResults () {
+  handleNoResults() {
     return this.statusMessage
   }
 
-  inputValueTemplate (result) {
+  inputValueTemplate(result) {
     if (result) {
       return result.title
     }
   }
 
-  searchLabelTemplate () {
+  searchLabelTemplate() {
     const element = document.createElement('label')
     element.classList.add('govuk-visually-hidden')
     element.htmlFor = this.searchInputId
@@ -80,7 +80,7 @@ export class SiteSearchElement extends HTMLElement {
     return element
   }
 
-  resultTemplate (result) {
+  resultTemplate(result) {
     if (result) {
       const element = document.createElement('span')
       element.textContent = result.title
@@ -89,9 +89,10 @@ export class SiteSearchElement extends HTMLElement {
         const section = document.createElement('span')
         section.className = 'app-site-search--section'
 
-        section.innerHTML = (result.hasFrontmatterDate && result.section)
-          ? `${result.section}<br>${result.date}`
-          : result.section || result.date
+        section.innerHTML =
+          result.hasFrontmatterDate && result.section
+            ? `${result.section}<br>${result.date}`
+            : result.section || result.date
 
         element.appendChild(section)
       }

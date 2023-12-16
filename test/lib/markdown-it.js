@@ -18,7 +18,10 @@ describe('markdown-it', () => {
       headingPermalinks: true
     }).render('# Heading')
 
-    assert.equal(result, '<h1 id="heading" tabindex="-1" class="govuk-heading-xl"><a class="app-link--heading govuk-link" href="#heading"><span>Heading</span></a></h1>\n')
+    assert.equal(
+      result,
+      '<h1 id="heading" tabindex="-1" class="govuk-heading-xl"><a class="app-link--heading govuk-link" href="#heading"><span>Heading</span></a></h1>\n'
+    )
   })
 
   it('Renders a definition list', () => {
