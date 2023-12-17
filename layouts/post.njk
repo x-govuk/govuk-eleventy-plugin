@@ -26,7 +26,7 @@
           <figure>
             <img src="{{ image.src }}" alt="{{ image.alt }}">
             {% if image.caption -%}
-            <figcaption>{{ image.caption }}</figcaption>
+            <figcaption>{{ image.caption | markdown }}</figcaption>
             {% endif -%}
           </figure>
         {%- endif %}
