@@ -11,6 +11,50 @@ description: The plugin offers a number of layouts to match the type of content 
 
 {% endfor %}
 
+## Common front matter options
+
+Layouts can accept the following [front matter data](https://www.11ty.dev/docs/data-frontmatter/) to customise the appearance, content and behaviour of a layout.
+
+| Name                     | Type    | Description                                                                                                              |
+| :----------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------- |
+| **layout**               | string  | Page layout.                                                                                                             |
+| **includeInBreadcrumbs** | boolean | Include page as the last item in any breadcrumbs. Default is `false`.                                                    |
+| **order**                | number  | Ranking of page in navigation. Lower numbers appear before pages with a higher number.                                   |
+| **title**                | string  | Page title.                                                                                                              |
+| **description**          | string  | Page description.                                                                                                        |
+| **opengraphImage**       | object  | Open Graph image that appears on social media networks.                                                                  |
+| **opengraphImage.src**   | string  | Path to Open Graph image. Can be a relative or absolute URL. This value overrides `opengraphImageUrl` in plugin options. |
+| **opengraphImage.alt**   | string  | Alternative text for Open Graph image.                                                                                   |
+| **aside**                | object  | Small portion of content that is indirectly related to the main content.                                                 |
+| **aside.title**          | string  | Title for aside.                                                                                                         |
+| **aside.content**        | string  | Content for aside. Accepts Markdown.                                                                                     |
+| **related**              | object  | Related links. See [related](#options-for-related).                                                                      |
+
+### Options for related
+
+With one section:
+
+| Name                  | Type   | Description                                                       |
+| :-------------------- | :----- | :---------------------------------------------------------------- |
+| **title**             | string | Title for group of related links. Default is `'Related content'`. |
+| **items**             | array  | See [items](#options-for-items).                                  |
+| **subsections**       | array  | Title for sub-group of related links.                             |
+| **subsections.title** | string |                                                                   |
+| **subsections.items** | array  | See [items](#options-for-items).                                  |
+
+With multiple sections:
+
+| Name         | Type  | Description                        |
+| :----------- | :---- | :--------------------------------- |
+| **sections** | array | See [items](#options-for-related). |
+
+### Options for items
+
+| Name     | Type   | Description                   |
+| :------- | :----- | :---------------------------- |
+| **text** | string | Title of related content.     |
+| **href** | string | Link for the related content. |
+
 ## Overriding layouts
 
 Layouts are registered with Eleventy by setting the `dir.layouts` key to point to the layout files installed in the package directory:

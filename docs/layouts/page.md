@@ -1,58 +1,20 @@
 ---
-layout: page
 order: 1
 title: Page
 description: Simple layout designed for maximum flexibility of content.
-aside:
-  title: Aside
-  content: | 
-    A small portion of content that is **indirectly** related to the main content.
-related:
-  sections:
-    - title: Related links
-      items:
-        - text: Layouts
-          href: ../../layouts
-        - text: Options
-          href: ../../options
-      subsections:
-        - title: Eleventy documentation
-          items:
-          - text: Front matter data
-            href: https://www.11ty.dev/docs/data-frontmatter/
 ---
 
-Use front matter options to customise the appearance, content and behaviour of this layout.
+> View an <a href="/example-layouts/page" target="_blank">example page that uses this layout (opens in a new tab)</a>
 
-For example, this page has the following options:
+To use this layout, make `page` the value for a page’s `layout` key:
 
 ```yaml
+---
 layout: page
-order: 1
-title: Page
-description: Simple layout designed for maximum flexibility of content.
-aside:
-  title: Aside
-  content: |
-    A small portion of content that is **indirectly** related to the main content.
-related:
-  sections:
-    - title: Related links
-      items:
-        - text: Layouts
-          href: ../../layouts
-        - text: Options
-          href: ../../options
-      subsections:
-        - title: Eleventy documentation
-          items:
-          - text: Front matter data
-            href: https://www.11ty.dev/docs/data-frontmatter/
+title: Page title
+---
+
+Page content
 ```
 
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-{% set detailsText %}{% include "../includes/front-matter-options.md" %}{% endset %}
-{{ govukDetails({
-  summaryText: "Common front matter options",
-  html: detailsText
-}) }}
+Use [common front matter options](/layouts#common-front-matter-options) to customise which items and content appear within a page.
