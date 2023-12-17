@@ -1,90 +1,23 @@
 ---
-layout: post
 order: 3
 title: Post
 description: Layout for date-based content, such as blog posts or news items.
-date: 2011-12-21
-modified: 2012-12-22
-image:
-  src: /assets/images/govuk-opengraph-image.png
-  alt: A crown icon above the words GOV.UK.
-  caption: The GOV.UK logo
-  opengraphImage: true
-authors:
-  - name: William Ewart Gladstone
-    url: https://www.gov.uk/government/history/past-prime-ministers/william-ewart-gladstone
-  - name: Benjamin Disraeli
-    url: https://www.gov.uk/government/history/past-prime-ministers/benjamin-disraeli-the-earl-of-beaconsfield
-aside:
-  title: Aside
-  content: | 
-    A small portion of content that is **indirectly** related to the main content.
-related:
-  sections:
-    - title: Related links
-      items:
-        - text: Layouts
-          href: ../../layouts
-        - text: Options
-          href: ../../options
-      subsections:
-        - title: Eleventy documentation
-          items:
-          - text: Front matter data
-            href: https://www.11ty.dev/docs/data-frontmatter/
-tags:
-  - example tag
 ---
 
-Use front matter options to customise the appearance, content and behaviour of this layout.
+> View an <a href="/example-layouts/post" target="_blank">example page that uses this layout (opens in a new tab)</a>
 
-For example, this page has the following options:
+To use this layout, make `post` the value for a page’s `layout` key:
 
 ```yaml
+---
 layout: post
-order: 3
-title: Post
-description: Layout for date-based content, such as blog posts or news items.
-date: 2011-12-21
-modified: 2012-12-22
-image:
-  src: /assets/images/govuk-opengraph-image.png
-  alt: A crown icon above the words GOV.UK.
-  caption: The GOV.UK logo
-authors:
-  - name: William Ewart Gladstone
-    url: https://www.gov.uk/government/history/past-prime-ministers/william-ewart-gladstone
-  - name: Benjamin Disraeli
-    url: https://www.gov.uk/government/history/past-prime-ministers/benjamin-disraeli-the-earl-of-beaconsfield
-aside:
-  title: Aside
-  content: |
-    A small portion of content that is **indirectly** related to the main content.
-related:
-  sections:
-    - title: Related links
-      items:
-        - text: Layouts
-          href: ../../layouts
-        - text: Options
-          href: ../../options
-      subsections:
-        - title: Eleventy documentation
-          items:
-          - text: Front matter data
-            href: https://www.11ty.dev/docs/data-frontmatter/
-tags:
-  - example tag
+title: Page title
+---
+
+Page content
 ```
 
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-{% set detailsText %}{% include "../includes/front-matter-options.md" %}{% endset %}
-{{ govukDetails({
-  summaryText: "Common front matter options",
-  html: detailsText
-}) }}
-
-In addition to the common front matter options, this layout also accepts the following options:
+In addition to [common front matter options](/layouts#common-front-matter-options), this layout accepts the following options:
 
 | Name                     | Type                       | Description                                                                                  |
 | :----------------------- | :------------------------- | :------------------------------------------------------------------------------------------- |

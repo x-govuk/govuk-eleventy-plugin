@@ -1,60 +1,22 @@
 ---
-layout: sub-navigation
 order: 2
 title: Page with sub navigation
 description: Layout with sub navigation.
-aside:
-  title: Aside
-  content: | 
-    A small portion of content that is **indirectly** related to the main content.
-related:
-  sections:
-    - title: Related links
-      items:
-        - text: Layouts
-          href: ../../layouts
-        - text: Options
-          href: ../../options
-      subsections:
-        - title: Eleventy documentation
-          items:
-          - text: Front matter data
-            href: https://www.11ty.dev/docs/data-frontmatter/
 ---
 
-The `sub-navigation` layout offers a page with sub navigation, appearing to the left of content on wider viewports, and above on narrower ones.
+> View an <a href="/example-layouts/sub-navigation" target="_blank">example page that uses this layout (opens in a new tab)</a>
 
-Use front matter options to customise the appearance, content and behaviour of this layout.
+This layout offers a page with sub navigation, appearing to the left of content on wider viewports, and above on narrower ones.
 
-For example, this page has the following options:
+To use this layout, make `sub-navigation` the value for a page’s `layout` key:
 
 ```yaml
+---
 layout: sub-navigation
-order: 2
-title: Page with sub navigation
-description: Layout with sub navigation.
-aside:
-  title: Aside
-  content: |
-    A small portion of content that is **indirectly** related to the main content.
-related:
-  sections:
-    - title: Related links
-      items:
-        - text: Layouts
-          href: ../../layouts
-        - text: Options
-          href: ../../options
-      subsections:
-        - title: Eleventy documentation
-          items:
-          - text: Front matter data
-            href: https://www.11ty.dev/docs/data-frontmatter/
+title: Page title
+---
+
+Page content
 ```
 
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-{% set detailsText %}{% include "../includes/front-matter-options.md" %}{% endset %}
-{{ govukDetails({
-  summaryText: "Common front matter options",
-  html: detailsText
-}) }}
+Use [common front matter options](/layouts#common-front-matter-options) to customise which items and content appear within a page.

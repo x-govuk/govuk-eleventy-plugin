@@ -43,6 +43,16 @@
   {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | canonicalUrl }}">
   {% endfor %}
+  <style>
+    @media screen and (min-width: 800px) {
+      .app-prose-scope .govuk-table {
+        display: table
+      }
+      .app-prose-scope .govuk-table__header:first-of-type {
+        width: 33%;
+      }
+    }
+  </style>
 
   {% if options.url %}<meta property="og:url" content="{{ page.url | canonicalUrl }}">{% endif %}
   <meta property="og:title" content="{{ title }}">

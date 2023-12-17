@@ -1,77 +1,25 @@
 ---
-layout: product
 order: 5
 title: Product page
-description: Layout for a product or marketing page based on the [Product Page Example](https://github.com/alphagov/product-page-example).
-startButton:
-  href: "#"
-  text: Start button
-image:
-  src: /assets/homepage-illustration.png
-  alt: The Eleventy mascot floating above a laptop.
-aside:
-  title: Aside
-  content: | 
-    A small portion of content that is **indirectly** related to the main content.
-related:
-  sections:
-    - title: Related links
-      items:
-        - text: Layouts
-          href: ../../layouts
-        - text: Options
-          href: ../../options
-      subsections:
-        - title: Eleventy documentation
-          items:
-          - text: Front matter data
-            href: https://www.11ty.dev/docs/data-frontmatter/
+description: Layout for product and marketing pages.
 ---
 
-Use front matter options to customise the appearance, content and behaviour of this layout.
+> View an <a href="/example-layouts/product" target="_blank">example page that uses this layout (opens in a new tab)</a>
 
-For example, this page has the following options:
+This layout, based on the component used on [GOV.UK product pages](https://github.com/alphagov/product-page-example), can be useful if you need a product or marketing page.
+
+To use this layout, make `product` the value for a page’s `layout` key:
 
 ```yaml
+---
 layout: product
-order: 5
-title: Product page
-description: Layout for a product or marketing page based on the [Product Page Example](https://github.com/alphagov/product-page-example).
-startButton:
-  href: "#"
-  text: Start button
-image:
-  src: /assets/homepage-illustration.png
-  alt: Eleventy’s possum mascot hanging on a red balloon and floating above a laptop.
-aside:
-  title: Aside
-  content: |
-    A small portion of content that is **indirectly** related to the main content.
-related:
-  sections:
-    - title: Related links
-      items:
-        - text: Layouts
-          href: ../../layouts
-        - text: Options
-          href: ../../options
-      subsections:
-        - title: Eleventy documentation
-          items:
-          - text: Front matter data
-            href: https://www.11ty.dev/docs/data-frontmatter/
+title: Page title
+---
+
+Page content
 ```
 
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-{% set detailsText %}{% include "../includes/front-matter-options.md" %}{% endset %}
-{{ govukDetails({
-  summaryText: "Common front matter options",
-  html: detailsText
-}) }}
-
-### Additional front matter options
-
-In addition to the common front matter options, this layout also has the following options:
+In addition to [common front matter options](/layouts#common-front-matter-options), this layout also accepts the following options:
 
 | Name                 | Type   | Description                                                                     |
 | :------------------- | :----- | :------------------------------------------------------------------------------ |
