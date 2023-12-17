@@ -19,4 +19,8 @@ title: Page title
 Page content
 ```
 
-Use [common front matter options](/layouts#common-front-matter-options) to customise which items and content appear within a page.
+In addition to [common front matter options](/layouts#common-front-matter-options), this layout also accepts the following options:
+
+| Name           | Type   | Description                                                                                                                                                |
+| :------------- | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **sectionKey** | string | Parent navigation key (usually a page title) to show items below in the sub navigation. Default is `homeKey` value provided in [plugin options](/options). |
