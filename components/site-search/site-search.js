@@ -71,13 +71,16 @@ export class SiteSearchElement extends HTMLElement {
     }
   }
 
-  searchLabelTemplate() {
-    const element = document.createElement('label')
-    element.classList.add('govuk-visually-hidden')
-    element.htmlFor = this.searchInputId
-    element.textContent = this.searchLabel
+  searchTemplate() {
+    const labelElement = document.createElement('label')
+    labelElement.classList.add('govuk-visually-hidden')
+    labelElement.htmlFor = this.searchInputId
+    labelElement.textContent = this.searchLabel
 
-    return element
+    const searchElement = document.createElement('search')
+    searchElement.append(labelElement)
+
+    return searchElement
   }
 
   resultTemplate(result) {
@@ -109,12 +112,12 @@ export class SiteSearchElement extends HTMLElement {
       this.sitemapLink.remove()
     }
 
-    // Add label for search input
-    const label = this.searchLabelTemplate()
-    this.append(label)
+    // Add `search` element with `label`
+    const search = this.searchTemplate()
+    this.append(search)
 
     accessibleAutocomplete({
-      element: this,
+      element: search,
       id: this.searchInputId,
       cssNamespace: 'app-site-search',
       displayMenu: 'overlay',
