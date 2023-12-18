@@ -1,6 +1,6 @@
 {% extends "govuk/template.njk" %}
 
-{% set assetUrl = assetPath | absoluteUrl(options.url) %}
+{% set assetUrl = assetPath | canonicalUrl %}
 {% set themeColor = options.themeColour %}
 
 {# Only show default Open Graph image if document does not provide its own #}
@@ -41,15 +41,15 @@
 {% block head %}
   <link rel="stylesheet" href="/assets/govuk.css">
   {% for stylesheet in options.stylesheets %}
-  <link rel="stylesheet" href="{{ stylesheet | absoluteUrl(options.url) }}">
+  <link rel="stylesheet" href="{{ stylesheet | canonicalUrl }}">
   {% endfor %}
 
-  <meta property="og:url" content="{{ page.url | absoluteUrl(options.url) }}">
+  {% if options.url %}<meta property="og:url" content="{{ page.url | canonicalUrl }}">{% endif %}
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
   {% if opengraphImage %}<meta name="twitter:card" content="summary_large_image">{% endif %}
-  {% if opengraphImage.src %}<meta name="twitter:image" content="{{ opengraphImage.src | absoluteUrl(options.url) }}">
-  <meta property="og:image" content="{{ opengraphImage.src | absoluteUrl(options.url) }}">{% endif %}
+  {% if opengraphImage.src %}<meta name="twitter:image" content="{{ opengraphImage.src | canonicalUrl }}">
+  <meta property="og:image" content="{{ opengraphImage.src | canonicalUrl }}">{% endif %}
   {% if opengraphImage.alt %}<meta property="og:image:alt" content="{{ opengraphImage.alt }}">{% endif %}
 {% endblock %}
 

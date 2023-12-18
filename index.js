@@ -26,6 +26,10 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addTemplateFormats('scss')
 
   // Filters
+  eleventyConfig.addFilter(
+    'canonicalUrl',
+    require('./lib/filters/canonical-url.js')
+  )
   eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
   eleventyConfig.addFilter('includes', require('./lib/filters/includes.js'))
   eleventyConfig.addFilter(
@@ -61,7 +65,6 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   // Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'))
 
   // Events
   eleventyConfig.on('eleventy.after', async ({ dir }) => {
