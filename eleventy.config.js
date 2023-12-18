@@ -17,9 +17,9 @@ module.exports = function (eleventyConfig) {
       url: 'https://x-govuk.github.io/#projects',
       name: 'X-GOVUK projects'
     },
-    url: process.env.GITHUB_ACTIONS
-      ? 'https://x-govuk.github.io/govuk-eleventy-plugin/'
-      : '/',
+    url:
+      process.env.GITHUB_ACTIONS &&
+      'https://x-govuk.github.io/govuk-eleventy-plugin/',
     header: {
       logotype: 'x-govuk',
       productName: 'Eleventy Plugin',
@@ -82,6 +82,6 @@ module.exports = function (eleventyConfig) {
       input: 'docs',
       layouts: '../layouts'
     },
-    pathPrefix: process.env.GITHUB_ACTIONS ? '/govuk-eleventy-plugin/' : '/'
+    pathPrefix: process.env.GITHUB_ACTIONS && '/govuk-eleventy-plugin/'
   }
 }

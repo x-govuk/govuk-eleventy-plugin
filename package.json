@@ -54,7 +54,6 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
-    "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@x-govuk/govuk-prototype-components": "^3.0.0",
@@ -94,6 +93,6 @@
     "stylelint-order": "^6.0.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=18.17"
   }
 }
