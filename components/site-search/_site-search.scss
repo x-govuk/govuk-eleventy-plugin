@@ -48,6 +48,8 @@ $icon-size: 40px;
 
 .app-site-search__hint,
 .app-site-search__input {
+  -webkit-appearance: none;
+  appearance: none;
   border: $govuk-border-width-form-element solid govuk-colour("white");
   border-radius: 0; // Safari 10 on iOS adds implicit border rounding.
   box-sizing: border-box;
@@ -56,12 +58,11 @@ $icon-size: 40px;
   padding: govuk-spacing(1);
   padding-left: $icon-size - govuk-spacing(1);
   width: 100%;
-  -webkit-appearance: none;
 }
 
 .app-site-search__hint {
-  position: absolute;
   color: govuk-colour("mid-grey");
+  position: absolute;
 }
 
 .app-site-search__input {
@@ -134,8 +135,8 @@ $icon-size: 40px;
   border-width: 1px 0;
   cursor: pointer;
   display: block;
-  position: relative;
   padding: govuk-spacing(2);
+  position: relative;
 
   &:first-of-type {
     border-top-width: 0;
@@ -200,6 +201,6 @@ $icon-size: 40px;
 
 .app-site-search__separator {
   display: inline-block;
-  margin-right: govuk-spacing(1);
   margin-left: govuk-spacing(1);
+  margin-right: govuk-spacing(1);
 }

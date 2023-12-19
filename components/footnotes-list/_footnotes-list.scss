@@ -29,8 +29,8 @@ a[aria-describedby="footnotes-label"]::after {
   li::before {
     @include govuk-font(19, $tabular: true);
     content: counter(footnotes) ".";
-    position: absolute;
     left: govuk-spacing(4);
+    position: absolute;
   }
 
   a[aria-label="Back to content"] {

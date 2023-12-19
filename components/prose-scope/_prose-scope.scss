@@ -125,9 +125,9 @@
   .x-govuk-code__language--shell {
     background-color: govuk-colour("black");
     border: $govuk-focus-width solid govuk-colour("white");
+    -webkit-font-smoothing: auto;
     margin-left: $govuk-focus-width * -1;
     margin-right: $govuk-focus-width * -1;
-    -webkit-font-smoothing: auto;
 
     code {
       filter: invert(100%);

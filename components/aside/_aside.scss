@@ -6,8 +6,8 @@
 
 .app-aside__heading {
   @include govuk-font(19, $weight: bold);
-  margin-top: govuk-spacing(3);
   margin-bottom: govuk-spacing(2);
+  margin-top: govuk-spacing(3);
 }
 
 .app-aside__body {
