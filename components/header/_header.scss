@@ -2,6 +2,14 @@
 // See: https://github.com/alphagov/govuk-design-system/blob/master/src/stylesheets/components/_header.scss
 
 @include govuk-exports("app-header") {
+  .app-header--full-width-border {
+    border-bottom: $govuk-border-width-wide solid $govuk-brand-colour;
+  }
+
+  .app-header--no-border {
+    border-bottom: 0;
+  }
+
   // Override the default 33% width on the logo in GOV.UK Frontend (prevents
   // unnecessary wrapping of product name on smaller tablet / desktop
   // viewports)
