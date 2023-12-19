@@ -37,9 +37,13 @@
     "dev": "eleventy --serve --watch",
     "start": "eleventy --serve",
     "lint:prettier": "prettier . --check",
+    "lint:prettier:fix": "prettier . --write",
     "lint:js": "eslint '**/*.js'",
+    "lint:js:fix": "eslint '**/*.js' --fix",
     "lint:scss": "stylelint '**/*.scss'",
+    "lint:scss:fix": "stylelint '**/*.scss' --fix",
     "lint": "npm run lint:prettier && npm run lint:js && npm run lint:scss",
+    "lint:fix": "npm run lint:prettier:fix && npm run lint:js:fix && npm run lint:scss:fix",
     "test": "node --test",
     "coverage": "node --test --experimental-test-coverage",
     "release": "np"
