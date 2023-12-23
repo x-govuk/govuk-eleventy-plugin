@@ -1,0 +1,13 @@
+@media screen and (min-width: 800px) {
+  .app-prose-scope .govuk-table {
+    display: table;
+  }
+
+  .app-prose-scope .govuk-table__header:first-of-type {
+    width: 30%;
+  }
+
+  .app-prose-scope .govuk-table__cell *:last-child {
+    margin-bottom: 0;
+  }
+}
