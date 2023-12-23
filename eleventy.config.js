@@ -20,6 +20,7 @@ module.exports = function (eleventyConfig) {
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',
+    stylesheets: ['/assets/application.css'],
     header: {
       logotype: 'x-govuk',
       productName: 'Eleventy Plugin',

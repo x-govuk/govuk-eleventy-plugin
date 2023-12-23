@@ -19,7 +19,24 @@ Page content
 
 In addition to [common front matter options](/layouts#common-front-matter-options), this layout accepts the following options:
 
-| Name                  | Type   | Description                                                                                                                                                |
-| :-------------------- | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **pagination**        | object | **Required.** Pages to show in the paginated list. Learn more about [pagination](https://www.11ty.dev/docs/pagination/) in the documentation for Eleventy. |
-| **paginationHeading** | string | Heading for the list of paginated pages.                                                                                                                   |
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    { text: "Name" },
+    { text: "Type" },
+    { text: "Description" }
+  ],
+  rows: [
+    [
+      { text: "pagination" },
+      { text: "object" },
+      { text: "**Required.** Pages to show in the paginated list. Learn more about [pagination](https://www.11ty.dev/docs/pagination/) in the documentation for Eleventy." | markdown }
+    ],
+    [
+      { text: "paginationHeading" },
+      { text: "string" },
+      { text: "Heading for the list of paginated pages." }
+    ]
+  ]
+}) }}

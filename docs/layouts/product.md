@@ -21,11 +21,44 @@ Page content
 
 In addition to [common front matter options](/layouts#common-front-matter-options), this layout also accepts the following options:
 
-| Name                 | Type   | Description                                                                     |
-| :------------------- | :----- | :------------------------------------------------------------------------------ |
-| **startButton**      | string | Start button. Appears below the title and any description.                      |
-| **startButton.text** | string | Text for the start button. Default is `'Get started'`.                          |
-| **startButton.href** | string | The URL that the start button should link to.                                   |
-| **image**            | object | Product image. Appears to the right of the page title, and is hidden on mobile. |
-| **image.src**        | string | Path to product image.                                                          |
-| **image.alt**        | string | Alternative text for product image.                                             |
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    { text: "Name" },
+    { text: "Type" },
+    { text: "Description" }
+  ],
+  rows: [
+    [
+      { text: "startButton" },
+      { text: "object" },
+      { text: "Start button. Appears below the title and any description." }
+    ],
+    [
+      { text: "startButton.text" },
+      { text: "string" },
+      { text: "Text for the start button (default is `'Get started'`)." | markdown }
+    ],
+    [
+      { text: "startButton.href" },
+      { text: "string" },
+      { text: "URL or page the start button should link to." }
+    ],
+    [
+      { text: "image" },
+      { text: "object" },
+      { text: "Product image. Appears to the right of the page title, and is hidden on mobile." }
+    ],
+    [
+      { text: "image.src" },
+      { text: "string" },
+      { text: "Path to product image." }
+    ],
+    [
+      { text: "image.alt" },
+      { text: "string" },
+      { text: "Alternative text for product image." }
+    ]
+  ]
+}) }}
