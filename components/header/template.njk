@@ -1,6 +1,5 @@
-{%- from "x-govuk/components/primary-navigation/macro.njk" import xGovukPrimaryNavigation -%}
 {%- from "../site-search/macro.njk" import appSiteSearch -%}
-{%- if params.navigation -%}
+{%- if options.navigation -%}
   {%- set headerType = "full-width-border" -%}
 {% elif layout == "product" or layout == "collection" %}
   {%- set headerType = "no-border" -%}
@@ -28,7 +27,3 @@
     {{ appSiteSearch(params.search) if params.search.indexPath | indent(4) }}
   </div>
 </header>
-{{ xGovukPrimaryNavigation({
-  visuallyHiddenTitle: params.navigation.visuallyHiddenTitle,
-  items: params.navigation.items | currentPage(page.url)
-}) if params.navigation }}
