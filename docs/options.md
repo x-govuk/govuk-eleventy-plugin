@@ -21,8 +21,6 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-## Plugin options
-
 | Name                  | Type    | Description                                                                                                                                                                                              |
 | :-------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **icons.mask**        | string  | Override default GOV.UK SVG mask icon.                                                                                                                                                                   |
@@ -39,9 +37,10 @@ module.exports = function(eleventyConfig) {
 | **stylesheets**       | Array   | Additional stylesheets to load after application styles.                                                                                                                                                 |
 | **url**               | string  | The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data.                                                                                                    |
 | **header**            | object  | See [header](#options-for-header).                                                                                                                                                                       |
+| **navigation**        | object  | See [navigation](#options-for-navigation).                                                                                                                                                               |
 | **footer**            | object  | See [footer](#options-for-footer).                                                                                                                                                                       |
 
-### Options for header
+## Options for header
 
 In addition to the [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can also be set:
 
@@ -64,7 +63,22 @@ Options for site search. See [adding a site search](../search).
 | **indexPath**   | string | Path to search index file. If set, a search input will be shown in the header. |
 | **sitemapPath** | string | Path to sitemap page.                                                          |
 
-### Options for footer
+## Options for navigation
+
+| Name                    | Type   | Description                                                                                                                |
+| :---------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------- |
+| **visuallyHiddenTitle** | string | Hidden title for header navigation.                                                                                        |
+| **items**               | Array  | An array of navigation links to shown within the header navigation. See [navigation.items](#options-for-navigation.items). |
+
+### Options for navigation.items
+
+| Name        | Type   | Description                                                        |
+| :---------- | :----- | :----------------------------------------------------------------- |
+| **text**    | string | **Required**. Text of the navigation link.                         |
+| **href**    | array  | **Required**. The value of the navigation link’s `href` attribute. |
+| **classes** | string | Classes to add to the navigation item.                             |
+
+## Options for footer
 
 In addition to the [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can also be set:
 
