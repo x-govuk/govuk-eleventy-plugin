@@ -285,12 +285,12 @@ The rendered output looks like this:
 To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
 
 ```markdown
-[![A crown icon above the words GOV.UK](/assets/images/govuk-apple-touch-icon-180x180.png "Visit GOV.UK")](https://www.gov.uk)
+[![A crown icon above the words GOV.UK](/assets/images/govuk-icon-180.png 'Visit GOV.UK')](https://www.gov.uk)
 ```
 
 The rendered output looks like this:
 
-[![A crown icon above the words GOV.UK](/assets/images/govuk-apple-touch-icon-180x180.png 'Visit GOV.UK')](https://www.gov.uk)
+[![A crown icon above the words GOV.UK](/assets/images/govuk-icon-180.png 'Visit GOV.UK')](https://www.gov.uk)
 
 ## Typographic replacements
 
