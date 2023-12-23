@@ -22,6 +22,7 @@
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
 {% from "x-govuk/components/masthead/macro.njk" import xGovukMasthead %}
+{% from "x-govuk/components/primary-navigation/macro.njk" import xGovukPrimaryNavigation %}
 {% from "x-govuk/components/related-navigation/macro.njk" import xGovukRelatedNavigation %}
 {% from "x-govuk/components/sub-navigation/macro.njk" import xGovukSubNavigation %}
 
@@ -62,6 +63,10 @@
 
 {% block header %}
   {{ appHeader(options.header) }}
+  {{ xGovukPrimaryNavigation({
+    visuallyHiddenTitle: options.navigation.visuallyHiddenTitle,
+    items: options.navigation.items | currentPage(page.url)
+  }) if options.navigation }}
 {% endblock %}
 
 {% block footer %}
