@@ -38,7 +38,7 @@ In addition to [common front matter options](/layouts#common-front-matter-option
     [
       { text: "startButton.text" },
       { text: "string" },
-      { text: "Text for the start button (default is `'Get started'`)." | markdown }
+      { text: "Text for the start button (default is ‘Get started’)." }
     ],
     [
       { text: "startButton.href" },

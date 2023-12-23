@@ -65,7 +65,7 @@ module.exports = function(eleventyConfig) {
     [
       { text: "homeKey" },
       { text: "string" },
-      { text: "First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is `'Home'`)." | markdown }
+      { text: "First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is ‘Home’)." | markdown }
     ],
     [
       { text: "parentSite" },
@@ -165,7 +165,7 @@ In addition to the [options available for the header component](https://design-s
     [
       { text: "search.label" },
       { text: "string" },
-      { text: "Text to show in the search field (default is `'Search site'`)."| markdown }
+      { text: "Text to show in the search field (default is ‘Search site’)." }
     ],
     [
       { text: "search.indexPath" },
