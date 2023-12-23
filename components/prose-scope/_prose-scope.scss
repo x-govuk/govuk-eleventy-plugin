@@ -9,6 +9,29 @@
     margin-bottom: 0;
   }
 
+  h1 {
+    max-width: 15em;
+  }
+
+  h2 {
+    max-width: 20em;
+  }
+
+  h3 {
+    max-width: 30em;
+  }
+
+  h4,
+  h5,
+  h6,
+  p,
+  ul:not([class]),
+  ol,
+  img,
+  video {
+    max-width: 38em;
+  }
+
   // Indicate abbreviations which have a title
   abbr {
     border-bottom: 1px dotted $govuk-secondary-text-colour;
