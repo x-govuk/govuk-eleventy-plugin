@@ -1,32 +1,35 @@
 {% extends "layouts/base.njk" %}
 
 {% block main %}
-  {{ xGovukMasthead({
-    title: {
-      html: title | smart
-    } if title,
-    description: {
-      html: description | markdown("inline") | noOrphans
-    } if description,
-    startButton: {
-      href: startButton.href,
-      text: startButton.text
-    } if startButton,
-    image: {
-      alt: image.alt,
-      src: image.src
-    } if image,
-    breadcrumbs: {
-      classes: "govuk-!-display-none-print",
-      items: breadcrumbItems
-    } if showBreadcrumbs
-  }) }}
+  <main id="main-content" role="main" {%- if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    {{ xGovukMasthead({
+      title: {
+        html: title | smart
+      } if title,
+      description: {
+        html: description | markdown("inline") | noOrphans
+      } if description,
+      startButton: {
+        href: startButton.href,
+        text: startButton.text
+      } if startButton,
+      image: {
+        alt: image.alt,
+        src: image.src
+      } if image,
+      breadcrumbs: {
+        classes: "govuk-!-display-none-print",
+        items: breadcrumbItems
+      } if showBreadcrumbs
+    }) }}
+    <div class="govuk-main-wrapper {%- if mainClasses %} {{ mainClasses }}{% endif %}">
+      <div class="govuk-width-container {%- if containerClasses %} {{ containerClasses }}{% endif %}">
+        {% block content %}
+          {{ appProseScope(content) if content }}
 
-  {{ super() }}
-{% endblock %}
-
-{% block content %}
-  {{ appProseScope(content) if content }}
-
-  {% include "layouts/shared/related.njk" %}
+          {% include "layouts/shared/related.njk" %}
+        {% endblock %}
+      </div>
+    </div>
+  </main>
 {% endblock %}
