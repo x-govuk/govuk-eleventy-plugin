@@ -1,6 +1,6 @@
 // Link to footnote
 a[aria-describedby="footnotes-label"] {
-  @include govuk-font(14, $tabular: true);
+  @include govuk-font(16, $tabular: true);
   @include govuk-link-style-no-visited-state;
 }
 
