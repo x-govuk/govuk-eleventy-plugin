@@ -1,6 +1,6 @@
 {
   "name": "@x-govuk/govuk-eleventy-plugin",
-  "version": "6.0.5",
+  "version": "6.1.0",
   "description": "Write documentation using Markdown and publish it using GOV.UK styles",
   "keywords": [
     "govuk",
