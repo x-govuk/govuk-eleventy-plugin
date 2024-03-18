@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ options.url }}">
+  <title>{{ options.homeKey }}</title>
+  <link href="{{ permalink | absoluteUrl(options.url) }}" rel="self"/>
+  <link href="{{ options.url }}"/>
+  <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ options.url }}/</id>
+  {%- for post in collections.post | reverse %}
+  {%- set absolutePostUrl = post.url | absoluteUrl(options.url) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    {% if post.data.authors %}
+      {% for author in post.data.authors %}
+        <author>
+          <name>{{ author.name }}</name>
+          {% if author.url %}<uri>{{ author.url }}</uri>{% endif %}
+        </author>
+      {% endfor %}
+    {% elif post.data.author %}
+      <author>
+        <name>{{ post.data.author.name }}</name>
+        {% if post.data.author.url %}<uri>{{ post.data.author.url }}</uri>{% endif %}
+      </author>
+    {% endif %}
+    <content xml:lang="{{ language or "en" }}" type="html">
+      <![CDATA[ {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }} ]]>
+    </content>
+  </entry>
+  {%- endfor %}
+</feed>

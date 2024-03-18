@@ -1,7 +1,10 @@
 const process = require('node:process')
+const rssPlugin = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
   // Plugins
+  eleventyConfig.addPlugin(rssPlugin);
+
   eleventyConfig.addPlugin(require('./index.js'), {
     icons: {
       mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
@@ -20,6 +23,7 @@ module.exports = function (eleventyConfig) {
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',
+    feedUrl: 'https://x-govuk.github.io/govuk-eleventy-plugin/feed.xml',
     stylesheets: ['/assets/application.css'],
     header: {
       logotype: 'x-govuk',
