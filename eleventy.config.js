@@ -1,9 +1,9 @@
 const process = require('node:process')
-const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const rssPlugin = require('@11ty/eleventy-plugin-rss')
 
 module.exports = function (eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(rssPlugin);
+  eleventyConfig.addPlugin(rssPlugin)
 
   eleventyConfig.addPlugin(require('./index.js'), {
     icons: {

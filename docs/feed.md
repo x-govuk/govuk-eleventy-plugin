@@ -5,7 +5,7 @@ title: Adding a feed
 description: Allow people to subscribe to your posts and read them in a feed reader
 ---
 
-You can add a feed using the [XML Atom format](https://en.wikipedia.org/wiki/Atom_(web_standard)) by following these instructions.
+You can add a feed using the [XML Atom format](<https://en.wikipedia.org/wiki/Atom_(web_standard)>) by following these instructions.
 
 ## Create a feed
 
