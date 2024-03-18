@@ -45,7 +45,7 @@
   <link rel="stylesheet" href="{{ stylesheet | canonicalUrl }}">
   {% endfor %}
 
-  {% if options.feedUrl %}<link rel="alternate" type="application/atom+xml" href="{{ options.feedUrl }}" >{% endif %}
+  {% if options.feedUrl %}<link rel="alternate" type="application/atom+xml" href="{{ options.feedUrl | canonicalUrl }}" >{% endif %}
 
   {% if options.url %}<meta property="og:url" content="{{ page.url | canonicalUrl }}">{% endif %}
   <meta property="og:title" content="{{ title }}">
