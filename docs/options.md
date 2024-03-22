@@ -220,7 +220,7 @@ In addition to the [options available for the header component](https://design-s
 
 ## Footer options
 
-In addition to the [options available for the footer component](https://design-system.service.gov.uk/components/header/), the following options can also be set for `footer`:
+In addition to the [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can also be set for `footer`:
 
 {{ govukTable({
   firstCellIsHeader: true,
