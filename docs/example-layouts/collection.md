@@ -51,7 +51,7 @@ related:
             - text: Post
               href: /example-layouts/post
             - text: Product page
-              href: /example-layouts/product-page
+              href: /example-layouts/product
 eleventyComputed:
   aside:
     title: Example layout
