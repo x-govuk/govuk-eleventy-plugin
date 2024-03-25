@@ -35,3 +35,4 @@ eleventyConfig.addPlugin(govukEleventyPlugin, {
 This will then add an invisible `<link>` to the feed within the `<head>` of every page to enable feed readers to easily find the feed.
 
 You may also want to link to the feed within your site itself.
+```
