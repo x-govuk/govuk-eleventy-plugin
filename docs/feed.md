@@ -21,6 +21,18 @@ permalink: /feed.xml
 
 The `permalink` value is the location of the generated feed.
 
+## Create a collection of posts
+
+The feed will include all pages in a collection called 'post'.
+
+You can create this by adding some code to your `eleventy.config.js`:
+
+```js
+eleventyConfig.addCollection('post', (collection) => {
+  return collection.getFilteredByGlob('app/posts/*.md')
+})
+```
+
 ## Add the URL of your feed to your options
 
 To make the feed discoverable, add the full URL of your feed as `feedUrl` within the options for this plugin in your `.eleventy.config.js` options file:
@@ -31,8 +43,8 @@ const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 eleventyConfig.addPlugin(govukEleventyPlugin, {
   feedUrl: 'https://your-website.example/feed.xml'
 })
+```
 
 This will then add an invisible `<link>` to the feed within the `<head>` of every page to enable feed readers to easily find the feed.
 
 You may also want to link to the feed within your site itself.
-```
