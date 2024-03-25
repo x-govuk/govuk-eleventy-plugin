@@ -23,7 +23,6 @@ module.exports = function (eleventyConfig) {
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',
-    feedUrl: 'https://x-govuk.github.io/govuk-eleventy-plugin/feed.xml',
     stylesheets: ['/assets/application.css'],
     header: {
       logotype: 'x-govuk',
