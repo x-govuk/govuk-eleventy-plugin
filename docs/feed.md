@@ -29,10 +29,8 @@ To make the feed discoverable, add the full URL of your feed as `feedUrl` within
 const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 
 eleventyConfig.addPlugin(govukEleventyPlugin, {
-  feedUrl: 'https://your-website.example/feed.xml',
-  [...]
+  feedUrl: 'https://your-website.example/feed.xml'
 })
-```
 
 This will then add an invisible `<link>` to the feed within the `<head>` of every page to enable feed readers to easily find the feed.
 
