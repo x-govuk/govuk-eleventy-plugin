@@ -5,28 +5,28 @@
   <link href="{{ options.url }}"/>
   <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ options.url }}/</id>
-  {%- for post in collections.post | reverse %}
-  {%- set absolutePostUrl = post.url | absoluteUrl(options.url) %}
+  {%- for item in pagination.items %}
+  {%- set absolutePostUrl = item.url | absoluteUrl(options.url) %}
   <entry>
-    <title>{{ post.data.title }}</title>
+    <title>{{ item.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <updated>{{ item.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    {% if post.data.authors %}
-      {% for author in post.data.authors %}
+    {% if item.data.authors %}
+      {% for author in item.data.authors %}
         <author>
           <name>{{ author.name }}</name>
           {% if author.url %}<uri>{{ author.url }}</uri>{% endif %}
         </author>
       {% endfor %}
-    {% elif post.data.author %}
+    {% elif item.data.author %}
       <author>
-        <name>{{ post.data.author.name }}</name>
-        {% if post.data.author.url %}<uri>{{ post.data.author.url }}</uri>{% endif %}
+        <name>{{ item.data.author.name }}</name>
+        {% if item.data.author.url %}<uri>{{ item.data.author.url }}</uri>{% endif %}
       </author>
     {% endif %}
     <content xml:lang="{{ language or "en" }}" type="html">
-      <![CDATA[ {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }} ]]>
+      <![CDATA[ {{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }} ]]>
     </content>
   </entry>
   {%- endfor %}
