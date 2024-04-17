@@ -20,7 +20,7 @@ related:
             - text: Collection
               href: /example-layouts/collection
             - text: Product page
-              href: /example-layouts/product-page
+              href: /example-layouts/product
 eleventyComputed:
   aside:
     title: Example layout

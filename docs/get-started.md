@@ -50,8 +50,10 @@ module.exports = function(eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {
+      // The folder where all your content will live:
+      input: 'app',
       // Use layouts from the plugin
-      layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
+      layouts: '../node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
     }
   }
 };
@@ -73,6 +75,12 @@ Once all the files have been generated, a preview URL will be shown which you ca
 
 Whenever you add a new page, or edit an existing one, the browser will automatically refresh with any of your changes applied.
 
+## Create a folder
+
+You can now create a folder to contain all the content for your site. This is often called `app`. If your site is documentation for another service, then it could be named `docs`.
+
+Whichever folder name you choose should be referenced under the `input` key within the `eleventy.config.js` file.
+
 ## Create your first page
 
 You’re now ready to start adding pages to your site.
@@ -90,7 +98,7 @@ title: My first page
 This is my first page, built using Eleventy and `@x-govuk/govuk-eleventy-plugin`.
 ```
 
-Create a file named `index.md` file to the root directory of your project, and add the above content.
+Create a file named `index.md` file within the folder you created, and add the above content.
 
 The first page in your site should also have a `homepage` value set to `true`[^1]. This is used to work out the structure of your site if it has [nested pages](https://www.11ty.dev/docs/plugins/navigation/).
 

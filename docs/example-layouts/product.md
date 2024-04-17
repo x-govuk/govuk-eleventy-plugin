@@ -27,8 +27,6 @@ related:
               href: /example-layouts/post
             - text: Collection
               href: /example-layouts/collection
-            - text: Product page
-              href: /example-layouts/product-page
 eleventyComputed:
   aside:
     title: Example layout
