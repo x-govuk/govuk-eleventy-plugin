@@ -56,7 +56,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${% raw %}{{ steps.deployment.outputs.page_url }}{% endraw %}
     runs-on: ubuntu-latest
     needs: build
     steps:
