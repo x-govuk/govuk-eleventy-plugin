@@ -1,7 +1,10 @@
 const process = require('node:process')
+const rssPlugin = require('@11ty/eleventy-plugin-rss')
 
 module.exports = function (eleventyConfig) {
   // Plugins
+  eleventyConfig.addPlugin(rssPlugin)
+
   eleventyConfig.addPlugin(require('./index.js'), {
     icons: {
       mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
