@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ options.url }}">
   <title>{{ options.homeKey }}</title>
-  <link href="{{ permalink | absoluteUrl(options.url) }}" rel="self"/>
+  <link href="{{ permalink | canonicalUrl }}" rel="self"/>
   <link href="{{ options.url }}"/>
   <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ options.url }}/</id>
   {%- for item in pagination.items %}
-  {%- set absolutePostUrl = item.url | absoluteUrl(options.url) %}
+  {%- set absolutePostUrl = item.url | canonicalUrl %}
   <entry>
     <title>{{ item.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
