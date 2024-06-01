@@ -84,7 +84,7 @@
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsdoc": "^48.0.0",
-    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-n": "^17.7.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-promise": "^6.1.0",
     "np": "^10.0.0",
