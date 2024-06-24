@@ -54,8 +54,8 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@rollup/plugin-commonjs": "^25.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.0",
+    "@rollup/plugin-commonjs": "^26.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@x-govuk/govuk-prototype-components": "^3.0.0",
     "deepmerge": "^4.2.2",
