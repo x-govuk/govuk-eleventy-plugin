@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')(eleventyConfig))
 
   // Collections
+  eleventyConfig.addCollection('all', require('./lib/collections/all.js'))
   eleventyConfig.addCollection(
     'ordered',
     require('./lib/collections/ordered.js')
