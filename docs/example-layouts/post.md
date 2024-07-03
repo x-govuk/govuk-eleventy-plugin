@@ -7,6 +7,7 @@ image:
   src: /assets/example-layouts/post-image.jpg
   alt: High angle photo of assorted-colour plastic balls.
   caption: Photo by [Greyson Joralemon](https://unsplash.com/@greysonjoralemon) on [Unsplash](https://unsplash.com/photos/9IBqihqhuHc)
+  opengraphImage: true
 authors:
   - name: Rod Gandini
     url: '#'
