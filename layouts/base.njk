@@ -3,9 +3,10 @@
 {% set assetUrl = assetPath | canonicalUrl %}
 {% set themeColor = options.themeColour %}
 
-{# Only show default Open Graph image if document does not provide its own #}
+{# Set the opengraphImageUrl in parent template to either the one
+   from the page metadata or else fallback to the generic one from options. #}
 {% set opengraphImage = image if image.opengraphImage else opengraphImage %}
-{% set opengraphImageUrl = options.opengraphImageUrl if not opengraphImage %}
+{% set opengraphImageUrl = (opengraphImage.src | canonicalUrl) if opengraphImage else options.opengraphImageUrl %}
 
 {# Pagination #}
 {% set pageNumber = pagination.pageNumber + 1 %}
@@ -52,7 +53,7 @@
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
   {% if opengraphImage %}<meta name="twitter:card" content="summary_large_image">{% endif %}
   {% if opengraphImage.src %}<meta name="twitter:image" content="{{ opengraphImage.src | canonicalUrl }}">
-  <meta property="og:image" content="{{ opengraphImage.src | canonicalUrl }}">{% endif %}
+  {% endif %}
   {% if opengraphImage.alt %}<meta property="og:image:alt" content="{{ opengraphImage.alt }}">{% endif %}
 {% endblock %}
 
