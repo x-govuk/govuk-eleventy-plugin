@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 7
+order: 9
 title: Adding tags
 description: Use tags to categorise posts and make it easier for readers to browse content on your site.
 ---

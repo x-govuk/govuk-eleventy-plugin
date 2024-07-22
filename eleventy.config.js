@@ -65,8 +65,8 @@ module.exports = function (eleventyConfig) {
     collection
       .getFilteredByGlob([
         'docs/options.md',
-        'docs/layouts.md',
-        'docs/markdown.md'
+        'docs/design.md',
+        'docs/layouts.md'
       ])
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   )

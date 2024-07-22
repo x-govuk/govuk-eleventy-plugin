@@ -1,8 +1,8 @@
 ---
 layout: sub-navigation
-order: 3
+order: 4
 title: Layouts
-description: The plugin offers a number of layouts to match the type of content you want write.
+description: Choose a layout to match the type of content you want write.
 ---
 
 {% for page in collections.layout %}

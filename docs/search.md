@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 6
+order: 7
 title: Adding a site search
 description: Make it easier for readers to find content on your site.
 ---
