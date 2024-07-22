@@ -88,6 +88,11 @@ module.exports = function(eleventyConfig) {
       { text: "Path to SCSS file, relative to input directory, containing [GOV.UK Frontend settings](https://frontend.design-system.service.gov.uk/sass-api-reference/) (default is `{dir.input}/sass/_settings.scss`)." | markdown }
     ],
     [
+      { text: "showBreadcrumbs" },
+      { text: "boolean" },
+      { text: "Show breadcrumb navigation (default is `true` with nested pages)." | markdown }
+    ],
+    [
       { text: "stylesheets" },
       { text: "Array" },
       { text: "Additional stylesheets to load after application styles." }
