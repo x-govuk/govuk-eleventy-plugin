@@ -7,6 +7,6 @@
     "hasFrontmatterDate": {{ item.data.date !== undefined }},
     "date": {{ item.date | date("d LLLL y") | dump | safe }},
     "templateContent": {{ item.templateContent | tokenize | dump | safe }},
-    "url": {{ item.url | pretty | dump | safe }}
+    "url": {{ item.url | canonicalUrl | pretty | dump | safe }}
   }{% if not loop.last %},{% endif %}
 {% endfor %}]
