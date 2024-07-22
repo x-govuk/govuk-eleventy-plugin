@@ -2,7 +2,7 @@
 layout: sub-navigation
 order: 2
 title: Options
-description: The plugin has a number of options that allow you to customise the appearance of your website.
+description: Customise the appearance and behaviour of your website.
 ---
 
 You can add options to the second parameter of the `addPlugin` function in Eleventy config file.

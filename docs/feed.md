@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 7
+order: 8
 title: Adding a feed
 description: Allow people to subscribe to your posts and read them in a feed reader
 ---
