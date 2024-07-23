@@ -27,6 +27,7 @@ module.exports = function (eleventyConfig) {
     header: {
       logotype: 'x-govuk',
       productName: 'Eleventy Plugin',
+      organisationName: 'X-GOVUK',
       search: {
         indexPath: '/search.json',
         sitemapPath: '/sitemap'
