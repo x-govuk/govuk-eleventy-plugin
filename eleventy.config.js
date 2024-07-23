@@ -20,6 +20,7 @@ module.exports = function (eleventyConfig) {
       url: 'https://x-govuk.github.io/#projects',
       name: 'X-GOVUK projects'
     },
+    titleSuffix: 'X-GOVUK',
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',

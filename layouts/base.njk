@@ -61,7 +61,9 @@
   {{- title if title -}}
   {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
   {{- " - " + options.header.productName if options.header.productName -}}
-  {{- " - " + options.header.organisationName -}}
+  {%- if options.titleSuffix or options.header.organisationName %}
+    {{- " - " + (options.titleSuffix if options.titleSuffix else options.header.organisationName) -}}
+  {%- endif %}
 {% endblock %}
 
 {% block header %}
