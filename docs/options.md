@@ -103,6 +103,11 @@ module.exports = function(eleventyConfig) {
       { text: "Browser theme colour. Must be a hex value, i.e. `#0b0c0c`" | markdown }
     ],
     [
+      { text: "titleSuffix" },
+      { text: "string" },
+      { text: "Value to show at the end of the document title (default is `GOV.UK`)." | markdown }
+    ],
+    [
       { text: "url" },
       { text: "string" },
       { text: "The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data." }
