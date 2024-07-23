@@ -20,6 +20,7 @@ module.exports = function (eleventyConfig) {
       url: 'https://x-govuk.github.io/#projects',
       name: 'X-GOVUK projects'
     },
+    titleSuffix: 'X-GOVUK',
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',
@@ -27,7 +28,6 @@ module.exports = function (eleventyConfig) {
     header: {
       logotype: 'x-govuk',
       productName: 'Eleventy Plugin',
-      organisationName: 'X-GOVUK',
       search: {
         indexPath: '/search.json',
         sitemapPath: '/sitemap'
