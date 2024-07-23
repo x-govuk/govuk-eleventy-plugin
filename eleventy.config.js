@@ -16,11 +16,11 @@ module.exports = function (eleventyConfig) {
     opengraphImageUrl:
       'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
     homeKey: 'GOV.UK Eleventy Plugin',
+    titleSuffix: 'GOV.UK Eleventy Plugin',
     parentSite: {
       url: 'https://x-govuk.github.io/#projects',
       name: 'X-GOVUK projects'
     },
-    titleSuffix: 'X-GOVUK',
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',
