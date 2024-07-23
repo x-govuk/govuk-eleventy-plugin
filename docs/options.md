@@ -104,7 +104,7 @@ module.exports = function(eleventyConfig) {
     ],
     [
       { text: "titleSuffix" },
-      { text: "string" },
+      { text: "string or boolean" },
       { text: "Value to show at the end of the document title (default is `GOV.UK`)." | markdown }
     ],
     [
