@@ -60,7 +60,6 @@
 {% block pageTitle %}
   {{- title if title -}}
   {{- " (page " + pageNumber + " of " + pageCount + ")" if pageCount > 1 -}}
-  {{- " - " + options.header.productName if options.header.productName -}}
   {{- " - " + options.titleSuffix if options.titleSuffix -}}
 {% endblock %}
 
