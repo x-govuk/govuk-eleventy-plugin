@@ -41,7 +41,7 @@
 {% endblock %}
 
 {% block head %}
-  <link rel="stylesheet" href="/assets/govuk.css">
+  <link rel="stylesheet" href="{{ "/assets/govuk.css" | canonicalUrl }}">
   {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | canonicalUrl }}">
   {% endfor %}
