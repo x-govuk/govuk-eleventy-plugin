@@ -11,7 +11,7 @@ The GOV.UK Eleventy Plugin makes it easy to add search functionality to your web
 
 The site search needs an index of your pages and the key words and phrases they contain.
 
-Create the search index by creating a page that uses the `search-index` layout:
+To create the search index, add a file named `search.json.njk` with the following content:
 
 ```yaml
 ---
