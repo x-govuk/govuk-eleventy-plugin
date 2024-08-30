@@ -2,10 +2,6 @@
 // See: https://github.com/alphagov/govuk-design-system/blob/master/src/stylesheets/components/_header.scss
 
 @include govuk-exports("app-header") {
-  .app-header--full-width-border {
-    border-bottom: $govuk-border-width-wide solid $govuk-brand-colour;
-  }
-
   .app-header--no-border {
     border-bottom: 0;
   }

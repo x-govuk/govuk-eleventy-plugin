@@ -12,8 +12,8 @@ describe('currentPage filter', () => {
     const result = currentPage(navigationData, '/')
 
     assert.deepEqual(result, [
-      { text: 'Home', href: '/', current: true },
-      { text: 'Styles', href: '/styles', current: false }
+      { text: 'Home', href: '/', active: true },
+      { text: 'Styles', href: '/styles', active: false }
     ])
   })
 
@@ -21,8 +21,8 @@ describe('currentPage filter', () => {
     const result = currentPage(navigationData, '/styles')
 
     assert.deepEqual(result, [
-      { text: 'Home', href: '/', current: false },
-      { text: 'Styles', href: '/styles', current: true }
+      { text: 'Home', href: '/', active: false },
+      { text: 'Styles', href: '/styles', active: true }
     ])
   })
 
@@ -30,8 +30,8 @@ describe('currentPage filter', () => {
     const result = currentPage(navigationData, '/styles/colour')
 
     assert.deepEqual(result, [
-      { text: 'Home', href: '/', current: false },
-      { text: 'Styles', href: '/styles', current: true }
+      { text: 'Home', href: '/', active: false },
+      { text: 'Styles', href: '/styles', active: true }
     ])
   })
 })
