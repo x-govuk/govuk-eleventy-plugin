@@ -1,10 +1,10 @@
 {%- from "../site-search/macro.njk" import appSiteSearch -%}
 {%- if options.navigation -%}
-  {%- set headerType = "full-width-border" -%}
+  {%- set headerClasses = " govuk-header--full-width-border" -%}
 {% elif layout == "product" or layout == "collection" %}
-  {%- set headerType = "no-border" -%}
+  {%- set headerClasses = " app-header--no-border" -%}
 {%- endif -%}
-<header class="govuk-header app-header{% if headerType %} app-header--{{ headerType }}{% endif %}" role="banner" data-module="govuk-header">
+<header class="govuk-header app-header{{ headerClasses }}" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
       <a href="{{ params.homepageUrl | default("/") }}" class="govuk-header__link govuk-header__link--homepage">
