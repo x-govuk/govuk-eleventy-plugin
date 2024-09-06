@@ -33,6 +33,11 @@ module.exports = function(eleventyConfig) {
   ],
   rows: [
     [
+      { text: "googleTagManagerIdentifier" },
+      { text: "string" },
+      { text: "The unique identifier within the Google Tag Manager snippet that follows `GTM-`" | markdown }
+    ],
+    [
       { text: "icons" },
       { text: "object" },
       { text: "Override GOV.UK icons." }
