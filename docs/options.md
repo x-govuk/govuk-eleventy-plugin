@@ -243,7 +243,7 @@ In addition to the [options available for the footer component](https://design-s
     [
       { text: "contentLicence" },
       { text: "object" },
-      { text: "Licence description. If no value is provided, the OGL logo is shown alongside the words `All content is available under the Open Government Licence v3.0, except where otherwise stated`." | markdown }
+      { text: "Licence description. If no value is provided, the OGL logo is shown alongside the words `All content is available under the Open Government Licence v3.0, except where otherwise stated`. Set to `false` to remove completely." | markdown }
     ],
     [
       { text: "contentLicence.text" },
@@ -258,7 +258,7 @@ In addition to the [options available for the footer component](https://design-s
     [
       { text: "copyright" },
       { text: "object" },
-      { text: "Copyright statement. If no value is provided, `© Crown copyright` is displayed below an image of the Royal Coat of Arms." | markdown }
+      { text: "Copyright statement. If no value is provided, `© Crown copyright` is displayed below an image of the Royal Coat of Arms.  Set to `false` to remove completely." | markdown }
     ],
     [
       { text: "copyright.text" },
