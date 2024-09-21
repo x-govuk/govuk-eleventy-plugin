@@ -71,7 +71,7 @@
     "markdown-it-mark": "^4.0.0",
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
-    "markdown-it-table-of-contents": "^0.6.0",
+    "markdown-it-table-of-contents": "^0.8.0",
     "rimraf": "^5.0.0",
     "rollup": "^4.1.0",
     "sass": "^1.45.1",
