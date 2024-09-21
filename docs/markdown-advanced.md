@@ -12,6 +12,14 @@ related:
 
 [[toc]]
 
+## Table of contents
+
+The contents list above is generated automatically. To add a table of contents to a page, add the following Markdown:
+
+```markdown
+[[toc]]
+```
+
 ## Tables
 
 To add a table, use 3 or more hyphens (`---`) to create each column's header, and use pipes (`|`) to separate each column.
