@@ -3,9 +3,9 @@
   <title>{{ options.homeKey }}</title>
   <link href="{{ permalink | canonicalUrl }}" rel="self"/>
   <link href="{{ options.url }}"/>
-  <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections[collection] | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ options.url }}/</id>
-  {%- for item in pagination.items %}
+  {%- for item in (collections[collection] | sort(true, false, "date") | slice(size)) %}
   {%- set absolutePostUrl = item.url | canonicalUrl %}
   <entry>
     <title>{{ item.data.title }}</title>
