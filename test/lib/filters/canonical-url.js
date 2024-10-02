@@ -1,13 +1,13 @@
-const assert = require('node:assert/strict')
-const { describe, it } = require('node:test')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
-const nunjucks = require('nunjucks')
+import Nunjucks from 'nunjucks'
 
-const canonicalUrl = require('../../../lib/filters/canonical-url.js')
+import { canonicalUrl } from '../../../lib/filters/canonical-url.js'
 
 describe('canonicalUrl filter', () => {
   const ctx = { options: { url: 'https://example.com' } }
-  const env = new nunjucks.Environment()
+  const env = new Nunjucks.Environment()
   env.addFilter('canonicalUrl', canonicalUrl)
 
   it('Returns given path if no site URL defined', () => {
