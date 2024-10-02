@@ -12,7 +12,7 @@ You’re welcome to use the plugin even if your service isn’t considered part 
 ## Requirements
 
 - [Node.js](https://nodejs.org) v22 or later
-- [Eleventy](https://www.11ty.dev) v2 or later
+- [Eleventy](https://www.11ty.dev) v3 or later
 
 ## Installation
 
