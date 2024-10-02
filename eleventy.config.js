@@ -1,12 +1,14 @@
-const process = require('node:process')
+import process from 'node:process'
 
-const rssPlugin = require('@11ty/eleventy-plugin-rss')
+import rssPlugin from '@11ty/eleventy-plugin-rss'
 
-module.exports = function (eleventyConfig) {
+import govukPlugin from './index.js'
+
+export default function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(rssPlugin)
 
-  eleventyConfig.addPlugin(require('./index.js'), {
+  eleventyConfig.addPlugin(govukPlugin, {
     icons: {
       mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
       shortcut:
@@ -29,27 +31,20 @@ module.exports = function (eleventyConfig) {
     header: {
       logotype: 'x-govuk',
       productName: 'Eleventy Plugin',
-      search: {
-        indexPath: '/search.json',
-        sitemapPath: '/sitemap'
-      }
+      search: { indexPath: '/search.json', sitemapPath: '/sitemap' }
     },
     headingPermalinks: true,
     footer: {
       contentLicence: {
         html: 'Licensed under the <a class="govuk-footer__link" href="https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt">MIT Licence</a>, except where otherwise stated'
       },
-      copyright: {
-        text: '© X-GOVUK'
-      },
+      copyright: { text: '© X-GOVUK' },
       meta: {
         items: [
           {
             href: 'https://www.11ty.dev',
             text: 'Documentation for Eleventy (opens in a new tab)',
-            attributes: {
-              target: '_blank'
-            }
+            attributes: { target: '_blank' }
           }
         ]
       }
@@ -89,10 +84,7 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    dir: {
-      input: 'docs',
-      layouts: '../layouts'
-    },
+    dir: { input: 'docs', layouts: '../layouts' },
     pathPrefix: process.env.GITHUB_ACTIONS && '/govuk-eleventy-plugin/'
   }
 }
