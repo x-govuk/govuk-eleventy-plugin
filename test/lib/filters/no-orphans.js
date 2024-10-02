@@ -1,6 +1,6 @@
-const assert = require('assert/strict')
-const { describe, it } = require('node:test')
-const noOrphans = require('../../../lib/filters/no-orphans.js')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
+import { noOrphans } from '../../../lib/filters/no-orphans.js'
 
 describe('noOrphans filter', () => {
   it('Inserts non-breaking space between last two words of a string', () => {

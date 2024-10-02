@@ -1,11 +1,12 @@
-const process = require('node:process')
-const rssPlugin = require('@11ty/eleventy-plugin-rss')
+import process from 'node:process'
+import rssPlugin from '@11ty/eleventy-plugin-rss'
+import govukPlugin from './index.js'
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(rssPlugin)
 
-  eleventyConfig.addPlugin(require('./index.js'), {
+  eleventyConfig.addPlugin(govukPlugin, {
     icons: {
       mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
       shortcut:

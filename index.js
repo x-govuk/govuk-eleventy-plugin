@@ -1,66 +1,41 @@
-const { EleventyHtmlBasePlugin } = require('@11ty/eleventy')
+import { EleventyHtmlBasePlugin } from '@11ty/eleventy'
+import eleventyNavigation from '@11ty/eleventy-navigation'
+import { eleventyComputed } from './lib/data/eleventy-computed.js'
+import { defaultPluginOptions } from './lib/data/options.js'
+import * as collections from './lib/collections/index.js'
+import * as filters from './lib/filters/index.js'
+import { generateAssets } from './lib/events/generate-govuk-assets.js'
+import { md } from './lib/markdown-it.js'
+import { nunjucksConfig } from './lib/nunjucks.js'
+import { scssExtension } from './lib/extensions/scss.js'
 
-module.exports = function (eleventyConfig, pluginOptions = {}) {
+export default function (eleventyConfig, pluginOptions = {}) {
   const { pathPrefix } = eleventyConfig
 
   // Plugin options
-  const options = require('./lib/data/options.js')(pluginOptions, pathPrefix)
+  const options = defaultPluginOptions(pluginOptions, pathPrefix)
 
   // Libraries
-  eleventyConfig.setLibrary('md', require('./lib/markdown-it.js')(options))
-  eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')(eleventyConfig))
-
-  // Collections
-  eleventyConfig.addCollection('all', require('./lib/collections/all.js'))
-  eleventyConfig.addCollection(
-    'ordered',
-    require('./lib/collections/ordered.js')
-  )
-  eleventyConfig.addCollection(
-    'sitemap',
-    require('./lib/collections/sitemap.js')
-  )
-  eleventyConfig.addCollection('tags', require('./lib/collections/tags.js'))
+  eleventyConfig.setLibrary('md', md(options))
+  eleventyConfig.setLibrary('njk', nunjucksConfig(eleventyConfig))
 
   // Extensions and template formats
-  eleventyConfig.addExtension('scss', require('./lib/extensions/scss.js'))
+  eleventyConfig.addExtension('scss', scssExtension)
   eleventyConfig.addTemplateFormats('scss')
 
+  // Collections
+  for (const [name, collection] of Object.entries(collections)) {
+    eleventyConfig.addCollection(name, collection)
+  }
+
   // Filters
-  eleventyConfig.addFilter(
-    'canonicalUrl',
-    require('./lib/filters/canonical-url.js')
-  )
-  eleventyConfig.addFilter('date', require('./lib/filters/date.js'))
-  eleventyConfig.addFilter(
-    'currentPage',
-    require('./lib/filters/current-page.js')
-  )
-  eleventyConfig.addFilter('includes', require('./lib/filters/includes.js'))
-  eleventyConfig.addFilter(
-    'itemsFromCollection',
-    require('./lib/filters/items-from-collection.js')
-  )
-  eleventyConfig.addFilter(
-    'itemsFromPagination',
-    require('./lib/filters/items-from-pagination.js')
-  )
-  eleventyConfig.addFilter(
-    'itemsFromNavigation',
-    require('./lib/filters/items-from-navigation.js')
-  )
-  eleventyConfig.addFilter('markdown', require('./lib/filters/markdown.js'))
-  eleventyConfig.addFilter('noOrphans', require('./lib/filters/no-orphans.js'))
-  eleventyConfig.addFilter('pretty', require('./lib/filters/pretty.js'))
-  eleventyConfig.addFilter('smart', require('./lib/filters/smart.js'))
-  eleventyConfig.addFilter('tokenize', require('./lib/filters/tokenize.js'))
+  for (const [name, filter] of Object.entries(filters)) {
+    eleventyConfig.addFilter(name, filter)
+  }
 
   // Global data
   eleventyConfig.addGlobalData('options', options)
-  eleventyConfig.addGlobalData(
-    'eleventyComputed',
-    require('./lib/data/eleventy-computed.js')
-  )
+  eleventyConfig.addGlobalData('eleventyComputed', eleventyComputed)
 
   // Passthrough
   eleventyConfig.addPassthroughCopy({
@@ -69,10 +44,10 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
 
   // Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
-  eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
+  eleventyConfig.addPlugin(eleventyNavigation)
 
   // Events
   eleventyConfig.on('eleventy.after', async ({ dir }) => {
-    require('./lib/events/generate-govuk-assets.js')(dir, pathPrefix, options)
+    generateAssets(dir, options)
   })
 }
