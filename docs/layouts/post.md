@@ -2,6 +2,8 @@
 order: 3
 title: Post
 description: Layout for date-based content, such as blog posts or news items.
+tags:
+  - example-tag
 ---
 
 > View an <a href="/example-layouts/post" target="_blank">example page that uses this layout (opens in a new tab)</a>
