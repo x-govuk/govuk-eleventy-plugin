@@ -9,6 +9,7 @@ import { scssExtension } from './lib/extensions/scss.js'
 import * as filters from './lib/filters/index.js'
 import { md } from './lib/markdown-it.js'
 import { nunjucksConfig } from './lib/nunjucks.js'
+import { getTemplates } from './lib/utils.js'
 
 export default async function (eleventyConfig, pluginOptions = {}) {
   const { pathPrefix } = eleventyConfig
@@ -26,6 +27,12 @@ export default async function (eleventyConfig, pluginOptions = {}) {
   // Extensions and template formats
   eleventyConfig.addExtension('scss', scssExtension)
   eleventyConfig.addTemplateFormats('scss')
+
+  // Virtual templates
+  const templates = await getTemplates(eleventyConfig)
+  for (const [virtualPath, template] of Object.entries(templates)) {
+    eleventyConfig.addTemplate(virtualPath, template)
+  }
 
   // Filters
   for (const [name, filter] of Object.entries(filters)) {
