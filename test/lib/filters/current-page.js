@@ -1,7 +1,7 @@
-const assert = require('node:assert/strict')
-const { describe, it } = require('node:test')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
-const currentPage = require('../../../lib/filters/current-page.js')
+import { currentPage } from '../../../lib/filters/current-page.js'
 
 const navigationData = [
   { text: 'Home', href: '/' },

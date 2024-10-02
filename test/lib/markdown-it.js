@@ -1,7 +1,7 @@
-const assert = require('node:assert/strict')
-const { describe, it } = require('node:test')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
-const md = require('../../lib/markdown-it.js')
+import { md } from '../../lib/markdown-it.js'
 
 describe('markdown-it', () => {
   it('Returns configured markdown-it parser', () => {
@@ -15,9 +15,7 @@ describe('markdown-it', () => {
   })
 
   it('Renders anchor heading permalinks when option enabled', () => {
-    const result = md({
-      headingPermalinks: true
-    }).render('# Heading')
+    const result = md({ headingPermalinks: true }).render('# Heading')
 
     assert.equal(
       result,
