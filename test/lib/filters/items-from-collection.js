@@ -1,21 +1,11 @@
-const assert = require('node:assert/strict')
-const { describe, it } = require('node:test')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
-const itemsFromCollection = require('../../../lib/filters/items-from-collection.js')
+import { itemsFromCollection } from '../../../lib/filters/items-from-collection.js'
 
 const collectionData = [
-  {
-    data: {
-      title: 'Home',
-      url: '/'
-    }
-  },
-  {
-    data: {
-      title: 'Page',
-      url: '/page/'
-    }
-  }
+  { data: { title: 'Home', url: '/' } },
+  { data: { title: 'Page', url: '/page/' } }
 ]
 
 describe('itemsFromCollection filter', () => {
@@ -23,14 +13,8 @@ describe('itemsFromCollection filter', () => {
     const result = itemsFromCollection(collectionData)
 
     assert.deepEqual(result, [
-      {
-        href: '/',
-        text: 'Home'
-      },
-      {
-        href: '/page/',
-        text: 'Page'
-      }
+      { href: '/', text: 'Home' },
+      { href: '/page/', text: 'Page' }
     ])
   })
 })

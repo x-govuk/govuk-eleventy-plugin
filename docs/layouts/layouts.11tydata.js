@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   eleventyNavigation: {
     parent: 'Layouts'
   },

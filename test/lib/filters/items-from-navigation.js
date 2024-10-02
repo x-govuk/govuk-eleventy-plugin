@@ -1,7 +1,7 @@
-const assert = require('node:assert/strict')
-const { describe, it } = require('node:test')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
-const itemsFromNavigation = require('../../../lib/filters/items-from-navigation.js')
+import { itemsFromNavigation } from '../../../lib/filters/items-from-navigation.js'
 
 const eleventyNavigationBreadcrumb = [
   {
@@ -70,11 +70,7 @@ describe('itemsFromNavigation filter', () => {
         current: false,
         parent: true,
         children: [
-          {
-            href: '/parent/child/',
-            text: 'Child page',
-            current: false
-          }
+          { href: '/parent/child/', text: 'Child page', current: false }
         ]
       },
       {
@@ -104,11 +100,7 @@ describe('itemsFromNavigation filter', () => {
         current: false,
         parent: false,
         children: [
-          {
-            href: '/parent/child/',
-            text: 'Child page',
-            current: false
-          }
+          { href: '/parent/child/', text: 'Child page', current: false }
         ]
       },
       {
@@ -123,10 +115,7 @@ describe('itemsFromNavigation filter', () => {
 
   it('Converts navigation data to items array adding parent site', () => {
     const config = {
-      parentSite: {
-        url: 'https://example.org',
-        name: 'Example'
-      }
+      parentSite: { url: 'https://example.org', name: 'Example' }
     }
     const result = itemsFromNavigation(
       eleventyNavigationBreadcrumb,
@@ -135,10 +124,7 @@ describe('itemsFromNavigation filter', () => {
     )
 
     assert.deepEqual(result, [
-      {
-        href: 'https://example.org',
-        text: 'Example'
-      },
+      { href: 'https://example.org', text: 'Example' },
       {
         href: '/',
         text: 'Home',
@@ -152,11 +138,7 @@ describe('itemsFromNavigation filter', () => {
         current: false,
         parent: true,
         children: [
-          {
-            href: '/parent/child/',
-            text: 'Child page',
-            current: false
-          }
+          { href: '/parent/child/', text: 'Child page', current: false }
         ]
       },
       {

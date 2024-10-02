@@ -1,9 +1,9 @@
-const assert = require('node:assert/strict')
-const fs = require('node:fs/promises')
-const path = require('node:path')
-const { describe, it } = require('node:test')
+import assert from 'node:assert/strict'
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import { describe, it } from 'node:test'
 
-const { getScssSettings, normalise } = require('../../lib/utils.js')
+import { getScssSettings, normalise } from '../../lib/utils.js'
 
 describe('getScssSettings utility', async (t) => {
   const mockDir = { input: '/test' }

@@ -1,7 +1,7 @@
-const assert = require('node:assert/strict')
-const { describe, it } = require('node:test')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
-const markdown = require('../../../lib/filters/markdown.js')
+import { markdown } from '../../../lib/filters/markdown.js'
 
 describe('markdown filter', () => {
   it('Converts Markdown string to HTML', () => {

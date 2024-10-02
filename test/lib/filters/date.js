@@ -1,7 +1,7 @@
-const assert = require('node:assert/strict')
-const { describe, it } = require('node:test')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
-const date = require('../../../lib/filters/date.js')
+import { date } from '../../../lib/filters/date.js'
 
 describe('Date filter', () => {
   it('Formats a date using tokens', () => {
