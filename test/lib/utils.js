@@ -1,6 +1,6 @@
-const assert = require('assert/strict')
-const { describe, it } = require('node:test')
-const { normalise } = require('../../lib/utils.js')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
+import { normalise } from '../../lib/utils.js'
 
 describe('Utility', () => {
   it('Normalises value provided to a filter', () => {

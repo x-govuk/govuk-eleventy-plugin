@@ -1,6 +1,6 @@
-const assert = require('assert/strict')
-const { describe, it } = require('node:test')
-const itemsFromCollection = require('../../../lib/filters/items-from-collection.js')
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
+import { itemsFromCollection } from '../../../lib/filters/items-from-collection.js'
 
 const collectionData = [
   {
