@@ -88,6 +88,6 @@
     "stylelint-order": "^6.0.0"
   },
   "engines": {
-    "node": ">=18.17"
+    "node": ">=22"
   }
 }
