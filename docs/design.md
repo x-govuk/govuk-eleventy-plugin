@@ -21,9 +21,9 @@ It is strongly recommended that you change the default values to match your depa
 Use the `header.logotype.text` option to replace the crown and GOV.UK logotype with a text value. For example:
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     header: {
       logotype: {
@@ -38,9 +38,9 @@ module.exports = function(eleventyConfig) {
 If you need more control, use `logo.logotype.html`. This allows you to provide your own HTML which could, for example, contain an SVG logo or image:
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     header: {
       logotype: {
@@ -59,9 +59,9 @@ By default, page titles in the browser are suffixed with `GOV.UK`.
 Change this to your own value by setting the `titleSuffix` option. For example:
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     titleSuffix: 'Circus Agency'
   })
@@ -82,9 +82,9 @@ If these are not right for your website, change:
 For example:
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     header: {
       contentLicence: {

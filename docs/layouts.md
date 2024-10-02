@@ -160,9 +160,9 @@ Layouts can accept the following [front matter data](https://www.11ty.dev/docs/d
 Layouts are registered with Eleventy by setting the `dir.layouts` key to point to the layout files installed in the package directory:
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin)
 
   return {

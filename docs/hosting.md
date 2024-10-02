@@ -76,9 +76,9 @@ To make sure navigation links point to the correct pages, and static assets like
 For example, if the URL of your website is `https://juggling.github.io/api-docs`, add the following values to your Eleventy configuration:
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   // Register the plugin
   eleventyConfig.addPlugin(govukEleventyPlugin)
 
@@ -102,10 +102,10 @@ Environment variables are a good way to let Eleventy know when a site is being g
 If you are hosting a site using GitHub Pages and deploying it using GitHub Actions, you can check for the presence of `process.env.GITHUB_ACTIONS`. For example:
 
 ```js
-const process = require('node:process')
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import process from 'node:process'
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   // Register the plugin
   eleventyConfig.addPlugin(govukEleventyPlugin)
 

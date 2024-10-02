@@ -21,11 +21,13 @@ You’re welcome to use the plugin even if your service isn’t considered part 
 ## Usage
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-eleventyConfig.addPlugin(govukEleventyPlugin, {
-  // Options
-})
+export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(govukEleventyPlugin, {
+    // Options
+  })
+}
 ```
 
 Learn more about how to [get started](https://x-govuk.github.io/govuk-eleventy-plugin/get-started/) and which [options you can provide](https://x-govuk.github.io/govuk-eleventy-plugin/options/).
