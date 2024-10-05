@@ -3,7 +3,6 @@
   <title>{{ options.homeKey }}</title>
   <link href="{{ permalink | canonicalUrl }}" rel="self"/>
   <link href="{{ options.url }}"/>
-  <updated>{{ collections[collection] | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ options.url }}/</id>
   {%- for item in (collections[collection] | sort(true, false, "date") %}
     {%- if loop.index0 < size %}
@@ -11,7 +10,6 @@
     <entry>
       <title>{{ item.data.title }}</title>
       <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ item.date | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
       {% if item.data.authors %}
         {% for author in item.data.authors %}
