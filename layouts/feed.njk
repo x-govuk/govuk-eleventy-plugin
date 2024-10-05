@@ -4,7 +4,7 @@
   <link href="{{ permalink | canonicalUrl }}" rel="self"/>
   <link href="{{ options.url }}"/>
   <id>{{ options.url }}/</id>
-  {%- for item in (collections[collection] | sort(true, false, "date") %}
+  {%- for item in (collections[collection] %}
     {%- if loop.index0 < size %}
     {%- set absolutePostUrl = item.url | canonicalUrl %}
     <entry>
