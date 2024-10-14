@@ -58,7 +58,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   // Global data
   eleventyConfig.addGlobalData('options', options)
   eleventyConfig.addGlobalData(
-    'eleventyComputed',
+    'eleventyComputed.eleventyNavigation',
     require('./lib/data/eleventy-computed.js')
   )
 
