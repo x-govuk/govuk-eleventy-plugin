@@ -13,7 +13,7 @@
 {% set pageCount = pagination.pages | length %}
 
 {# Navigation #}
-{% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs }) | itemsFromNavigation(page.url, options) if eleventyNavigation.key %}
+{% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs, allowMissing: true }) | itemsFromNavigation(page.url, options) if eleventyNavigation.key %}
 {% set minimumItemsInBreadcrumbs = 0 %}
 {% set minimumItemsInBreadcrumbs = 1 if options.parentSite %}
 {% set showBreadcrumbs = options.showBreadcrumbs != false and breadcrumbItems | length > minimumItemsInBreadcrumbs %}
