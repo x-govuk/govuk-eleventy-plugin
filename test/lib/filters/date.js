@@ -1,5 +1,6 @@
-const assert = require('assert/strict')
+const assert = require('node:assert/strict')
 const { describe, it } = require('node:test')
+
 const date = require('../../../lib/filters/date.js')
 
 describe('Date filter', () => {

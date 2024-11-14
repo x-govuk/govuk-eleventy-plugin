@@ -1,5 +1,6 @@
-const assert = require('assert/strict')
+const assert = require('node:assert/strict')
 const { describe, it } = require('node:test')
+
 const itemsFromNavigation = require('../../../lib/filters/items-from-navigation.js')
 
 const eleventyNavigationBreadcrumb = [
