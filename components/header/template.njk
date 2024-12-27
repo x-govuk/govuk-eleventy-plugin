@@ -1,4 +1,4 @@
-{%- from "components/site-search/macro.njk" import appSiteSearch -%}
+{%- from "components/site-search/macro.njk" import appSiteSearch with context -%}
 {%- if options.navigation -%}
   {%- set headerClasses = " govuk-header--full-width-border" -%}
 {% elif layout == "product" or layout == "collection" %}
