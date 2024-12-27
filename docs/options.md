@@ -39,18 +39,18 @@ module.exports = function(eleventyConfig) {
     ],
     [
       { text: "icons.mask" },
-      { text: "string" },
-      { text: "Override GOV.UK SVG mask icon." }
+      { text: "string|boolean" },
+      { text: "Override GOV.UK SVG mask icon. Use `false` to not include a mask icon." }
     ],
     [
       { text: "icons.shortcut" },
-      { text: "string" },
-      { text: "Override GOV.UK favicon." }
+      { text: "string|boolean" },
+      { text: "Override GOV.UK favicon. Use `false` to not include a favicon." }
     ],
     [
       { text: "icons.touch" },
-      { text: "string" },
-      { text: "Override GOV.UK touch icon." | markdown }
+      { text: "string|boolean" },
+      { text: "Override GOV.UK touch icon. Use `false` to not include a touch icon." | markdown }
     ],
     [
       { text: "opengraphImageUrl" },
