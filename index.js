@@ -1,5 +1,7 @@
 const { EleventyHtmlBasePlugin } = require('@11ty/eleventy')
 
+const addCollections = require('./lib/collections/index.js')
+
 module.exports = function (eleventyConfig, pluginOptions = {}) {
   const { pathPrefix } = eleventyConfig
 
@@ -11,16 +13,7 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
   eleventyConfig.setLibrary('njk', require('./lib/nunjucks.js')(eleventyConfig))
 
   // Collections
-  eleventyConfig.addCollection('all', require('./lib/collections/all.js'))
-  eleventyConfig.addCollection(
-    'ordered',
-    require('./lib/collections/ordered.js')
-  )
-  eleventyConfig.addCollection(
-    'sitemap',
-    require('./lib/collections/sitemap.js')
-  )
-  eleventyConfig.addCollection('tags', require('./lib/collections/tags.js'))
+  addCollections(eleventyConfig)
 
   // Extensions and template formats
   eleventyConfig.addExtension('scss', require('./lib/extensions/scss.js'))
