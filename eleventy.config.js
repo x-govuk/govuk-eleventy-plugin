@@ -4,6 +4,8 @@ import rssPlugin from '@11ty/eleventy-plugin-rss'
 
 import govukPlugin from './index.js'
 
+import { layoutNames } from './lib/utils.js'
+
 export default function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(rssPlugin)
@@ -71,6 +73,9 @@ export default function (eleventyConfig) {
       .getFilteredByGlob(['docs/upgrading/*.md'])
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   )
+
+  // Global data
+  eleventyConfig.addGlobalData('layoutNames', layoutNames)
 
   // Passthrough
   eleventyConfig.addPassthroughCopy('./docs/assets')
