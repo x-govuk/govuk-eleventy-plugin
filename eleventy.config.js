@@ -81,7 +81,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./docs/assets')
 
   // Watch
-  eleventyConfig.addWatchTarget('./components/')
   eleventyConfig.addWatchTarget('./lib/')
 
   // Config
