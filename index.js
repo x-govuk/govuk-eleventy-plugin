@@ -66,6 +66,6 @@ module.exports = function (eleventyConfig, pluginOptions = {}) {
 
   // Events
   eleventyConfig.on('eleventy.after', async ({ dir }) => {
-    require('./lib/events/generate-govuk-assets.js')(dir, pathPrefix, options)
+    require('./lib/events/generate-govuk-assets.js')(dir, options)
   })
 }
