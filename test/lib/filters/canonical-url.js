@@ -18,6 +18,14 @@ describe('canonicalUrl filter', () => {
     assert.equal(result, '/path')
   })
 
+  it('Returns given path if site URL is not a URL', () => {
+    const result = env.renderString('{{ "/path" | canonicalUrl }}', {
+      options: { url: 'foo' }
+    })
+
+    assert.equal(result, '/path')
+  })
+
   it('Returns external URL if doesn’t share hostname with site URL', () => {
     const result = env.renderString(
       '{{ "http://foo.bar" | canonicalUrl }}',
