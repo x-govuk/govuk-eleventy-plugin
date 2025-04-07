@@ -20,8 +20,6 @@
   ],
   "license": "MIT",
   "files": [
-    "components",
-    "layouts",
     "lib"
   ],
   "main": "index.js",
