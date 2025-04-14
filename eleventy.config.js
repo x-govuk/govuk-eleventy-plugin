@@ -1,15 +1,11 @@
 import process from 'node:process'
 
-import rssPlugin from '@11ty/eleventy-plugin-rss'
+import { layoutNames } from './lib/utils.js'
 
 import govukPlugin from './index.js'
 
-import { layoutNames } from './lib/utils.js'
-
 export default function (eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(rssPlugin)
-
   eleventyConfig.addPlugin(govukPlugin, {
     icons: {
       mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
