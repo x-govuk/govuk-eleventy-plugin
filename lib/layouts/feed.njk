@@ -26,7 +26,7 @@
       </author>
     {% endif %}
     <content xml:lang="{{ language or "en" }}" type="html">
-      <![CDATA[ {{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }} ]]>
+      <![CDATA[ {{ item.templateContent | renderTransforms(item.data.page) }} ]]>
     </content>
   </entry>
   {%- endfor %}
