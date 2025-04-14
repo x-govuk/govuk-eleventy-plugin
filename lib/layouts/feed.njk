@@ -3,9 +3,9 @@
   <title>{{ options.homeKey }}</title>
   <link href="{{ permalink | canonicalUrl }}" rel="self"/>
   <link href="{{ options.url }}"/>
-  <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections[collection.name] | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ options.url }}/</id>
-  {%- for item in pagination.items %}
+  {%- for item in collections[collection.name] | reverse | sliceFromCollection(collection.limit) %}
   {%- set absolutePostUrl = item.url | canonicalUrl %}
   <entry>
     <title>{{ item.data.title }}</title>
@@ -26,7 +26,11 @@
       </author>
     {% endif %}
     <content xml:lang="{{ language or "en" }}" type="html">
-      <![CDATA[ {{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }} ]]>
+      <![CDATA[
+        {% if item.data.image %}<figure><img src="{{ item.data.image.src | canonicalUrl }}" alt="{{ item.data.image.alt }}">{% if item.data.image.caption %}<figcaption>{{ item.data.image.caption | markdown }}</figcaption>
+        {% endif %}</figure>{% endif %}
+        {{- item.templateContent | renderTransforms(item.data.page) }}
+      ]]>
     </content>
   </entry>
   {%- endfor %}

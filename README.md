@@ -11,8 +11,8 @@ You’re welcome to use the plugin even if your service isn’t considered part 
 
 ## Requirements
 
-- [Node.js](https://nodejs.org) v18.17 or later
-- [Eleventy](https://www.11ty.dev) v2 or later
+- [Node.js](https://nodejs.org) v22 or later
+- [Eleventy](https://www.11ty.dev) v3 or later
 
 ## Installation
 
@@ -21,11 +21,13 @@ You’re welcome to use the plugin even if your service isn’t considered part 
 ## Usage
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
 
-eleventyConfig.addPlugin(govukEleventyPlugin, {
-  // Options
-})
+export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(govukEleventyPlugin, {
+    // Options
+  })
+}
 ```
 
 Learn more about how to [get started](https://x-govuk.github.io/govuk-eleventy-plugin/get-started/) and which [options you can provide](https://x-govuk.github.io/govuk-eleventy-plugin/options/).
