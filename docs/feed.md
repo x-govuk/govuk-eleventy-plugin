@@ -16,10 +16,9 @@ To create a feed, add a file named `feed.njk` with the following content:
 eleventyExcludeFromCollections: true
 layout: feed
 permalink: /feed.xml
-pagination:
-  data: collections.post
-  size: 20
-  reverse: true
+collection:
+  name: post
+  limit: 20
 ---
 ```
 
