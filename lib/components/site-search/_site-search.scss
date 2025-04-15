@@ -3,22 +3,24 @@
 
 $icon-size: 40px;
 
-.app-site-search {
-  float: left;
-  padding-bottom: govuk-spacing(1);
-  padding-top: govuk-spacing(1);
+.govuk-service-navigation .govuk-width-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
-  @include govuk-media-query($from: desktop) {
-    float: right;
-  }
+.app-site-search {
+  margin-bottom: govuk-spacing(2);
+  margin-top: govuk-spacing(2);
+  margin-left: auto;
 
   &:defined {
     position: relative;
     width: 100%;
 
     @include govuk-media-query($from: desktop) {
-      margin-top: -10px;
-      width: 300px;
+      max-width: calc(33% - govuk-spacing(4));
     }
   }
 }
@@ -50,7 +52,7 @@ $icon-size: 40px;
 .app-site-search__input {
   -webkit-appearance: none;
   appearance: none;
-  border: $govuk-border-width-form-element solid govuk-colour("white");
+  border: $govuk-border-width-form-element solid $govuk-border-colour;
   border-radius: 0; // Safari 10 on iOS adds implicit border rounding.
   box-sizing: border-box;
   height: govuk-px-to-rem($icon-size);
