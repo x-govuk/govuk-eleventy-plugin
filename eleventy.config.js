@@ -28,9 +28,18 @@ export default function (eleventyConfig) {
     stylesheets: ['/assets/application.css'],
     header: {
       logotype: 'x-govuk',
-      productName: 'Eleventy Plugin',
-      search: { indexPath: '/search.json', sitemapPath: '/sitemap' }
+      homepageUrl: 'https://x-govuk.github.io'
     },
+    navigation: {
+      serviceName: 'GOV.UK Eleventy Plugin',
+      serviceUrl: process.env.GITHUB_ACTIONS ? '/govuk-eleventy-plugin/' : '/'
+    },
+    search: {
+      indexPath: '/search.json',
+      sitemapPath: '/sitemap',
+      label: 'Search documentation'
+    },
+    showBreadcrumbs: false,
     headingPermalinks: true,
     footer: {
       contentLicence: {
