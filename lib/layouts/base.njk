@@ -33,6 +33,7 @@
 {% from "components/footer/macro.njk" import appFooter %}
 {% from "components/header/macro.njk" import appHeader with context %}
 {% from "components/prose-scope/macro.njk" import appProseScope %}
+{% from "components/site-search/macro.njk" import appSiteSearch with context %}
 
 {% block headIcons %}
   {%- if options.icons.shortcut %}<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ options.icons.shortcut }}" type="image/x-icon">{% endif %}
@@ -66,9 +67,14 @@
 {% block header %}
   {{ appHeader(options.header) }}
   {{ govukServiceNavigation({
+    serviceName: options.navigation.serviceName,
+    serviceUrl: options.navigation.serviceUrl,
     navigationLabel: options.navigation.visuallyHiddenTitle,
-    navigation: options.navigation.items | currentPage(page.url)
-  }) if options.navigation }}
+    navigation: options.navigation.items | currentPage(page.url) if options.navigation.items,
+    slots: {
+      end: appSiteSearch(options.search) if options.search.indexPath
+    }
+  }) if options.navigation or options.search }}
 {% endblock %}
 
 {% block footer %}
