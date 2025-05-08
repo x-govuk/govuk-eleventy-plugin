@@ -11,4 +11,4 @@ $govuk-global-styles: true;
 @import "node_modules/markdown-it-govuk/x-govuk/all";
 
 // Plugin components
-@import "lib/components/all";
+@import "lib/components/index";
