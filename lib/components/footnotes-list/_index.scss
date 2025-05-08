@@ -1,3 +1,5 @@
+@use "govuk-frontend/dist/govuk" as *;
+
 // Link to footnote
 a[aria-describedby="footnotes-label"] {
   @include govuk-font(16, $tabular: true);
