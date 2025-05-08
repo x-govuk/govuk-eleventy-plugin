@@ -1,3 +1,5 @@
+@use "govuk-frontend/dist/govuk" as *;
+
 // Based on the GOV.UK ‘Contents list’ component
 // https://components.publishing.service.gov.uk/component-guide/contents_list
 .app-contents-list {

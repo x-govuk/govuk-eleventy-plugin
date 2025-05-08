@@ -1,3 +1,5 @@
+@use "govuk-frontend/dist/govuk" as *;
+
 .app-prose-scope {
   @include govuk-responsive-margin(8, "bottom");
 

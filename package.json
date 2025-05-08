@@ -23,7 +23,6 @@
     "lib"
   ],
   "main": "index.js",
-  "sass": "lib/govuk.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/x-govuk/govuk-eleventy-plugin.git"
@@ -88,5 +87,10 @@
   "engines": {
     "node": ">=22"
   },
-  "type": "module"
+  "type": "module",
+  "exports": {
+    ".": {
+      "sass": "./lib/index.scss"
+    }
+  }
 }

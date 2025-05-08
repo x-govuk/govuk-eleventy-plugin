@@ -1,3 +1,5 @@
+@use "govuk-frontend/dist/govuk" as *;
+
 .app-aside {
   @include govuk-responsive-margin(6, "bottom");
   @include govuk-text-colour;

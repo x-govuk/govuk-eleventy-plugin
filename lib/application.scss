@@ -1,14 +1,9 @@
-// GOV.UK Frontend options
-$govuk-global-styles: true;
+// GOV.UK Frontend components
+@use "pkg:govuk-frontend/dist/govuk" with (
+  $govuk-global-styles: true,
+  $govuk-new-organisation-colours: true,
+  $govuk-new-typography-scale: true
+);
 
-// GOV.UK Frontend
-@import "node_modules/govuk-frontend/dist/govuk/index";
-
-// GOV.UK Prototype components
-@import "node_modules/@x-govuk/govuk-prototype-components/src/x-govuk/index";
-
-// GOV.UK fenced code highlighting
-@import "node_modules/markdown-it-govuk/src/index";
-
-// Plugin components
-@import "lib/components/index";
+// GOV.UK Eleventy Plugin components
+@forward "pkg:@x-govuk/govuk-eleventy-plugin";

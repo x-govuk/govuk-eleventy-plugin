@@ -1,3 +1,5 @@
+@use "govuk-frontend/dist/govuk" as *;
+
 .govuk-link.app-link--heading {
   @include govuk-link-style-text;
   @include govuk-link-style-no-underline;
