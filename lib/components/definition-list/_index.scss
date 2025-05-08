@@ -1,3 +1,5 @@
+@use "govuk-frontend/dist/govuk" as *;
+
 .app-definition-list {
   dt {
     @include govuk-font($size: 19, $weight: bold);
