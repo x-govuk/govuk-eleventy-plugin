@@ -5,7 +5,7 @@ $govuk-global-styles: true;
 @import "node_modules/govuk-frontend/dist/govuk/index";
 
 // GOV.UK Prototype components
-@import "node_modules/@x-govuk/govuk-prototype-components/x-govuk/all";
+@import "node_modules/@x-govuk/govuk-prototype-components/src/x-govuk/index";
 
 // GOV.UK fenced code highlighting
 @import "node_modules/markdown-it-govuk/src/index";
