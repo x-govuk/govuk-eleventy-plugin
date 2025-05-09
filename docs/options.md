@@ -83,11 +83,6 @@ export default function(eleventyConfig) {
       { text: "Name of parent site." }
     ],
     [
-      { text: "scssSettingsPath" },
-      { text: "string" },
-      { text: "Path to SCSS file, relative to input directory, containing [GOV.UK Frontend settings](https://frontend.design-system.service.gov.uk/sass-api-reference/) (default is `{dir.input}/sass/_settings.scss`)." | markdown }
-    ],
-    [
       { text: "showBreadcrumbs" },
       { text: "boolean" },
       { text: "Show breadcrumb navigation (default is `true` with nested pages)." | markdown }
