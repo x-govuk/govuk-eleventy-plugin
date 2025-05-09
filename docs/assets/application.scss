@@ -1,3 +1,20 @@
+// Use GOV.UK Frontend components
+$_font-family: system-ui, sans-serif;
+@use "pkg:govuk-frontend/dist/govuk" with (
+  $govuk-global-styles: true,
+  $govuk-new-organisation-colours: true,
+  $govuk-new-typography-scale: true,
+  $govuk-font-family: $_font-family,
+  $govuk-brand-colour: #2288aa,
+  $govuk-link-colour: #006688,
+  $govuk-link-hover-colour: #004466,
+  $govuk-link-visited-colour: #333366,
+  $govuk-page-width: 1100px
+);
+
+// Use GOV.UK Eleventy Plugin components
+@use "pkg:@x-govuk/govuk-eleventy-plugin";
+
 @media screen and (min-width: 800px) {
   .app-prose-scope .govuk-table:not([tabindex]) {
     display: table;
