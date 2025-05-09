@@ -16,8 +16,10 @@ a[aria-describedby="footnotes-label"]::after {
 
 // Footnotes
 .app-footnotes-list {
-  @extend %govuk-list;
+  @include govuk-font($size: 19);
   counter-reset: footnotes;
+  list-style-type: none;
+  padding-left: 0;
 
   li {
     counter-increment: footnotes;
