@@ -41,6 +41,8 @@
 {% endblock %}
 
 {% block head %}
+  <script src="/assets/application.js" type="module" defer></script>
+
   <link rel="stylesheet" href="{{ "/assets/govuk.css" | canonicalUrl }}">
   {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | canonicalUrl }}">
@@ -76,6 +78,5 @@
 {% endblock %}
 
 {% block bodyEnd %}
-  <script src="/assets/govuk.js" type="module"></script>
   {% block scripts %}{% endblock %}
 {% endblock %}
