@@ -43,9 +43,10 @@
 {% block head %}
   <script src="/assets/application.js" type="module" defer></script>
 
-  <link rel="stylesheet" href="{{ "/assets/govuk.css" | canonicalUrl }}">
   {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | canonicalUrl }}">
+  {% else %}
+  <link rel="stylesheet" href="{{ "/assets/application.css" | canonicalUrl }}">
   {% endfor %}
 
   {% if options.feedUrl %}<link rel="alternate" type="application/atom+xml" href="{{ options.feedUrl | canonicalUrl }}" >{% endif %}
