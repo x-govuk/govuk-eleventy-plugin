@@ -4,7 +4,7 @@
 
 {%- set _rebrand = params.rebrand | default(govukRebrand() if govukRebrand is callable else govukRebrand) -%}
 
-{%- if options.navigation -%}
+{%- if options.serviceNavigation -%}
   {%- set headerClasses = " govuk-header--full-width-border" -%}
 {% elif layout == "product" or layout == "collection" %}
   {%- set headerClasses = " app-header--no-border" -%}
