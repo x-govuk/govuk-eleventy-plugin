@@ -19,6 +19,11 @@ $_icon-size: 40px;
       .govuk-template--rebranded & {
         margin-bottom: 0;
       }
+
+      .app-service-navigation & {
+        margin-bottom: 0;
+        outline: 1px solid $govuk-border-colour;
+      }
     }
   }
 }
@@ -50,7 +55,7 @@ $_icon-size: 40px;
 .app-site-search__input {
   -webkit-appearance: none;
   appearance: none;
-  border: $govuk-border-width-form-element solid govuk-colour("white");
+  border: $govuk-border-width-form-element solid transparent;
   border-radius: 0; // Safari 10 on iOS adds implicit border rounding.
   box-sizing: border-box;
   height: govuk-px-to-rem($_icon-size);

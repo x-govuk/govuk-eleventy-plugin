@@ -25,7 +25,6 @@
 {# Components #}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {% from "x-govuk/components/masthead/macro.njk" import xGovukMasthead %}
 {% from "x-govuk/components/related-navigation/macro.njk" import xGovukRelatedNavigation %}
@@ -36,6 +35,7 @@
 {% from "components/document-list/macro.njk" import appDocumentList %}
 {% from "components/footer/macro.njk" import appFooter %}
 {% from "components/header/macro.njk" import appHeader with context %}
+{% from "components/service-navigation/macro.njk" import appServiceNavigation with context %}
 {% from "components/prose-scope/macro.njk" import appProseScope %}
 
 {% block headIcons %}
@@ -72,10 +72,7 @@
 
 {% block header %}
   {{ appHeader(options.header) }}
-  {{ govukServiceNavigation({
-    navigationLabel: options.navigation.visuallyHiddenTitle,
-    navigation: options.navigation.items | currentPage(page.url)
-  }) if options.navigation }}
+  {{ appServiceNavigation(options.serviceNavigation) if options.serviceNavigation }}
 {% endblock %}
 
 {% block footer %}
