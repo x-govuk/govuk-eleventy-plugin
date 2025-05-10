@@ -41,7 +41,7 @@ eleventyConfig.addCollection('post', (collection) => {
 To make the feed discoverable, add the full URL of your feed as `feedUrl` within the options for this plugin in your `.eleventy.config.js` options file:
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
