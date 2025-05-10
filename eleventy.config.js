@@ -16,6 +16,7 @@ export default function (eleventyConfig) {
     },
     opengraphImageUrl:
       'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
+    themeColor: '#2288aa',
     homeKey: 'GOV.UK Eleventy Plugin',
     titleSuffix: 'GOV.UK Eleventy Plugin',
     parentSite: {
@@ -27,7 +28,6 @@ export default function (eleventyConfig) {
       'https://x-govuk.github.io/govuk-eleventy-plugin/',
     stylesheets: ['/assets/application.css'],
     header: {
-      logotype: 'x-govuk',
       productName: 'Eleventy Plugin',
       search: { indexPath: '/search.json', sitemapPath: '/sitemap' }
     },
@@ -46,7 +46,8 @@ export default function (eleventyConfig) {
           }
         ]
       }
-    }
+    },
+    rebrand: true
   })
 
   // Collections
@@ -78,6 +79,9 @@ export default function (eleventyConfig) {
 
   // Watch
   eleventyConfig.addWatchTarget('./lib/')
+
+  // Enable X-GOVUK brand
+  eleventyConfig.addNunjucksGlobal('xGovuk', true)
 
   // Config
   return {
