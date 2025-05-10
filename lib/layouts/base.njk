@@ -1,10 +1,14 @@
 {% extends "govuk/template.njk" %}
 
-{% set assetUrl = assetPath | canonicalUrl %}
-{% set themeColor = options.themeColour %}
+{%- set _rebrand = govukRebrand() if govukRebrand is callable else govukRebrand -%}
 
-{# Set the opengraphImageUrl in parent template to either the one
-   from the page metadata or else fallback to the generic one from options. #}
+{#- Hardcoded value is $govuk-brand-blue if rebrand, otherwise
+    govuk-colour ("black") -#}
+{% set themeColor = options.themeColor | default("#1d70b8" if _rebrand else "#0b0c0c", true) -%}
+{% set assetPath = assetPath | default("/assets/rebrand" if _rebrand else "/assets", true) -%}
+
+{#- Set the opengraphImageUrl in parent template to either the one
+    from the page metadata or else fallback to the generic one from options. -#}
 {% set opengraphImage = image if image.opengraphImage else opengraphImage %}
 {% set opengraphImageUrl = (opengraphImage.src | canonicalUrl) if opengraphImage else options.opengraphImageUrl %}
 
