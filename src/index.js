@@ -1,15 +1,15 @@
 import { EleventyHtmlBasePlugin } from '@11ty/eleventy'
 import eleventyNavigation from '@11ty/eleventy-navigation'
 
-import { addCollections } from './lib/collections/index.js'
-import { eleventyComputed } from './lib/data/eleventy-computed.js'
-import { defaultPluginOptions } from './lib/data/options.js'
-import { generateAssets } from './lib/events/generate-govuk-assets.js'
-import { scssExtension } from './lib/extensions/scss.js'
-import * as filters from './lib/filters/index.js'
-import { md } from './lib/markdown-it.js'
-import { nunjucksConfig } from './lib/nunjucks.js'
-import { getTemplates } from './lib/utils.js'
+import { addCollections } from './collections/index.js'
+import { eleventyComputed } from './data/eleventy-computed.js'
+import { defaultPluginOptions } from './data/options.js'
+import { generateAssets } from './events/generate-govuk-assets.js'
+import { scssExtension } from './extensions/scss.js'
+import * as filters from './filters/index.js'
+import { md } from './markdown-it.js'
+import { nunjucksConfig } from './nunjucks.js'
+import { getTemplates } from './utils.js'
 
 export default async function (eleventyConfig, pluginOptions = {}) {
   const { pathPrefix } = eleventyConfig

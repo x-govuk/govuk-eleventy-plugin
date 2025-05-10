@@ -44,7 +44,7 @@ export async function getTemplates(eleventyConfig) {
       const templatePath = path.join(input, layoutDir, `${name}.njk`)
       await fs.stat(templatePath)
     } catch {
-      const templateString = await getFileContents(`lib/layouts/${name}.njk`)
+      const templateString = await getFileContents(`src/layouts/${name}.njk`)
       templates[`${layoutDir}/${name}.njk`] = templateString
     }
   }
