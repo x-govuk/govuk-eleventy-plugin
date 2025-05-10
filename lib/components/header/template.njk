@@ -1,21 +1,35 @@
-{%- from "components/site-search/macro.njk" import appSiteSearch with context -%}
+{% from "components/site-search/macro.njk" import appSiteSearch with context -%}
+{% from "macros/x-govuk-logo.njk" import xGovukLogo -%}
+{% from "govuk/macros/logo.njk" import govukLogo -%}
+
+{%- set _rebrand = params.rebrand | default(govukRebrand() if govukRebrand is callable else govukRebrand) -%}
+
 {%- if options.navigation -%}
   {%- set headerClasses = " govuk-header--full-width-border" -%}
 {% elif layout == "product" or layout == "collection" %}
   {%- set headerClasses = " app-header--no-border" -%}
 {%- endif -%}
+
 <header class="govuk-header app-header{{ headerClasses }}" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
       <a href="{{ params.homepageUrl | default("/") }}" class="govuk-header__link govuk-header__link--homepage">
-        {% if params.logotype == "x-govuk" %}
-          {% include "./_x-govuk.svg" %}
+        {% if xGovuk %}
+          {{ xGovukLogo({
+            classes: "govuk-header__logotype x-govuk-header__logotype",
+            ariaLabelText: "X-GOVUK"
+          }) | trim | indent(10) }}
         {% elif params.logotype.html %}
           {{ params.logotype.html }}
         {% elif params.logotype.text %}
           <span class="app-header__logotype">{{ params.logotype.text }}</span>
         {% else %}
-          {% include "./_govuk.svg" %}
+          {{ govukLogo({
+            classes: "govuk-header__logotype",
+            ariaLabelText: "GOV.UK",
+            useTudorCrown: params.useTudorCrown,
+            rebrand: _rebrand
+          }) | trim | indent(10) }}
         {% endif %}
         {% if params.productName %}
         <span class="govuk-header__product-name">
