@@ -16,7 +16,8 @@ $_icon-size: 40px;
     @include govuk-media-query($from: desktop) {
       max-width: calc(33% - govuk-spacing(4));
 
-      .govuk-template--rebranded & {
+      .govuk-template--rebranded &,
+      .app-service-navigation & {
         margin-bottom: 0;
       }
     }
@@ -44,13 +45,17 @@ $_icon-size: 40px;
 .app-site-search__wrapper {
   display: block;
   position: relative;
+
+  .app-service-navigation & {
+    outline: 1px solid $govuk-border-colour;
+  }
 }
 
 .app-site-search__hint,
 .app-site-search__input {
   -webkit-appearance: none;
   appearance: none;
-  border: $govuk-border-width-form-element solid govuk-colour("white");
+  border: $govuk-border-width-form-element solid transparent;
   border-radius: 0; // Safari 10 on iOS adds implicit border rounding.
   box-sizing: border-box;
   height: govuk-px-to-rem($_icon-size);
@@ -77,6 +82,7 @@ $_icon-size: 40px;
   }
 }
 
+.app-site-search__input:focus,
 .app-site-search__input--focused {
   border-color: $govuk-focus-text-colour;
   box-shadow: inset 0 0 0 $govuk-border-width-form-element;
