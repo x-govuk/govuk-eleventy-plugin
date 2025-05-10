@@ -6,21 +6,19 @@
 $_icon-size: 40px;
 
 .app-site-search {
-  float: left;
-  padding-bottom: govuk-spacing(1);
-  padding-top: govuk-spacing(1);
-
-  @include govuk-media-query($from: desktop) {
-    float: right;
-  }
+  margin-left: auto;
 
   &:defined {
+    margin-bottom: govuk-spacing(2);
     position: relative;
     width: 100%;
 
     @include govuk-media-query($from: desktop) {
-      margin-top: -10px;
-      width: 300px;
+      max-width: calc(33% - govuk-spacing(4));
+
+      .govuk-template--rebranded & {
+        margin-bottom: 0;
+      }
     }
   }
 }
