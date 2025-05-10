@@ -16,10 +16,9 @@ To create a feed, add a file named `feed.njk` with the following content:
 eleventyExcludeFromCollections: true
 layout: feed
 permalink: /feed.xml
-pagination:
-  data: collections.post
-  size: 20
-  reverse: true
+collection:
+  name: post
+  limit: 20
 ---
 ```
 
@@ -42,11 +41,13 @@ eleventyConfig.addCollection('post', (collection) => {
 To make the feed discoverable, add the full URL of your feed as `feedUrl` within the options for this plugin in your `.eleventy.config.js` options file:
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
-eleventyConfig.addPlugin(govukEleventyPlugin, {
-  feedUrl: 'feed.xml'
-})
+export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(govukEleventyPlugin, {
+    feedUrl: 'feed.xml'
+  })
+}
 ```
 
 This will then add an invisible `<link>` to the feed within the `<head>` of every page to enable feed readers to easily find the feed.

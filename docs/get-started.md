@@ -23,8 +23,8 @@ This plugin includes the following features:
 
 ## Requirements
 
-- [Node.js](https://nodejs.org) v18.17 or later
-- [Eleventy](https://www.11ty.dev) v2.0.0 or later
+- [Node.js](https://nodejs.org) v22 or later
+- [Eleventy](https://www.11ty.dev) v3 or later
 
 [Node version manager](https://github.com/nvm-sh/nvm) is recommended if you are working across multiple projects that use different versions of Node.js.
 
@@ -39,9 +39,9 @@ npm install @11ty/eleventy @x-govuk/govuk-eleventy-plugin
 Next, add an `eleventy.config.js` file to the root directory of your project. This file is used to [configure Eleventy](https://www.11ty.dev/docs/config/).
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   // Register the plugin
   eleventyConfig.addPlugin(govukEleventyPlugin)
 
@@ -52,8 +52,6 @@ module.exports = function(eleventyConfig) {
     dir: {
       // The folder where all your content will live:
       input: 'app',
-      // Use layouts from the plugin
-      layouts: '../node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
     }
   }
 };

@@ -20,12 +20,9 @@
   ],
   "license": "MIT",
   "files": [
-    "components",
-    "layouts",
-    "lib"
+    "src"
   ],
-  "main": "index.js",
-  "sass": "lib/govuk.scss",
+  "main": "/src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/x-govuk/govuk-eleventy-plugin.git"
@@ -52,12 +49,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-navigation": "^1.0.0",
-    "@11ty/eleventy-plugin-rss": "^1.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.0",
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
-    "@x-govuk/govuk-prototype-components": "^3.0.0",
+    "@x-govuk/govuk-prototype-components": "x-govuk/govuk-prototype-components#develop",
     "deepmerge": "^4.2.2",
     "govuk-frontend": "^5.6.0",
     "luxon": "^3.0.1",
@@ -65,14 +62,14 @@
     "markdown-it-anchor": "^9.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "markdown-it-govuk": "^0.4.0",
+    "markdown-it-govuk": "x-govuk/markdown-it-govuk",
     "markdown-it-image-figures": "^2.0.0",
     "markdown-it-ins": "^4.0.0",
     "markdown-it-mark": "^4.0.0",
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
     "markdown-it-table-of-contents": "^0.9.0",
-    "rimraf": "^5.0.0",
+    "rimraf": "^6.0.0",
     "rollup": "^4.1.0",
     "sass": "^1.45.1",
     "smartypants": "^0.2.0"
@@ -87,6 +84,13 @@
     "stylelint-order": "^6.0.0"
   },
   "engines": {
-    "node": ">=18.17"
+    "node": ">=22"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "sass": "./src/index.scss",
+      "import": "./src/index.js"
+    }
   }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ options.url }}">
+  <title>{{ options.homeKey }}</title>
+  <link href="{{ permalink | canonicalUrl }}" rel="self"/>
+  <link href="{{ options.url }}"/>
+  <updated>{{ collections[collection.name] | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ options.url }}/</id>
+  {%- for item in collections[collection.name] | reverse | sliceFromCollection(collection.limit) %}
+  {%- set absolutePostUrl = item.url | canonicalUrl %}
+  <entry>
+    <title>{{ item.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ item.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    {% if item.data.authors %}
+      {% for author in item.data.authors %}
+        <author>
+          <name>{{ author.name }}</name>
+          {% if author.url %}<uri>{{ author.url }}</uri>{% endif %}
+        </author>
+      {% endfor %}
+    {% elif item.data.author %}
+      <author>
+        <name>{{ item.data.author.name }}</name>
+        {% if item.data.author.url %}<uri>{{ item.data.author.url }}</uri>{% endif %}
+      </author>
+    {% endif %}
+    <content xml:lang="{{ language or "en" }}" type="html">
+      <![CDATA[
+        {% if item.data.image %}<figure><img src="{{ item.data.image.src | canonicalUrl }}" alt="{{ item.data.image.alt }}">{% if item.data.image.caption %}<figcaption>{{ item.data.image.caption | markdown }}</figcaption>
+        {% endif %}</figure>{% endif %}
+        {{- item.templateContent | renderTransforms(item.data.page) }}
+      ]]>
+    </content>
+  </entry>
+  {%- endfor %}
+</feed>
