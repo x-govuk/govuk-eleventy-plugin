@@ -83,6 +83,11 @@ export default function(eleventyConfig) {
       { text: "Name of parent site." }
     ],
     [
+      { text: "rebrand" },
+      { text: "boolean" },
+      { text: "Use GOV.UK rebrand (default is `false`, this will change to `true` in a subsequent release after 25 June 2025)." | markdown }
+    ],
+    [
       { text: "showBreadcrumbs" },
       { text: "boolean" },
       { text: "Show breadcrumb navigation (default is `true` with nested pages)." | markdown }
