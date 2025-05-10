@@ -44,7 +44,7 @@ You can see an [example of a sitemap](../sitemap) on this website.
 Add the `permalink` values to the corresponding plugin options for `header.search`. For example:
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {

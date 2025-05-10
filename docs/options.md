@@ -10,7 +10,7 @@ You can add options to the second parameter of the `addPlugin` function in Eleve
 For example, to add a product name to the right of the GOV.UK text in the header, you would add the following:
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {

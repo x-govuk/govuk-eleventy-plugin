@@ -39,7 +39,7 @@ npm install @11ty/eleventy @x-govuk/govuk-eleventy-plugin
 Next, add an `eleventy.config.js` file to the root directory of your project. This file is used to [configure Eleventy](https://www.11ty.dev/docs/config/).
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   // Register the plugin

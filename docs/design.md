@@ -21,7 +21,7 @@ It is strongly recommended that you change the default values to match your depa
 Use the `header.logotype.text` option to replace the crown and GOV.UK logotype with a text value. For example:
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -38,7 +38,7 @@ export default function(eleventyConfig) {
 If you need more control, use `logo.logotype.html`. This allows you to provide your own HTML which could, for example, contain an SVG logo or image:
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -59,7 +59,7 @@ By default, page titles in the browser are suffixed with `GOV.UK`.
 Change this to your own value by setting the `titleSuffix` option. For example:
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -82,7 +82,7 @@ If these are not right for your website, change:
 For example:
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -144,7 +144,7 @@ $_font-family: system-ui, sans-serif;
 To make sure these customised styles are used on your site, add the output path to the `stylesheets` option, which accepts an array. For example:
 
 ```js
-import govukEleventyPlugin from '@x-govuk/govuk-eleventy-plugin'
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {

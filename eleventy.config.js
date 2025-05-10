@@ -1,11 +1,11 @@
 import process from 'node:process'
 
-import govukPlugin from './src/index.js'
+import { govukEleventyPlugin } from './src/index.js'
 import { layoutNames } from './src/utils.js'
 
 export default function (eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(govukPlugin, {
+  eleventyConfig.addPlugin(govukEleventyPlugin, {
     icons: {
       mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
       shortcut:
