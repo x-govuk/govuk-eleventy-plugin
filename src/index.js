@@ -11,7 +11,7 @@ import { md } from './markdown-it.js'
 import { nunjucksConfig } from './nunjucks.js'
 import { getTemplates } from './utils.js'
 
-export default async function (eleventyConfig, pluginOptions = {}) {
+export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   const { pathPrefix } = eleventyConfig
 
   // Plugin options
