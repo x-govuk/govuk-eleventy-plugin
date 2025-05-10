@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
-import { markdown } from '../../../lib/filters/markdown.js'
+import { markdown } from '../../src/filters/markdown.js'
 
 describe('markdown filter', () => {
   it('Converts Markdown string to HTML', () => {

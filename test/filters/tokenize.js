@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
-import { tokenize } from '../../../lib/filters/tokenize.js'
+import { tokenize } from '../../src/filters/tokenize.js'
 
 describe('tokenize filter', () => {
   it('Reduces size of a string by removing duplicate and common words', () => {

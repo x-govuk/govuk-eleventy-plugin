@@ -1,8 +1,7 @@
 import process from 'node:process'
 
-import { layoutNames } from './lib/utils.js'
-
-import govukPlugin from './index.js'
+import govukPlugin from './src/index.js'
+import { layoutNames } from './src/utils.js'
 
 export default function (eleventyConfig) {
   // Plugins
@@ -78,7 +77,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./docs/assets')
 
   // Watch
-  eleventyConfig.addWatchTarget('./lib/')
+  eleventyConfig.addWatchTarget('./src/')
 
   // Enable X-GOVUK brand
   eleventyConfig.addNunjucksGlobal('xGovuk', true)

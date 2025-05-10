@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
-import { md } from '../../lib/markdown-it.js'
+import { md } from '../src/markdown-it.js'
 
 describe('markdown-it', () => {
   it('Returns configured markdown-it parser', () => {
