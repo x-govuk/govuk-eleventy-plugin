@@ -3,6 +3,8 @@ import process from 'node:process'
 import { govukEleventyPlugin } from './src/index.js'
 import { layoutNames } from './src/utils.js'
 
+const serviceName = 'GOV.UK Eleventy Plugin'
+
 export default function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -16,18 +18,19 @@ export default function (eleventyConfig) {
     opengraphImageUrl:
       'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
     themeColor: '#2288aa',
-    homeKey: 'GOV.UK Eleventy Plugin',
-    titleSuffix: 'GOV.UK Eleventy Plugin',
-    parentSite: {
-      url: 'https://x-govuk.github.io/#projects',
-      name: 'X-GOVUK projects'
-    },
+    titleSuffix: serviceName,
+    homeKey: serviceName,
+    showBreadcrumbs: false,
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',
     stylesheets: ['/assets/application.css'],
     header: {
-      productName: 'Eleventy Plugin',
+      homepageUrl: 'https://x-govuk.github.io'
+    },
+    serviceNavigation: {
+      serviceName,
+      serviceUrl: process.env.GITHUB_ACTIONS ? '/govuk-eleventy-plugin/' : '/',
       search: { indexPath: '/search.json', sitemapPath: '/sitemap' }
     },
     headingPermalinks: true,
