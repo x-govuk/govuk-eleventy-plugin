@@ -269,6 +269,11 @@ In addition to the [options available for the footer component](https://design-s
       { text: "copyright.html" },
       { text: "string" },
       { text: "If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
+    ],
+    [
+      { text: "logo" },
+      { text: "boolean" },
+      { text: "Show logo in rebranded footer (default is `true`)." | markdown }
     ]
   ]
 }) }}
