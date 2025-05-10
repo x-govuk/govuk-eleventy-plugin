@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
-import { currentPage } from '../../../lib/filters/current-page.js'
+import { currentPage } from '../../src/filters/current-page.js'
 
 const navigationData = [
   { text: 'Home', href: '/' },

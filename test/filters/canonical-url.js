@@ -3,7 +3,7 @@ import { describe, it } from 'node:test'
 
 import Nunjucks from 'nunjucks'
 
-import { canonicalUrl } from '../../../lib/filters/canonical-url.js'
+import { canonicalUrl } from '../../src/filters/canonical-url.js'
 
 describe('canonicalUrl filter', () => {
   const ctx = { options: { url: 'https://example.com' } }

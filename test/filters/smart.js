@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
-import { smart } from '../../../lib/filters/smart.js'
+import { smart } from '../../src/filters/smart.js'
 
 describe('smart filter', () => {
   it('Converts plain ASCII quotes into ‘smart’ typographic quotes', () => {
