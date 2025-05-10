@@ -3,6 +3,8 @@ import process from 'node:process'
 import { govukEleventyPlugin } from './src/index.js'
 import { layoutNames } from './src/utils.js'
 
+const serviceName = 'GOV.UK Eleventy Plugin'
+
 export default function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -16,21 +18,25 @@ export default function (eleventyConfig) {
     opengraphImageUrl:
       'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
     themeColor: '#2288aa',
-    homeKey: 'GOV.UK Eleventy Plugin',
-    titleSuffix: 'GOV.UK Eleventy Plugin',
-    parentSite: {
-      url: 'https://x-govuk.github.io/#projects',
-      name: 'X-GOVUK projects'
-    },
+    titleSuffix: serviceName,
+    homeKey: serviceName,
+    showBreadcrumbs: false,
+    headingPermalinks: true,
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',
     stylesheets: ['/assets/application.css'],
     header: {
-      productName: 'Eleventy Plugin',
-      search: { indexPath: '/search.json', sitemapPath: '/sitemap' }
+      homepageUrl: 'https://x-govuk.github.io'
     },
-    headingPermalinks: true,
+    serviceNavigation: {
+      serviceName,
+      serviceUrl: process.env.GITHUB_ACTIONS ? '/govuk-eleventy-plugin/' : '/',
+      search: {
+        indexPath: '/search.json',
+        sitemapPath: '/sitemap'
+      }
+    },
     footer: {
       contentLicence: {
         html: 'Licensed under the <a class="govuk-footer__link" href="https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt">MIT Licence</a>, except where otherwise stated'
