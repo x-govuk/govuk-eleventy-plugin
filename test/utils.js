@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
 import { describe, it } from 'node:test'
 
-import { getFileContents, getTemplates, normalise } from '../../lib/utils.js'
+import { getFileContents, getTemplates, normalise } from '../src/utils.js'
 
 describe('getFileContents utility', () => {
   it('Gets file contents', async (t) => {
@@ -26,7 +26,7 @@ describe('getFileContents utility', () => {
 })
 
 describe('getTemplates utility', () => {
-  const eleventyConfig = { dir: { input: 'src', layouts: 'layouts' } }
+  const eleventyConfig = { dir: { input: 'docs', layouts: 'layouts' } }
 
   it('Gets all virtual templates', async () => {
     const result = await getTemplates(eleventyConfig)
@@ -48,7 +48,7 @@ describe('getTemplates utility', () => {
 
   it('Ignores virtual template if layout exists', async (t) => {
     t.mock.method(fs, 'stat', (filePath) => {
-      if (filePath === 'src/layouts/page.njk') {
+      if (filePath === 'docs/layouts/page.njk') {
         return Promise.resolve()
       }
 

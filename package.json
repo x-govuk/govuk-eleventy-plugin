@@ -20,9 +20,9 @@
   ],
   "license": "MIT",
   "files": [
-    "lib"
+    "src"
   ],
-  "main": "index.js",
+  "main": "/src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/x-govuk/govuk-eleventy-plugin.git"
@@ -90,7 +90,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "sass": "./lib/index.scss"
+      "sass": "./src/index.scss",
+      "import": "./src/index.js"
     }
   }
 }

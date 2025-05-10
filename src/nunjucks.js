@@ -30,7 +30,7 @@ export function nunjucksConfig(eleventyConfig) {
     ...(includes ? [path.join(input, includes)] : []),
     ...(layouts ? [path.join(input, layouts)] : []),
     input,
-    './node_modules/@x-govuk/govuk-eleventy-plugin/lib',
+    './node_modules/@x-govuk/govuk-eleventy-plugin/src',
     './node_modules/govuk-frontend/dist',
     resolveNpmModule('@x-govuk/govuk-prototype-components/src')
   ]

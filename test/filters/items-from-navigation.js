@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
-import { itemsFromNavigation } from '../../../lib/filters/items-from-navigation.js'
+import { itemsFromNavigation } from '../../src/filters/items-from-navigation.js'
 
 const eleventyNavigationBreadcrumb = [
   {

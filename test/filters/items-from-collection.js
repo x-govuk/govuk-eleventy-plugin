@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
-import { itemsFromCollection } from '../../../lib/filters/items-from-collection.js'
+import { itemsFromCollection } from '../../src/filters/items-from-collection.js'
 
 const collectionData = [
   { data: { title: 'Home', url: '/' } },
