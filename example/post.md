@@ -4,7 +4,7 @@ title: How we designed a service to manage juggling licence applications
 description: Layout for date-based content, such as blog posts or news items.
 date: 2011-12-21
 image:
-  src: /assets/example-layouts/post-image.jpg
+  src: /assets/post-image.jpg
   alt: High angle photo of assorted-colour plastic balls.
   caption: Photo by [Greyson Joralemon](https://unsplash.com/@greysonjoralemon) on [Unsplash](https://unsplash.com/photos/9IBqihqhuHc)
   opengraphImage: true
@@ -15,23 +15,16 @@ authors:
     url: '#'
 related:
   sections:
-    - title: Related content
+    - title: Other example layouts
       items:
-        - text: Layouts
-          href: /layouts
-        - text: Post layout
-          href: /layouts/post
-      subsections:
-        - title: Other example layouts
-          items:
-            - text: Page
-              href: /example-layouts/page
-            - text: Page with sub navigation
-              href: /example-layouts/sub-navigation
-            - text: Collection
-              href: /example-layouts/collection
-            - text: Product page
-              href: /example-layouts/product
+        - text: Collection
+          href: /collection
+        - text: Page
+          href: /page
+        - text: Page with sub navigation
+          href: /page-with-sub-navigation
+        - text: Product page
+          href: /product-page
 tags:
   - example tag
 eleventyComputed:
