@@ -1,17 +1,19 @@
 @use "govuk-frontend/dist/govuk" as *;
 
-.app-definition-list {
-  dt {
-    @include govuk-font($size: 19, $weight: bold);
-    margin-bottom: govuk-spacing(1);
-  }
+@include govuk-exports("govuk-eleventy-plugin/component/definition-list") {
+  .app-definition-list {
+    dt {
+      @include govuk-font($size: 19, $weight: bold);
+      margin-bottom: govuk-spacing(1);
+    }
 
-  dd + dt {
-    margin-top: govuk-spacing(4);
-  }
+    dd + dt {
+      margin-top: govuk-spacing(4);
+    }
 
-  dd {
-    @include govuk-font($size: 19);
-    margin-left: govuk-spacing(5);
+    dd {
+      @include govuk-font($size: 19);
+      margin-left: govuk-spacing(5);
+    }
   }
 }
