@@ -2,52 +2,54 @@
 
 // Based on the GOV.UK ‘Contents list’ component
 // https://components.publishing.service.gov.uk/component-guide/contents_list
-.app-contents-list {
-  @include govuk-responsive-margin(8, "bottom");
+@include govuk-exports("govuk-eleventy-plugin/component/contents-list") {
+  .app-contents-list {
+    @include govuk-responsive-margin(8, "bottom");
 
-  ul {
-    list-style-type: none;
-    margin-top: 0;
-    padding-left: 0;
+    ul {
+      list-style-type: none;
+      margin-top: 0;
+      padding-left: 0;
+    }
+
+    ul ul {
+      margin-bottom: 0;
+    }
+
+    li {
+      @include govuk-font($size: 16, $weight: bold);
+      @include govuk-text-colour;
+      padding-top: govuk-spacing(2);
+
+      @include govuk-media-query($from: tablet) {
+        padding-top: govuk-spacing(6) / 4;
+      }
+    }
+
+    li li {
+      font-weight: normal;
+      padding-left: govuk-spacing(5);
+      position: relative;
+
+      &::before {
+        content: "—";
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        width: govuk-spacing(4);
+      }
+    }
+
+    a {
+      @include govuk-link-common;
+      @include govuk-link-style-no-visited-state;
+      @include govuk-link-style-no-underline;
+    }
   }
 
-  ul ul {
-    margin-bottom: 0;
-  }
-
-  li {
-    @include govuk-font($size: 16, $weight: bold);
+  .app-contents-list__title {
     @include govuk-text-colour;
-    padding-top: govuk-spacing(2);
-
-    @include govuk-media-query($from: tablet) {
-      padding-top: govuk-spacing(6) / 4;
-    }
+    @include govuk-font($size: 16, $weight: regular, $line-height: 1.5);
+    margin: 0;
   }
-
-  li li {
-    font-weight: normal;
-    padding-left: govuk-spacing(5);
-    position: relative;
-
-    &::before {
-      content: "—";
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      width: govuk-spacing(4);
-    }
-  }
-
-  a {
-    @include govuk-link-common;
-    @include govuk-link-style-no-visited-state;
-    @include govuk-link-style-no-underline;
-  }
-}
-
-.app-contents-list__title {
-  @include govuk-text-colour;
-  @include govuk-font($size: 16, $weight: regular, $line-height: 1.5);
-  margin: 0;
 }

@@ -1,6 +1,6 @@
 @use "govuk-frontend/dist/govuk" as *;
 
-@include govuk-exports("app-header") {
+@include govuk-exports("govuk-eleventy-plugin/component/header") {
   .app-header__container {
     align-items: center;
     display: flex;
