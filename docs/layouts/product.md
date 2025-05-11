@@ -4,7 +4,7 @@ title: Product page
 description: Layout for product and marketing pages.
 ---
 
-> View an <a href="/example-layouts/product" target="_blank">example page that uses this layout (opens in a new tab)</a>
+> View an <a href="/example/product-page" target="_blank">example page that uses this layout (opens in a new tab)</a>
 
 This layout, based on the component used on [GOV.UK product pages](https://github.com/alphagov/product-page-example), can be useful if you need a product or marketing page.
 
