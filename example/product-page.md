@@ -1,32 +1,26 @@
 ---
+homepage: true
 layout: product
-title: Apply for a juggling licence
-description: API documentation for the new Apply for a juggling licence service.
+title: API documentation for the new Apply for a juggling licence service
+description: The best way to submit applications. Simpler, clearer, faster.
 startButton:
   href: "#"
   text: Get started
 image:
-  src: /assets/example-layouts/product-illustration.svg
+  src: /assets/product-illustration.svg
   alt: Eleventy’s possum mascot hanging on a red balloon and floating above a laptop.
 related:
   sections:
-    - title: Related content
+    - title: Other example layouts
       items:
-        - text: Layouts
-          href: /layouts
-        - text: Page layout
-          href: /layouts/product
-      subsections:
-        - title: Other example layouts
-          items:
-            - text: Page
-              href: /example-layouts/page
-            - text: Page with sub navigation
-              href: /example-layouts/sub-navigation
-            - text: Post
-              href: /example-layouts/post
-            - text: Collection
-              href: /example-layouts/collection
+        - text: Collection
+          href: /collection
+        - text: Page
+          href: /page
+        - text: Page with sub navigation
+          href: /page-with-sub-navigation
+        - text: Post
+          href: /post
 eleventyComputed:
   aside:
     title: Example layout

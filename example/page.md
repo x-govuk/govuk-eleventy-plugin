@@ -1,34 +1,25 @@
 ---
 layout: page
-title: Apply for a juggling licence
-description: API documentation for the new Apply for a juggling licence service.
+title: About this API
+order: 1
 related:
   sections:
-    - title: Related content
+    - title: Other example layouts
       items:
-        - text: Layouts
-          href: /layouts
-        - text: Page layout
-          href: /layouts/page
-      subsections:
-        - title: Other example layouts
-          items:
-            - text: Page with sub navigation
-              href: /example-layouts/sub-navigation
-            - text: Post
-              href: /example-layouts/post
-            - text: Collection
-              href: /example-layouts/collection
-            - text: Product page
-              href: /example-layouts/product
+        - text: Collection
+          href: /collection
+        - text: Page with sub navigation
+          href: /page-with-sub-navigation
+        - text: Post
+          href: /post
+        - text: Product page
+          href: /product-page
 eleventyComputed:
   aside:
     title: Example layout
     content: |
       This is an example page using the `page` layout. You can [view the source used to create this page on GitHub]({{ viewSource }}).
 ---
-
-## About this API
 
 Once a juggler has submitted their application via the Apply service, the application will become available over the API.
 
