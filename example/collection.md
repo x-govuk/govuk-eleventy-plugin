@@ -1,8 +1,7 @@
 ---
 layout: collection
-title: Apply for a juggling licence
-description: API documentation for the new Apply for a juggling licence service.
-paginationHeading: API methods
+title: API methods
+order: 3
 pagination:
   data: example
   size: 4
@@ -35,23 +34,16 @@ example:
       description: Withdraw an application.
 related:
   sections:
-    - title: Related content
+    - title: Other example layouts
       items:
-        - text: Layouts
-          href: /layouts
-        - text: Collection layout
-          href: /layouts/collection
-      subsections:
-        - title: Other example layouts
-          items:
-            - text: Page
-              href: /example-layouts/page
-            - text: Page with sub navigation
-              href: /example-layouts/sub-navigation
-            - text: Post
-              href: /example-layouts/post
-            - text: Product page
-              href: /example-layouts/product
+        - text: Page
+          href: /page
+        - text: Page with sub navigation
+          href: /page-with-sub-navigation
+        - text: Post
+          href: /post
+        - text: Product page
+          href: /product-page
 eleventyComputed:
   aside:
     title: Example layout
