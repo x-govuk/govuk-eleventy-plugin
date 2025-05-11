@@ -1,54 +1,56 @@
 @use "govuk-frontend/dist/govuk" as *;
 
-// Link to footnote
-a[aria-describedby="footnotes-label"] {
-  @include govuk-font(16, $tabular: true);
-  @include govuk-link-style-no-visited-state;
-}
-
-a[aria-describedby="footnotes-label"]::before {
-  color: currentcolor;
-  content: "[";
-}
-
-a[aria-describedby="footnotes-label"]::after {
-  color: currentcolor;
-  content: "]";
-}
-
-// Footnotes
-.app-footnotes-list {
-  @include govuk-font($size: 19);
-  counter-reset: footnotes;
-  list-style-type: none;
-  padding-left: 0;
-
-  li {
-    counter-increment: footnotes;
-    padding: govuk-spacing(3);
-    padding-left: govuk-spacing(8);
-    position: relative;
-  }
-
-  li::before {
-    @include govuk-font(19, $tabular: true);
-    content: counter(footnotes) ".";
-    left: govuk-spacing(4);
-    position: absolute;
-  }
-
-  a[aria-label="Back to content"] {
+@include govuk-exports("govuk-eleventy-plugin/component/footnotes-list") {
+  // Link to footnote
+  a[aria-describedby="footnotes-label"] {
+    @include govuk-font(16, $tabular: true);
     @include govuk-link-style-no-visited-state;
-    position: relative;
-    text-underline-offset: 0;
-    top: 2px;
   }
 
-  :target {
-    background-color: govuk-tint($govuk-focus-colour, 75%);
+  a[aria-describedby="footnotes-label"]::before {
+    color: currentcolor;
+    content: "[";
   }
 
-  :last-child {
-    margin-bottom: 0;
+  a[aria-describedby="footnotes-label"]::after {
+    color: currentcolor;
+    content: "]";
+  }
+
+  // Footnotes
+  .app-footnotes-list {
+    @include govuk-font($size: 19);
+    counter-reset: footnotes;
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      counter-increment: footnotes;
+      padding: govuk-spacing(3);
+      padding-left: govuk-spacing(8);
+      position: relative;
+    }
+
+    li::before {
+      @include govuk-font(19, $tabular: true);
+      content: counter(footnotes) ".";
+      left: govuk-spacing(4);
+      position: absolute;
+    }
+
+    a[aria-label="Back to content"] {
+      @include govuk-link-style-no-visited-state;
+      position: relative;
+      text-underline-offset: 0;
+      top: 2px;
+    }
+
+    :target {
+      background-color: govuk-tint($govuk-focus-colour, 75%);
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 }

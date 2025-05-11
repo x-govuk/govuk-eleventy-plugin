@@ -1,6 +1,6 @@
 @use "govuk-frontend/dist/govuk" as *;
 
-@include govuk-exports("app-service-navigation") {
+@include govuk-exports("govuk-eleventy-plugin/component/service-navigation") {
   .app-service-navigation {
     .govuk-width-container {
       align-items: center;
