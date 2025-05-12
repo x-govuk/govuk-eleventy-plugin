@@ -1,0 +1,17 @@
+@use "govuk-frontend/dist/govuk" as *;
+
+@include govuk-exports("govuk-eleventy-plugin/component/header") {
+  .app-header__container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .app-header__logo {
+    width: auto;
+  }
+
+  .app-header--no-border {
+    border-bottom: 0;
+  }
+}

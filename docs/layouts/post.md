@@ -6,7 +6,7 @@ tags:
   - example-tag
 ---
 
-> View an <a href="/example-layouts/post" target="_blank">example page that uses this layout (opens in a new tab)</a>
+> View an <a href="/example/post" target="_blank">example page that uses this layout (opens in a new tab)</a>
 
 To use this layout, make `post` the value for a page’s `layout` key:
 

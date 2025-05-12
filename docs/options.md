@@ -10,9 +10,9 @@ You can add options to the second parameter of the `addPlugin` function in Eleve
 For example, to add a product name to the right of the GOV.UK text in the header, you would add the following:
 
 ```js
-const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     header: {
       productName: 'Apply for a juggling licence',
@@ -83,9 +83,9 @@ module.exports = function(eleventyConfig) {
       { text: "Name of parent site." }
     ],
     [
-      { text: "scssSettingsPath" },
-      { text: "string" },
-      { text: "Path to SCSS file, relative to input directory, containing [GOV.UK Frontend settings](https://frontend.design-system.service.gov.uk/sass-api-reference/) (default is `{dir.input}/sass/_settings.scss`)." | markdown }
+      { text: "rebrand" },
+      { text: "boolean" },
+      { text: "Use GOV.UK rebrand (default is `false`, this will change to `true` in a subsequent release after 25 June 2025)." | markdown }
     ],
     [
       { text: "showBreadcrumbs" },
@@ -118,9 +118,9 @@ module.exports = function(eleventyConfig) {
       { text: "See [header options](#header-options)." | markdown }
     ],
     [
-      { text: "navigation" },
+      { text: "serviceNavigation" },
       { text: "object" },
-      { text: "See [navigation options](#navigation-options)." | markdown }
+      { text: "See [service navigation options](#service-navigation-options)." | markdown }
     ],
     [
       { text: "footer" },
@@ -132,7 +132,7 @@ module.exports = function(eleventyConfig) {
 
 ## Header options
 
-In addition to the [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can also be set for `header`:
+In addition to the [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can be set for `header`:
 
 {{ govukTable({
   firstCellIsHeader: true,
@@ -170,27 +170,14 @@ In addition to the [options available for the header component](https://design-s
     [
       { text: "search" },
       { text: "object" },
-      { text: "Search box that appears in the header." }
-    ],
-    [
-      { text: "search.label" },
-      { text: "string" },
-      { text: "Text to show in the search field (default is ‘Search site’)." }
-    ],
-    [
-      { text: "search.indexPath" },
-      { text: "string" },
-      { text: "Path to search index file." }
-    ],
-    [
-      { text: "search.sitemapPath" },
-      { text: "string" },
-      { text: "Path to sitemap page." }
+      { text: "See [search options](#search-options)." | markdown }
     ]
   ]
 }) }}
 
-## Navigation options
+## Service navigation options
+
+In addition to the [options available for the service navigation component](https://design-system.service.gov.uk/components/service-navigation/), the following options can be set for `serviceNavigation`:
 
 {{ govukTable({
   firstCellIsHeader: true,
@@ -201,36 +188,48 @@ In addition to the [options available for the header component](https://design-s
   ],
   rows: [
     [
-      { text: "visuallyHiddenTitle" },
+      { text: "search" },
+      { text: "object" },
+      { text: "Injects search field into `slots.end`. See [search options](#search-options)." | markdown }
+    ]
+  ]
+}) }}
+
+## Search options
+
+You can show a search field in your site header, or within the service navigation (if enabled).
+
+Follow guidance in the GOV.UK Design System about [adding other header and navigation elements](https://design-system.service.gov.uk/patterns/navigate-a-service/#adding-other-header-and-navigation-elements) to decide which is the best location to use.
+
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    { text: "Name" },
+    { text: "Type" },
+    { text: "Description" }
+  ],
+  rows: [
+    [
+      { text: "label" },
       { text: "string" },
-      { text: "Hidden title for navigation." }
+      { text: "Text to show in the search field (default is ‘Search site’)." }
     ],
     [
-      { text: "items" },
-      { text: "Array" },
-      { text: "An array of navigation links to show." }
+      { text: "indexPath" },
+      { text: "string" },
+      { text: "Path to search index file." }
     ],
     [
-      { text: "items[].text" },
+      { text: "sitemapPath" },
       { text: "string" },
-      { text: "**Required**. Navigation link text." | markdown }
-    ],
-    [
-      { text: "items[].href" },
-      { text: "string" },
-      { text: "**Required**. Navigation link `href` attribute." | markdown }
-    ],
-    [
-      { text: "items[].classes" },
-      { text: "string" },
-      { text: "Classes to add to the navigation item." }
+      { text: "Path to sitemap page, shown as a fallback if the search field cannot be displayed." }
     ]
   ]
 }) }}
 
 ## Footer options
 
-In addition to the [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can also be set for `footer`:
+In addition to the [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can be set for `footer`:
 
 {{ govukTable({
   firstCellIsHeader: true,
@@ -269,6 +268,11 @@ In addition to the [options available for the footer component](https://design-s
       { text: "copyright.html" },
       { text: "string" },
       { text: "If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
+    ],
+    [
+      { text: "logo" },
+      { text: "boolean" },
+      { text: "Show logo in rebranded footer (default is `true`)." | markdown }
     ]
   ]
 }) }}

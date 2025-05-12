@@ -1,0 +1,19 @@
+{% from "components/site-search/macro.njk" import appSiteSearch with context -%}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  classes: "app-service-navigation" + (" " + params.classes if params.classes),
+  attributes: params.attributes,
+  ariaLabel: params.ariaLabel,
+  menuButtonText: params.menuButtonText,
+  menuButtonLabel: params.menuButtonLabel,
+  navigationLabel: params.navigationLabel,
+  navigationId: params.navigationId,
+  navigationClasses: params.navigationClasses,
+  serviceName: params.serviceName,
+  serviceUrl: params.serviceUrl,
+  navigation: params.navigation | currentPage(page.url) if params.navigation,
+  slots: {
+    end: appSiteSearch(params.search) if params.search.indexPath else params.slots.end
+  }
+}) }}
