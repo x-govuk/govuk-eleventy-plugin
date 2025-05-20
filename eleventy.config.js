@@ -9,11 +9,11 @@ export default function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     icons: {
-      mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true',
+      mask: 'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-icon-mask.svg?raw=true',
       shortcut:
-        'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-favicon.ico',
+        'https://raw.githubusercontent.com/x-govuk/logo/main/images/favicon.ico',
       touch:
-        'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png'
+        'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-icon-180.png'
     },
     opengraphImageUrl:
       'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
