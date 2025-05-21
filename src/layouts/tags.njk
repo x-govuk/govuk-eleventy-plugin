@@ -17,7 +17,7 @@
     <ul class="govuk-list govuk-list--bullet">
       {% for tag in collections.tags %}
       <li>
-        <a href="/tags/{{ tag | slug }}">{{ tag }}</a>
+        <a class="govuk-link" href="/tags/{{ tag | slug }}">{{ tag }}</a>
         ({{ collections[tag] | length }})
       </li>
       {% endfor %}
