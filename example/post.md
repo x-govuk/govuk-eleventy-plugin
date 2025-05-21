@@ -26,7 +26,8 @@ related:
         - text: Product page
           href: /product-page
 tags:
-  - example tag
+  - design
+  - juggling
 eleventyComputed:
   aside:
     title: Example layout

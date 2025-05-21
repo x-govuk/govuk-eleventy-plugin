@@ -32,7 +32,7 @@
     "postbuild": "npm run build:example",
     "build": "eleventy",
     "build:example": "eleventy --config=example.config.js",
-    "predev": "rimraf _site",
+    "predev": "npm run build",
     "dev": "eleventy --serve --watch",
     "start": "eleventy --serve",
     "lint:prettier": "prettier . --check",

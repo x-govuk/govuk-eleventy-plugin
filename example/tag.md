@@ -9,5 +9,5 @@ eleventyComputed:
   title: "Pages tagged ‘{{ tag }}’"
 eleventyNavigation:
   parent: "Tags"
-eleventyExcludeFromCollections: true  
+eleventyExcludeFromCollections: true
 ---
