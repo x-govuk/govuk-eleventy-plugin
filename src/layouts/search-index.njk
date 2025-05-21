@@ -1,12 +1,12 @@
 [{% for item in collections.sitemap %}
   {
-    "title": {{ item.data.title | dump | safe }},
+    "title": {{ item.data.title | default("") | dump | safe }},
     {% if item.data.description %}"description": {{ item.data.description | dump | safe }},{% endif %}
     {% if item.data.eleventyNavigation.parent %}"section": {{ item.data.eleventyNavigation.parent | dump | safe }},{% endif %}
-    "layout": {{ item.data.layout | dump | safe }},
+    "layout": {{ item.data.layout | default("") | dump | safe }},
     "hasFrontmatterDate": {{ item.data.date !== undefined }},
-    "date": {{ item.date | date("d LLLL y") | dump | safe }},
-    "templateContent": {{ item.templateContent | tokenize | dump | safe }},
-    "url": {{ item.url | canonicalUrl | pretty | dump | safe }}
+    "date": {{ item.date | date("d LLLL y") | default("") | dump | safe }},
+    "templateContent": {{ item.templateContent | tokenize | default([]) | dump | safe }},
+    "url": {{ item.url | canonicalUrl | pretty | default("") | dump | safe }}
   }{% if not loop.last %},{% endif %}
 {% endfor %}]
