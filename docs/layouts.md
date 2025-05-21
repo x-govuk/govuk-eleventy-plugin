@@ -2,7 +2,7 @@
 layout: sub-navigation
 order: 4
 title: Layouts
-description: Choose a layout to match the type of content you want write.
+description: Choose a layout to match the type of content you want to write.
 ---
 
 {% for page in collections.layout %}
