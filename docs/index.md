@@ -25,6 +25,6 @@ eleventyComputed:
     <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl govuk-!-margin-top-0">
     <h2 class="govuk-heading-m">Contribute</h2>
     <p class="govuk-body">The project repository is public and we welcome contributions from anyone.</p>
-    <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="{{ pkg.repository.url | replace(".git", "") }}">View this project on GitHub</a></p>
+    <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="{{ pkg.repository.url | replace(".git", "") | replace("git+","") }}">View this project on GitHub</a></p>
   </section>
 </div>
