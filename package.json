@@ -1,6 +1,6 @@
 {
   "name": "@x-govuk/govuk-eleventy-plugin",
-  "version": "7.0.1",
+  "version": "7.0.0",
   "description": "Write documentation using Markdown and publish it using GOV.UK styles",
   "keywords": [
     "govuk",
@@ -25,7 +25,7 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/x-govuk/govuk-eleventy-plugin.git"
+    "url": "git+https://github.com/x-govuk/govuk-eleventy-plugin.git"
   },
   "scripts": {
     "prebuild": "rimraf _site",
