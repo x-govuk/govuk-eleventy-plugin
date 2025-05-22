@@ -92,8 +92,9 @@
   "type": "module",
   "exports": {
     ".": {
-      "sass": "./src/index.scss",
-      "import": "./src/index.js"
+      "import": "./src/index.js",
+      "module-sync": "./src/index.js",
+      "sass": "./src/index.scss"
     }
   }
 }
