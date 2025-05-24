@@ -48,7 +48,7 @@ export async function generateAssets(dir, options) {
       ]
     })
 
-    const { output } = await bundle.generate({ format: 'iife' })
+    const { output } = await bundle.generate({ format: 'es' })
     const { code } = output[0]
     fs.writeFile(jsFile, code)
   } catch (error) {
