@@ -45,7 +45,7 @@
 {% endblock %}
 
 {% block head %}
-  <script src="/assets/application.js" type="module" defer></script>
+  <script src="/assets/application.js" type="module"></script>
 
   {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | canonicalUrl }}">
