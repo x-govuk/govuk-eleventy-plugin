@@ -83,7 +83,7 @@ export class SiteSearchElement extends HTMLElement {
     return searchElement
   }
 
-  resultTemplate(result) {
+  suggestionTemplate(result) {
     if (result) {
       const element = document.createElement('span')
       element.textContent = result.title
@@ -130,7 +130,7 @@ export class SiteSearchElement extends HTMLElement {
       onConfirm: this.handleOnConfirm,
       templates: {
         inputValue: this.inputValueTemplate,
-        suggestion: this.resultTemplate
+        suggestion: this.suggestionTemplate
       },
       tNoResults: this.handleNoResults.bind(this)
     })
