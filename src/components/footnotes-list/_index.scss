@@ -19,10 +19,11 @@
 
   // Footnotes
   .app-footnotes-list {
-    @include govuk-font($size: 19);
     counter-reset: footnotes;
     list-style-type: none;
     padding-left: 0;
+
+    @include govuk-font($size: 19);
 
     li {
       counter-increment: footnotes;
@@ -32,17 +33,19 @@
     }
 
     li::before {
-      @include govuk-font(19, $tabular: true);
       content: counter(footnotes) ".";
       left: govuk-spacing(4);
       position: absolute;
+
+      @include govuk-font(19, $tabular: true);
     }
 
     a[aria-label="Back to content"] {
-      @include govuk-link-style-no-visited-state;
       position: relative;
       text-underline-offset: 0;
       top: 2px;
+
+      @include govuk-link-style-no-visited-state;
     }
 
     :target {

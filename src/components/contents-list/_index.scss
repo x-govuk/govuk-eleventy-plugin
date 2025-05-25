@@ -17,9 +17,10 @@
     }
 
     li {
+      padding-top: govuk-spacing(2);
+
       @include govuk-font($size: 16, $weight: bold);
       @include govuk-text-colour;
-      padding-top: govuk-spacing(2);
 
       @include govuk-media-query($from: tablet) {
         padding-top: govuk-spacing(6) / 4;
@@ -48,8 +49,9 @@
   }
 
   .app-contents-list__title {
+    margin: 0;
+
     @include govuk-text-colour;
     @include govuk-font($size: 16, $weight: regular, $line-height: 1.5);
-    margin: 0;
   }
 }

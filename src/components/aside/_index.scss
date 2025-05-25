@@ -2,15 +2,17 @@
 
 @include govuk-exports("govuk-eleventy-plugin/component/aside") {
   .app-aside {
+    border-top: 2px solid $govuk-brand-colour;
+
     @include govuk-responsive-margin(6, "bottom");
     @include govuk-text-colour;
-    border-top: 2px solid $govuk-brand-colour;
   }
 
   .app-aside__heading {
-    @include govuk-font(19, $weight: bold);
     margin-bottom: govuk-spacing(2);
     margin-top: govuk-spacing(3);
+
+    @include govuk-font(19, $weight: bold);
   }
 
   .app-aside__body {

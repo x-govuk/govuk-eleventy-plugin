@@ -26,12 +26,12 @@ $_icon-size: 40px;
   }
 
   .app-site-search__link {
-    @include govuk-link-style-inverse;
-
     display: inline-block;
     padding-bottom: govuk-spacing(1);
     padding-top: govuk-spacing(1);
     text-decoration: none;
+
+    @include govuk-link-style-inverse;
 
     &:hover {
       text-decoration: underline;
@@ -189,9 +189,10 @@ $_icon-size: 40px;
   }
 
   .app-site-search--section {
-    @include govuk-font($size: 16);
     color: $govuk-secondary-text-colour;
     display: block;
+
+    @include govuk-font($size: 16);
   }
 
   .app-site-search__aliases {
