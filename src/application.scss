@@ -1,9 +1,9 @@
-// GOV.UK Frontend components
+// Use GOV.UK Frontend
 @use "pkg:govuk-frontend/dist/govuk" with (
   $govuk-global-styles: true,
   $govuk-new-organisation-colours: true,
   $govuk-new-typography-scale: true
 );
 
-// GOV.UK Eleventy Plugin components
+// Use GOV.UK Eleventy Plugin components
 @forward "pkg:@x-govuk/govuk-eleventy-plugin";
