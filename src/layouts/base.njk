@@ -58,8 +58,7 @@
   {% if options.url %}<meta property="og:url" content="{{ page.url | canonicalUrl }}">{% endif %}
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
-  {% if opengraphImage %}<meta name="twitter:card" content="summary_large_image">{% endif %}
-  {% if opengraphImage.src %}<meta name="twitter:image" content="{{ opengraphImage.src | canonicalUrl }}">
+  {% if opengraphImage.src %}<meta name="og:image" content="{{ opengraphImage.src | canonicalUrl }}">
   {% endif %}
   {% if opengraphImage.alt %}<meta property="og:image:alt" content="{{ opengraphImage.alt }}">{% endif %}
 {% endblock %}
