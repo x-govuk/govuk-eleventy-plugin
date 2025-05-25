@@ -1,4 +1,4 @@
-import accessibleAutocomplete from 'accessible-autocomplete/dist/accessible-autocomplete.min.js'
+import accessibleAutocomplete from 'accessible-autocomplete'
 
 export class SiteSearchElement extends HTMLElement {
   constructor() {
