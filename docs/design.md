@@ -111,13 +111,13 @@ In this file, import GOV.UK Frontend and override the `$govuk-font-family` setti
 You will also need to import the components used by the plugin, as this stylesheet will replace the default that is otherwise provided by the plugin. For example:
 
 ```scss
-// GOV.UK Frontend components
+// Use GOV.UK Frontend
 $_font-family: system-ui, sans-serif;
 @use "pkg:govuk-frontend/dist/govuk" with (
   $govuk-font-family: $_font-family,
 );
 
-// GOV.UK Eleventy Plugin components
+// Use GOV.UK Eleventy Plugin components
 @use "pkg:@x-govuk/govuk-eleventy-plugin";
 ```
 
@@ -135,7 +135,7 @@ $_font-family: system-ui, sans-serif;
   $govuk-page-width: 1100px
 );
 
-// Use GOV.UK Eleventy Plugin
+// Use GOV.UK Eleventy Plugin components
 @use "pkg:@x-govuk/govuk-eleventy-plugin";
 ```
 
