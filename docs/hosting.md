@@ -86,10 +86,6 @@ export default function(eleventyConfig) {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    dir: {
-      // Use layouts from the plugin
-      layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
-    },
     pathPrefix: "/api-docs/"
   }
 };
@@ -114,10 +110,6 @@ export default function(eleventyConfig) {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    dir: {
-      // Use layouts from the plugin
-      layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
-    },
     pathPrefix: process.env.GITHUB_ACTIONS ? '/api-docs/' : '/'
   }
 };
