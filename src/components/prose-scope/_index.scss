@@ -74,10 +74,11 @@
     }
 
     figure {
-      @include govuk-responsive-margin(6, "bottom");
       margin-left: 0;
       margin-right: 0;
       width: 100%;
+
+      @include govuk-responsive-margin(6, "bottom");
 
       // Show outline around linked images within figures
       img {
@@ -101,9 +102,10 @@
     }
 
     figcaption {
-      @include govuk-font($size: 19);
       color: $govuk-secondary-text-colour;
       margin-top: govuk-spacing(1);
+
+      @include govuk-font($size: 19);
     }
 
     // Responsive tables
