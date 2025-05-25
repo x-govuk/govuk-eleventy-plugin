@@ -113,15 +113,7 @@
       display: block;
       overflow-x: auto;
       scrollbar-color: $govuk-border-colour govuk-colour("light-grey");
-
-      &::-webkit-scrollbar {
-        height: govuk-spacing(1);
-        width: govuk-spacing(1);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: $govuk-border-colour;
-      }
+      scrollbar-width: thin;
 
       &:focus,
       &:focus-visible {
