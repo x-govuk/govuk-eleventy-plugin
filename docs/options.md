@@ -98,7 +98,7 @@ export default function(eleventyConfig) {
       { text: "Additional stylesheets to load after application styles." }
     ],
     [
-      { text: "themeColour" },
+      { text: "themeColor" },
       { text: "string" },
       { text: "Browser theme colour. Must be a hex value, i.e. `#0b0c0c`" | markdown }
     ],
