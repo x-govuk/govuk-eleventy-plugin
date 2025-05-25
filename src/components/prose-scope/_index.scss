@@ -121,7 +121,8 @@
         background: $govuk-border-colour;
       }
 
-      &:focus {
+      &:focus,
+      &:focus-visible {
         box-shadow:
           0 0 0 #{$govuk-focus-width * 3} govuk-colour("black"),
           0 0 0 #{$govuk-focus-width * 4} $govuk-focus-colour;
@@ -131,13 +132,6 @@
       &:focus:not(:focus-visible) {
         box-shadow: none;
         outline: none;
-      }
-
-      &:focus-visible {
-        box-shadow:
-          0 0 0 #{$govuk-focus-width * 3} govuk-colour("black"),
-          0 0 0 #{$govuk-focus-width * 4} $govuk-focus-colour;
-        outline: #{$govuk-focus-width * 2} solid govuk-colour("white");
       }
     }
 
