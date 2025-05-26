@@ -1,7 +1,7 @@
 import process from 'node:process'
 
 import { govukEleventyPlugin } from './src/index.js'
-import { layoutNames } from './src/utils.js'
+import { layoutNames } from './src/index.js'
 
 const serviceName = 'GOV.UK Eleventy Plugin'
 
