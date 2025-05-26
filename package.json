@@ -64,7 +64,7 @@
     "markdown-it-anchor": "^9.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "markdown-it-govuk": "^0.5.0",
+    "markdown-it-govuk": "^0.6.0",
     "markdown-it-image-figures": "^2.0.0",
     "markdown-it-ins": "^4.0.0",
     "markdown-it-mark": "^4.0.0",

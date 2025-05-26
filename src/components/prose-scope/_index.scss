@@ -126,7 +126,7 @@
     }
 
     // Reverse the colour of code that uses shell highlighting
-    .x-govuk-code__language--shell {
+    .app-code__language--shell {
       background-color: govuk-colour("black");
       border: $govuk-focus-width solid govuk-colour("white");
       -webkit-font-smoothing: auto;
