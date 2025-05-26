@@ -13,20 +13,6 @@ export async function getFileContents(filePath) {
   return await fs.readFile(filePath, { encoding: 'utf8' })
 }
 
-export const layoutNames = [
-  'base',
-  'collection',
-  'feed',
-  'page',
-  'post',
-  'product',
-  'search-index',
-  'sitemap',
-  'sub-navigation',
-  'tag',
-  'tags'
-]
-
 /**
  * Get navigation key for page
  *
@@ -68,9 +54,10 @@ export const getNavigationParent = (data) => {
  * Uses users own named layout if exists, else provides a virtual template
  *
  * @param {object} eleventyConfig - Eleventy config
+ * @param {Array} layoutNames - Layout names
  * @returns {object} Template names and strings
  */
-export async function getTemplates(eleventyConfig) {
+export async function getTemplates(eleventyConfig, layoutNames) {
   const { includes, layouts, input } = eleventyConfig.dir
   const layoutDir = layouts || includes
   const templates = {}
