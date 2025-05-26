@@ -98,6 +98,14 @@
       "import": "./src/index.js",
       "module-sync": "./src/index.js",
       "sass": "./src/index.scss"
+    },
+    "./collections": {
+      "import": "./src/collections/index.js",
+      "module-sync": "./src/collections/index.js"
+    },
+    "./filters": {
+      "import": "./src/filters/index.js",
+      "module-sync": "./src/filters/index.js"
     }
   }
 }
