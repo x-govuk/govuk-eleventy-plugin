@@ -26,7 +26,7 @@ This plugin includes the following features:
 - [Node.js](https://nodejs.org) v22 or later
 - [Eleventy](https://www.11ty.dev) v3 or later
 
-[Node version manager](https://github.com/nvm-sh/nvm) is recommended if you are working across multiple projects that use different versions of Node.js.
+We recommend [Node version manager](https://github.com/nvm-sh/nvm) if you are working across projects that use different versions of Node.js.
 
 ## Installation
 
@@ -36,7 +36,7 @@ To install both Eleventy and this plugin, in your terminal type:
 npm install @11ty/eleventy @x-govuk/govuk-eleventy-plugin
 ```
 
-Next, add an `eleventy.config.js` file to the root directory of your project. This file is used to [configure Eleventy](https://www.11ty.dev/docs/config/).
+Next, add an `eleventy.config.js` file to the root directory of your project. Use this file to [configure Eleventy](https://www.11ty.dev/docs/config/).
 
 ```js
 import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
@@ -63,7 +63,7 @@ To generate a site, type the following command:
 npx eleventy --serve
 ```
 
-Once all the files have been generated, a preview URL will be shown which you can enter into your browser’s address bar:
+Once Eleventy has generated all the files, the terminal will show a preview URL which you can enter into your browser’s address bar:
 
 ```shell
 [11ty] Copied 14 files / Wrote 0 files in 1.11 seconds (v2.0.0)
@@ -75,17 +75,17 @@ Whenever you add a new page, or edit an existing one, the browser will automatic
 
 ## Create a folder
 
-You can now create a folder to contain all the content for your site. This is often called `app`. If your site is documentation for another service, then it could be named `docs`.
+You can now create a folder to contain all the content for your site. This is often called `app`, and another popular name is `docs`.
 
-Whichever folder name you choose should be referenced under the `input` key within the `eleventy.config.js` file.
+Add your chosen folder name to the `input` key within the `eleventy.config.js` file.
 
 ## Create your first page
 
 You’re now ready to start adding pages to your site.
 
-Pages are made up of 2 parts: a front matter and its contents.
+Pages have 2 parts: a front matter and its contents.
 
-A front matter starts and ends with `---` and is written using a key/value data format called YAML. In most cases, you will only need 2 bits of information: `layout` and `title`. For example:
+A front matter starts and ends with `---` and uses a key/value data format called YAML. In most cases, you will need 2 bits of information: `layout` and `title`. For example:
 
 ```yaml
 ---
@@ -98,9 +98,9 @@ This is my first page, built using Eleventy and `@x-govuk/govuk-eleventy-plugin`
 
 Create a file named `index.md` file within the folder you created, and add the above content.
 
-The first page in your site should also have a `homepage` value set to `true`[^1]. This is used to work out the structure of your site if it has [nested pages](https://www.11ty.dev/docs/plugins/navigation/).
+The first page in your site should also have a `homepage` value set to `true`[^1]. Eleventy uses this to work out the structure of your site if it has [nested pages](https://www.11ty.dev/docs/plugins/navigation/).
 
-[^1]: Using `homepage: true` is equivalent to writing the following:
+[^1]: Using `homepage: true` is the same as writing the following:
 
     ```yaml
     eleventyComputed:
