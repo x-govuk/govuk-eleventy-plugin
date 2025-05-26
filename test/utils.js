@@ -27,22 +27,14 @@ describe('getFileContents utility', () => {
 
 describe('getTemplates utility', () => {
   const eleventyConfig = { dir: { input: 'docs', layouts: 'layouts' } }
+  const layoutNames = ['page', 'post']
 
   it('Gets all virtual templates', async () => {
-    const result = await getTemplates(eleventyConfig)
+    const result = await getTemplates(eleventyConfig, layoutNames)
 
     assert.deepEqual(Object.keys(result), [
-      'layouts/base.njk',
-      'layouts/collection.njk',
-      'layouts/feed.njk',
       'layouts/page.njk',
-      'layouts/post.njk',
-      'layouts/product.njk',
-      'layouts/search-index.njk',
-      'layouts/sitemap.njk',
-      'layouts/sub-navigation.njk',
-      'layouts/tag.njk',
-      'layouts/tags.njk'
+      'layouts/post.njk'
     ])
   })
 
@@ -55,20 +47,9 @@ describe('getTemplates utility', () => {
       throw new Error('ENOENT: no such file or directory')
     })
 
-    const result = await getTemplates(eleventyConfig)
+    const result = await getTemplates(eleventyConfig, layoutNames)
 
-    assert.deepEqual(Object.keys(result), [
-      'layouts/base.njk',
-      'layouts/collection.njk',
-      'layouts/feed.njk',
-      'layouts/post.njk',
-      'layouts/product.njk',
-      'layouts/search-index.njk',
-      'layouts/sitemap.njk',
-      'layouts/sub-navigation.njk',
-      'layouts/tag.njk',
-      'layouts/tags.njk'
-    ])
+    assert.deepEqual(Object.keys(result), ['layouts/post.njk'])
   })
 })
 

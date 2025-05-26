@@ -11,6 +11,20 @@ import { md } from './markdown-it.js'
 import { nunjucksConfig } from './nunjucks.js'
 import { getTemplates } from './utils.js'
 
+export const layoutNames = [
+  'base',
+  'collection',
+  'feed',
+  'page',
+  'post',
+  'product',
+  'search-index',
+  'sitemap',
+  'sub-navigation',
+  'tag',
+  'tags'
+]
+
 export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   const { pathPrefix } = eleventyConfig
 
@@ -29,7 +43,7 @@ export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addTemplateFormats('scss')
 
   // Virtual templates
-  const templates = await getTemplates(eleventyConfig)
+  const templates = await getTemplates(eleventyConfig, layoutNames)
   for (const [virtualPath, template] of Object.entries(templates)) {
     eleventyConfig.addTemplate(virtualPath, template)
   }
