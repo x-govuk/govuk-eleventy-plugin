@@ -45,7 +45,6 @@ describe('markdown-it', () => {
     const result = md().render('[[toc]]\n\n# A\n\n## B')
 
     assert.match(result, /<nav class="app-contents-list"/)
-    assert.match(result, /aria-label="Contents"/)
     assert.match(result, /href="#b"/)
     assert.doesNotMatch(result, /href="#a"/)
   })

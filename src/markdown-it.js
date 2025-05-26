@@ -15,7 +15,6 @@ import markdownItTableOfContents from 'markdown-it-table-of-contents'
 
 import { defListRules } from './markdown-it/deflist.js'
 import { footnotesRules } from './markdown-it/footnote.js'
-import { tableOfContentsRules } from './markdown-it/table-of-contents.js'
 import { tableRules } from './markdown-it/table.js'
 
 /**
@@ -62,9 +61,15 @@ export function md(options = {}) {
     .use(markdownItSup)
     .use(tableRules)
     .use(markdownItTableOfContents, {
-      includeLevel: [2, 3]
+      includeLevel: [2, 3],
+      listType: 'ol',
+      transformContainerOpen: () => {
+        return '<nav class="app-contents-list"><h2 class="app-contents-list__title">Contents</h2>'
+      },
+      transformContainerClose: () => {
+        return '</nav>'
+      }
     })
-    .use(tableOfContentsRules)
 
   return md
 }

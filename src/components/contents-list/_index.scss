@@ -6,13 +6,13 @@
   .app-contents-list {
     @include govuk-responsive-margin(8, "bottom");
 
-    ul {
+    ol {
       list-style-type: none;
       margin-top: 0;
       padding-left: 0;
     }
 
-    ul ul {
+    ol ol {
       margin-bottom: 0;
     }
 
