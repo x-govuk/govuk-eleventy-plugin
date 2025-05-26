@@ -100,6 +100,10 @@
       "import": "./src/collections/index.js",
       "module-sync": "./src/collections/index.js"
     },
+    "./extensions": {
+      "import": "./src/extensions/index.js",
+      "module-sync": "./src/extensions/index.js"
+    },
     "./filters": {
       "import": "./src/filters/index.js",
       "module-sync": "./src/filters/index.js"
