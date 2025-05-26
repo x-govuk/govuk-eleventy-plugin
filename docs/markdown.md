@@ -310,4 +310,3 @@ The rendered output looks like this:
 | Copyright            | `(C)` `(c)`           | (C)                 |
 | Registered trademark | `(R)` `(r)`           | (R)                 |
 | Trademark            | `(TM)` `(tm)`         | (TM)                |
-| Section              | `(P)` `(p)`           | (P)                 |
