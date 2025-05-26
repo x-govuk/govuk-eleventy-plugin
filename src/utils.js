@@ -14,6 +14,42 @@ export async function getFileContents(filePath) {
 }
 
 /**
+ * Get navigation key for page
+ *
+ * @param {object} data - Page data
+ * @returns {string|undefined} Page navigation key
+ */
+export const getNavigationKey = (data) => {
+  const { homepage, eleventyExcludeFromCollections, eleventyNavigation } = data
+
+  if (homepage) {
+    // Use explicit navigation `key`, or `homeKey` set in plugin options
+    return eleventyNavigation.key || data.options.homeKey
+  } else if (!eleventyExcludeFromCollections) {
+    // Use explicit navigation `key`, or page title
+    return eleventyNavigation.key || data.title
+  }
+}
+
+/**
+ * Get navigation parent for page
+ *
+ * @param {object} data - Page data
+ * @returns {string|undefined} Parent page key
+ */
+export const getNavigationParent = (data) => {
+  const { homepage, eleventyExcludeFromCollections, eleventyNavigation } = data
+
+  if (homepage) {
+    // The homepage has no parent
+    return false
+  } else if (!eleventyExcludeFromCollections) {
+    // Use explicit navigation `parent`, or `homeKey` set in plugin options
+    return eleventyNavigation.parent || data.options.homeKey
+  }
+}
+
+/**
  * Get virtual templates
  * Uses users own named layout if exists, else provides a virtual template
  *
