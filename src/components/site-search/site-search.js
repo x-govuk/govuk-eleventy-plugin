@@ -119,6 +119,7 @@ export class SiteSearchElement extends HTMLElement {
     accessibleAutocomplete({
       element: search,
       id: this.searchInputId,
+      inputClasses: 'govuk-input',
       cssNamespace: 'app-site-search',
       displayMenu: 'overlay',
       minLength: 2,
