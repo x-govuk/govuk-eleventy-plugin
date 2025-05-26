@@ -110,6 +110,10 @@
     "./filters": {
       "import": "./src/filters/index.js",
       "module-sync": "./src/filters/index.js"
+    },
+    "./utils": {
+      "import": "./src/utils.js",
+      "module-sync": "./src/utils.js"
     }
   }
 }
