@@ -31,17 +31,17 @@ The number of number signs you use should correspond to the heading level. For e
 
 To create paragraphs, use a blank line to separate one or more lines of text.
 
-| Markdown                                                                                                                                          | Rendered output                                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| <pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre> | <p class="govuk-body">This is the first paragraph.</p><p class="govuk-body">And this is the second one.</p> |
+| Markdown                                                                                                                                  | Rendered output                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| <pre class="app-code app-code--block govuk-!-margin-0" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre> | <p class="govuk-body">This is the first paragraph.</p><p class="govuk-body">And this is the second one.</p> |
 
 ## Line breaks
 
 To create a line break or new line (`<br>`), end a line with 2 or more spaces, and then type return.
 
-| Markdown                                                                                                                                 | Rendered output                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| <pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0">This is the first line.<br>And this is the second one.</pre> | <p class="govuk-body">This is the first line.<br>And this is the second one.</p> |
+| Markdown                                                                                                                         | Rendered output                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| <pre class="app-code app-code--block govuk-!-margin-0" tabindex="0">This is the first line.<br>And this is the second one.</pre> | <p class="govuk-body">This is the first line.<br>And this is the second one.</p> |
 
 ## Emphasis
 
