@@ -62,6 +62,7 @@
     "govuk-frontend": "^5.6.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-anchor": "^9.0.0",
+    "markdown-it-attrs": "^4.3.1",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-govuk": "^0.6.0",
