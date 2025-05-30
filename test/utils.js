@@ -9,13 +9,13 @@ describe('getFileContents utility', () => {
     const testContent = 'Test file content'
     t.mock.method(fs, 'readFile', async () => testContent)
 
-    const result = await getFileContents('/file/path.txt')
+    const result = await getFileContents('files', '/file/path.txt')
     assert.strictEqual(result, testContent)
   })
 
   it('Throws error getting content for non-existent file', async () => {
     await assert.rejects(
-      () => getFileContents('non-existent-file.txt'),
+      () => getFileContents('files', 'non-existent-file.txt'),
       (error) => {
         assert.ok(error instanceof Error)
         assert.ok(error.message.includes('ENOENT'))
