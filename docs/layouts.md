@@ -172,8 +172,8 @@ For example, to show a notification banner at the top of each page that uses the
 {% block content %}
   {# Templates can include front matter data #}
   {{ govukNotificationBanner({
-    text: "This page was last reviewed on " + (reviewed | date("d LLLL y")) + ".
-    It needs to be reviewed again on " + (reviewAgain | date("d LLLL y")) + "."
+    text: "This page was last reviewed on " + (reviewed | govukDate) + ".
+    It needs to be reviewed again on " + (reviewAgain | govukDate) + "."
   }) if reviewed and reviewAgain }}
 
   {{ appDocumentHeader({

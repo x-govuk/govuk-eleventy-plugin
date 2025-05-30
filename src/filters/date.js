@@ -1,32 +1,48 @@
-import { DateTime } from 'luxon'
+import { normalise } from '../utils.js'
 
 /**
- * Format a data using tokens
+ * Format ISO 8601 date string into a date with the GOV.UK style
  *
- * @param {string} string - Date to convert
- * @param {string} [format] - Optional token-based formatting
- * @returns {string} Formatted date
- * @example date('2022-03-16', 'yyyy') // 2022
+ * @param {string} string - Date
+ * @returns {string} `string` as a date with the GOV.UK style
  */
-export function date(string, format) {
-  // Enable special `now` value
-  const dateObject = string === 'now' ? DateTime.local().toJSDate() : string
+export function govukDate(string) {
+  string = normalise(string, '')
 
-  // Convert dateObj to Luxon DateTime object, using UTC
-  // See: https://11ty.dev/docs/dates/#dates-off-by-one-day
-  let date = DateTime.fromJSDate(dateObject, {
-    locale: 'en-GB',
-    zone: 'utc'
-  })
+  try {
+    const date = Date.parse(string)
 
-  if (format) {
-    // Format date if formatting tokens provided
-    // See: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-    date = DateTime.fromISO(date).toFormat(format)
-  } else {
-    // Format date as ISO 8601
-    date = date.toISO()
+    // 2021-08-17 => 17 August 2021
+    const formattedDate = new Intl.DateTimeFormat('en-GB', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }).format(date)
+
+    return formattedDate
+  } catch (error) {
+    return error.message.split(':')[0]
+  }
+}
+
+/**
+ * Format string into an ISO 8601 date
+ *
+ * @param {string} string - String
+ * @returns {string} ISO 8601 date
+ */
+export function isoDate(string) {
+  string = normalise(string, '')
+
+  if (!string) {
+    return
   }
 
-  return date
+  try {
+    const date = new Date(string)
+
+    return date.toISOString()
+  } catch (error) {
+    return error.message.split(':')[0]
+  }
 }
