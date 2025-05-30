@@ -2,6 +2,7 @@ import slugify from '@sindresorhus/slugify'
 import MarkdownIt from 'markdown-it'
 import markdownItAbbr from 'markdown-it-abbr'
 import markdownItAnchor from 'markdown-it-anchor'
+import markdownItAttrs from 'markdown-it-attrs'
 import markdownItDeflist from 'markdown-it-deflist'
 import markdownItFootnote from 'markdown-it-footnote'
 import markdownItGovuk from 'markdown-it-govuk'
@@ -48,6 +49,7 @@ export function md(options = {}) {
         : false,
       slugify: (string) => slugify(string).replaceAll(/[*+~.()'"!:@]/g, '')
     })
+    .use(markdownItAttrs)
     .use(markdownItDeflist)
     .use(defListRules)
     .use(markdownItFootnote)
