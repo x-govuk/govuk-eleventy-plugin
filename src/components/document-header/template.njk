@@ -30,10 +30,10 @@
         <span aria-hidden="true">&ensp;•&ensp;</span>
       {%- endif -%}
       {%- if params.date -%}
-        <span class="govuk-visually-hidden">Posted on </span><time datetime="{{ params.date | date }}">{{ params.date | date("d LLLL y") }}</time>
+        <span class="govuk-visually-hidden">Posted on </span><time datetime="{{ params.date | isoDate }}">{{ params.date | govukDate}}</time>
       {%- endif -%}
       {%- if params.modified -%}
-        <span aria-hidden="true">&ensp;•&ensp;</span>Last updated <time datetime="{{ params.modified | date }}">{{ params.modified | date("d LLLL y") }}</time>
+        <span aria-hidden="true">&ensp;•&ensp;</span>Last updated <time datetime="{{ params.modified | isoDate }}">{{ params.modified | govukDate }}</time>
       {%- endif -%}
       {%- if params.tags | length > 0 -%}
         <span aria-hidden="true">&ensp;•&ensp;</span>Tags:

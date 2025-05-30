@@ -60,7 +60,6 @@
     "@x-govuk/govuk-prototype-components": "^4.0.0",
     "deepmerge": "^4.2.2",
     "govuk-frontend": "^5.6.0",
-    "luxon": "^3.0.1",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-anchor": "^9.0.0",
     "markdown-it-deflist": "^3.0.0",

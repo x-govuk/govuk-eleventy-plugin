@@ -1,5 +1,5 @@
 export { canonicalUrl } from './canonical-url.js'
-export { date } from './date.js'
+export { govukDate, isoDate } from './date.js'
 export {
   dateToRfc3339,
   getNewestCollectionItemDate

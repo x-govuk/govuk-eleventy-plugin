@@ -16,7 +16,7 @@
       <ul class="app-document-list__item-metadata">
         {% if item.data.date %}
         <li class="app-document-list__attribute">
-          <time datetime="{{ item.date | date }}">{{ item.date | date("d LLLL y") }}</time>
+          <time datetime="{{ item.date | isoDate }}">{{ item.date | govukDate }}</time>
         </li>
         {% endif %}
         {% if item.data.tags %}

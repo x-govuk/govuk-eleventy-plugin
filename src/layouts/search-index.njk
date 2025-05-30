@@ -5,7 +5,7 @@
     {% if item.data.eleventyNavigation.parent %}"section": {{ item.data.eleventyNavigation.parent | dump | safe }},{% endif %}
     "layout": {{ item.data.layout | default("") | dump | safe }},
     "hasFrontmatterDate": {{ item.data.date !== undefined }},
-    "date": {{ item.date | date("d LLLL y") | default("") | dump | safe }},
+    "date": {{ item.date | govukDate | default("") | dump | safe }},
     "templateContent": {{ item.templateContent | tokenize | default([]) | dump | safe }},
     "url": {{ item.url | canonicalUrl | pretty | default("") | dump | safe }}
   }{% if not loop.last %},{% endif %}
