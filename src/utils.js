@@ -4,11 +4,12 @@ import path from 'node:path'
 /**
  * Get file contents
  *
+ * @param {string} baseDirectory - Base directory for files
  * @param {string} filePath - Path to file
  * @returns {Promise<string>} File contents
  */
-export async function getFileContents(filePath) {
-  filePath = path.join(import.meta.dirname, '..', filePath)
+export async function getFileContents(baseDirectory, filePath) {
+  filePath = path.join(baseDirectory, filePath)
 
   return await fs.readFile(filePath, { encoding: 'utf8' })
 }
@@ -55,19 +56,24 @@ export const getNavigationParent = (data) => {
  *
  * @param {object} eleventyConfig - Eleventy config
  * @param {Array} layoutNames - Layout names
+ * @param {string} baseDirectory - Base directory
  * @returns {object} Template names and strings
  */
-export async function getTemplates(eleventyConfig, layoutNames) {
+export async function getTemplates(eleventyConfig, layoutNames, baseDirectory) {
   const { includes, layouts, input } = eleventyConfig.dir
   const layoutDir = layouts || includes
   const templates = {}
+  baseDirectory = baseDirectory || path.join(import.meta.dirname, '..')
 
   for (const name of layoutNames) {
     try {
       const templatePath = path.join(input, layoutDir, `${name}.njk`)
       await fs.stat(templatePath)
     } catch {
-      const templateString = await getFileContents(`src/layouts/${name}.njk`)
+      const templateString = await getFileContents(
+        baseDirectory,
+        `src/layouts/${name}.njk`
+      )
       templates[`${layoutDir}/${name}.njk`] = templateString
     }
   }
