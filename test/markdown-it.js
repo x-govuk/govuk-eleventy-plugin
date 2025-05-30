@@ -26,7 +26,7 @@ describe('markdown-it', () => {
   it('Renders a definition list', () => {
     const result = md().render('Term\n: Definition')
 
-    assert.match(result, /<dl class="app-definition-list"/)
+    assert.match(result, /<dl class="govuk-body"/)
   })
 
   it('Renders footnotes', () => {
