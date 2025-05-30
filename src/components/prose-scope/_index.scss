@@ -102,7 +102,31 @@
       @include govuk-font($size: 19);
     }
 
-    // Responsive tables
+    // Heading anchor
+    [class^="govuk-heading"][tabindex] {
+      outline: none;
+    }
+
+    [class^="govuk-heading"][tabindex] .govuk-link {
+      @include govuk-link-style-text;
+      @include govuk-link-style-no-underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:hover::after,
+      :target &::after {
+        color: govuk-colour("dark-grey");
+        content: "#";
+        font-variant: all-small-caps;
+        font-weight: normal;
+        margin-left: govuk-spacing(1);
+        opacity: 0.5;
+      }
+    }
+
+    // Responsive table
     .govuk-table[tabindex] {
       display: block;
       overflow-x: auto;
