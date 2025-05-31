@@ -54,7 +54,7 @@ export default function(eleventyConfig) {
 
 ## Replace (or remove) GOV.UK in page titles
 
-By default, page titles in the browser are suffixed with `GOV.UK`.
+By default, page titles in the browser get suffixed with `GOV.UK`.
 
 Change this to your own value by setting the `titleSuffix` option. For example:
 
@@ -100,11 +100,11 @@ export default function(eleventyConfig) {
 
 ## Replace the GDS Transport typeface
 
-A number of design features, including the typeface used, can be changed by overriding the default values used in the GOV.UK Frontend stylesheet.
+You can change certain design features, including the typeface used, by overriding the default values used in the GOV.UK Frontend stylesheet.
 
 ### Override the default styles
 
-First, add a SCSS file inside your site’s [input directory](https://www.11ty.dev/docs/config/#input-directory), for example `/[input]/assets/styles.scss`. This file will be generated as `assets/styles.css`.
+First, add a SCSS file inside your site’s [input directory](https://www.11ty.dev/docs/config/#input-directory), for example `/[input]/assets/styles.scss`. This file is then generated as `assets/styles.css`.
 
 In this file, import GOV.UK Frontend and override the `$govuk-font-family` setting.
 

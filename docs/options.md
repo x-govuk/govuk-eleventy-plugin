@@ -85,7 +85,7 @@ export default function(eleventyConfig) {
     [
       { text: "rebrand" },
       { text: "boolean" },
-      { text: "Use GOV.UK rebrand (default is `false`, this will change to `true` in a subsequent release after 25 June 2025)." | markdown }
+      { text: "Use GOV.UK rebrand (default is `false`, this will change to `true` in a release after 25 June 2025)." | markdown }
     ],
     [
       { text: "showBreadcrumbs" },
@@ -95,7 +95,7 @@ export default function(eleventyConfig) {
     [
       { text: "stylesheets" },
       { text: "Array" },
-      { text: "Additional stylesheets to load after application styles." }
+      { text: "Stylesheets to load after application styles." }
     ],
     [
       { text: "themeColor" },
@@ -132,7 +132,7 @@ export default function(eleventyConfig) {
 
 ## Header options
 
-In addition to the [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can be set for `header`:
+Alongside [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can be set for `header`:
 
 {{ govukTable({
   firstCellIsHeader: true,
@@ -177,7 +177,7 @@ In addition to the [options available for the header component](https://design-s
 
 ## Service navigation options
 
-In addition to the [options available for the service navigation component](https://design-system.service.gov.uk/components/service-navigation/), the following options can be set for `serviceNavigation`:
+Alongside [options available for the service navigation component](https://design-system.service.gov.uk/components/service-navigation/), the following options can be set for `serviceNavigation`:
 
 {{ govukTable({
   firstCellIsHeader: true,
@@ -229,7 +229,7 @@ Follow guidance in the GOV.UK Design System about [adding other header and navig
 
 ## Footer options
 
-In addition to the [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can be set for `footer`:
+Alongside [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can be set for `footer`:
 
 {{ govukTable({
   firstCellIsHeader: true,

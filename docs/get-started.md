@@ -9,13 +9,13 @@ You can use this plugin to create and publish documentation and other simple web
 
 This plugin includes the following features:
 
-- a set of [layouts](../layouts) that use [`govuk-frontend`](https://github.com/alphagov/govuk-frontend) components and styles
+- a set of [layouts](/layouts) that use [`govuk-frontend`](https://github.com/alphagov/govuk-frontend) components and styles
 
 - includes [`markdown-it-govuk`](https://github.com/x-govuk/markdown-it-govuk) to ensure pages uses the same typography and styles as those used on GOV.UK
 
-- support for an [extended Markdown syntax](../markdown-advanced)
+- support for an [extended Markdown syntax](/markdown-advanced)
 
-- [full configuration](../options) of your website’s header and footer
+- [full configuration](/options) of your website’s header and footer
 
 - site search
 
