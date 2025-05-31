@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 10
+order: 11
 title: Upgrading
 description: Guides for upgrading to major releases with breaking changes
 ---
