@@ -155,24 +155,6 @@ Here’s a simple footnote,[^1] and here’s a longer one.[^bignote]
 
     Add as many paragraphs as you like.
 
-## Abbreviations and acronyms
-
-> The [first time you use an abbreviation or acronym explain it in full](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#abbreviations-and-acronyms) on each page unless it’s well known, like UK, DVLA, US, EU, VAT and MP. This includes government departments or schemes. Then refer to it by initials, and use the syntax below so the full explanation is available as hover text.
-
-To create an abbreviation, add an asterisk followed by brackets around the abbreviation and a colon, followed by the explanation (`*[UC]: Universal Credit`).
-
-You don’t have to put abbreviations at the end of the document. You can put them anywhere except inside other elements like lists, block quotes, and tables.
-
-```markdown
-This policy is the responsibility of the DWP.
-
-*[DWP]: Department for Work and Pensions
-```
-
-This policy is the responsibility of the DWP.
-
-\*[DWP]: Department for Work and Pensions
-
 ## Definition lists
 
 To create a definition list, type the term on the first line. On the next line, type a colon followed by a space and the definition.
@@ -194,24 +176,6 @@ First Term
 Second Term
 : This is one definition of the second term.
 : This is another definition of the second term.
-
-## Task lists
-
-==Not supported==
-
-Task lists allow you to create a list of items with checkboxes. To create a checkbox, add brackets with a space (`[ ]`) at the start of a list item. To show a selected checkbox, add an `x` between the brackets (`[x]`).
-
-```markdown
-1. [x] Write the press release
-2. [ ] Update the website
-3. [ ] Contact the media
-```
-
-The rendered output looks like this:
-
-1. [x] Write the press release
-2. [ ] Update the website
-3. [ ] Contact the media
 
 ## Strike-through
 
