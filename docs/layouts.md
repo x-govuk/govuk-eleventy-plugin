@@ -45,6 +45,11 @@ Layouts can accept the following [front matter data](https://www.11ty.dev/docs/d
       { text: "Page title." }
     ],
     [
+      { text: "theme" },
+      { text: "string" },
+      { text: "Common title page sits under in sub navigation." | markdown }
+    ],
+    [
       { text: "description" },
       { text: "string" },
       { text: "Page description." }

@@ -23,6 +23,8 @@ export function itemsFromNavigation(
       parent: pageUrl && pageUrl.startsWith(item.url),
       href: item.url,
       text: smart(item.title),
+      order: item.data?.order,
+      theme: item.data?.theme,
       children: item.children
         ? item.children.map((child) => ({
             current: pageUrl && child.url === pageUrl,
@@ -46,6 +48,22 @@ export function itemsFromNavigation(
       text: smart(options.parentSite.name)
     })
   }
+
+  items.sort((a, b) => {
+    if (typeof a.order !== 'undefined' && typeof b.order !== 'undefined') {
+      // Sort by order value, if given
+      return (a.order || 0) - (b.order || 0)
+    }
+
+    // Sort by title
+    if (a.text < b.text) {
+      return -1
+    } else if (a.text > b.text) {
+      return 1
+    }
+
+    return 0
+  })
 
   return items
 }
