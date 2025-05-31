@@ -2,7 +2,7 @@
 layout: sub-navigation
 order: 5
 title: Markdown
-description: A lightweight markup language that allows you to add formatting to plain text text documents.
+description: A lightweight markup language that allows you to add formatting to plain text documents.
 related:
   sections:
     - items:
@@ -58,7 +58,7 @@ To emphasise text, add one asterisk or underscore before and after a word or phr
 
 To bold text, add 2 asterisks or underscores before and after a word or phrase.
 
-> The [GDS Style Guide recommends only using emboldened text when referring to text from interfaces](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold) in technical documentation or instructions.
+> The [GDS Style Guide recommends using emboldened text when referring to text from interfaces](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold) in technical documentation or instructions.
 
 | Markdown                                | Rendered output                                                              |
 | --------------------------------------- | ---------------------------------------------------------------------------- |
@@ -95,7 +95,7 @@ The rendered output looks like this:
 
 ### Nested blockquotes
 
-Blockquotes can be nested. Add a `>>` in front of the paragraph you want to nest.
+To nest blockquotes, add a `>>` in front of the paragraph you want to nest.
 
 ```markdown
 > Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
@@ -111,7 +111,7 @@ The rendered output looks like this:
 
 ### Blockquotes with other elements
 
-Blockquotes can contain other Markdown formatted elements. Not all elements can be used — you'll need to experiment to see which ones work.
+Blockquotes can contain other Markdown formatted elements. Not all elements can be used — you’ll need to experiment to see which ones work.
 
 ```markdown
 > #### Check the MOT status of a vehicle
@@ -211,17 +211,16 @@ At the command prompt, type `npm install`.
 
 By default, [Eleventy doesn’t support the Markdown syntax for indented code blocks](https://www.11ty.dev/docs/languages/markdown/#indented-code-blocks) because pages can get rendered incorrectly should a layout or component include indented markup.
 
-To include code blocks in your documentation, use [fenced code blocks](../markdown-advanced/#fenced-code).
+To include code blocks in your documentation, use [fenced code blocks](/markdown-advanced/#fenced-code).
 
 ## Horizontal rules
 
 To create a horizontal rule, use 3 or more asterisks (`***`), dashes (`---`), or underscores (`___`) on a line by themselves.
 
 ```markdown
+***
 ---
----
-
----
+___
 ```
 
 The rendered output of all 3 looks identical:
@@ -230,7 +229,7 @@ The rendered output of all 3 looks identical:
 
 ## Links
 
-To create a link, enclose the link text in brackets (e.g., `[GOV.UK]`) and then follow it immediately with the URL in parentheses (e.g., `(https://www.gov.uk)`).
+To create a link, enclose the link text in brackets (e.g., `[GOV.UK]`) and then follow it with the URL in parentheses (e.g., `(https://www.gov.uk)`).
 
 ```markdown
 Visit [GOV.UK](https://www.gov.uk).
@@ -242,7 +241,7 @@ Visit [GOV.UK](https://www.gov.uk).
 
 ### URLs and email addresses
 
-To quickly turn a URL or email address into a link, enclose it in angle brackets.
+To turn a URL or email address into a link, enclose it in angle brackets.
 
 ```markdown
 <https://www.gov.uk>
@@ -256,17 +255,17 @@ The rendered output looks like this:
 
 ### Formatting links
 
-To [emphasize](../markdown#emphasis) links, add asterisks before and after the brackets and parentheses. To denote links as [code](../markdown#code), add backticks in the brackets.
+To [emphasize](#emphasis) links, add asterisks before and after the brackets and parentheses. To denote links as [code](#code), add backticks in the brackets.
 
 ```markdown
 Visit the **[Markdown Guide](https://www.markdownguide.org)**.
-See the section on [`code`](../markdown#code).
+See the section on [`code`](#code).
 ```
 
 The rendered output looks like this:
 
 Visit the **[Markdown Guide](https://www.markdownguide.org)**.  
-See the section on [`code`](../markdown#code).
+See the section on [`code`](#code).
 
 ## Images
 
