@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 9
+order: 10
 title: Hosting
 description: Hosting Eleventy websites on services like GitHub Pages.
 ---
