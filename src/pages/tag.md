@@ -1,4 +1,5 @@
 ---
+eleventyExcludeFromCollections: true
 layout: tag
 pagination:
   alias: tag
@@ -9,5 +10,4 @@ eleventyComputed:
   title: "Pages tagged ‘{{ tag }}’"
 eleventyNavigation:
   parent: "Tags"
-eleventyExcludeFromCollections: true
 ---

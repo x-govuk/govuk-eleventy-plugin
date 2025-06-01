@@ -51,30 +51,68 @@ export const getNavigationParent = (data) => {
 }
 
 /**
- * Get virtual templates
+ * Get virtual templates for default layouts
  * Uses users own named layout if exists, else provides a virtual template
  *
  * @param {object} eleventyConfig - Eleventy config
- * @param {Array} layoutNames - Layout names
+ * @param {Array} layoutFiles - Layout files
  * @param {string} baseDirectory - Base directory
  * @returns {object} Template names and strings
  */
-export async function getTemplates(eleventyConfig, layoutNames, baseDirectory) {
+export async function getLayoutTemplates(
+  eleventyConfig,
+  layoutFiles,
+  baseDirectory
+) {
   const { includes, layouts, input } = eleventyConfig.dir
   const layoutDir = layouts || includes
   const templates = {}
   baseDirectory = baseDirectory || path.join(import.meta.dirname, '..')
 
-  for (const name of layoutNames) {
+  for (const filename of layoutFiles) {
     try {
-      const templatePath = path.join(input, layoutDir, `${name}.njk`)
+      const templatePath = path.join(input, layoutDir, filename)
       await fs.stat(templatePath)
     } catch {
       const templateString = await getFileContents(
         baseDirectory,
-        `src/layouts/${name}.njk`
+        `src/layouts/${filename}`
       )
-      templates[`${layoutDir}/${name}.njk`] = templateString
+      templates[`${layoutDir}/${filename}`] = templateString
+    }
+  }
+
+  return templates
+}
+
+/**
+ * Get virtual templates for default pages
+ * Uses users own named page if exists, else provides a virtual template
+ *
+ * @param {object} eleventyConfig - Eleventy config
+ * @param {Array} pageFilenames - Page filenames
+ * @param {string} baseDirectory - Base directory
+ * @returns {object} Template names and strings
+ */
+export async function getPageTemplates(
+  eleventyConfig,
+  pageFilenames,
+  baseDirectory
+) {
+  const { input } = eleventyConfig.dir
+  const templates = {}
+  baseDirectory = baseDirectory || path.join(import.meta.dirname, '..')
+
+  for (const filename of pageFilenames) {
+    try {
+      const templatePath = path.join(input, filename)
+      await fs.stat(templatePath)
+    } catch {
+      const templateString = await getFileContents(
+        baseDirectory,
+        `src/pages/${filename}`
+      )
+      templates[`${input}/${filename}`] = templateString
     }
   }
 

@@ -192,9 +192,9 @@ For example, to show a notification banner at the top of each page that uses the
 
 You can extend the following layouts:
 
-{%- for layoutName in layoutNames %}
+{%- for layoutFilename in layoutFilenames %}
 
-- `layouts/{{ layoutName }}.njk`
+- `layouts/{{ layoutFilename }}`
 
 {%- endfor %}
 {##}
