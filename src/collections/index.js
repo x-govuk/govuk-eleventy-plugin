@@ -4,6 +4,11 @@ export async function addCollections(eleventyConfig) {
     eleventyConfig.addCollection('all', all)
   }
 
+  if (!eleventyConfig.collections.feed) {
+    const { feed } = await import('./feed.js')
+    eleventyConfig.addCollection('feed', feed)
+  }
+
   if (!eleventyConfig.collections.navigation) {
     const { navigation } = await import('./navigation.js')
     eleventyConfig.addCollection('navigation', navigation)

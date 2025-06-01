@@ -21,6 +21,11 @@ export default function (eleventyConfig) {
           }
         ]
       }
+    },
+    templates: {
+      feed: true,
+      searchIndex: true,
+      tags: true
     }
   })
 
