@@ -19,7 +19,12 @@ const defaults = {
   rebrand: true,
   stylesheets: [],
   titleSuffix: 'GOV.UK',
-  url: false
+  url: false,
+  templates: {
+    error404: {
+      permalink: '/404.html'
+    }
+  }
 }
 
 export function defaultPluginOptions(options, pathPrefix) {

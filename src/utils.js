@@ -2,6 +2,30 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 /**
+ * Check if a file exists at permalink location
+ *
+ * @param {object} data - Eleventy data
+ * @param {string} permalink - Permalink
+ * @returns {boolean} - File exists at permalink location
+ */
+export async function checkPermalink(data, permalink) {
+  const targetPath = path.join(
+    data.eleventy.directories.input,
+    permalink?.replace(/^\//, '')
+  )
+
+  try {
+    await fs.access(targetPath, fs.constants.R_OK)
+
+    // Return false to skip writing if file exists
+    console.log('file already exists')
+    return false
+  } catch {
+    return permalink
+  }
+}
+
+/**
  * Get file contents
  *
  * @param {string} baseDirectory - Base directory for files
@@ -51,30 +75,34 @@ export const getNavigationParent = (data) => {
 }
 
 /**
- * Get virtual templates
+ * Get virtual templates for default layouts
  * Uses users own named layout if exists, else provides a virtual template
  *
  * @param {object} eleventyConfig - Eleventy config
- * @param {Array} layoutNames - Layout names
+ * @param {Array} layoutFiles - Layout files
  * @param {string} baseDirectory - Base directory
  * @returns {object} Template names and strings
  */
-export async function getTemplates(eleventyConfig, layoutNames, baseDirectory) {
+export async function getLayoutTemplates(
+  eleventyConfig,
+  layoutFiles,
+  baseDirectory
+) {
   const { includes, layouts, input } = eleventyConfig.dir
   const layoutDir = layouts || includes
   const templates = {}
   baseDirectory = baseDirectory || path.join(import.meta.dirname, '..')
 
-  for (const name of layoutNames) {
+  for (const filename of layoutFiles) {
     try {
-      const templatePath = path.join(input, layoutDir, `${name}.njk`)
+      const templatePath = path.join(input, layoutDir, filename)
       await fs.stat(templatePath)
     } catch {
       const templateString = await getFileContents(
         baseDirectory,
-        `src/layouts/${name}.njk`
+        `src/layouts/${filename}`
       )
-      templates[`${layoutDir}/${name}.njk`] = templateString
+      templates[`${layoutDir}/${filename}`] = templateString
     }
   }
 

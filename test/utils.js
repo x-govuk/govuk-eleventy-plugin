@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
 import { describe, it } from 'node:test'
 
-import { getFileContents, getTemplates, normalise } from '../src/utils.js'
+import { getFileContents, getLayoutTemplates, normalise } from '../src/utils.js'
 
 describe('getFileContents utility', () => {
   it('Gets file contents', async (t) => {
@@ -25,12 +25,12 @@ describe('getFileContents utility', () => {
   })
 })
 
-describe('getTemplates utility', () => {
+describe('getLayoutTemplates utility', () => {
   const eleventyConfig = { dir: { input: 'docs', layouts: 'layouts' } }
-  const layoutNames = ['page', 'post']
+  const layoutFilenames = ['page.njk', 'post.njk']
 
-  it('Gets all virtual templates', async () => {
-    const result = await getTemplates(eleventyConfig, layoutNames)
+  it('Gets virtual templates for default layouts', async () => {
+    const result = await getLayoutTemplates(eleventyConfig, layoutFilenames)
 
     assert.deepEqual(Object.keys(result), [
       'layouts/page.njk',
@@ -47,7 +47,7 @@ describe('getTemplates utility', () => {
       throw new Error('ENOENT: no such file or directory')
     })
 
-    const result = await getTemplates(eleventyConfig, layoutNames)
+    const result = await getLayoutTemplates(eleventyConfig, layoutFilenames)
 
     assert.deepEqual(Object.keys(result), ['layouts/post.njk'])
   })
