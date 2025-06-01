@@ -9,20 +9,28 @@ import { scssExtension } from './extensions/index.js'
 import * as filters from './filters/index.js'
 import { md } from './markdown-it.js'
 import { nunjucksConfig } from './nunjucks.js'
-import { getTemplates } from './utils.js'
+import { getLayoutTemplates, getPageTemplates } from './utils.js'
 
-export const layoutNames = [
-  'base',
-  'collection',
-  'feed',
-  'page',
-  'post',
-  'product',
-  'search-index',
-  'sitemap',
-  'sub-navigation',
-  'tag',
-  'tags'
+export const layoutFilenames = [
+  'base.njk',
+  'collection.njk',
+  'feed.njk',
+  'page.njk',
+  'post.njk',
+  'product.njk',
+  'search-index.njk',
+  'sitemap.njk',
+  'sub-navigation.njk',
+  'tag.njk',
+  'tags.njk'
+]
+
+export const pageFilenames = [
+  '404.md',
+  'search.json.njk',
+  'sitemap.md',
+  'tag.md',
+  'tags.md'
 ]
 
 export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
@@ -42,10 +50,19 @@ export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addExtension('scss', scssExtension)
   eleventyConfig.addTemplateFormats('scss')
 
-  // Virtual templates
-  const templates = await getTemplates(eleventyConfig, layoutNames)
-  for (const [virtualPath, template] of Object.entries(templates)) {
-    eleventyConfig.addTemplate(virtualPath, template)
+  // Virtual layout templates
+  const layoutTemplates = await getLayoutTemplates(
+    eleventyConfig,
+    layoutFilenames
+  )
+  for (const [virtualPath, layoutTemplate] of Object.entries(layoutTemplates)) {
+    eleventyConfig.addTemplate(virtualPath, layoutTemplate)
+  }
+
+  // Virtual page templates
+  const pageTemplates = await getPageTemplates(eleventyConfig, pageFilenames)
+  for (const [virtualPath, pageTemplate] of Object.entries(pageTemplates)) {
+    eleventyConfig.addTemplate(virtualPath, pageTemplate)
   }
 
   // Filters

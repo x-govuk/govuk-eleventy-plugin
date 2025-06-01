@@ -1,7 +1,7 @@
 import process from 'node:process'
 
 import { govukEleventyPlugin } from './src/index.js'
-import { layoutNames } from './src/index.js'
+import { layoutFilenames } from './src/index.js'
 
 const serviceName = 'GOV.UK Eleventy Plugin'
 
@@ -77,7 +77,7 @@ export default function (eleventyConfig) {
   )
 
   // Global data
-  eleventyConfig.addGlobalData('layoutNames', layoutNames)
+  eleventyConfig.addGlobalData('layoutFilenames', layoutFilenames)
 
   // Passthrough
   eleventyConfig.addPassthroughCopy('./docs/assets')

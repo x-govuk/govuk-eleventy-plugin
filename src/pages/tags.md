@@ -1,5 +1,5 @@
 ---
 eleventyExcludeFromCollections: true
-layout: sitemap
-title: Sitemap
+layout: tags
+title: Tags
 ---
