@@ -23,7 +23,11 @@ const defaults = {
   opengraphImageUrl: '/assets/rebrand/images/govuk-opengraph-image.png',
   stylesheets: [],
   titleSuffix: 'GOV.UK',
-  url: false
+  url: false,
+  templates: {
+    error404: true,
+    sitemap: true
+  }
 }
 
 export function defaultPluginOptions(options, pathPrefix) {

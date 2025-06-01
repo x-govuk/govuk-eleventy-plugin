@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ options.url }}">
-  <title>{{ options.homeKey }}</title>
-  <link href="{{ permalink | canonicalUrl }}" rel="self"/>
+  <title>{{ title or options.homeKey }}</title>
+  <link href="{{ page.url | canonicalUrl }}" rel="self"/>
   <link href="{{ options.url }}"/>
   <updated>{{ collections[collection.name] | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ options.url }}</id>
