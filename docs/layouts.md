@@ -58,9 +58,9 @@ For example, to show a message at the top of each page that uses the page layout
 
 You can extend the following layouts:
 
-{%- for layoutName in layoutNames %}
+{%- for layoutFilename in layoutFilenames %}
 
-- `layouts/{{ layoutName }}.njk`
+- `layouts/{{ layoutFilename }}`
 
 {%- endfor %}
 {##}

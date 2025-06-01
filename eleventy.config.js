@@ -1,7 +1,7 @@
 import process from 'node:process'
 
 import { govukEleventyPlugin } from './src/index.js'
-import { layoutNames } from './src/index.js'
+import { layoutFilenames } from './src/index.js'
 
 const serviceName = 'GOV.UK Eleventy Plugin'
 
@@ -33,7 +33,7 @@ export default function (eleventyConfig) {
       serviceName,
       serviceUrl: process.env.GITHUB_ACTIONS ? '/govuk-eleventy-plugin/' : '/',
       search: {
-        indexPath: '/search.json',
+        indexPath: '/search-index.json',
         sitemapPath: '/sitemap'
       },
       navigation: [
@@ -65,6 +65,11 @@ export default function (eleventyConfig) {
           }
         ]
       }
+    },
+    templates: {
+      searchIndex: true,
+      sitemap: true,
+      tags: true
     }
   })
 
@@ -95,7 +100,7 @@ export default function (eleventyConfig) {
   )
 
   // Global data
-  eleventyConfig.addGlobalData('layoutNames', layoutNames)
+  eleventyConfig.addGlobalData('layoutFilenames', layoutFilenames)
 
   // Passthrough
   eleventyConfig.addPassthroughCopy('./docs/assets')
