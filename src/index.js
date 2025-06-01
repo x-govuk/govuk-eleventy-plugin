@@ -9,20 +9,29 @@ import { scssExtension } from './extensions/index.js'
 import * as filters from './filters/index.js'
 import { md } from './markdown-it.js'
 import { nunjucksConfig } from './nunjucks.js'
-import { getTemplates } from './utils.js'
+import {
+  FeedTemplate,
+  PageNotFoundTemplate,
+  SearchIndexTemplate,
+  SitemapTemplate,
+  TagsTemplate,
+  TagTemplate
+} from './templates/index.js'
+import { getLayoutTemplates } from './utils.js'
 
-export const layoutNames = [
-  'base',
-  'collection',
-  'feed',
-  'page',
-  'post',
-  'product',
-  'search-index',
-  'sitemap',
-  'sub-navigation',
-  'tag',
-  'tags'
+export const layoutFilenames = [
+  'base.njk',
+  'collection.njk',
+  'error.njk',
+  'feed.njk',
+  'page.njk',
+  'post.njk',
+  'product.njk',
+  'search-index.njk',
+  'sitemap.njk',
+  'sub-navigation.njk',
+  'tag.njk',
+  'tags.njk'
 ]
 
 export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
@@ -42,10 +51,61 @@ export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addExtension('scss', scssExtension)
   eleventyConfig.addTemplateFormats('scss')
 
-  // Virtual templates
-  const templates = await getTemplates(eleventyConfig, layoutNames)
-  for (const [virtualPath, template] of Object.entries(templates)) {
-    eleventyConfig.addTemplate(virtualPath, template)
+  // Virtual layout templates
+  const layoutTemplates = await getLayoutTemplates(
+    eleventyConfig,
+    layoutFilenames
+  )
+  for (const [virtualPath, layoutTemplate] of Object.entries(layoutTemplates)) {
+    eleventyConfig.addTemplate(virtualPath, layoutTemplate)
+  }
+
+  // Virtual page templates
+  if (options.templates?.error404) {
+    eleventyConfig.addTemplate(
+      '404.11ty.js',
+      new PageNotFoundTemplate(options.templates?.error404)
+    )
+  }
+
+  if (options.templates?.feed) {
+    eleventyConfig.addTemplate(
+      'feed.11ty.js',
+      new FeedTemplate(options.templates?.feed, {
+        url: options?.url
+      })
+    )
+  }
+
+  if (options.templates?.searchIndex) {
+    eleventyConfig.addTemplate(
+      'search-index.11ty.js',
+      new SearchIndexTemplate(options.templates.searchIndex)
+    )
+  }
+
+  if (options.templates?.sitemap) {
+    eleventyConfig.addTemplate(
+      'sitemap.11ty.js',
+      new SitemapTemplate(options.templates.sitemap)
+    )
+  }
+
+  if (options.templates?.tags) {
+    const slugify = eleventyConfig.getFilter('slugify')
+
+    eleventyConfig.addTemplate(
+      'tags.11ty.js',
+      new TagsTemplate(options.templates.tags)
+    )
+
+    eleventyConfig.addTemplate(
+      'tag.11ty.js',
+      new TagTemplate({
+        ...options.templates.tags,
+        slugify
+      })
+    )
   }
 
   // Filters

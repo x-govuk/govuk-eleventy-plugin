@@ -1,0 +1,13 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      {{ appDocumentHeader({
+        title: title
+      }) }}
+
+      {{ appProseScope(content) if content }}
+    </div>
+  </div>
+{% endblock %}

@@ -11,6 +11,11 @@ export default function (eleventyConfig) {
     serviceNavigation: {
       serviceName: 'Apply for a juggling licence',
       serviceUrl: '/product-page'
+    },
+    templates: {
+      feed: true,
+      searchIndex: true,
+      tags: true
     }
   })
 
