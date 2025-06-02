@@ -11,7 +11,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter-from-desktop">
       {{ xGovukSubNavigation({
-        items: collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | itemsFromNavigation(page.url, { pathPrefix: options.pathPrefix })
+        items: collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | itemsFromNavigation(page.url, { pathPrefix: options.pathPrefix }, true)
       }) }}
     </div>
     <div class="govuk-grid-column-three-quarters-from-desktop">
