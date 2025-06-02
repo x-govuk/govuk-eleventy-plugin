@@ -34,6 +34,7 @@
     "build:example": "eleventy --config=example.config.js",
     "predev": "npm run build",
     "dev": "eleventy --serve --watch",
+    "dev:example": "eleventy --serve --watch --config=example.config.js",
     "start": "eleventy --serve",
     "lint:prettier": "prettier . --check",
     "lint:prettier:fix": "prettier . --write",
