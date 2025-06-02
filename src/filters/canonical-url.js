@@ -4,10 +4,11 @@ import path from 'node:path'
  * Get canonical site URL with resolved path
  *
  * @param {string} string - Path to resolve
+ * @param {object} [options] - Plugin options
  * @returns {string} Canonical site URL with resolved path
  */
-export function canonicalUrl(string = '') {
-  const { options } = this.ctx
+export function canonicalUrl(string = '', options) {
+  options = options || this.ctx.options
 
   // No site URL configured
   if (!options?.url) {

@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
+import { canonicalUrl, govukDate, tokenize } from './filters/index.js'
+
 /**
  * Get file contents
  *
@@ -133,4 +135,47 @@ export function normalise(value, defaultValue) {
   }
 
   return value
+}
+
+/**
+ * Creates a new search index template.
+ *
+ * @class
+ */
+export class SearchIndexTemplate {
+  /**
+   * Get template data for search index
+   *
+   * @returns {object} Template data
+   */
+  data() {
+    return {
+      eleventyExcludeFromCollections: true,
+      permalink: (data) => data.options.searchIndexPath
+    }
+  }
+
+  /**
+   * Render template string for search index
+   *
+   * @param {object} data - Eleventy data
+   * @param {Array} data.collections - Eleventy collections
+   * @param {object} data.options - Plugin options
+   * @returns {string} Search index JSON
+   */
+  render({ collections, options }) {
+    const index = collections.sitemap.map((item) => ({
+      title: item.data.title,
+      ...(item.data.description && { description: item.data.description }),
+      ...(item.data.eleventyNavigation.parent &&
+        item.data.eleventyNavigation.parent !== item.data.options.homeKey && {
+          section: item.data.eleventyNavigation.parent
+        }),
+      ...(item.data.date && { date: govukDate(item.data.date) }),
+      ...(item.url && { url: canonicalUrl(item.url, options) }),
+      ...(item.templateContent && { tokens: tokenize(item.templateContent) })
+    }))
+
+    return JSON.stringify(index, null, 2)
+  }
 }
