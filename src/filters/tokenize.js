@@ -12,18 +12,18 @@ export function tokenize(string) {
   content = content.toLowerCase()
 
   // Remove HTML elements
-  // Remove words with apostrophes (’)
-  // Remove ampersands (&amp;), punctuation and newlines
-  // Remove short and less meaningful words
   let tokens = content.replace(
     /<script.*?<\/script>|<!--.*?-->|<style.*?<\/style>|<.*?>/g,
     ' '
   )
-  tokens = tokens.replace(/(?=\S*[’])([a-zA-Z’]+)/gi, '')
-  tokens = tokens.replace(
-    /\.\s|,|;|‘|“|”|\?|\(|\)|\[|\]|\/|-|–|§|&amp;|\n/g,
-    ' '
-  )
+
+  // Remove HTML entities
+  tokens = tokens.replace(/&[a-zA-Z0-9#]+;/gi, ' ')
+
+  // Remove special characters
+  tokens = tokens.replace(/[^0-9a-zA-Z]+/gi, ' ')
+
+  // Remove short and less meaningful words
   tokens = tokens.replace(
     /\b(the|a|an|and|am|you|I|to|if|of|off|me|my|on|in|it|is|at|as|we|do|be|has|but|was|so|no|not|or|up|for)\b/gi,
     ' '
