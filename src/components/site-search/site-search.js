@@ -88,12 +88,12 @@ export class SiteSearchElement extends HTMLElement {
       const element = document.createElement('span')
       element.textContent = result.title
 
-      if (result.hasFrontmatterDate || result.section) {
+      if (result.hasFrontMatterDate || result.section) {
         const section = document.createElement('span')
         section.className = 'app-site-search--section'
 
         section.innerHTML =
-          result.hasFrontmatterDate && result.section
+          result.hasFrontMatterDate && result.section
             ? `${result.section}<br>${result.date}`
             : result.section || result.date
 
