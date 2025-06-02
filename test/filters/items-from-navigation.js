@@ -61,15 +61,6 @@ describe('itemsFromNavigation filter', () => {
 
     assert.deepEqual(result, [
       {
-        href: '/parent/child',
-        text: 'Child page',
-        order: undefined,
-        theme: undefined,
-        current: true,
-        parent: true,
-        children: false
-      },
-      {
         href: '/',
         text: 'Home',
         order: undefined,
@@ -88,6 +79,15 @@ describe('itemsFromNavigation filter', () => {
         children: [
           { href: '/parent/child/', text: 'Child page', current: false }
         ]
+      },
+      {
+        href: '/parent/child',
+        text: 'Child page',
+        order: undefined,
+        theme: undefined,
+        current: true,
+        parent: true,
+        children: false
       }
     ])
   })
@@ -97,15 +97,6 @@ describe('itemsFromNavigation filter', () => {
 
     assert.deepEqual(result, [
       {
-        href: '/parent/child',
-        text: 'Child page',
-        order: undefined,
-        theme: undefined,
-        current: false,
-        parent: false,
-        children: false
-      },
-      {
         href: '/',
         text: 'Home',
         order: undefined,
@@ -124,6 +115,15 @@ describe('itemsFromNavigation filter', () => {
         children: [
           { href: '/parent/child/', text: 'Child page', current: false }
         ]
+      },
+      {
+        href: '/parent/child',
+        text: 'Child page',
+        order: undefined,
+        theme: undefined,
+        current: false,
+        parent: false,
+        children: false
       }
     ])
   })
@@ -139,6 +139,48 @@ describe('itemsFromNavigation filter', () => {
     )
 
     assert.deepEqual(result, [
+      { href: 'https://example.org', text: 'Example' },
+      {
+        href: '/',
+        text: 'Home',
+        order: undefined,
+        theme: undefined,
+        current: false,
+        parent: true,
+        children: false
+      },
+      {
+        href: '/parent/',
+        text: 'Parent page',
+        order: undefined,
+        theme: undefined,
+        current: false,
+        parent: true,
+        children: [
+          { href: '/parent/child/', text: 'Child page', current: false }
+        ]
+      },
+      {
+        href: '/parent/child',
+        text: 'Child page',
+        order: undefined,
+        theme: undefined,
+        current: true,
+        parent: true,
+        children: false
+      }
+    ])
+  })
+
+  it('Converts navigation data to sorted items array', () => {
+    const result = itemsFromNavigation(
+      eleventyNavigationBreadcrumb,
+      '/parent/child',
+      {},
+      true
+    )
+
+    assert.deepEqual(result, [
       {
         href: '/parent/child',
         text: 'Child page',
@@ -148,7 +190,6 @@ describe('itemsFromNavigation filter', () => {
         parent: true,
         children: false
       },
-      { href: 'https://example.org', text: 'Example' },
       {
         href: '/',
         text: 'Home',

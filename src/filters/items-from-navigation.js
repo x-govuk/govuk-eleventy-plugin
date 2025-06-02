@@ -7,12 +7,14 @@ import { smart } from './smart.js'
  * @param {Array} eleventyNavigation - Eleventy navigation data
  * @param {string} [pageUrl] - URL of current page
  * @param {object} [options] - Plugin options
+ * @param {boolean} [sort] - Sort navigation items
  * @returns {Array} `items` array
  */
 export function itemsFromNavigation(
   eleventyNavigation,
   pageUrl = false,
-  options = {}
+  options = {},
+  sort = false
 ) {
   const items = []
 
@@ -49,21 +51,23 @@ export function itemsFromNavigation(
     })
   }
 
-  items.sort((a, b) => {
-    if (typeof a.order !== 'undefined' && typeof b.order !== 'undefined') {
-      // Sort by order value, if given
-      return (a.order || 0) - (b.order || 0)
-    }
+  if (sort) {
+    items.sort((a, b) => {
+      if (typeof a.order !== 'undefined' && typeof b.order !== 'undefined') {
+        // Sort by order value, if given
+        return (a.order || 0) - (b.order || 0)
+      }
 
-    // Sort by title
-    if (a.text < b.text) {
-      return -1
-    } else if (a.text > b.text) {
-      return 1
-    }
+      // Sort by title
+      if (a.text < b.text) {
+        return -1
+      } else if (a.text > b.text) {
+        return 1
+      }
 
-    return 0
-  })
+      return 0
+    })
+  }
 
   return items
 }
