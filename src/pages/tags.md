@@ -2,5 +2,5 @@
 eleventyExcludeFromCollections: true
 layout: tags
 title: Tags
-permalink: /tags/index.html
+permalink: "{{ options.tags.path }}"
 ---

@@ -151,7 +151,7 @@ export class SearchIndexTemplate {
   data() {
     return {
       eleventyExcludeFromCollections: true,
-      permalink: (data) => data.options.searchIndexPath
+      permalink: (data) => data.options.search.path
     }
   }
 

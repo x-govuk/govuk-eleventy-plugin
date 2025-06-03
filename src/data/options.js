@@ -18,7 +18,27 @@ const defaults = {
   parentSite: false,
   stylesheets: [],
   titleSuffix: 'GOV.UK',
-  url: false
+  url: false,
+  404: {
+    enabled: true,
+    path: '/404.html'
+  },
+  feed: {
+    enabled: false,
+    path: '/feed.xml'
+  },
+  search: {
+    enabled: false,
+    path: '/search.json'
+  },
+  sitemap: {
+    enabled: false,
+    path: '/sitemap/'
+  },
+  tags: {
+    enabled: false,
+    path: '/tags/'
+  }
 }
 
 export function defaultPluginOptions(options, pathPrefix) {
