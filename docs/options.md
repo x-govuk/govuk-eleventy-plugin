@@ -113,6 +113,11 @@ export default function(eleventyConfig) {
       { text: "The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data." }
     ],
     [
+      { text: "feedUrl" },
+      { text: "string" },
+      { text: "The URL of your website’s RSS feed. see [Adding a feed](/feed)." | markdown }
+    ],
+    [
       { text: "header" },
       { text: "object" },
       { text: "See [header options](#header-options)." | markdown }
