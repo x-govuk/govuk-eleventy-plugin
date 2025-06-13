@@ -48,8 +48,12 @@ $_icon-size: 40px;
     display: block;
     position: relative;
 
-    .app-service-navigation & {
+    .govuk-service-navigation & {
       outline: 1px solid $govuk-border-colour;
+    }
+
+    .govuk-service-navigation--inverse & {
+      outline: 1px solid transparent;
     }
   }
 

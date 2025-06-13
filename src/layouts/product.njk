@@ -1,5 +1,7 @@
 {% extends "layouts/base.njk" %}
 
+{% set inverseServiceNavigation = true %}
+
 {% block main %}
   <main id="main-content" role="main" {%- if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {{ xGovukMasthead({
