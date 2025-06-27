@@ -85,7 +85,7 @@ export default function(eleventyConfig) {
     [
       { text: "rebrand" },
       { text: "boolean" },
-      { text: "Use GOV.UK rebrand (default is `false`, this will change to `true` in a release after 25 June 2025)." | markdown }
+      { text: "Use GOV.UK rebrand (default is `true`). This option will be removed in an upcoming release." | markdown }
     ],
     [
       { text: "showBreadcrumbs" },
