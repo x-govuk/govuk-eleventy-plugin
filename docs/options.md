@@ -148,11 +148,6 @@ Alongside [options available for the header component](https://design-system.ser
   ],
   rows: [
     [
-      { text: "homepageUrl" },
-      { text: "string" },
-      { text: "URL organisation name is linked to (default is `'/'`)." | markdown }
-    ],
-    [
       { text: "logotype" },
       { text: "object" },
       { text: "Logo that appears in the header. If no value is provided, the GOV.UK logo is shown." }
@@ -166,11 +161,6 @@ Alongside [options available for the header component](https://design-system.ser
       { text: "logotype.html" },
       { text: "string" },
       { text: "If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
-    ],
-    [
-      { text: "productName" },
-      { text: "string" },
-      { text: "Product name that appears after the organisation name (default is `false`)." | markdown }
     ],
     [
       { text: "search" },
