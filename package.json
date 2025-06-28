@@ -58,7 +58,7 @@
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "@x-govuk/govuk-prototype-components": "^4.0.0",
+    "@x-govuk/govuk-prototype-components": "^5.0.0",
     "deepmerge": "^4.2.2",
     "govuk-frontend": "^5.11.0",
     "markdown-it-abbr": "^2.0.0",
