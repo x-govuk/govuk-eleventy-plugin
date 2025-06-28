@@ -52,9 +52,8 @@ export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
   eleventyConfig.addPlugin(eleventyNavigation)
 
-  // GOV.UK rebrand
-  // Defaults to `false`; will change to `true` in a release after 25 June 2025
-  eleventyConfig.addNunjucksGlobal('govukRebrand', options.rebrand || false)
+  // GOV.UK rebrand (defaults to `true`)
+  eleventyConfig.addNunjucksGlobal('govukRebrand', options.rebrand)
 
   // Events
   eleventyConfig.on('eleventy.after', async ({ dir }) => {
