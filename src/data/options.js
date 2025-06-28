@@ -31,17 +31,18 @@ export function defaultPluginOptions(options, pathPrefix) {
   }
 
   // Rewrite default GOV.UK icon asset paths if rebrand enabled
-  defaults.icons = options.rebrand
-    ? {
-        mask: '/assets/rebrand/images/govuk-mask-icon.svg',
-        shortcut: '/assets/rebrand/images/favicon.ico',
-        touch: '/assets/rebrand/images/govuk-icon-180.png'
-      }
-    : {
-        mask: '/assets/images/govuk-mask-icon.svg',
-        shortcut: '/assets/images/favicon.ico',
-        touch: '/assets/images/govuk-icon-180.png'
-      }
+  defaults.icons =
+    options.rebrand !== false
+      ? {
+          mask: '/assets/rebrand/images/govuk-mask-icon.svg',
+          shortcut: '/assets/rebrand/images/favicon.ico',
+          touch: '/assets/rebrand/images/govuk-icon-180.png'
+        }
+      : {
+          mask: '/assets/images/govuk-mask-icon.svg',
+          shortcut: '/assets/images/favicon.ico',
+          touch: '/assets/images/govuk-icon-180.png'
+        }
 
   // Rewrite default GOV.UK Opengraph asset path if rebrand enabled
   defaults.opengraphImageUrl = options.rebrand
