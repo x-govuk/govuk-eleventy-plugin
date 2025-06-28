@@ -6,6 +6,7 @@ description: Use this plugin for [Eleventy](https://www.11ty.dev) to spend time 
 image:
   src: /assets/homepage-illustration.png
   alt: Eleventy’s possum mascot hanging on a red balloon and floating above a laptop.
+  hideOnMobile: true
 startButton:
   href: /get-started
 eleventyComputed:
