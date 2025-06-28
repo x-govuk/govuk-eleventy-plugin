@@ -1,11 +1,11 @@
 {% extends "layouts/base.njk" %}
 
-{% set inverseServiceNavigation = true %}
+{% set inverseMasthead = inverseMasthead | default(true) %}
 
 {% block main %}
   <main id="main-content" role="main" {%- if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {{ xGovukMasthead({
-      inverse: true,
+      inverse: inverseMasthead,
       title: {
         html: title | smart
       } if title,

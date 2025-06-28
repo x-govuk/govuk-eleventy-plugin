@@ -2,7 +2,7 @@
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {{ govukServiceNavigation({
-  classes: "app-service-navigation" + (" govuk-service-navigation--inverse" if inverseServiceNavigation) + (" " + params.classes if params.classes),
+  classes: "app-service-navigation" + (" govuk-service-navigation--inverse" if inverseMasthead) + (" " + params.classes if params.classes),
   attributes: params.attributes,
   ariaLabel: params.ariaLabel,
   menuButtonText: params.menuButtonText,

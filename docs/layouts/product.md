@@ -31,6 +31,11 @@ In addition to [common front matter options](/layouts#common-front-matter-option
   ],
   rows: [
     [
+      { text: "inverseMasthead" },
+      { text: "boolean" },
+      { text: "Use the masthead with a dark background. Defaults to `true`" }
+    ],
+    [
       { text: "startButton" },
       { text: "object" },
       { text: "Start button. Appears below the title and any description." }
