@@ -9,6 +9,7 @@ startButton:
 image:
   src: /assets/product-illustration.svg
   alt: Eleventy’s possum mascot hanging on a red balloon and floating above a laptop.
+  hideOnMobile: true
 related:
   sections:
     - title: Other example layouts
