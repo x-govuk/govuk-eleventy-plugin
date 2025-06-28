@@ -59,6 +59,11 @@ In addition to [common front matter options](/layouts#common-front-matter-option
       { text: "image.alt" },
       { text: "string" },
       { text: "Alternative text for product image." }
+    ],
+    [
+      { text: "image.hideOnMobile" },
+      { text: "boolean" },
+      { text: "When true, the image is hidden on tablet breakpoint and below." }
     ]
   ]
 }) }}
