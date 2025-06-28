@@ -111,6 +111,10 @@
       "import": "./src/filters/index.js",
       "module-sync": "./src/filters/index.js"
     },
+    "./templates": {
+      "import": "./src/templates/index.js",
+      "module-sync": "./src/templates/index..js"
+    },
     "./utils": {
       "import": "./src/utils.js",
       "module-sync": "./src/utils.js"
