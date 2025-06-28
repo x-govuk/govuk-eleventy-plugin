@@ -5,20 +5,15 @@
 {% block main %}
   <main id="main-content" role="main" {%- if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {{ xGovukMasthead({
+      inverse: true,
       title: {
         html: title | smart
       } if title,
       description: {
         html: description | markdown("inline") | noOrphans
       } if description,
-      startButton: {
-        href: startButton.href,
-        text: startButton.text
-      } if startButton,
-      image: {
-        alt: image.alt,
-        src: image.src
-      } if image,
+      startButton: startButton,
+      image: image,
       breadcrumbs: {
         classes: "govuk-!-display-none-print",
         items: breadcrumbItems
