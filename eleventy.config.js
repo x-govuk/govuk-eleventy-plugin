@@ -51,8 +51,7 @@ export default function (eleventyConfig) {
           }
         ]
       }
-    },
-    rebrand: true
+    }
   })
 
   // Collections
