@@ -34,6 +34,11 @@ In addition to [common front matter options](/layouts#common-front-matter-option
       { text: "sectionKey" },
       { text: "string" },
       { text: "Parent navigation key (usually a page title) to show items below in the sub navigation. Default is `homeKey` value provided in [plugin options](/options)." | markdown }
+    ],
+    [
+      { text: "showPagination" },
+      { text: "boolean" },
+      { text: "Show previous and next links." }
     ]
   ]
 }) }}
