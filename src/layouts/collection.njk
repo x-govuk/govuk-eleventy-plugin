@@ -22,11 +22,11 @@
   <section class="govuk-grid-column-two-thirds-from-desktop">
     {{ appProseScope(content) if content }}
 
-    {% if paginationHeading %}
-      <h2 class="govuk-heading-l govuk-!-font-size-27">
-        {{ paginationHeading }}
-      </h2>
-    {% endif %}
+    {{ appHeading({
+      level: 2,
+      size: "l",
+      title: paginationHeading
+    }) if paginationHeading }}
 
     {{ appDocumentList({
       headingLevel: 3 if paginationHeading else 2,

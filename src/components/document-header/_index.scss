@@ -8,7 +8,7 @@
     @include govuk-font($size: 16, $line-height: 1.5);
   }
 
-  .app-document-header__description {
+  .app-document-header > .govuk-body-l {
     max-width: 30em;
   }
 }
