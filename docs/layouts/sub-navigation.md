@@ -22,6 +22,7 @@ Page content
 
 In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
 
-| Name       | Type   | Description                                                                                                                                                              |
-| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| sectionKey | string | Parent navigation key (typically a page title) to show items below in the sub navigation (default is `homeKey` value provided in [plugin options](/get-started/options)) |
+| Name           | Type    | Description                                                                                                                                                              |
+| -------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| sectionKey     | string  | Parent navigation key (typically a page title) to show items below in the sub navigation (default is `homeKey` value provided in [plugin options](/get-started/options)) |
+| showPagination | boolean | Show previous/next pagination links at the foot of the page                                                                                                              |

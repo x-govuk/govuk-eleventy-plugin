@@ -18,4 +18,8 @@ title: Page title
 Page content
 ```
 
-Use [common front matter options](/layouts/front-matter-options) to customise which items and content appear within a page.
+In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
+
+| Name           | Type    | Description                                                 |
+| -------------- | ------- | ----------------------------------------------------------- |
+| showPagination | boolean | Show previous/next pagination links at the foot of the page |
