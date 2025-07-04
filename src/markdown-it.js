@@ -74,8 +74,8 @@ export function md(options = {}) {
       }
     })
 
-  if(options?.markdownIt?.configure) {
-    options.markdownIt.configure(md);
+  if (options?.markdownIt?.configure) {
+    options.markdownIt.configure(md)
   }
 
   return md
