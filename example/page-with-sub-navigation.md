@@ -3,6 +3,7 @@ layout: sub-navigation
 caption: Get started
 title: Authentication
 order: 2
+showPagination: true
 related:
   sections:
     - title: Other example layouts
