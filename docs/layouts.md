@@ -50,6 +50,11 @@ Layouts can accept the following [front matter data](https://www.11ty.dev/docs/d
       { text: "Common title page sits under in sub navigation." | markdown }
     ],
     [
+      { text: "caption" },
+      { text: "string" },
+      { text: "Heading caption that sits above the page title." }
+    ],
+    [
       { text: "description" },
       { text: "string" },
       { text: "Page description." }
@@ -182,6 +187,7 @@ For example, to show a notification banner at the top of each page that uses the
   }) if reviewed and reviewAgain }}
 
   {{ appDocumentHeader({
+    caption: caption,
     title: title,
     description: description
   }) }}
