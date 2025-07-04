@@ -31,6 +31,11 @@ All layouts can accept the following [front matter data](https://www.11ty.dev/do
       { text: "Content for aside. Accepts Markdown." }
     ],
     [
+      { text: "caption" },
+      { text: "string" },
+      { text: "Heading caption that sits above the page title" }
+    ],
+    [
       { text: "description" },
       { text: "string" },
       { text: "Page description" }
