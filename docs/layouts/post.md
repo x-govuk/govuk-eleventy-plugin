@@ -61,6 +61,11 @@ In addition to [common front matter options](/layouts#common-front-matter-option
       { text: "URL for website of post author." }
     ],
     [
+      { text: "collection" },
+      { text: "string" },
+      { text: "Name of collection to show previous and next links for." }
+    ],
+    [
       { text: "date" },
       { text: "string" },
       { text: "Date post was published using the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601)." | markdown }

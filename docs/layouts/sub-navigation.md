@@ -31,6 +31,11 @@ In addition to [common front matter options](/layouts#common-front-matter-option
   ],
   rows: [
     [
+      { text: "collection" },
+      { text: "string" },
+      { text: "Name of collection to show previous and next links for." }
+    ],
+    [
       { text: "sectionKey" },
       { text: "string" },
       { text: "Parent navigation key (usually a page title) to show items below in the sub navigation. Default is `homeKey` value provided in [plugin options](/options)." | markdown }
