@@ -22,6 +22,14 @@
     </div>
 
     <div class="govuk-grid-column-two-thirds-from-desktop">
+      {{ appMetadata({
+        date: date,
+        modified: modified,
+        author: author,
+        authors: authors,
+        tags: tags
+      }) }}
+
       {% call appProseScope() %}
         {% if image -%}
           <figure>

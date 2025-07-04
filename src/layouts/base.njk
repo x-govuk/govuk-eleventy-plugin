@@ -36,8 +36,9 @@
 {% from "components/footer/macro.njk" import appFooter %}
 {% from "components/header/macro.njk" import appHeader with context %}
 {% from "components/heading/macro.njk" import appHeading %}
-{% from "components/service-navigation/macro.njk" import appServiceNavigation with context %}
+{% from "components/metadata/macro.njk" import appMetadata %}
 {% from "components/prose-scope/macro.njk" import appProseScope %}
+{% from "components/service-navigation/macro.njk" import appServiceNavigation with context %}
 
 {% block headIcons %}
   {%- if options.icons.shortcut %}<link rel="icon" href="{{ options.icons.shortcut }}" sizes="any">{% endif %}

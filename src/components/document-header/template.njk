@@ -1,47 +1,10 @@
 {% from "components/heading/macro.njk" import appHeading %}
 
-{%- macro _authorLink(author) -%}
-  {%- if author.url -%}
-    <a class="govuk-link" href="{{ author.url }}">{{ author.name }}</a>
-  {%- else -%}
-    {{- author.name or author -}}
-  {%- endif -%}
-{% endmacro -%}
-
 <header class="app-document-header">
   {{ appHeading({
     caption: params.caption,
     title: params.title,
     description: params.description
   }) }}
-
-  {% if params.date or params.modified or params.authors or params.author or params.tags %}
-    <p class="app-document-header__metadata">
-      {%- if params.authors -%}
-        <span class="govuk-visually-hidden">Posted by</span>
-        {%- for author in params.authors -%}
-          {{- " and " if loop.last else (", " if not loop.first) -}}
-          {{- _authorLink(author) -}}
-        {%- endfor -%}
-        <span aria-hidden="true">&ensp;•&ensp;</span>
-      {%- elif params.author -%}
-        {{- _authorLink(params.author) -}}
-        <span aria-hidden="true">&ensp;•&ensp;</span>
-      {%- endif -%}
-      {%- if params.date -%}
-        <span class="govuk-visually-hidden">Posted on </span><time datetime="{{ params.date | isoDate }}">{{ params.date | govukDate}}</time>
-      {%- endif -%}
-      {%- if params.modified -%}
-        <span aria-hidden="true">&ensp;•&ensp;</span>Last updated <time datetime="{{ params.modified | isoDate }}">{{ params.modified | govukDate }}</time>
-      {%- endif -%}
-      {%- if params.tags | length > 0 -%}
-        <span aria-hidden="true">&ensp;•&ensp;</span>Tags:
-        {%- for tag in params.tags %}
-          <a href="/tags/{{ tag | slug }}" class="govuk-link">{{ tag }}</a>
-          {%- if not loop.last %}, {% endif %}
-        {%- endfor -%}
-      {%- endif -%}
-    </p>
-  {% endif %}
 </header>
 
