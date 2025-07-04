@@ -131,6 +131,11 @@ export default function(eleventyConfig) {
       { text: "footer" },
       { text: "object" },
       { text: "See [footer options](#footer-options)." | markdown }
+    ],
+    [
+      { text: "markdownIt" },
+      { text: "object" },
+      { text: "See [markdown-it options](#markdown-it-options)." | markdown }
     ]
   ]
 }) }}
@@ -268,6 +273,31 @@ Alongside [options available for the footer component](https://design-system.ser
       { text: "logo" },
       { text: "boolean" },
       { text: "Show logo in rebranded footer (default is `true`)." | markdown }
+    ]
+  ]
+}) }}
+
+## markdown-it options
+
+The following options can be used to customise the markdown-it parser:
+
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    { text: "Name" },
+    { text: "Type" },
+    { text: "Description" }
+  ],
+  rows: [
+    [
+      { text: "options" },
+      { text: "object" },
+      { text: "Override the default configuration options when initialising the markdown it options. See [markdown-it documentation](https://markdown-it.github.io/markdown-it/#MarkdownIt.new) for the available options." | markdown }
+    ],
+    [
+      { text: "configure" },
+      { text: "function" },
+      { text: "This will be passed the initialised markdown-it parser instance, e.g. to configure additional plugins. e.g.\n\n```javascript\n{\n    markdownIt: {\n        configure(md) {\n            md.use(myPlugin)\n        }\n    }\n}\n```" | markdown }
     ]
   ]
 }) }}
