@@ -16,5 +16,20 @@
 
   {{ appProseScope(content) if content }}
 
+  {% if showPagination %}
+    {% set previous = collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | getPreviousNavigationItem(page.url) %}
+    {% set next = collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | getNextNavigationItem(page.url) %}
+    {{ govukPagination({
+      previous: {
+        labelText: previous.title,
+        href: previous.url
+      } if previous,
+      next: {
+        labelText: next.title,
+        href: next.url
+      } if next
+    }) }}
+  {% endif %}
+
   {% include "layouts/shared/related.njk" %}
 {% endblock %}
