@@ -8,6 +8,7 @@ image:
   alt: High angle photo of assorted-colour plastic balls.
   caption: Photo by [Greyson Joralemon](https://unsplash.com/@greysonjoralemon) on [Unsplash](https://unsplash.com/photos/9IBqihqhuHc)
   opengraphImage: true
+showPagination: true
 author:
   - name: Rod Gandini
     url: '#'
