@@ -1,3 +1,5 @@
+{% from "components/heading/macro.njk" import appHeading %}
+
 {%- macro _authorLink(author) -%}
   {%- if author.url -%}
     <a class="govuk-link" href="{{ author.url }}">{{ author.name }}</a>
@@ -7,14 +9,11 @@
 {% endmacro -%}
 
 <header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    {{ params.title | smart }}
-  </h1>
-  {% if params.description %}
-    <p class="app-document-header__description govuk-body-l">
-      {{ params.description | markdown("inline") }}
-    </p>
-  {% endif %}
+  {{ appHeading({
+    caption: params.caption,
+    title: params.title,
+    description: params.description
+  }) }}
 
   {% if params.date or params.modified or params.authors or params.author or params.tags %}
     <p class="app-document-header__metadata">
