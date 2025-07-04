@@ -8,6 +8,8 @@ related:
     - items:
       - text: Markdown Guide
         href: https://www.markdownguide.org
+      - text: Options for customising markdown parsing
+        href: ../options/#markdown-it-options
 ---
 
 [[toc]]
