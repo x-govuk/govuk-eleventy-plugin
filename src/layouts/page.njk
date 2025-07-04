@@ -16,5 +16,20 @@
 
   {{ appProseScope(content) if content }}
 
+  {% if collection %}
+    {% set previous = collections[collection] | getPreviousCollectionItem %}
+    {% set next = collections[collection] | getNextCollectionItem %}
+    {{ govukPagination({
+      previous: {
+        labelText: previous.data.title,
+        href: previous.url
+      } if previous,
+      next: {
+        labelText: next.data.title,
+        href: next.url
+      } if next
+    }) }}
+  {% endif %}
+
   {% include "layouts/shared/related.njk" %}
 {% endblock %}

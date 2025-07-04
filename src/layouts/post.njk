@@ -42,6 +42,21 @@
 
         {{ content }}
       {% endcall %}
+
+      {% if collection %}
+        {% set previous = collections[collection] | getPreviousCollectionItem %}
+        {% set next = collections[collection] | getNextCollectionItem %}
+        {{ govukPagination({
+          previous: {
+            labelText: previous.data.title,
+            href: previous.url
+          } if previous,
+          next: {
+            labelText: next.data.title,
+            href: next.url
+          } if next
+        }) }}
+      {% endif %}
     </div>
 
     {% if aside or related %}
