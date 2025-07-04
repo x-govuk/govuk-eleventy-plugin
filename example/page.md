@@ -1,6 +1,8 @@
 ---
 layout: page
+caption: Get started
 title: About this API
+description: The Apply for a juggling licence REST API is designed to make interacting with the licencing server quick and easy.
 order: 1
 related:
   sections:
