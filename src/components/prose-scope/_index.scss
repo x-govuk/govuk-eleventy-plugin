@@ -4,6 +4,10 @@
   .app-prose-scope {
     @include govuk-responsive-margin(8, "bottom");
 
+    &:has(+ .govuk-pagination) {
+      @include govuk-responsive-margin(4, "bottom");
+    }
+
     > *:first-child {
       margin-top: 0;
     }

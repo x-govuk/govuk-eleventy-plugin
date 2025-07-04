@@ -13,4 +13,8 @@ export { markdown } from './markdown.js'
 export { noOrphans } from './no-orphans.js'
 export { pretty } from './pretty.js'
 export { smart } from './smart.js'
+export {
+  getNextNavigationItem,
+  getPreviousNavigationItem
+} from './navigation.js'
 export { tokenize } from './tokenize.js'
