@@ -17,4 +17,23 @@ title: Page title
 Page content
 ```
 
-Use [common front matter options](/layouts/front-matter-options) to customise which items and content appear within a page.
+In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{{ govukTable({
+  caption: "Page front matter options",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    { text: "Name" },
+    { text: "Type" },
+    { text: "Description" }
+  ],
+  rows: [
+    [
+      { text: "showPagination" },
+      { text: "boolean" },
+      { text: "Show previous and next links." }
+    ]
+  ]
+}) }}

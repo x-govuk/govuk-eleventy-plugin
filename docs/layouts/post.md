@@ -96,6 +96,11 @@ In addition to [common front matter options](/layouts/front-matter-options), thi
       { text: "Date post was updated using the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601)" | markdown }
     ],
     [
+      { text: "showPagination" },
+      { text: "boolean" },
+      { text: "Show previous and next links." }
+    ],
+    [
       { text: "tags" },
       { text: "Array" },
       { text: "List of tags post relates to" }
