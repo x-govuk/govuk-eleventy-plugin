@@ -31,7 +31,8 @@ export function md(options = {}) {
     highlight,
     html: true,
     linkify: false,
-    typographer: true
+    typographer: true,
+    ...(options?.markdownIt?.options ?? {})
   }
 
   const md = new MarkdownIt(opts)
@@ -72,6 +73,10 @@ export function md(options = {}) {
         return '</nav>'
       }
     })
+
+  if(options?.markdownIt?.configure) {
+    options.markdownIt.configure(md);
+  }
 
   return md
 }

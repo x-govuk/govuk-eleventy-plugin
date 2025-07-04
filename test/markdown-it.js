@@ -14,6 +14,26 @@ describe('markdown-it', () => {
     assert.equal(options.typographer, true)
   })
 
+  it('Uses provided configuration overrides', () => {
+    const pluginOptions = {
+      markdownIt: {
+        options: {
+          breaks: false,
+          langPrefix: 'lang-'
+        }
+      }
+    }
+
+    const { options } = md(pluginOptions)
+
+    assert.equal(options.breaks, false)
+    assert.equal(typeof options.highlight, 'function')
+    assert.equal(options.html, true)
+    assert.equal(options.linkify, false)
+    assert.equal(options.typographer, true)
+    assert.equal(options.langPrefix, 'lang-')
+  })
+
   it('Renders anchor heading permalinks when option enabled', () => {
     const result = md({ headingPermalinks: true }).render('# Heading')
 
@@ -53,5 +73,23 @@ describe('markdown-it', () => {
     const result = md().render('|A|B|\n|-|-|\n|1|2|')
 
     assert.match(result, /<table tabindex="0"/)
+  })
+
+  it('Allows configuring additional plugins', () => {
+    const plugin = (md) => {
+      const { rules } = md.renderer
+      rules.dl_open = () => '<dl class="govuk-summary-list">\n'
+    }
+
+    const options = {
+      markdownIt: {
+        configure(md) {
+          md.use(plugin)
+        }
+      }
+    }
+    const result = md(options).render('Term\n: Definition')
+
+    assert.match(result, /<dl class="govuk-summary-list"/)
   })
 })
