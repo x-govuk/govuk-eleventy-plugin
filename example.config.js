@@ -11,7 +11,8 @@ export default function (eleventyConfig) {
     serviceNavigation: {
       serviceName: 'Apply for a juggling licence',
       serviceUrl: '/product-page'
-    }
+    },
+    useMarkdownHeaderAsTitle: true,
   })
 
   // Passthrough

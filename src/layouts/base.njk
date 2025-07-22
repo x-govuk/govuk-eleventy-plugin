@@ -11,6 +11,7 @@
     from the page metadata or else fallback to the generic one from options. -#}
 {% set opengraphImage = image if image.opengraphImage else opengraphImage %}
 {% set opengraphImageUrl = (opengraphImage.src | canonicalUrl) if opengraphImage else options.opengraphImageUrl %}
+{% set useMarkdownHeaderAsTitle = useMarkdownHeaderAsTitle | default(options.useMarkdownHeaderAsTitle) %}
 
 {# Pagination #}
 {% set pageNumber = pagination.pageNumber + 1 %}
