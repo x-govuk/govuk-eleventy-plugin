@@ -1,4 +1,4 @@
-import { getNavigationKey, getNavigationParent } from '../utils.js'
+import { getTitle, getNavigationKey, getNavigationParent } from '../utils.js'
 
 /**
  * Set sensible defaults for eleventyNavigation
@@ -6,6 +6,7 @@ import { getNavigationKey, getNavigationParent } from '../utils.js'
  * @see {@link https://www.11ty.dev/docs/plugins/navigation/}
  */
 export const eleventyComputed = {
+  title: (data) => getTitle(data),
   eleventyNavigation: {
     key: (data) => getNavigationKey(data),
     parent: (data) => getNavigationParent(data),

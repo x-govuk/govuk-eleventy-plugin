@@ -54,4 +54,52 @@ describe('markdown-it', () => {
 
     assert.match(result, /<table tabindex="0"/)
   })
+
+  it('Does not render headings if options.useMarkdownHeaderAsTitle is true', () => {
+    // arrange
+    const options = { useMarkdownHeaderAsTitle: true } // global options
+    const frontMatter = { options } // page front matter
+
+    // act
+    const result = md().render('# Heading', frontMatter)
+
+    // assert
+    assert.equal(result, '')
+  })
+
+  it('Renders headings if options.useMarkdownHeaderAsTitle is false', () => {
+    // arrange
+    const options = { useMarkdownHeaderAsTitle: false } // global options
+    const frontMatter = { options } // page front matter
+
+    // act
+    const result = md().render('# Heading', frontMatter)
+
+    // assert
+    assert.match(result, /<h1 id="heading" tabindex="-1" class="govuk-heading-xl"\>Heading/)
+  })
+
+  it('Renders headings if front matter useMarkdownHeaderAsTitle is false', () => {
+    // arrange
+    const options = { useMarkdownHeaderAsTitle: true } // global options
+    const frontMatter = { options,  useMarkdownHeaderAsTitle: false } // page front matter
+
+    // act
+    const result = md().render('# Heading', frontMatter)
+
+    // assert
+    assert.match(result, /<h1 id="heading" tabindex="-1" class="govuk-heading-xl"\>Heading/)
+  })
+
+  it('Does not render headings if front matter useMarkdownHeaderAsTitle is true', () => {
+    // arrange
+    const options = { useMarkdownHeaderAsTitle: false } // global options
+    const frontMatter = { options, useMarkdownHeaderAsTitle: true } // page front matter
+
+    //act 
+    const result = md().render('# Heading', frontMatter)
+
+    // assert
+    assert.equal(result, '')
+  })
 })

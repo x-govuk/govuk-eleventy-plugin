@@ -19,7 +19,8 @@ const defaults = {
   rebrand: true,
   stylesheets: [],
   titleSuffix: 'GOV.UK',
-  url: false
+  url: false,
+  useMarkdownHeaderAsTitle: false,
 }
 
 export function defaultPluginOptions(options, pathPrefix) {

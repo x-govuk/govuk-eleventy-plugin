@@ -17,6 +17,7 @@ import markdownItTableOfContents from 'markdown-it-table-of-contents'
 import { defListRules } from './markdown-it/deflist.js'
 import { footnotesRules } from './markdown-it/footnote.js'
 import { tableRules } from './markdown-it/table.js'
+import { headingRules } from './markdown-it/heading.js'
 
 /**
  * Configure markdown-it
@@ -72,6 +73,7 @@ export function md(options = {}) {
         return '</nav>'
       }
     })
+    .use(headingRules)
 
   return md
 }
