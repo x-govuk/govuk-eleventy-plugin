@@ -1,6 +1,5 @@
 ---
 layout: page
-title: About this API
 order: 1
 related:
   sections:
@@ -20,6 +19,7 @@ eleventyComputed:
     content: |
       This is an example page using the `page` layout. You can [view the source used to create this page on GitHub]({{ viewSource }}).
 ---
+# About this API
 
 Once a juggler has submitted their application via the Apply service, the application will become available over the API.
 
