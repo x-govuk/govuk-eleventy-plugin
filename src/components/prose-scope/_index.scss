@@ -61,6 +61,7 @@
       bottom: -0.4em;
     }
 
+    // Use sensible defaults for embedded media
     iframe,
     img,
     video {
@@ -78,7 +79,7 @@
 
       // Show outline around linked images within figures
       img {
-        display: block;
+        display: inline-block;
         outline: 1px solid rgba($govuk-border-colour, 0.5);
       }
 
@@ -90,6 +91,12 @@
         &:active {
           outline-color: $govuk-link-active-colour;
         }
+      }
+
+      > .govuk-link:focus img {
+        outline: none;
+
+        @include govuk-focused-box;
       }
 
       :focus & {
