@@ -39,7 +39,7 @@ export class SearchElement extends HTMLElement {
     return searchIndex.filter((item) => {
       const regex = new RegExp(searchQuery, 'gi')
       return (
-        item.title.match(regex) ||
+        item?.title?.match(regex) ||
         item?.description?.match(regex) ||
         item?.tokens?.match(regex)
       )
@@ -89,26 +89,37 @@ export class SearchElement extends HTMLElement {
 
   suggestionTemplate(result) {
     if (result) {
-      const element = document.createElement('span')
-      element.textContent = result.title
+      const container = document.createElement('span')
 
-      if (result.hasFrontMatterDate || result.section) {
+      // Add title of result to container
+      const title = document.createElement('span')
+      title.className = 'app-search__option-title'
+      title.textContent = result.title
+
+      container.appendChild(title)
+
+      // Add section and/or data to container
+      if (result.date || result.section) {
         const section = document.createElement('span')
-        section.className = 'app-search--section'
+        section.className = 'app-search__option-metadata'
 
         section.innerHTML =
-          result.hasFrontMatterDate && result.section
+          result.date && result.section
             ? `${result.section}<br>${result.date}`
             : result.section || result.date
 
-        element.appendChild(section)
+        container.appendChild(section)
       }
 
-      return element.innerHTML
+      return container.innerHTML
     }
   }
 
   async connectedCallback() {
+    if (!this.searchIndexUrl) {
+      return
+    }
+
     await this.fetchSearchIndex(this.searchIndexUrl)
 
     // Remove fallback link to sitemap
@@ -120,21 +131,21 @@ export class SearchElement extends HTMLElement {
     const search = this.searchTemplate()
     this.append(search)
 
-    accessibleAutocomplete({
+    return accessibleAutocomplete({
       element: search,
       id: this.searchInputId,
       inputClasses: 'govuk-input',
       cssNamespace: 'app-search',
       displayMenu: 'overlay',
       minLength: 2,
-      placeholder: this.searchLabel,
-      confirmOnBlur: false,
       autoselect: true,
+      confirmOnBlur: false,
+      placeholder: this.searchLabel,
       source: this.renderResults.bind(this),
       onConfirm: this.handleOnConfirm,
       templates: {
         inputValue: this.inputValueTemplate,
-        suggestion: this.suggestionTemplate
+        suggestion: (value) => this.suggestionTemplate(value)
       },
       tNoResults: this.handleNoResults.bind(this)
     })
