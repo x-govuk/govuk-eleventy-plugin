@@ -1,4 +1,4 @@
-{% from "components/site-search/macro.njk" import appSiteSearch with context -%}
+{% from "components/search/macro.njk" import appSearch with context -%}
 {% from "macros/x-govuk-logo.njk" import xGovukLogo -%}
 {% from "govuk/macros/logo.njk" import govukLogo -%}
 
@@ -35,6 +35,6 @@
         {% endif %}
       </a>
     </div>
-    {{ appSiteSearch(params.search) if params.search.indexPath | indent(4) }}
+    {{ appSearch(params.search) if params.search.indexPath | indent(4) }}
   </div>
 </header>

@@ -5,8 +5,8 @@
 
 $_icon-size: 40px;
 
-@include govuk-exports("govuk-eleventy-plugin/component/site-search") {
-  .app-site-search {
+@include govuk-exports("govuk-eleventy-plugin/component/search") {
+  .app-search {
     margin-left: auto;
 
     &:defined {
@@ -21,7 +21,7 @@ $_icon-size: 40px;
     }
   }
 
-  .app-site-search__link {
+  .app-search__link {
     display: inline-block;
     padding-bottom: govuk-spacing(1);
     padding-top: govuk-spacing(1);
@@ -38,12 +38,12 @@ $_icon-size: 40px;
       @include govuk-focused-text;
     }
 
-    .app-site-search:defined & {
+    .app-search:defined & {
       display: none;
     }
   }
 
-  .app-site-search__wrapper {
+  .app-search__wrapper {
     background-color: govuk-colour("white");
     display: block;
     position: relative;
@@ -57,20 +57,20 @@ $_icon-size: 40px;
     }
   }
 
-  .app-site-search__hint,
-  .app-site-search__input {
+  .app-search__hint,
+  .app-search__input {
     appearance: none;
     border-color: transparent;
     padding-left: $_icon-size - govuk-spacing(1);
     width: 100%;
   }
 
-  .app-site-search__hint {
+  .app-search__hint {
     color: govuk-colour("mid-grey");
     position: absolute;
   }
 
-  .app-site-search__input {
+  .app-search__input {
     background-color: transparent;
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'><path d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='%23505a5f'></path></svg>");
     background-position: center left -2px;
@@ -83,20 +83,20 @@ $_icon-size: 40px;
     }
   }
 
-  .app-site-search__input:focus,
-  .app-site-search__input--focused {
+  .app-search__input:focus,
+  .app-search__input--focused {
     border-color: $govuk-focus-text-colour;
     box-shadow: inset 0 0 0 $govuk-border-width-form-element;
     outline: $govuk-focus-width solid $govuk-focus-colour;
     outline-offset: 0;
   }
 
-  .app-site-search__input--show-all-values {
+  .app-search__input--show-all-values {
     cursor: pointer;
     padding: govuk-spacing(1) 34px govuk-spacing(1) govuk-spacing(1);
   }
 
-  .app-site-search__dropdown-arrow-down {
+  .app-search__dropdown-arrow-down {
     display: inline-block;
     height: 24px;
     position: absolute;
@@ -106,7 +106,7 @@ $_icon-size: 40px;
     z-index: -1;
   }
 
-  .app-site-search__menu {
+  .app-search__menu {
     background-color: govuk-colour("white");
     border-top: 0;
     color: govuk-colour("black");
@@ -117,15 +117,15 @@ $_icon-size: 40px;
     width: 100%;
   }
 
-  .app-site-search__menu--visible {
+  .app-search__menu--visible {
     display: block;
   }
 
-  .app-site-search__menu--hidden {
+  .app-search__menu--hidden {
     display: none;
   }
 
-  .app-site-search__menu--overlay {
+  .app-search__menu--overlay {
     box-shadow: rgba(govuk-colour("black"), 0.25) 0 2px 6px;
     left: 0;
     position: absolute;
@@ -133,11 +133,11 @@ $_icon-size: 40px;
     z-index: 100;
   }
 
-  .app-site-search__menu--inline {
+  .app-search__menu--inline {
     position: relative;
   }
 
-  .app-site-search__option {
+  .app-search__option {
     border-bottom: solid govuk-colour("mid-grey");
     border-width: 1px 0;
     cursor: pointer;
@@ -158,12 +158,12 @@ $_icon-size: 40px;
     }
   }
 
-  .app-site-search__option--odd {
+  .app-search__option--odd {
     background-color: #fafafa;
   }
 
-  .app-site-search__option--focused,
-  .app-site-search__option:hover {
+  .app-search__option--focused,
+  .app-search__option:hover {
     background-color: $govuk-link-colour;
     border-color: $govuk-link-colour;
     color: govuk-colour("white");
@@ -171,24 +171,24 @@ $_icon-size: 40px;
     outline: 3px solid transparent;
     outline-offset: -3px;
 
-    .app-site-search--section {
+    .app-search--section {
       color: inherit;
     }
   }
 
-  .app-site-search__option--no-results {
+  .app-search__option--no-results {
     background-color: govuk-colour("white");
     color: govuk-colour("dark-grey");
     cursor: not-allowed;
   }
 
-  .app-site-search__hint,
-  .app-site-search__input,
-  .app-site-search__option {
+  .app-search__hint,
+  .app-search__input,
+  .app-search__option {
     @include govuk-font($size: 19);
   }
 
-  .app-site-search--section {
+  .app-search--section {
     color: $govuk-secondary-text-colour;
     display: block;
 

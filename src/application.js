@@ -1,9 +1,9 @@
 import { initAll as GOVUKFrontend } from 'govuk-frontend'
 
-import { SiteSearchElement } from './components/site-search/site-search.js'
+import { SearchElement } from './components/search/search.js'
 
 // Initiate custom elements
-customElements.define('site-search', SiteSearchElement)
+customElements.define('app-search', SearchElement)
 
 // Initiate scripts on page load
 document.addEventListener('DOMContentLoaded', () => {
