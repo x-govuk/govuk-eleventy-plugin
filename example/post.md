@@ -24,7 +24,7 @@ related:
         - text: Page with sub navigation
           href: /page-with-sub-navigation
         - text: Product page
-          href: /product-page
+          href: /
 tags:
   - design
   - juggling

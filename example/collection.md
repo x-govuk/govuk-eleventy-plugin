@@ -43,7 +43,7 @@ related:
         - text: Post
           href: /post
         - text: Product page
-          href: /product-page
+          href: /
 eleventyComputed:
   aside:
     title: Example layout

@@ -10,7 +10,7 @@ export default function (eleventyConfig) {
       'https://x-govuk.github.io/govuk-eleventy-plugin/example/',
     serviceNavigation: {
       serviceName: 'Apply for a juggling licence',
-      serviceUrl: '/product-page'
+      serviceUrl: '/'
     },
     footer: {
       meta: {
