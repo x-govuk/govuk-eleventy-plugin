@@ -1,5 +1,4 @@
 ---
-layout: sub-navigation
 order: 3
 title: Design
 description: Replace the crown, GOV.UK logotype and GDS Transport typeface.

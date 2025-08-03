@@ -1,10 +1,10 @@
 ---
-order: 2
 title: Page with sub navigation
 description: Layout with sub navigation.
+theme: Content presentation
 ---
 
-> View an <a href="/example/page-with-sub-navigation" target="_blank">example page that uses this layout (opens in a new tab)</a>
+> View an [example page that uses this layout (opens in a new tab)](/example/page-with-sub-navigation){target=example}
 
 This layout offers a page with sub navigation, appearing to the left of content on wider viewports, and above on narrower ones.
 
@@ -19,10 +19,12 @@ title: Page title
 Page content
 ```
 
-In addition to [common front matter options](/layouts#common-front-matter-options), this layout also accepts the following options:
+In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 {{ govukTable({
+  caption: "Page with sub navigation front matter options",
+  captionClasses: "govuk-table__caption--m",
   firstCellIsHeader: true,
   head: [
     { text: "Name" },
@@ -33,7 +35,7 @@ In addition to [common front matter options](/layouts#common-front-matter-option
     [
       { text: "sectionKey" },
       { text: "string" },
-      { text: "Parent navigation key (usually a page title) to show items below in the sub navigation. Default is `homeKey` value provided in [plugin options](/options)." | markdown }
+      { text: "Parent navigation key (typically a page title) to show items below in the sub navigation (default is `homeKey` value provided in [plugin options](/get-started/options))" | markdown }
     ]
   ]
 }) }}

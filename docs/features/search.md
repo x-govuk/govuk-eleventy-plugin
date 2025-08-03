@@ -1,8 +1,6 @@
 ---
-layout: sub-navigation
-order: 7
-title: Adding a site search
-description: Make it easier for readers to find content on your site.
+title: Search
+description: Make it easier for readers to search for content on your site.
 ---
 
 The GOV.UK Eleventy Plugin makes it easy to add search functionality to your website. Follow these instructions to enable this feature.

@@ -1,11 +1,9 @@
 ---
-layout: sub-navigation
-order: 8
-title: Adding a feed
-description: Allow people to subscribe to your posts and read them in a feed reader
+title: RSS feed
+description: Allow readers to subscribe to posts in their feed reader.
 ---
 
-You can add a feed using the [XML Atom format](<https://en.wikipedia.org/wiki/Atom_(web_standard)>) by following these instructions.
+The GOV.UK Eleventy Plugin makes it easy to a feed to your site using the [XML Atom format](<https://en.wikipedia.org/wiki/Atom_(web_standard)>). Follow these instructions to enable this feature.
 
 ## Create a feed
 

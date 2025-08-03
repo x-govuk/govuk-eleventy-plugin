@@ -35,7 +35,21 @@ export default function (eleventyConfig) {
       search: {
         indexPath: '/search.json',
         sitemapPath: '/sitemap'
-      }
+      },
+      navigation: [
+        {
+          text: 'Get started',
+          href: '/get-started/'
+        },
+        {
+          text: 'Features',
+          href: '/features/'
+        },
+        {
+          text: 'Layouts',
+          href: '/layouts/'
+        }
+      ]
     },
     footer: {
       contentLicence: {
@@ -55,24 +69,29 @@ export default function (eleventyConfig) {
   })
 
   // Collections
+  eleventyConfig.addCollection('feature', (collection) =>
+    collection
+      .getFilteredByGlob(['docs/features/*.md'])
+      .sort((a, b) => a.data?.title.localeCompare(b.data?.title))
+  )
   eleventyConfig.addCollection('layout', (collection) =>
     collection
       .getFilteredByGlob(['docs/layouts/*.md'])
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+      .sort((a, b) => a.data?.title.localeCompare(b.data?.title))
   )
   eleventyConfig.addCollection('homepage', (collection) =>
     collection
       .getFilteredByGlob([
-        'docs/options.md',
-        'docs/design.md',
+        'docs/get-started/options.md',
+        'docs/features.md',
         'docs/layouts.md'
       ])
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+      .sort((a, b) => a.data?.title.localeCompare(b.data?.title))
   )
   eleventyConfig.addCollection('upgrading', (collection) =>
     collection
       .getFilteredByGlob(['docs/upgrading/*.md'])
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+      .sort((a, b) => a.data?.title.localeCompare(b.data?.title))
   )
 
   // Global data

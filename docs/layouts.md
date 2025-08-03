@@ -1,164 +1,26 @@
 ---
 layout: sub-navigation
-order: 4
+order: 3
 title: Layouts
+sectionKey: Layouts
 description: Choose a layout to match the content you want to write.
 ---
 
-{% for page in collections.layout %}
+The GOV.UK Eleventy Plugin provides different layouts you can choose from, which you can use on different parts of your site:
+
+{% for page in collections.layout | includes("data.theme", "Content presentation") %}
 
 - [{{ page.data.title }}]({{ page.url }}) – {{ page.data.description }}
 
 {% endfor %}
 
-## Common front matter options
+The plugin also provides the following layouts used by features. It’s unlikely you will need to use these for content pages:
 
-Layouts can accept the following [front matter data](https://www.11ty.dev/docs/data-frontmatter/) to customise the appearance, content and behaviour of a layout.
+{% for page in collections.layout | includes("data.theme", "Feature layouts") %}
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{{ govukTable({
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "layout" },
-      { text: "string" },
-      { text: "Page layout." }
-    ],
-    [
-      { text: "includeInBreadcrumbs" },
-      { text: "boolean" },
-      { text: "Include page as the last item in any breadcrumbs (default is `false`)." | markdown }
-    ],
-    [
-      { text: "order" },
-      { text: "integer" },
-      { text: "Ranking of page in navigation. Lower numbers appear before pages with a higher number." }
-    ],
-    [
-      { text: "title" },
-      { text: "string" },
-      { text: "Page title." }
-    ],
-    [
-      { text: "theme" },
-      { text: "string" },
-      { text: "Common title page sits under in sub navigation." | markdown }
-    ],
-    [
-      { text: "description" },
-      { text: "string" },
-      { text: "Page description." }
-    ],
-    [
-      { text: "opengraphImage" },
-      { text: "object" },
-      { text: "Open Graph image that appears on social media networks." }
-    ],
-    [
-      { text: "opengraphImage.src" },
-      { text: "string" },
-      { text: "Path to Open Graph image. Can be a relative or absolute URL. This value overrides `opengraphImageUrl` in plugin options." | markdown }
-    ],
-    [
-      { text: "opengraphImage.alt" },
-      { text: "string" },
-      { text: "Alternative text for Open Graph image." }
-    ],
-    [
-      { text: "aside" },
-      { text: "object" },
-      { text: "Small portion of content that is indirectly related to the main content." }
-    ],
-    [
-      { text: "aside.title" },
-      { text: "string" },
-      { text: "Title for aside." }
-    ],
-    [
-      { text: "aside.content" },
-      { text: "string" },
-      { text: "Content for aside. Accepts Markdown." }
-    ],
-    [
-      { text: "related" },
-      { text: "object" },
-      { text: "Related links section. See [section](#section)." | markdown }
-    ],
-    [
-      { text: "related.sections" },
-      { text: "Array" },
-      { text: "Multiple related links sections. See [section](#section)." | markdown }
-    ]
-  ]
-}) }}
+- [{{ page.data.title }}]({{ page.url }})
 
-{{ govukTable({
-  attributes: { id: "section" },
-  caption: "Options for section",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "title" },
-      { text: "string" },
-      { text: "Title for group of related links (default is ‘Related content’)." }
-    ],
-    [
-      { text: "items" },
-      { text: "Array" },
-      { text: "See [items](#items)." | markdown }
-    ],
-    [
-      { text: "subsections" },
-      { text: "Array" },
-      { text: "Subsections containing related links." }
-    ],
-    [
-      { text: "subsections[].title" },
-      { text: "string" },
-      { text: "Title for a subsection of related links." }
-    ],
-    [
-      { text: "subsections[].items" },
-      { text: "Array" },
-      { text: "Related items in a subsection. See [items](#items)." | markdown }
-    ]
-  ]
-}) }}
-
-{{ govukTable({
-  attributes: { id: "items" },
-  caption: "Options for items",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "text" },
-      { text: "string" },
-      { text: "Title of related content." }
-    ],
-    [
-      { text: "href" },
-      { text: "string" },
-      { text: "Link for the related content." }
-    ]
-  ]
-}) }}
+{% endfor %}
 
 ## Overriding layouts
 

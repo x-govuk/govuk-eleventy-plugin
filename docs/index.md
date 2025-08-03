@@ -2,7 +2,7 @@
 homepage: true
 layout: product
 includeInBreadcrumbs: true
-description: Use this plugin for [Eleventy](https://www.11ty.dev) to spend time writing documentation, not building a website for it.
+description: Use this [Eleventy](https://www.11ty.dev) plugin to create websites that follow service manual standards. Built-in features like search, tags, and RSS feeds let you focus on writing content, not writing code.
 image:
   src: /assets/homepage-illustration.png
   alt: Eleventy’s possum mascot hanging on a red balloon and floating above a laptop.

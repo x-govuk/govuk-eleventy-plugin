@@ -1,10 +1,10 @@
 ---
-order: 1
 title: Page
 description: Simple layout designed for maximum flexibility of content.
+theme: Content presentation
 ---
 
-> View an <a href="/example/page" target="_blank">example page that uses this layout (opens in a new tab)</a>
+> View an [example page that uses this layout (opens in a new tab)](/example/page){target=example}
 
 To use this layout, make `page` the value for a page’s `layout` key:
 
@@ -17,4 +17,4 @@ title: Page title
 Page content
 ```
 
-Use [common front matter options](/layouts#common-front-matter-options) to customise which items and content appear within a page.
+Use [common front matter options](/layouts/front-matter-options) to customise which items and content appear within a page.

@@ -1,10 +1,10 @@
 ---
-order: 4
 title: Collection
 description: Layout for a paginated list of pages.
+theme: Content presentation
 ---
 
-> View an <a href="/example/collection" target="_blank">example page that uses this layout (opens in a new tab)</a>
+> View an [example page that uses this layout (opens in a new tab)](/example/collection){target=example}
 
 To use this layout, make `collection` the value for a page’s `layout` key.
 
@@ -24,10 +24,12 @@ pagination:
 Page introduction content (optional).
 ```
 
-In addition to [common front matter options](/layouts#common-front-matter-options), this layout accepts the following options:
+In addition to [common front matter options](/layouts/front-matter-options), this layout accepts the following options:
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 {{ govukTable({
+  caption: "Collection front matter options",
+  captionClasses: "govuk-table__caption--m",
   firstCellIsHeader: true,
   head: [
     { text: "Name" },
@@ -43,7 +45,7 @@ In addition to [common front matter options](/layouts#common-front-matter-option
     [
       { text: "pagination.data" },
       { text: "string" },
-      { text: "The pages that should be listed, usually a reference to a [collection](https://www.11ty.dev/docs/collections/)" | markdown }
+      { text: "Pages to list, typically a reference to a [collection](https://www.11ty.dev/docs/collections/)" | markdown }
     ],
     [
       { text: "pagination.size" },
@@ -58,7 +60,7 @@ In addition to [common front matter options](/layouts#common-front-matter-option
     [
       { text: "paginationHeading" },
       { text: "string" },
-      { text: "Heading for the list of paginated pages." }
+      { text: "Heading for the list of paginated pages" }
     ]
   ]
 }) }}

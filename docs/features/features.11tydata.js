@@ -1,8 +1,8 @@
 export default {
   eleventyNavigation: {
-    parent: 'Layouts'
+    parent: 'Features'
   },
   layout: 'sub-navigation',
-  caption: 'Layouts',
-  sectionKey: 'Layouts'
+  caption: 'Features',
+  sectionKey: 'Features'
 }

@@ -1,8 +1,7 @@
 ---
-layout: sub-navigation
-order: 11
+order: 5
 title: Upgrading
-description: Guides for upgrading to major releases with breaking changes
+description: Guides for upgrading to major releases with breaking changes.
 ---
 
 {% for page in collections.upgrading %}

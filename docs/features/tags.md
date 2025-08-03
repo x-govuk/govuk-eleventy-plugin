@@ -1,8 +1,6 @@
 ---
-layout: sub-navigation
-order: 9
-title: Adding tags
-description: Use tags to categorise posts and make it easier for readers to browse content on your site.
+title: Tags
+description: Allow readers to browse content by using tags to categorise posts.
 ---
 
 The GOV.UK Eleventy Plugin lets you use tags to categorise pages. Each post can display its list of tags, which link to a page that lists other posts with the same tag. Follow these instructions to enable this feature.

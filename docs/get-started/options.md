@@ -1,5 +1,4 @@
 ---
-layout: sub-navigation
 order: 2
 title: Options
 description: Customise the appearance and behaviour of your website.
@@ -33,19 +32,44 @@ export default function(eleventyConfig) {
   ],
   rows: [
     [
+      { text: "feedUrl" },
+      { text: "string" },
+      { text: "The URL of your website’s RSS feed. See [Adding a feed](/features/feed)." | markdown }
+    ],
+    [
+      { text: "footer" },
+      { text: "object" },
+      { text: "See [footer options](#footer-options)" | markdown }
+    ],
+    [
+      { text: "header" },
+      { text: "object" },
+      { text: "See [header options](#header-options)" | markdown }
+    ],
+    [
+      { text: "headingPermalinks" },
+      { text: "boolean" },
+      { text: "Add links to headings, making it easier to share sections of a page (default is `false`)" | markdown }
+    ],
+    [
+      { text: "homeKey" },
+      { text: "string" },
+      { text: "First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is `Home`)" | markdown }
+    ],
+    [
       { text: "icons" },
       { text: "object" },
-      { text: "Override GOV.UK icons." }
+      { text: "Override GOV.UK icons" }
     ],
     [
       { text: "icons.mask" },
       { text: "string|boolean" },
-      { text: "Override GOV.UK SVG mask icon. Use `false` to not include a mask icon." }
+      { text: "Override GOV.UK SVG mask icon. Use `false` to not include a mask icon." | markdown }
     ],
     [
       { text: "icons.shortcut" },
       { text: "string|boolean" },
-      { text: "Override GOV.UK favicon. Use `false` to not include a favicon." }
+      { text: "Override GOV.UK favicon. Use `false` to not include a favicon." | markdown }
     ],
     [
       { text: "icons.touch" },
@@ -55,32 +79,22 @@ export default function(eleventyConfig) {
     [
       { text: "opengraphImageUrl" },
       { text: "string" },
-      { text: "URL for default Open Graph share image." }
-    ],
-    [
-      { text: "headingPermalinks" },
-      { text: "boolean" },
-      { text: "Add links to headings, making it easier to share sections of a page (default is `false`)." | markdown }
-    ],
-    [
-      { text: "homeKey" },
-      { text: "string" },
-      { text: "First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is ‘Home’)." | markdown }
+      { text: "URL for default Open Graph share image" }
     ],
     [
       { text: "parentSite" },
       { text: "object" },
-      { text: "Website to show as first item in breadcrumbs." }
+      { text: "Website to show as first item in breadcrumbs" }
     ],
     [
       { text: "parentSite.url" },
       { text: "string" },
-      { text: "URL for parent site." }
+      { text: "URL for parent site" }
     ],
     [
       { text: "parentSite.name" },
       { text: "string" },
-      { text: "Name of parent site." }
+      { text: "Name of parent site" }
     ],
     [
       { text: "rebrand" },
@@ -88,49 +102,34 @@ export default function(eleventyConfig) {
       { text: "Use GOV.UK rebrand (default is `true`). This option will be removed in an upcoming release." | markdown }
     ],
     [
+      { text: "serviceNavigation" },
+      { text: "object" },
+      { text: "See [service navigation options](#service-navigation-options)" | markdown }
+    ],
+    [
       { text: "showBreadcrumbs" },
       { text: "boolean" },
-      { text: "Show breadcrumb navigation (default is `true` with nested pages)." | markdown }
+      { text: "Show breadcrumb navigation (default is `true` with nested pages)" | markdown }
     ],
     [
       { text: "stylesheets" },
       { text: "Array" },
-      { text: "Stylesheets to load after application styles." }
+      { text: "Stylesheets to load after application styles" }
     ],
     [
       { text: "themeColor" },
       { text: "string" },
-      { text: "Browser theme colour. Must be a hex value, i.e. `#0b0c0c`" | markdown }
+      { text: "Browser theme colour. Must be a hex value, i.e. `#0b0c0c`." | markdown }
     ],
     [
       { text: "titleSuffix" },
       { text: "string or boolean" },
-      { text: "Value to show at the end of the document title (default is `GOV.UK`)." | markdown }
+      { text: "Value to show at the end of the document title (default is `GOV.UK`)" | markdown }
     ],
     [
       { text: "url" },
       { text: "string" },
       { text: "The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data." }
-    ],
-    [
-      { text: "feedUrl" },
-      { text: "string" },
-      { text: "The URL of your website’s RSS feed. see [Adding a feed](/feed)." | markdown }
-    ],
-    [
-      { text: "header" },
-      { text: "object" },
-      { text: "See [header options](#header-options)." | markdown }
-    ],
-    [
-      { text: "serviceNavigation" },
-      { text: "object" },
-      { text: "See [service navigation options](#service-navigation-options)." | markdown }
-    ],
-    [
-      { text: "footer" },
-      { text: "object" },
-      { text: "See [footer options](#footer-options)." | markdown }
     ]
   ]
 }) }}
@@ -165,7 +164,7 @@ Alongside [options available for the header component](https://design-system.ser
     [
       { text: "search" },
       { text: "object" },
-      { text: "See [search options](#search-options)." | markdown }
+      { text: "See [search options](#search-options)" | markdown }
     ]
   ]
 }) }}
@@ -207,17 +206,17 @@ Follow guidance in the GOV.UK Design System about [adding other header and navig
     [
       { text: "label" },
       { text: "string" },
-      { text: "Text to show in the search field (default is ‘Search site’)." }
+      { text: "Text to show in the search field (default is `Search site`)" }
     ],
     [
       { text: "indexPath" },
       { text: "string" },
-      { text: "Path to search index file." }
+      { text: "Path to search index file" }
     ],
     [
       { text: "sitemapPath" },
       { text: "string" },
-      { text: "Path to sitemap page, shown as a fallback if the search field cannot be displayed." }
+      { text: "Path to sitemap page, shown as a fallback if the search field cannot be displayed" }
     ]
   ]
 }) }}
@@ -267,7 +266,7 @@ Alongside [options available for the footer component](https://design-system.ser
     [
       { text: "logo" },
       { text: "boolean" },
-      { text: "Show logo in rebranded footer (default is `true`)." | markdown }
+      { text: "Show logo in rebranded footer (default is `true`)" | markdown }
     ]
   ]
 }) }}

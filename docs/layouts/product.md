@@ -1,10 +1,10 @@
 ---
-order: 5
 title: Product page
 description: Layout for product and marketing pages.
+theme: Content presentation
 ---
 
-> View an <a href="/example/product-page" target="_blank">example page that uses this layout (opens in a new tab)</a>
+> View an [example page that uses this layout (opens in a new tab)](/example/){target=example}
 
 This layout, based on the component used on [GOV.UK product pages](https://github.com/alphagov/product-page-example), can be useful if you need a product or marketing page.
 
@@ -19,10 +19,12 @@ title: Page title
 Page content
 ```
 
-In addition to [common front matter options](/layouts#common-front-matter-options), this layout also accepts the following options:
+In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 {{ govukTable({
+  caption: "Product page front matter options",
+  captionClasses: "govuk-table__caption--m",
   firstCellIsHeader: true,
   head: [
     { text: "Name" },
@@ -33,7 +35,7 @@ In addition to [common front matter options](/layouts#common-front-matter-option
     [
       { text: "inverseMasthead" },
       { text: "boolean" },
-      { text: "Use the masthead with a dark background. Defaults to `true`" }
+      { text: "Use the masthead with a dark background (default is `true`)" }
     ],
     [
       { text: "startButton" },
@@ -43,12 +45,12 @@ In addition to [common front matter options](/layouts#common-front-matter-option
     [
       { text: "startButton.text" },
       { text: "string" },
-      { text: "Text for the start button (default is ‘Get started’)." }
+      { text: "Text for the start button (default is ‘Get started’)" }
     ],
     [
       { text: "startButton.href" },
       { text: "string" },
-      { text: "URL or page the start button should link to." }
+      { text: "URL or page the start button should link to" }
     ],
     [
       { text: "image" },
@@ -58,17 +60,17 @@ In addition to [common front matter options](/layouts#common-front-matter-option
     [
       { text: "image.src" },
       { text: "string" },
-      { text: "Path to product image." }
+      { text: "Path to product image" }
     ],
     [
       { text: "image.alt" },
       { text: "string" },
-      { text: "Alternative text for product image." }
+      { text: "Alternative text for product image" }
     ],
     [
       { text: "image.hideOnMobile" },
       { text: "boolean" },
-      { text: "When true, the image is hidden on tablet breakpoint and below." }
+      { text: "When true, the image is hidden on tablet breakpoint and below" }
     ]
   ]
 }) }}
