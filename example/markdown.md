@@ -1,16 +1,26 @@
 ---
-layout: sub-navigation
-order: 5
-title: Markdown
-description: A lightweight markup language that allows you to add formatting to plain text documents.
-related:
-  sections:
-    - items:
-        - text: Markdown Guide
-          href: https://www.markdownguide.org
+layout: page
+title: Markdown guide
+description: Markdown is a lightweight markup language that allows you to add formatting to plain text documents.
 ---
 
+<!-- markdownlint-disable no-inline-html -->
+
 [[toc]]
+
+## Paragraphs and line breaks
+
+To create paragraphs, use a blank line to separate one or more lines of text.
+
+| Markdown                                                                                                                                  | Rendered output                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| <pre class="app-code app-code--block govuk-!-margin-0" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre> | <p class="govuk-body">This is the first paragraph.</p><p class="govuk-body">And this is the second one.</p> |
+
+To create a line break or new line (`<br>`), end a line with 2 or more spaces, and then type return.
+
+| Markdown                                                                                                                         | Rendered output                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| <pre class="app-code app-code--block govuk-!-margin-0" tabindex="0">This is the first line.<br>And this is the second one.</pre> | <p class="govuk-body">This is the first line.<br>And this is the second one.</p> |
 
 ## Headings
 
@@ -27,43 +37,19 @@ The number of number signs you use should correspond to the heading level. For e
 | `##### Heading level 5`  | <h5 class="govuk-heading-s">Heading level 5</h5> |
 | `###### Heading level 6` | <h6 class="govuk-heading-s">Heading level 6</h6> |
 
-## Paragraphs
+## Horizontal rules
 
-To create paragraphs, use a blank line to separate one or more lines of text.
+To create a horizontal rule, use 3 or more asterisks (`***`), dashes (`---`), or underscores (`___`) on a line by themselves.
 
-| Markdown                                                                                                                                  | Rendered output                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| <pre class="app-code app-code--block govuk-!-margin-0" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre> | <p class="govuk-body">This is the first paragraph.</p><p class="govuk-body">And this is the second one.</p> |
+```markdown
+***
+---
+___
+```
 
-## Line breaks
+The rendered output of all 3 looks identical:
 
-To create a line break or new line (`<br>`), end a line with 2 or more spaces, and then type return.
-
-| Markdown                                                                                                                         | Rendered output                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| <pre class="app-code app-code--block govuk-!-margin-0" tabindex="0">This is the first line.<br>And this is the second one.</pre> | <p class="govuk-body">This is the first line.<br>And this is the second one.</p> |
-
-## Emphasis
-
-To emphasise text, add one asterisk or underscore before and after a word or phrase.
-
-> The [GDS Style Guide recommends against the use of italics](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#italics), and the GDS Transport font doesn’t provide an italic style. Use ‘single quotation marks’ if referring to a document, scheme or initiative.
-
-| Markdown                     | Rendered output                                             |
-| ---------------------------- | ----------------------------------------------------------- |
-| `This text is *emphasised*.` | <p class="govuk-body">This text is <em>emphasised</em>.</p> |
-| `This text is _emphasised_.` | <p class="govuk-body">This text is <em>emphasised</em>.</p> |
-
-## Strong emphasis
-
-To bold text, add 2 asterisks or underscores before and after a word or phrase.
-
-> The [GDS Style Guide recommends using emboldened text when referring to text from interfaces](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold) in technical documentation or instructions.
-
-| Markdown                                | Rendered output                                                              |
-| --------------------------------------- | ---------------------------------------------------------------------------- |
-| `This text is **strongly emphasised**.` | <p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p> |
-| `This text is __strongly emphasised__.` | <p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p> |
+---
 
 ## Blockquotes
 
@@ -126,8 +112,6 @@ The rendered output looks like this:
 > If your vehicle is new, you must [get an MOT test](https://www.gov.uk/getting-an-mot) by the third anniversary of its registration.
 
 ## Lists
-
-You can organize items into ordered and unordered lists.
 
 ### Ordered lists
 
@@ -195,6 +179,36 @@ If you need to start an unordered list item with a number followed by a period, 
 - 2012\. A great year!
 - I think 2009 was second best.
 
+### Description lists
+
+To create a description list, type the term on the first line. On the next line, type a colon followed by a space and the description.
+
+```markdown
+First Term
+: This is the description of the first term.
+
+Second Term
+: This is one description of the second term.
+: This is another description of the second term.
+```
+
+The rendered output looks like this:
+
+First Term
+: This is the description of the first term.
+
+Second Term
+: This is one description of the second term.
+: This is another description of the second term.
+
+### Contents list
+
+To add a table of contents, add the following Markdown where you want the list to appear on the page:
+
+```markdown
+[[toc]]
+```
+
 ## Code
 
 ### Code spans
@@ -209,23 +223,133 @@ At the command prompt, type `npm install`.
 
 ### Code blocks
 
-By default, [Eleventy doesn’t support the Markdown syntax for indented code blocks](https://www.11ty.dev/docs/languages/markdown/#indented-code-blocks) because pages can get rendered incorrectly should a layout or component include indented markup.
+By default, [Eleventy doesn’t support the Markdown syntax for indented code blocks](https://www.11ty.dev/docs/languages/markdown/#indented-code-blocks) because pages can render incorrectly should a layout or component include indented markup.
 
-To include code blocks in your documentation, use [fenced code blocks](/markdown-advanced/#fenced-code).
+To include code blocks in your documentation, you should use fenced code blocks instead. These use 3 backticks (` ``` `) or 3 tildes (`~~~`) on the lines before and after the code block.
 
-## Horizontal rules
+````markdown
+```
+{
+  "firstName": "William",
+  "lastName": "Pitt",
+  "age": 24
+}
+```
+````
 
-To create a horizontal rule, use 3 or more asterisks (`***`), dashes (`---`), or underscores (`___`) on a line by themselves.
+The rendered output looks like this:
 
-```markdown
-***
----
-___
+```text
+{
+  "firstName": "William",
+  "lastName": "Pitt",
+  "age": 24
+}
 ```
 
-The rendered output of all 3 looks identical:
+### Syntax highlighting
 
----
+This feature allows you to add color highlighting different programming languages. To add syntax highlighting, specify a language next to the backticks before the fenced code block.
+
+````markdown
+```json
+{
+  "firstName": "William",
+  "lastName": "Pitt",
+  "age": 24
+}
+```
+````
+
+The rendered output looks like this:
+
+```json
+{
+  "firstName": "William",
+  "lastName": "Pitt",
+  "age": 24
+}
+```
+
+## Emphasised text
+
+To emphasise text, add one asterisk or underscore before and after a word or phrase.
+
+> The [GDS Style Guide recommends against the use of italics](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#italics), and the GDS Transport font doesn’t provide an italic style. Use ‘single quotation marks’ if referring to a document, scheme or initiative.
+
+| Markdown                     | Rendered output                                             |
+| ---------------------------- | ----------------------------------------------------------- |
+| `This text is *emphasised*.` | <p class="govuk-body">This text is <em>emphasised</em>.</p> |
+| `This text is _emphasised_.` | <p class="govuk-body">This text is <em>emphasised</em>.</p> |
+
+## Strongly emphasised text
+
+To bold text, add 2 asterisks or underscores before and after a word or phrase.
+
+> The [GDS Style Guide recommends using emboldened text when referring to text from interfaces](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold) in technical documentation or instructions.
+
+| Markdown                                | Rendered output                                                              |
+| --------------------------------------- | ---------------------------------------------------------------------------- |
+| `This text is **strongly emphasised**.` | <p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p> |
+| `This text is __strongly emphasised__.` | <p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p> |
+
+## Deleted text
+
+To show that certain words are a mistake not meant for inclusion in the document, use 2 tilde symbols (`~~`) before and after the words.
+
+```markdown
+~~The world is flat.~~ We now know that the world is round.
+```
+
+The rendered output looks like this:
+
+~~The world is flat.~~ We now know that the world is round.
+
+## Inserted text
+
+To show inserted text, use 2 plus signs (`++`) before and after the words. You can use this alongside the syntax for [deleted text](#deleted-text).
+
+```text
+I need to ~~remove~~ ++insert++ a word.
+```
+
+The rendered output looks like this:
+
+I need to ~~remove~~ ++insert++ a word.
+
+## Highlighted text
+
+To highlight words, use 2 equal signs (`==`) before and after the words.
+
+```text
+I need to highlight these ==important words==.
+```
+
+The rendered output looks like this:
+
+I need to highlight these ==important words==.
+
+## Subscript and superscript text
+
+For subscript text, use one tilde symbol (`~`) before and after the characters.
+
+```text
+H~2~O
+```
+
+The rendered output looks like this:
+
+H~2~O
+
+For superscript text, use one caret symbol (`^`) before and after the characters.
+
+```text
+X^2^
+```
+
+The rendered output looks like this:
+
+X^2^
 
 ## Links
 
@@ -255,7 +379,7 @@ The rendered output looks like this:
 
 ### Formatting links
 
-To [emphasize](#emphasis) links, add asterisks before and after the brackets and parentheses. To denote links as [code](#code), add backticks in the brackets.
+To [emphasise](#emphasised-text) links, add asterisks before and after the brackets and parentheses. To denote links as [code](#code), add backticks in the brackets.
 
 ```markdown
 Visit the **[Markdown Guide](https://www.markdownguide.org)**.
@@ -290,6 +414,85 @@ To add a link to an image, enclose the Markdown for the image in brackets, and t
 The rendered output looks like this:
 
 [![A crown icon above the words GOV.UK.](/assets/images/govuk-icon-180.png 'Visit GOV.UK')](https://www.gov.uk)
+
+## Tables
+
+To add a table, use 3 or more hyphens (`---`) to create each column’s header, and use pipes (`|`) to separate each column.
+
+```markdown
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+```
+
+The rendered output looks like this:
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+Cell widths can vary, as shown below. The rendered output will look the same.
+
+```markdown
+| Syntax | Description |
+| --- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+```
+
+### Alignment
+
+You can align text in the columns to the left, right, or center by adding a colon (`:`) to the left, right, or on both side of the hyphens within the header row.
+
+```markdown
+| Syntax    | Description | Test Text   |
+| :-------- | :---------: | ----------: |
+| Header    | Title       | Here’s this |
+| Paragraph | Text        | And more    |
+```
+
+The rendered output looks like this:
+
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here’s this |
+| Paragraph |    Text     |    And more |
+
+## Footnotes
+
+Footnotes allow you to add notes and references without cluttering the body of the document.
+
+When you create a footnote, a superscript number with a link appears where you added the footnote reference. Readers can click the link to jump to the content of the footnote at the bottom of the page.
+
+To create a footnote reference, add a caret and an identifier inside brackets (`[^1]`).
+
+Identifiers can be numbers or words, but they can’t contain spaces or tabs. Identifiers correlate the footnote reference with the footnote itself — in the output, footnotes get numbered sequentially.
+
+Add the footnote using another caret and number inside brackets with a colon and text (`[^1]: My footnote.`).
+
+You don’t have to put footnotes at the end of the document. You can put them anywhere except inside other elements like lists, blockquotes, and tables.
+
+```markdown
+Here’s a simple footnote,[^1] and here’s a longer one.[^longer]
+
+[^1]: This is the first footnote.
+
+[^longer]: Here’s the second, which has 2 paragraphs.
+
+    Indent any following paragraphs to include them in the footnote.
+```
+
+The rendered output looks like this:
+
+Here’s a simple footnote,[^1] and here’s a longer one.[^longer]
+
+[^1]: This is the first footnote.
+
+[^longer]: Here’s the second, which has 2 paragraphs.
+
+    Indent any following paragraphs to include them in the footnote.
 
 ## Typographic replacements
 

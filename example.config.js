@@ -11,6 +11,16 @@ export default function (eleventyConfig) {
     serviceNavigation: {
       serviceName: 'Apply for a juggling licence',
       serviceUrl: '/product-page'
+    },
+    footer: {
+      meta: {
+        items: [
+          {
+            href: '/markdown',
+            text: 'Markdown guide'
+          }
+        ]
+      }
     }
   })
 

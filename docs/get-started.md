@@ -13,11 +13,11 @@ This plugin includes the following features:
 
 - includes [`markdown-it-govuk`](https://github.com/x-govuk/markdown-it-govuk) to ensure pages uses the same typography and styles as those used on GOV.UK
 
-- support for an [extended Markdown syntax](/markdown-advanced)
-
 - [full configuration](/options) of your website’s header and footer
 
 - site search
+
+- Markdown support for [basic and extended syntax](/example/markdown)
 
 - SCSS compilation (for any files with the `.scss` extension)
 
