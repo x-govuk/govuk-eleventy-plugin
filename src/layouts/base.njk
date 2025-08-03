@@ -39,7 +39,7 @@
 {% from "components/prose-scope/macro.njk" import appProseScope %}
 
 {% block headIcons %}
-  {%- if options.icons.shortcut %}<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ options.icons.shortcut }}" type="image/x-icon">{% endif %}
+  {%- if options.icons.shortcut %}<link rel="icon" href="{{ options.icons.shortcut }}" sizes="any">{% endif %}
   {%- if options.icons.mask %}<link rel="mask-icon" href="{{ options.icons.mask }}" color="{{ themeColor }}">{% endif %}
   {%- if options.icons.touch %}<link rel="apple-touch-icon" href="{{ options.icons.touch }}">{% endif %}
 {% endblock %}
