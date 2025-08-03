@@ -1,17 +1,17 @@
 import accessibleAutocomplete from 'accessible-autocomplete'
 
-export class SiteSearchElement extends HTMLElement {
+export class SearchElement extends HTMLElement {
   constructor() {
     super()
 
     this.statusMessage = null
-    this.searchInputId = 'app-site-search__input'
+    this.searchInputId = 'app-search__input'
     this.searchIndex = null
     this.searchIndexUrl = this.getAttribute('index')
     this.searchLabel = this.getAttribute('label')
     this.searchResults = []
     this.searchTimeout = 10
-    this.sitemapLink = this.querySelector('.app-site-search__link')
+    this.sitemapLink = this.querySelector('.app-search__link')
   }
 
   async fetchSearchIndex(indexUrl) {
@@ -38,7 +38,11 @@ export class SiteSearchElement extends HTMLElement {
   findResults(searchQuery, searchIndex) {
     return searchIndex.filter((item) => {
       const regex = new RegExp(searchQuery, 'gi')
-      return item.title.match(regex) || item.templateContent.match(regex)
+      return (
+        item.title.match(regex) ||
+        item?.description?.match(regex) ||
+        item?.tokens?.match(regex)
+      )
     })
   }
 
@@ -90,7 +94,7 @@ export class SiteSearchElement extends HTMLElement {
 
       if (result.hasFrontMatterDate || result.section) {
         const section = document.createElement('span')
-        section.className = 'app-site-search--section'
+        section.className = 'app-search--section'
 
         section.innerHTML =
           result.hasFrontMatterDate && result.section
@@ -120,7 +124,7 @@ export class SiteSearchElement extends HTMLElement {
       element: search,
       id: this.searchInputId,
       inputClasses: 'govuk-input',
-      cssNamespace: 'app-site-search',
+      cssNamespace: 'app-search',
       displayMenu: 'overlay',
       minLength: 2,
       placeholder: this.searchLabel,

@@ -1,4 +1,4 @@
-{% from "components/site-search/macro.njk" import appSiteSearch with context -%}
+{% from "components/search/macro.njk" import appSearch with context -%}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {{ govukServiceNavigation({
@@ -14,6 +14,6 @@
   serviceUrl: params.serviceUrl,
   navigation: params.navigation | currentPage(page.url) if params.navigation,
   slots: {
-    end: appSiteSearch(params.search) if params.search.indexPath else params.slots.end
+    end: appSearch(params.search) if params.search.indexPath else params.slots.end
   }
 }) }}
