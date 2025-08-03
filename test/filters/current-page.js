@@ -5,7 +5,8 @@ import { currentPage } from '../../src/filters/current-page.js'
 
 const navigationData = [
   { text: 'Home', href: '/' },
-  { text: 'Styles', href: '/styles' }
+  { text: 'Styles', href: '/styles' },
+  { text: 'Styles 2', href: '/styles-2' }
 ]
 
 describe('currentPage filter', () => {
@@ -14,7 +15,8 @@ describe('currentPage filter', () => {
 
     assert.deepEqual(result, [
       { text: 'Home', href: '/', active: true },
-      { text: 'Styles', href: '/styles', active: false }
+      { text: 'Styles', href: '/styles', active: false },
+      { text: 'Styles 2', href: '/styles-2', active: false }
     ])
   })
 
@@ -23,7 +25,8 @@ describe('currentPage filter', () => {
 
     assert.deepEqual(result, [
       { text: 'Home', href: '/', active: false },
-      { text: 'Styles', href: '/styles', active: true }
+      { text: 'Styles', href: '/styles', active: true },
+      { text: 'Styles 2', href: '/styles-2', active: false }
     ])
   })
 
@@ -32,7 +35,8 @@ describe('currentPage filter', () => {
 
     assert.deepEqual(result, [
       { text: 'Home', href: '/', active: false },
-      { text: 'Styles', href: '/styles', active: true }
+      { text: 'Styles', href: '/styles', active: true },
+      { text: 'Styles 2', href: '/styles-2', active: false }
     ])
   })
 })

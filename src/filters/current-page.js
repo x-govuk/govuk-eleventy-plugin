@@ -7,10 +7,12 @@
  */
 export function currentPage(array, pageUrl) {
   return array.map((item) => {
+    const normalizedHref = item.href.replace(/\/$/, '') || '/'
+    const normalizedPageUrl = pageUrl.replace(/\/$/, '') || '/'
+
     item.active =
-      item.href === '/'
-        ? pageUrl === '/' // Page is home page
-        : pageUrl.startsWith(item.href) // Page is within navigation section
+      normalizedPageUrl === normalizedHref ||
+      normalizedPageUrl.startsWith(`${normalizedHref}/`)
 
     return item
   })
