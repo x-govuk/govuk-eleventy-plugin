@@ -41,6 +41,10 @@ $_icon-size: 40px;
     &:focus {
       @include govuk-focused-text;
     }
+
+    .app-site-search:defined & {
+      display: none;
+    }
   }
 
   .app-site-search__wrapper {
