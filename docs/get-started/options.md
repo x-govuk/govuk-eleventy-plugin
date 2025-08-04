@@ -112,6 +112,11 @@ export default function(eleventyConfig) {
       { text: "Show breadcrumb navigation (default is `true` with nested pages)" | markdown }
     ],
     [
+      { text: "useMarkdownHeaderAsTitle" },
+      { text: "boolean" },
+      { text: "Use markdown header for page title (default is `false`). Useful for pages which use the following layouts: `page` and `page with sub navigation` where your markdown page might naturally use markdown h1 headings." | markdown }
+    ],
+    [
       { text: "stylesheets" },
       { text: "Array" },
       { text: "Stylesheets to load after application styles" }

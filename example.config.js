@@ -21,7 +21,8 @@ export default function (eleventyConfig) {
           }
         ]
       }
-    }
+    },
+    useMarkdownHeaderAsTitle: true,
   })
 
   // Passthrough

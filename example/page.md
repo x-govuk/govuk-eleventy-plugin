@@ -1,7 +1,6 @@
 ---
 layout: page
 caption: Get started
-title: About this API
 description: The Apply for a juggling licence REST API is designed to make interacting with the licencing server quick and easy.
 order: 1
 related:
@@ -22,6 +21,7 @@ eleventyComputed:
     content: |
       This is an example page using the `page` layout. You can [view the source used to create this page on GitHub]({{ viewSource }}).
 ---
+# About this API
 
 Once a juggler has submitted their application via the Apply service, the application will become available over the API.
 
