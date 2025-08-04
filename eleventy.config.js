@@ -1,6 +1,7 @@
 import process from 'node:process'
 
 import { govukEleventyPlugin } from './src/index.js'
+import { markdownTitlePlugin } from './src/markdown-title-plugin.js'
 import { layoutNames } from './src/utils.js'
 
 const serviceName = 'GOV.UK Eleventy Plugin'
@@ -67,6 +68,8 @@ export default function (eleventyConfig) {
       }
     }
   })
+
+  eleventyConfig.addPlugin(markdownTitlePlugin)
 
   // Collections
   eleventyConfig.addCollection('feature', (collection) =>

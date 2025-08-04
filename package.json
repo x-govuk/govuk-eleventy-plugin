@@ -61,6 +61,7 @@
     "@x-govuk/govuk-prototype-components": "^5.0.0",
     "deepmerge": "^4.2.2",
     "govuk-frontend": "^5.11.0",
+    "jsdom": "^26.1.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-anchor": "^9.0.0",
     "markdown-it-attrs": "^4.3.1",

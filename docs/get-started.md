@@ -1,10 +1,11 @@
 ---
 layout: sub-navigation
 order: 1
-title: Get started
 sectionKey: Get started
 description: With the GOV.UK Eleventy Plugin you can focus on writing content instead of writing code.
 ---
+
+# Get started
 
 Use this plugin to create websites that follows standards set out in the GOV.UK Design System. Perfect for documentation, user guides, blogs, and other sites for people working in government.
 
