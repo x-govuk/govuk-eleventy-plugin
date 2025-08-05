@@ -19,11 +19,21 @@ export async function generateAssets(dir, options) {
   // Ignored if custom stylesheets are used
   if (options.stylesheets.length === 0) {
     const inputFilePath = path.join(import.meta.dirname, '../application.scss')
-    const inputFile = await fs.readFile(inputFilePath)
+    let inputFile = await fs.readFile(inputFilePath)
+
+    // Update asset path to use configured path prefix
+    const assetPath = path.join(options.pathPrefix, '/assets/')
+    inputFile = inputFile
+      .toString()
+      .replace(
+        `$govuk-assets-path: "/assets/"`,
+        `$govuk-assets-path: "${assetPath}"`
+      )
+
     const outputFile = `${dir.output}/assets/application.css`
 
     try {
-      const result = sass.compileString(inputFile.toString(), {
+      const result = sass.compileString(inputFile, {
         importers: [new sass.NodePackageImporter()], // Imports with `pkg:`
         loadPaths: ['./node_modules', '.'], // Imports without `pkg:`
         quietDeps: true,
