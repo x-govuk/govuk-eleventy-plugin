@@ -1,5 +1,7 @@
 // Use GOV.UK Frontend
 @use "pkg:govuk-frontend/dist/govuk" with (
+  // pathPrefix gets prepended to assets path in `generate-govuk-assets.js`
+  $govuk-assets-path: "/assets/",
   $govuk-global-styles: true,
   $govuk-new-organisation-colours: true,
   $govuk-new-typography-scale: true
