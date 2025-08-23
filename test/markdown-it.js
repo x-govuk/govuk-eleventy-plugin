@@ -23,6 +23,24 @@ describe('markdown-it', () => {
     )
   })
 
+  it('Renders a note alert as inset text', () => {
+    const result = md().render('> [!NOTE]\n> Text')
+
+    assert.equal(
+      result,
+      `<div class="govuk-inset-text app-inset-text--note"><span class="govuk-visually-hidden">Note: </span><p class="govuk-body">Text</p>\n</div>\n`
+    )
+  })
+
+  it('Renders a note alert with title as inset text with heading', () => {
+    const result = md().render('> [!NOTE] Heading\n> Text')
+
+    assert.equal(
+      result,
+      `<div class="govuk-inset-text app-inset-text--note"><h3 class="govuk-heading-m"><span class="govuk-visually-hidden">Note: </span>Heading</h3><p class="govuk-body">Text</p>\n</div>\n`
+    )
+  })
+
   it('Renders a definition list', () => {
     const result = md().render('Term\n: Definition')
 

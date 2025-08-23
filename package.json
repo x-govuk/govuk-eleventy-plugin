@@ -66,6 +66,7 @@
     "markdown-it-attrs": "^4.3.1",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
+    "markdown-it-github-alerts": "^1.0.0",
     "markdown-it-govuk": "^0.6.0",
     "markdown-it-image-figures": "^2.0.0",
     "markdown-it-ins": "^4.0.0",

@@ -5,6 +5,7 @@ import markdownItAnchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
 import markdownItDeflist from 'markdown-it-deflist'
 import markdownItFootnote from 'markdown-it-footnote'
+import MarkdownItGitHubAlerts from 'markdown-it-github-alerts'
 import markdownItGovuk from 'markdown-it-govuk'
 import highlight from 'markdown-it-govuk/highlight'
 import markdownItImageFigures from 'markdown-it-image-figures'
@@ -14,6 +15,7 @@ import markdownItSub from 'markdown-it-sub'
 import markdownItSup from 'markdown-it-sup'
 import markdownItTableOfContents from 'markdown-it-table-of-contents'
 
+import { alertRules } from './markdown-it/alert.js'
 import { defListRules } from './markdown-it/deflist.js'
 import { footnotesRules } from './markdown-it/footnote.js'
 import { tableRules } from './markdown-it/table.js'
@@ -54,6 +56,8 @@ export function md(options = {}) {
     .use(defListRules)
     .use(markdownItFootnote)
     .use(footnotesRules)
+    .use(MarkdownItGitHubAlerts)
+    .use(alertRules)
     .use(markdownItIns)
     .use(markdownItImageFigures, {
       figcaption: true

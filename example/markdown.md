@@ -95,19 +95,57 @@ The rendered output looks like this:
 >
 > > Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 
-### Blockquotes with other elements
+## Alerts
 
-Blockquotes can contain other Markdown formatted elements. Not all elements can be used — you’ll need to experiment to see which ones work.
+Alerts, based on the blockquote syntax, can be used emphasise critical information. [On GitHub they are displayed with distinctive colors and icons](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts), while pages rendered by the plugin use the [inset text component](https://design-system.service.gov.uk/components/inset-text/) from the GOV.UK Design System.
 
 ```markdown
-> #### Check the MOT status of a vehicle
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+```
+
+The rendered output for the note alert type uses the standard design for inset text:
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+The rendered output for other alert types uses inset text with a coloured border and background:
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
+You can also include a title:
+
+```markdown
+> [!NOTE] Check the MOT status of a vehicle
 >
 > If your vehicle is new, you must [get an MOT test](https://www.gov.uk/getting-an-mot) by the third anniversary of its registration.
 ```
 
 The rendered output looks like this:
 
-> #### Check the MOT status of a vehicle
+> [!NOTE] Check the MOT status of a vehicle
 >
 > If your vehicle is new, you must [get an MOT test](https://www.gov.uk/getting-an-mot) by the third anniversary of its registration.
 
