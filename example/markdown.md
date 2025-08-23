@@ -313,6 +313,7 @@ The rendered output looks like this:
 
 To emphasise text, add one asterisk or underscore before and after a word or phrase.
 
+> [!NOTE]
 > The [GDS Style Guide recommends against the use of italics](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#italics), and the GDS Transport font doesn’t provide an italic style. Use ‘single quotation marks’ if referring to a document, scheme or initiative.
 
 | Markdown                     | Rendered output                                             |
@@ -324,6 +325,7 @@ To emphasise text, add one asterisk or underscore before and after a word or phr
 
 To bold text, add 2 asterisks or underscores before and after a word or phrase.
 
+> [!NOTE]
 > The [GDS Style Guide recommends using emboldened text when referring to text from interfaces](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold) in technical documentation or instructions.
 
 | Markdown                                | Rendered output                                                              |

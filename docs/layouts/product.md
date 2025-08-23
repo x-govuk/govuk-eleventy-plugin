@@ -4,6 +4,7 @@ description: Layout for product and marketing pages.
 theme: Content presentation
 ---
 
+> [!NOTE]
 > View an [example page that uses this layout (opens in a new tab)](/example/){target=example}
 
 This layout, based on the component used on [GOV.UK product pages](https://github.com/alphagov/product-page-example), can be useful if you need a product or marketing page.

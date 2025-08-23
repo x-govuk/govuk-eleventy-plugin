@@ -4,6 +4,7 @@ description: Layout with sub navigation.
 theme: Content presentation
 ---
 
+> [!NOTE]
 > View an [example page that uses this layout (opens in a new tab)](/example/page-with-sub-navigation){target=example}
 
 This layout offers a page with sub navigation, appearing to the left of content on wider viewports, and above on narrower ones.

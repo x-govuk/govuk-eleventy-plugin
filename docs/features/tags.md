@@ -17,6 +17,7 @@ permalink: "/tags/"
 ---
 ```
 
+> [!NOTE]
 > View an <a href="/example/tags" target="_blank">example tag index (opens in a new tab)</a>
 
 ## Create a page for each tag
@@ -39,4 +40,5 @@ eleventyNavigation:
 ---
 ```
 
+> [!NOTE]
 > View an <a href="/example/tags/design" target="_blank">example tag page (opens in a new tab)</a>

@@ -4,6 +4,7 @@ description: Layout for a paginated list of pages.
 theme: Content presentation
 ---
 
+> [!NOTE]
 > View an [example page that uses this layout (opens in a new tab)](/example/collection){target=example}
 
 To use this layout, make `collection` the value for a page’s `layout` key.

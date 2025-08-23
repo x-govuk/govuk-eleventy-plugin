@@ -35,6 +35,7 @@ permalink: /sitemap
 ---
 ```
 
+> [!NOTE]
 > View an <a href="/example/sitemap" target="_blank">example sitemap (opens in a new tab)</a>
 
 ## Add a search input to the site header
