@@ -79,22 +79,6 @@ The rendered output looks like this:
 >
 > Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 
-### Nested blockquotes
-
-To nest blockquotes, add a `>>` in front of the paragraph you want to nest.
-
-```markdown
-> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
->
-> > Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
-```
-
-The rendered output looks like this:
-
-> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
->
-> > Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
-
 ## Alerts
 
 Alerts, based on the blockquote syntax, can be used emphasise critical information. [On GitHub they are displayed with distinctive colors and icons](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts), while pages rendered by the plugin use the [inset text component](https://design-system.service.gov.uk/components/inset-text/) from the GOV.UK Design System.
