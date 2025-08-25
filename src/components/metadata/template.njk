@@ -7,21 +7,18 @@
 {% endmacro -%}
 
 <dl class="app-metadata">
-  {%- if params.authors -%}
+  {%- if params.author -%}
   <div class="app-metadata__item">
-    <dt class="app-metadata__term">Posted by:</dt>
+    <dt class="app-metadata__term">Posted by</dt>
     <dd class="app-metadata__definition">
-    {%- for author in params.authors -%}
-      {{- " and " if loop.last else (", " if not loop.first) -}}
-      {{- _authorLink(author) -}}
-    {%- endfor -%}
-    </dd>
-  </div>
-  {%- elif params.author -%}
-  <div class="app-metadata__item">
-    <dt class="app-metadata__term">Posted by:</dt>
-    <dd class="app-metadata__definition">
+    {%- if params.author is string or params.author is mapping -%}
       {{- _authorLink(params.author) -}}
+    {%- else -%}
+      {%- for author in params.author -%}
+        {{- " and " if loop.last and loop.length > 1 else (", " if not loop.first) -}}
+        {{- _authorLink(author) -}}
+      {%- endfor -%}
+    {%- endif -%}
     </dd>
   </div>
   {%- endif -%}
