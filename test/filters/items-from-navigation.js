@@ -128,50 +128,6 @@ describe('itemsFromNavigation filter', () => {
     ])
   })
 
-  it('Converts navigation data to items array adding parent site', () => {
-    const config = {
-      parentSite: { url: 'https://example.org', name: 'Example' }
-    }
-    const result = itemsFromNavigation(
-      eleventyNavigationBreadcrumb,
-      '/parent/child',
-      config
-    )
-
-    assert.deepEqual(result, [
-      { href: 'https://example.org', text: 'Example' },
-      {
-        href: '/',
-        text: 'Home',
-        order: undefined,
-        theme: undefined,
-        current: false,
-        parent: true,
-        children: false
-      },
-      {
-        href: '/parent/',
-        text: 'Parent page',
-        order: undefined,
-        theme: undefined,
-        current: false,
-        parent: true,
-        children: [
-          { href: '/parent/child/', text: 'Child page', current: false }
-        ]
-      },
-      {
-        href: '/parent/child',
-        text: 'Child page',
-        order: undefined,
-        theme: undefined,
-        current: true,
-        parent: true,
-        children: false
-      }
-    ])
-  })
-
   it('Converts navigation data to sorted items array', () => {
     const result = itemsFromNavigation(
       eleventyNavigationBreadcrumb,

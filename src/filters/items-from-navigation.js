@@ -44,13 +44,6 @@ export function itemsFromNavigation(
     items.push(navItem)
   })
 
-  if (options?.parentSite) {
-    items.unshift({
-      href: options.parentSite.url,
-      text: smart(options.parentSite.name)
-    })
-  }
-
   if (sort) {
     items.sort((a, b) => {
       if (typeof a.order !== 'undefined' && typeof b.order !== 'undefined') {

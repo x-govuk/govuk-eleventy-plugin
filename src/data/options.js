@@ -15,7 +15,6 @@ const defaults = {
     productName: false
   },
   homeKey: 'Home',
-  parentSite: false,
   rebrand: true,
   stylesheets: [],
   titleSuffix: 'GOV.UK',

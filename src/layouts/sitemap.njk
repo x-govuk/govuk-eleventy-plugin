@@ -4,14 +4,8 @@
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     classes: "govuk-!-display-none-print",
-    items: [{
-      href: options.parentSite.url,
-      text: options.parentSite.name
-    }, {
-      href: options.pathPrefix,
-      text: options.homeKey
-    }]
-  }) if options.parentSite }}
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
 {% endblock %}
 
 {% block content %}
