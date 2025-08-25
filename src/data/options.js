@@ -38,5 +38,10 @@ export function defaultPluginOptions(options, pathPrefix) {
     delete options.titleSuffix
   }
 
+  // Add _feedPath to enable feed to be linked to from page head
+  if (options.templates?.feed) {
+    options._feedPath = options.templates?.feed?.permalink || '/feed.xml'
+  }
+
   return deepmerge(defaults, options)
 }

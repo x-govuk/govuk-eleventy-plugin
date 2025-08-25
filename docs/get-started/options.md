@@ -24,7 +24,6 @@ export default function(eleventyConfig) {
 
 | Name              | Type              | Description                                                                                                                                                                  |
 | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| feedUrl           | string            | The URL of your website’s RSS feed. See [Adding a feed](/features/feed).                                                                                                     |
 | footer            | object            | See [options for footer](#options-for-footer-object)                                                                                                                         |
 | header            | object            | See [options for header](#options-for-header-object)                                                                                                                         |
 | headingPermalinks | boolean           | Add links to headings, making it easier to share sections of a page (default is `false`)                                                                                     |
