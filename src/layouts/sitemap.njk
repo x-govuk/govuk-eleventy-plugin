@@ -1,13 +1,5 @@
 {% extends "layouts/base.njk" %}
 
-{# Create breadcrumbs manually as sitemap should be excluded from collections #}
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-    classes: "govuk-!-display-none-print",
-    items: breadcrumbItems
-  }) if showBreadcrumbs }}
-{% endblock %}
-
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
