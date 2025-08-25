@@ -27,41 +27,10 @@ Page introduction content (optional).
 
 In addition to [common front matter options](/layouts/front-matter-options), this layout accepts the following options:
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{{ govukTable({
-  caption: "Collection front matter options",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "pagination" },
-      { text: "object" },
-      { text: "**Required.** Pages to show in the paginated list. Learn more about [pagination](https://www.11ty.dev/docs/pagination/) in the documentation for Eleventy." | markdown }
-    ],
-    [
-      { text: "pagination.data" },
-      { text: "string" },
-      { text: "Pages to list, typically a reference to a [collection](https://www.11ty.dev/docs/collections/)" | markdown }
-    ],
-    [
-      { text: "pagination.size" },
-      { text: "number" },
-      { text: "The number of items to list" }
-    ],
-    [
-      { text: "pagination.reverse" },
-      { text: "boolean" },
-      { text: "Set to `true` to list the items in reverse date order" | markdown }
-    ],
-    [
-      { text: "paginationHeading" },
-      { text: "string" },
-      { text: "Heading for the list of paginated pages" }
-    ]
-  ]
-}) }}
+| Name               | Type    | Description                                                                                                                                                |
+| ------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| pagination         | object  | **Required.** Pages to show in the paginated list. Learn more about [pagination](https://www.11ty.dev/docs/pagination/) in the documentation for Eleventy. |
+| pagination.data    | string  | Pages to list, typically a reference to a [collection](https://www.11ty.dev/docs/collections/)                                                             |
+| pagination.size    | integer | The number of items to list                                                                                                                                |
+| pagination.reverse | boolean | Set to `true` to list the items in reverse date order                                                                                                      |
+| paginationHeading  | string  | Heading for the list of paginated pages                                                                                                                    |

@@ -1,6 +1,6 @@
 // Use GOV.UK Frontend
 $_font-family: system-ui, sans-serif;
-@use "pkg:govuk-frontend/dist/govuk" with (
+@use "pkg:govuk-frontend/dist/govuk" as * with (
   $govuk-global-styles: true,
   $govuk-new-organisation-colours: true,
   $govuk-new-typography-scale: true,
@@ -14,20 +14,64 @@ $_font-family: system-ui, sans-serif;
 // Use GOV.UK Eleventy Plugin components
 @use "pkg:@x-govuk/govuk-eleventy-plugin";
 
-@media screen and (min-width: 800px) {
-  .app-prose-scope .govuk-table:not([tabindex]) {
-    display: table;
+// Use responsive tables to show options
+.app-prose-scope .govuk-table {
+  @include govuk-media-query($until: "desktop") {
+    display: block;
 
-    .govuk-table__header:first-of-type {
+    .govuk-table__head {
+      @include govuk-visually-hidden;
+    }
+
+    .govuk-table__body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .govuk-table__row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: govuk-spacing(6);
+    }
+
+    .govuk-table__cell:first-child {
+      @include govuk-font(24);
+    }
+
+    .govuk-table__body .govuk-table__cell::before {
+      color: $govuk-secondary-text-colour;
+      display: block;
+      margin-bottom: govuk-spacing(1);
+      @include govuk-font(16);
+    }
+
+    .govuk-table__cell:nth-child(1)::before {
+      content: "Name";
+    }
+
+    .govuk-table__cell:nth-child(2)::before {
+      content: "Type";
+    }
+
+    .govuk-table__cell:nth-child(3)::before {
+      content: "Description";
+    }
+  }
+
+  @include govuk-media-query($from: "desktop") {
+    // stylelint-disable-next-line
+    display: table !important;
+
+    .govuk-table__header:nth-child(1) {
       width: 30%;
     }
 
     .govuk-table__header:nth-child(2) {
       width: 15%;
     }
+  }
 
-    .govuk-table__cell *:last-child {
-      margin-bottom: 0;
-    }
+  .govuk-table__cell:first-child {
+    font-weight: bold;
   }
 }

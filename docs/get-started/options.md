@@ -20,253 +20,72 @@ export default function(eleventyConfig) {
 }
 ```
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{{ govukTable({
-  caption: "Plugin options",
-  captionClasses: "govuk-table__caption--l",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "feedUrl" },
-      { text: "string" },
-      { text: "The URL of your website’s RSS feed. See [Adding a feed](/features/feed)." | markdown }
-    ],
-    [
-      { text: "footer" },
-      { text: "object" },
-      { text: "See [footer options](#footer-options)" | markdown }
-    ],
-    [
-      { text: "header" },
-      { text: "object" },
-      { text: "See [header options](#header-options)" | markdown }
-    ],
-    [
-      { text: "headingPermalinks" },
-      { text: "boolean" },
-      { text: "Add links to headings, making it easier to share sections of a page (default is `false`)" | markdown }
-    ],
-    [
-      { text: "homeKey" },
-      { text: "string" },
-      { text: "First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is `Home`)" | markdown }
-    ],
-    [
-      { text: "icons" },
-      { text: "object" },
-      { text: "Override GOV.UK icons" }
-    ],
-    [
-      { text: "icons.mask" },
-      { text: "string|boolean" },
-      { text: "Override GOV.UK SVG mask icon. Use `false` to not include a mask icon." | markdown }
-    ],
-    [
-      { text: "icons.shortcut" },
-      { text: "string|boolean" },
-      { text: "Override GOV.UK favicon. Use `false` to not include a favicon." | markdown }
-    ],
-    [
-      { text: "icons.touch" },
-      { text: "string|boolean" },
-      { text: "Override GOV.UK touch icon. Use `false` to not include a touch icon." | markdown }
-    ],
-    [
-      { text: "opengraphImageUrl" },
-      { text: "string" },
-      { text: "URL for default Open Graph share image" }
-    ],
-    [
-      { text: "parentSite" },
-      { text: "object" },
-      { text: "Website to show as first item in breadcrumbs" }
-    ],
-    [
-      { text: "parentSite.url" },
-      { text: "string" },
-      { text: "URL for parent site" }
-    ],
-    [
-      { text: "parentSite.name" },
-      { text: "string" },
-      { text: "Name of parent site" }
-    ],
-    [
-      { text: "rebrand" },
-      { text: "boolean" },
-      { text: "Use GOV.UK rebrand (default is `true`). This option will be removed in an upcoming release." | markdown }
-    ],
-    [
-      { text: "serviceNavigation" },
-      { text: "object" },
-      { text: "See [service navigation options](#service-navigation-options)" | markdown }
-    ],
-    [
-      { text: "showBreadcrumbs" },
-      { text: "boolean" },
-      { text: "Show breadcrumb navigation (default is `true` with nested pages)" | markdown }
-    ],
-    [
-      { text: "stylesheets" },
-      { text: "Array" },
-      { text: "Stylesheets to load after application styles" }
-    ],
-    [
-      { text: "themeColor" },
-      { text: "string" },
-      { text: "Browser theme colour. Must be a hex value, i.e. `#0b0c0c`." | markdown }
-    ],
-    [
-      { text: "titleSuffix" },
-      { text: "string or boolean" },
-      { text: "Value to show at the end of the document title (default is `GOV.UK`)" | markdown }
-    ],
-    [
-      { text: "url" },
-      { text: "string" },
-      { text: "The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data." }
-    ]
-  ]
-}) }}
+## Plugin options
 
-## Header options
+| Name              | Type              | Description                                                                                                                                                                  |
+| ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| feedUrl           | string            | The URL of your website’s RSS feed. See [Adding a feed](/features/feed).                                                                                                     |
+| footer            | object            | See [options for footer](#options-for-footer-object)                                                                                                                         |
+| header            | object            | See [options for header](#options-for-header-object)                                                                                                                         |
+| headingPermalinks | boolean           | Add links to headings, making it easier to share sections of a page (default is `false`)                                                                                     |
+| homeKey           | string            | First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is `Home`) |
+| icons             | object            | Override GOV.UK site icons                                                                                                                                                   |
+| icons.mask        | string or boolean | Override GOV.UK SVG mask icon. Use `false` to not include a mask icon.                                                                                                       |
+| icons.shortcut    | string or boolean | Override GOV.UK favicon. Use `false` to not include a favicon.                                                                                                               |
+| icons.touch       | string or boolean | Override GOV.UK touch icon. Use `false` to not include a touch icon.                                                                                                         |
+| opengraphImageUrl | string            | URL for default Open Graph share image                                                                                                                                       |
+| parentSite        | object            | Website to show as first item in breadcrumbs                                                                                                                                 |
+| parentSite.url    | string            | URL for parent site                                                                                                                                                          |
+| parentSite.name   | string            | Name of parent site                                                                                                                                                          |
+| rebrand           | boolean           | Use GOV.UK rebrand (default is `true`). This option will be removed in an upcoming release.                                                                                  |
+| serviceNavigation | object            | See [options for service navigation](#options-for-service-navigation-object)                                                                                                 |
+| showBreadcrumbs   | boolean           | Show breadcrumb navigation (default is `true` for nested pages)                                                                                                              |
+| stylesheets       | array             | Stylesheets to load instead of default application styles                                                                                                                    |
+| themeColor        | string            | Browser theme colour. Must be a hex value (default is `#0b0c0c`)                                                                                                             |
+| titleSuffix       | string            | Value to show at the end of the document title (default is `GOV.UK`)                                                                                                         |
+| url               | string            | The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data.                                                                        |
 
-Alongside [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can be set for `header`:
+## Options for `header` object
 
-{{ govukTable({
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "logotype" },
-      { text: "object" },
-      { text: "Logo that appears in the header. If no value is provided, the GOV.UK logo is shown." }
-    ],
-    [
-      { text: "logotype.text" },
-      { text: "string" },
-      { text: "Text to show instead of the GOV.UK logo. This text will appear bold. If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
-    ],
-    [
-      { text: "logotype.html" },
-      { text: "string" },
-      { text: "If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
-    ],
-    [
-      { text: "search" },
-      { text: "object" },
-      { text: "See [search options](#search-options)" | markdown }
-    ]
-  ]
-}) }}
+Alongside [options available for the header component](https://design-system.service.gov.uk/components/header/), the following options can be set:
 
-## Service navigation options
+| Name          | Type   | Description                                                                                                                                                            |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| logotype      | object | Logo that appears in the header. If no value is provided, the GOV.UK logo is shown.                                                                                    |
+| logotype.text | string | Text to show instead of the GOV.UK logo. This text will appear bold. If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored. |
+| logotype.html | string | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                      |
+| search        | object | See [options for search](#options-for-search-object)                                                                                                                   |
 
-Alongside [options available for the service navigation component](https://design-system.service.gov.uk/components/service-navigation/), the following options can be set for `serviceNavigation`:
+## Options for `serviceNavigation` object
 
-{{ govukTable({
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "search" },
-      { text: "object" },
-      { text: "Injects search field into `slots.end`. See [search options](#search-options)." | markdown }
-    ]
-  ]
-}) }}
+Alongside [options available for the service navigation component](https://design-system.service.gov.uk/components/service-navigation/), the following options can be set:
 
-## Search options
+| Name   | Type   | Description                                                                                  |
+| ------ | ------ | -------------------------------------------------------------------------------------------- |
+| search | object | Injects search field into `slots.end`. See [options for search](#options-for-search-object). |
+
+## Options for `search` object
 
 You can show a search field in your site header, or within the service navigation (if enabled).
 
 Follow guidance in the GOV.UK Design System about [adding other header and navigation elements](https://design-system.service.gov.uk/patterns/navigate-a-service/#adding-other-header-and-navigation-elements) to decide which is the best location to use.
 
-{{ govukTable({
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "label" },
-      { text: "string" },
-      { text: "Text to show in the search field (default is `Search site`)" }
-    ],
-    [
-      { text: "indexPath" },
-      { text: "string" },
-      { text: "Path to search index file" }
-    ],
-    [
-      { text: "sitemapPath" },
-      { text: "string" },
-      { text: "Path to sitemap page, shown as a fallback if the search field cannot be displayed" }
-    ]
-  ]
-}) }}
+| Name        | Type   | Description                                                                       |
+| ----------- | ------ | --------------------------------------------------------------------------------- |
+| label       | string | Text to show in the search field (default is `Search site`)                       |
+| indexPath   | string | Path to search index file                                                         |
+| sitemapPath | string | Path to sitemap page, shown as a fallback if the search field cannot be displayed |
 
-## Footer options
+## Options for `footer` object
 
-Alongside [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can be set for `footer`:
+Alongside [options available for the footer component](https://design-system.service.gov.uk/components/footer/), the following options can be set:
 
-{{ govukTable({
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "contentLicence" },
-      { text: "object" },
-      { text: "Licence description. If no value is provided, the OGL logo is shown alongside the words `All content is available under the Open Government Licence v3.0, except where otherwise stated`. Set to `false` to remove completely." | markdown }
-    ],
-    [
-      { text: "contentLicence.text" },
-      { text: "string" },
-      { text: "If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
-    ],
-    [
-      { text: "contentLicence.html" },
-      { text: "string" },
-      { text: "If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
-    ],
-    [
-      { text: "copyright" },
-      { text: "object" },
-      { text: "Copyright statement. If no value is provided, `© Crown copyright` is displayed below an image of the Royal Coat of Arms.  Set to `false` to remove completely." | markdown }
-    ],
-    [
-      { text: "copyright.text" },
-      { text: "string" },
-      { text: "If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
-    ],
-    [
-      { text: "copyright.html" },
-      { text: "string" },
-      { text: "If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored." | markdown }
-    ],
-    [
-      { text: "logo" },
-      { text: "boolean" },
-      { text: "Show logo in rebranded footer (default is `true`)" | markdown }
-    ]
-  ]
-}) }}
+| Name                | Type    | Description                                                                                                                                                                                                                    |
+| ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| contentLicence      | object  | Licence description. If no value is provided, the OGL logo is shown alongside the words `All content is available under the Open Government Licence v3.0, except where otherwise stated`. Set to `false` to remove completely. |
+| contentLicence.text | string  | If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
+| contentLicence.html | string  | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
+| copyright           | object  | Copyright statement. If no value is provided, `© Crown copyright` is displayed below an image of the Royal Coat of Arms. Set to `false` to remove completely.                                                                 |
+| copyright.text      | string  | If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
+| copyright.html      | string  | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
+| logo                | boolean | Show logo in rebranded footer (default is `true`)                                                                                                                                                                              |

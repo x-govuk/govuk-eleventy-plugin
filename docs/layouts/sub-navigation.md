@@ -22,21 +22,6 @@ Page content
 
 In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{{ govukTable({
-  caption: "Page with sub navigation front matter options",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "sectionKey" },
-      { text: "string" },
-      { text: "Parent navigation key (typically a page title) to show items below in the sub navigation (default is `homeKey` value provided in [plugin options](/get-started/options))" | markdown }
-    ]
-  ]
-}) }}
+| Name       | Type   | Description                                                                                                                                                              |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| sectionKey | string | Parent navigation key (typically a page title) to show items below in the sub navigation (default is `homeKey` value provided in [plugin options](/get-started/options)) |
