@@ -15,7 +15,12 @@ const defaults = {
     productName: false
   },
   homeKey: 'Home',
-  rebrand: true,
+  icons: {
+    mask: '/assets/rebrand/images/govuk-mask-icon.svg',
+    shortcut: '/assets/rebrand/images/favicon.ico',
+    touch: '/assets/rebrand/images/govuk-icon-180.png'
+  },
+  opengraphImageUrl: '/assets/rebrand/images/govuk-opengraph-image.png',
   stylesheets: [],
   titleSuffix: 'GOV.UK',
   url: false
@@ -28,25 +33,6 @@ export function defaultPluginOptions(options, pathPrefix) {
   if (options.titleSuffix === true) {
     delete options.titleSuffix
   }
-
-  // Rewrite default GOV.UK icon asset paths if rebrand enabled
-  defaults.icons =
-    options.rebrand !== false
-      ? {
-          mask: '/assets/rebrand/images/govuk-mask-icon.svg',
-          shortcut: '/assets/rebrand/images/favicon.ico',
-          touch: '/assets/rebrand/images/govuk-icon-180.png'
-        }
-      : {
-          mask: '/assets/images/govuk-mask-icon.svg',
-          shortcut: '/assets/images/favicon.ico',
-          touch: '/assets/images/govuk-icon-180.png'
-        }
-
-  // Rewrite default GOV.UK Opengraph asset path if rebrand enabled
-  defaults.opengraphImageUrl = options.rebrand
-    ? '/assets/rebrand/images/govuk-opengraph-image.png'
-    : '/assets/images/govuk-opengraph-image.png'
 
   return deepmerge(defaults, options)
 }

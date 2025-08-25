@@ -1,8 +1,6 @@
 {% from "macros/x-govuk-logo.njk" import xGovukLogo -%}
 {% from "govuk/macros/logo.njk" import govukLogo -%}
 
-{%- set _rebrand = params.rebrand | default(govukRebrand() if govukRebrand is callable else govukRebrand) -%}
-
 <footer class="govuk-footer app-footer {{ params.classes if params.classes }}" role="contentinfo"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="govuk-width-container {{ params.containerClasses if params.containerClasses }}">
     {% if xGovuk %}
@@ -15,11 +13,11 @@
         useCrown: true,
         useLogotype: false
       }) | trim | indent(10) }}
-    {% elif _rebrand and params.logo != false %}
+    {% elif params.logo != false %}
       {{- govukLogo({
         classes: "govuk-footer__crown",
-        rebrand: true,
-        useLogotype: false
+        useLogotype: false,
+        rebrand: true
       }) }}
     {% endif %}
     {% if params.navigation | length %}

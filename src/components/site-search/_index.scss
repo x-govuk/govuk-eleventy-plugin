@@ -15,12 +15,8 @@ $_icon-size: 40px;
       width: 100%;
 
       @include govuk-media-query($from: desktop) {
+        margin-bottom: 0;
         max-width: calc(33% - govuk-spacing(4));
-
-        .govuk-template--rebranded &,
-        .app-service-navigation & {
-          margin-bottom: 0;
-        }
       }
     }
   }

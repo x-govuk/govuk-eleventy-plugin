@@ -2,8 +2,6 @@
 {% from "macros/x-govuk-logo.njk" import xGovukLogo -%}
 {% from "govuk/macros/logo.njk" import govukLogo -%}
 
-{%- set _rebrand = params.rebrand | default(govukRebrand() if govukRebrand is callable else govukRebrand) -%}
-
 {%- if options.serviceNavigation -%}
   {%- set headerClasses = " govuk-header--full-width-border" -%}
 {% elif layout == "product" or layout == "collection" %}
@@ -27,8 +25,7 @@
           {{ govukLogo({
             classes: "govuk-header__logotype",
             ariaLabelText: "GOV.UK",
-            useTudorCrown: params.useTudorCrown,
-            rebrand: _rebrand
+            rebrand: true
           }) | trim | indent(10) }}
         {% endif %}
         {% if params.productName %}
