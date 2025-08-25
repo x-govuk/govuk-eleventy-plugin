@@ -442,22 +442,22 @@ To add an image, add an exclamation mark (`!`), followed by alternative text in 
 The rendered output looks like this:
 
 ```markdown
-![A crown icon above the words GOV.UK.](/assets/images/govuk-opengraph-image.png "The GOV.UK logo")
+![High angle photo of assorted-colour plastic balls.](/assets/post-image.jpg 'Photo by Greyson Joralemon')
 ```
 
-![A crown icon above the words GOV.UK.](/assets/images/govuk-opengraph-image.png 'The GOV.UK logo')
+![High angle photo of assorted-colour plastic balls.](/assets/post-image.jpg 'Photo by Greyson Joralemon')
 
 ### Linking images
 
 To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
 
 ```markdown
-[![A crown icon above the words GOV.UK.](/assets/images/govuk-icon-180.png 'Visit GOV.UK')](https://www.gov.uk)
+[![A stylised crown icon.](/assets/rebrand/images/govuk-icon-180.png)](https://www.gov.uk)
 ```
 
 The rendered output looks like this:
 
-[![A crown icon above the words GOV.UK.](/assets/images/govuk-icon-180.png 'Visit GOV.UK')](https://www.gov.uk)
+[![A stylised crown icon.](/assets/rebrand/images/govuk-icon-180.png)](https://www.gov.uk)
 
 ## Tables
 
