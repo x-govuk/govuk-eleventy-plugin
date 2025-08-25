@@ -2,6 +2,7 @@ import slugify from '@sindresorhus/slugify'
 import MarkdownIt from 'markdown-it'
 import markdownItAbbr from 'markdown-it-abbr'
 import markdownItAnchor from 'markdown-it-anchor'
+import markdownItAttribution from 'markdown-it-attribution'
 import markdownItAttrs from 'markdown-it-attrs'
 import markdownItDeflist from 'markdown-it-deflist'
 import markdownItFootnote from 'markdown-it-footnote'
@@ -50,6 +51,11 @@ export function md(options = {}) {
           })
         : false,
       slugify: (string) => slugify(string).replaceAll(/[*+~.()'"!:@]/g, '')
+    })
+    .use(markdownItAttribution, {
+      classNameContainer: 'app-attribution',
+      classNameAttribution: 'app-attribution__caption',
+      marker: '--'
     })
     .use(markdownItAttrs)
     .use(markdownItDeflist)

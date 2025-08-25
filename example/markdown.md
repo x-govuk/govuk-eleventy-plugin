@@ -79,6 +79,26 @@ The rendered output looks like this:
 >
 > Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
 
+### Blockquotes with attribution
+
+You can attribute a quote to its author by adding two hyphens (`--`) before the attribution you want to add.
+
+```markdown
+> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
+>
+> Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
+>
+> -- Winston Churchill, [in a speech to the House of Commons](https://hansard.parliament.uk/Commons/1947-11-11/debates/ab1e1152-6b4a-4d04-ac38-954df6634b08/ParliamentBill#207). 11th November 1947
+```
+
+The rendered output looks like this:
+
+> Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.
+>
+> Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.
+>
+> -- Winston Churchill, [in a speech to the House of Commons](https://hansard.parliament.uk/Commons/1947-11-11/debates/ab1e1152-6b4a-4d04-ac38-954df6634b08/ParliamentBill#207). 11th November 1947
+
 ## Alerts
 
 Alerts, based on the blockquote syntax, can be used emphasise critical information. [On GitHub they are displayed with distinctive colors and icons](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts), while pages rendered by the plugin use the [inset text component](https://design-system.service.gov.uk/components/inset-text/) from the GOV.UK Design System.

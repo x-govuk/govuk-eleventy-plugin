@@ -1,0 +1,13 @@
+@use "govuk-frontend/dist/govuk" as *;
+
+@include govuk-exports("govuk-eleventy-plugin/components/attribution") {
+  .app-attribution {
+    margin: 0 0 govuk-spacing(4);
+  }
+
+  .app-attribution__caption {
+    color: $govuk-secondary-text-colour;
+    margin: govuk-spacing(-2) 0 govuk-spacing(6);
+    padding: 0 0 0 govuk-spacing(6);
+  }
+}
