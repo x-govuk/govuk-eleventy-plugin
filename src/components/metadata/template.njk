@@ -7,7 +7,7 @@
 {% endmacro -%}
 
 <dl class="app-metadata">
-  {%- if params.author -%}
+  {% if params.author %}
   <div class="app-metadata__item">
     <dt class="app-metadata__term">Posted by</dt>
     <dd class="app-metadata__definition">
@@ -21,30 +21,30 @@
     {%- endif -%}
     </dd>
   </div>
-  {%- endif -%}
-  {%- if params.date -%}
+  {% endif %}
+  {% if params.date %}
   <div class="app-metadata__item">
     <dt class="app-metadata__term">Published</dt>
     <dd class="app-metadata__definition">
       <time datetime="{{ params.date | isoDate }}">{{ params.date | govukDate }}</time>
     </dd>
   </div>
-  {%- endif -%}
-  {%- if params.modified -%}
+  {% endif %}
+  {% if params.modified %}
   <div class="app-metadata__item">
     <dt class="app-metadata__term">Last updated</dt>
     <dd class="app-metadata__definition">
       <time datetime="{{ params.modified | isoDate }}">{{ params.modified | govukDate }}</time>
     </dd>
   </div>
-  {%- endif -%}
-  {%- if params.tags | length > 0 -%}
+  {% endif %}
+  {% if params.tags | length > 0 %}
   <div class="app-metadata__item">
-    <dt class="app-metadata__term">Tagged:</dt>
-    <dd class="app-metadata__definition">{%- for tag in params.tags %}
+    <dt class="app-metadata__term">Tagged</dt>
+    <dd class="app-metadata__definition">{% for tag in params.tags -%}
       <a href="/tags/{{ tag | slug }}" class="govuk-link">{{ tag }}</a>
-      {%- if not loop.last %}, {% endif %}
-    {%- endfor -%}</dd>
+      {%- if not loop.last %}, {% endif -%}
+    {%- endfor %}</dd>
   </div>
-  {%- endif -%}
+  {% endif %}
 </dl>
