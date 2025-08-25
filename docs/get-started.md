@@ -12,6 +12,8 @@ This plugin includes:
 
 - ready-to-use layouts that include [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend) components and styles
 
+- built-in features like search, tags, RSS feeds, and sitemap generation
+
 - flexible customisation with [full configuration options](/get-started/options) for the header and footer
 
 - Markdown support for [basic and extended syntax](/example/markdown)
