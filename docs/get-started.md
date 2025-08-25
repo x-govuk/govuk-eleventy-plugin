@@ -25,3 +25,7 @@ Follow the [installation guide](/get-started/install) to start building your fir
 ## Demo
 
 You can [see a demo site (opens in a new tab)](/example){target=example} built using this plugin. It demonstrates every layout and includes search, sitemap, tags and an RSS feed.
+
+## Want to build a site using NHS.UK styles?
+
+Use the [NHS.UK Eleventy Plugin](https://x-govuk.github.io/nhsuk-eleventy-plugin/) to build websites that use NHS.UK components and styles.
