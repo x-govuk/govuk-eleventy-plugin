@@ -27,7 +27,6 @@ export const layoutFilenames = [
   'page.njk',
   'post.njk',
   'product.njk',
-  'search-index.njk',
   'sitemap.njk',
   'sub-navigation.njk',
   'tag.njk',
