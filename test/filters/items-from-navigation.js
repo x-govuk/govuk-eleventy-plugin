@@ -63,7 +63,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/',
         text: 'Home',
-        order: undefined,
         theme: undefined,
         current: false,
         parent: true,
@@ -72,7 +71,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/parent/',
         text: 'Parent page',
-        order: undefined,
         theme: undefined,
         current: false,
         parent: true,
@@ -83,7 +81,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/parent/child',
         text: 'Child page',
-        order: undefined,
         theme: undefined,
         current: true,
         parent: true,
@@ -99,7 +96,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/',
         text: 'Home',
-        order: undefined,
         theme: undefined,
         current: false,
         parent: false,
@@ -108,7 +104,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/parent/',
         text: 'Parent page',
-        order: undefined,
         theme: undefined,
         current: false,
         parent: false,
@@ -119,7 +114,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/parent/child',
         text: 'Child page',
-        order: undefined,
         theme: undefined,
         current: false,
         parent: false,
@@ -140,7 +134,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/parent/child',
         text: 'Child page',
-        order: undefined,
         theme: undefined,
         current: true,
         parent: true,
@@ -149,7 +142,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/',
         text: 'Home',
-        order: undefined,
         theme: undefined,
         current: false,
         parent: true,
@@ -158,7 +150,6 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/parent/',
         text: 'Parent page',
-        order: undefined,
         theme: undefined,
         current: false,
         parent: true,
