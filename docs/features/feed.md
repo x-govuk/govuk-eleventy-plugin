@@ -3,51 +3,45 @@ title: RSS feed
 description: Allow readers to subscribe to posts in their feed reader.
 ---
 
-The GOV.UK Eleventy Plugin makes it easy to a feed to your site using the [XML Atom format](<https://en.wikipedia.org/wiki/Atom_(web_standard)>). Follow these instructions to enable this feature.
+An RSS feed lets users subscribe to your content and read new posts in their feed reader.
 
-## Create a feed
+The GOV.UK Eleventy Plugin creates a feed using the [XML Atom format](<https://en.wikipedia.org/wiki/Atom_(web_standard)>) that automatically includes your latest posts.
 
-To create a feed, add a file named `feed.njk` with the following content:
+{% set url = options.url | replace("https://", "feed://") %}
 
-```yaml
----
-eleventyExcludeFromCollections: true
-layout: feed
-permalink: /feed.xml
-collection:
-  name: post
-  limit: 20
----
-```
+> [!NOTE]
+> View an [example RSS feed (may open in a feed reader)]({{ "/example/feed.xml" | htmlBaseUrl(url) }})
 
-The `permalink` value is the location of the generated feed.
+## Configure the RSS feed
 
-## Create a collection of pages
+To enable an RSS feed for all posts on your site, set `templates.feed` to `true` in your plugin options.
 
-The feed will include all pages in the collection referenced by the `data` key of the `pagination` object.
+Or, you can customise the feed by using these options:
 
-You can create a collection by adding some code to your `eleventy.config.js`:
+| Name       | Type    | Description                                                                                                                 |
+| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
+| title      | string  | Sets the feed title (default is `Feed`)                                                                                     |
+| collection | string  | Sets the collection to use for feed entries (default is `feed`)                                                             |
+| size       | integer | Sets the number of recent entries to include in the feed (default is `20`)                                                  |
+| url        | string  | Sets the base URL for the feed (default is value used for `options.url`)                                                    |
+| permalink  | string  | Sets the file name and location (default is `/feed.xml`). Set to `false` to disable writing this file to the output folder. |
+
+## Using a different collection of pages
+
+By default the feed will include all pages that use the `post` layout.
+
+You can create your own collection and set the feed to use entries from that collection instead.
+
+Create a collection in `eleventy.config.js`:
 
 ```js
-eleventyConfig.addCollection('post', (collection) => {
-  return collection.getFilteredByGlob('app/posts/*.md')
+eleventyConfig.addCollection('guide', (collection) => {
+  return collection.getFilteredByGlob('app/guide/*.md')
 })
 ```
 
-## Add the URL of your feed to your options
+Then update the `collection` template option to use `'guide'`.
 
-To make the feed discoverable, add the full URL of your feed as `feedUrl` within the options for this plugin in your `.eleventy.config.js` options file:
+## Change how entries appear in your feed
 
-```js
-import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
-
-export default function(eleventyConfig) {
-  eleventyConfig.addPlugin(govukEleventyPlugin, {
-    feedUrl: 'feed.xml'
-  })
-}
-```
-
-This will then add an invisible `<link>` to the feed within the `<head>` of every page so that feed readers can find the feed.
-
-You may also want to link to the feed within your site itself.
+The RSS feed uses the [feed layout](/layouts/feed). You can override this layout to change how entries appear in your feed.

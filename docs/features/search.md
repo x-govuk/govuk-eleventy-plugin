@@ -3,44 +3,28 @@ title: Search
 description: Make it easier for readers to search for content on your site.
 ---
 
-The GOV.UK Eleventy Plugin makes it easy to add search functionality to your website. Follow these instructions to enable this feature.
+The GOV.UK Eleventy Plugin makes it easy to add search to your website.
 
-## Create a search index
-
-The site search needs an index of your pages and the key words and phrases they contain.
-
-To create the search index, add a file named `search.json.njk` with the following content:
-
-```yaml
----
-eleventyExcludeFromCollections: true
-layout: search-index
-permalink: /search.json
----
-```
-
-The `permalink` value is the location of the generated file.
-
-## Create a sitemap
-
-The search feature works when JavaScript is available, falling back to a link to a sitemap.
-
-Create the search index by creating a page that uses the `sitemap` layout:
-
-```yaml
----
-eleventyExcludeFromCollections: true
-layout: sitemap
-permalink: /sitemap
----
-```
+It works by creating a search index each time you build your site. This JSON file contains the title, description and URL of every page, plus a list of words that appear on that page.
 
 > [!NOTE]
-> View an <a href="/example/sitemap" target="_blank">example sitemap (opens in a new tab)</a>
+> View an [example search index (JSON, opens in a tab)](/example/search-index.json){target=example}
 
-## Add a search input to the site header
+This search index provides suggestions when users type in the search box in your site’s header or service navigation.
 
-Add the `permalink` values to the corresponding plugin options for `header.search`. For example:
+## Configure the search index
+
+To enable search indexing, set `templates.searchIndex` to `true` in your plugin options.
+
+Or, you can customise the search index by using these options:
+
+| Name      | Type   | Description                                                                                                                          |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| permalink | string | Sets the file name and location (default is `/search-index.json`). Set to `false` to disable writing this file to the output folder. |
+
+## Add a search bar to your site’s header or service navigation
+
+Add the `permalink` value to the corresponding plugin options for `header.search` or `serviceNavigation.search`. For example:
 
 ```js
 import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
@@ -49,7 +33,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     header: {
       search: {
-        indexPath: '/search.json',
+        indexPath: '/search-index.json',
         sitemapPath: '/sitemap'
       }
     }

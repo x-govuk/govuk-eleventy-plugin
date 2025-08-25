@@ -5,40 +5,23 @@ description: Allow readers to browse content by using tags to categorise posts.
 
 The GOV.UK Eleventy Plugin lets you use tags to categorise pages. Each post can display its list of tags, which link to a page that lists other posts with the same tag. Follow these instructions to enable this feature.
 
-## Create a page that lists all tags used
-
-To include a list of all tags used on your website, create a page that uses the `tags` layout:
-
-```yaml
----
-layout: tags
-title: Tags
-permalink: "/tags/"
----
-```
-
 > [!NOTE]
-> View an <a href="/example/tags" target="_blank">example tag index (opens in a new tab)</a>
+> View an [example tag list page (opens in a tab)](/example/tags){target=example} and an [example tag page (opens in a tab)](/example/tags/design){target=example}
 
-## Create a page for each tag
+## Configure tag pages
 
-To generate a page for each tag used on your website, create a page that uses the `tag` layout and paginates `collections.tags` data:
+To enable tag pages on your site, set `templates.tags` to `true` in your plugin options.
 
-```yaml
----
-layout: tag
-pagination:
-  addAllPagesToCollections: true
-  alias: tag
-  data: collections.tags
-  size: 1
-permalink: "/tags/{% raw %}{{ tag | slug }}{% endraw %}/"
-eleventyComputed:
-  title: "Posts tagged ‘{% raw %}{{ tag }}{% endraw %}’"
-eleventyNavigation:
-  parent: Tags
----
-```
+Or, you can customise tag pages by using these options:
 
-> [!NOTE]
-> View an <a href="/example/tags/design" target="_blank">example tag page (opens in a new tab)</a>
+| Name      | Type   | Description                                                                                                           |
+| --------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
+| title     | string | Sets the tag list title (default is `Tags`)                                                                           |
+| tagTitle  | string | Sets the title for individual tag pages (default is `Posts tagged ‘{% raw %}{{ tag }}{% endraw %}’`)                  |
+| permalink | string | Sets the folder name and location (default is `/tags`). Set to `false` to disable writing files to the output folder. |
+
+## Change how tag pages look
+
+The tag list page uses the [tags layout](/layouts/tags). You can override this layout to change how the page appears.
+
+The tag page uses the [tag layout](/layouts/tag). You can override this layout to change how the page appears.
