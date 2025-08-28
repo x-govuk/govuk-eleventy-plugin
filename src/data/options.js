@@ -3,7 +3,7 @@ import deepmerge from 'deepmerge'
 /**
  * Default option values
  *
- * @see {@link https://x-govuk.github.io/govuk-eleventy-plugin/options/}
+ * @see {@link https://x-govuk.github.io/govuk-eleventy-plugin/get-started/options/}
  */
 const defaults = {
   footer: {
