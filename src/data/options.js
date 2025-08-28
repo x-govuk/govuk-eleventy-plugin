@@ -16,7 +16,7 @@ const defaults = {
   },
   homeKey: 'Home',
   icons: {
-    mask: '/assets/rebrand/images/govuk-mask-icon.svg',
+    mask: '/assets/rebrand/images/govuk-icon-mask.svg',
     shortcut: '/assets/rebrand/images/favicon.ico',
     touch: '/assets/rebrand/images/govuk-icon-180.png'
   },
