@@ -1,3 +1,12 @@
+{%- macro _author(author) -%}
+<author>
+  <name>{{ author.name or author }}</name>
+  {% if author.url %}
+  <uri>{{ author.url }}</uri>
+  {% endif %}
+</author>
+{% endmacro -%}
+
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ options.url }}">
   <title>{{ title or options.homeKey }}</title>
@@ -12,14 +21,13 @@
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ item.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    {% for author in item.data.authors or [item.data.author] %}
-    <author>
-      <name>{{ author.name }}</name>
-      {% if author.url %}
-      <uri>{{ author.url }}</uri>
-      {% endif %}
-    </author>
-    {% endfor %}
+    {%- if item.data.author is string or item.data.author is mapping -%}
+      {{- _author(item.data.author) -}}
+    {%- else -%}
+      {%- for author in item.data.author -%}
+        {{- _author(author) -}}
+      {%- endfor -%}
+    {%- endif -%}
     <content xml:lang="{{ language or "en" }}" type="html">
       <![CDATA[
         {% if item.data.image %}<figure><img src="{{ item.data.image.src | canonicalUrl }}" alt="{{ item.data.image.alt }}">{% if item.data.image.caption %}<figcaption>{{ item.data.image.caption | markdown }}</figcaption>
