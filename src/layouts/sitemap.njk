@@ -21,7 +21,7 @@
         {% endif %}
         {{ collections.sitemap | eleventyNavigation(item.key) | eleventyNavigationToHtml({
           listClass: "app-contents-list govuk-!-margin-left-4"
-        }) | safe }}
+        }) | smart | safe }}
       </div>
     {% endfor %}
   </div>
