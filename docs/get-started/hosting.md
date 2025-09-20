@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
     - name: Setup Pages
       uses: actions/configure-pages@v5
     - name: Install dependencies
@@ -47,7 +47,7 @@ jobs:
     - name: Build with Eleventy
       run: npm run-script build
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
 
   deploy:
     environment:
