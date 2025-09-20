@@ -1,4 +1,4 @@
-import { sortNavigation } from './navigation.js'
+import { sortCollection } from './collection.js'
 import { smart } from './smart.js'
 
 /**
@@ -18,7 +18,7 @@ export function itemsFromNavigation(
   sort = false
 ) {
   const navigationItems = []
-  const navigationData = sortNavigation(eleventyNavigation, sort)
+  const navigationData = sortCollection(eleventyNavigation, sort)
 
   navigationData.forEach((item) => {
     const isCurrentPage = pageUrl && item.url === pageUrl
@@ -29,7 +29,7 @@ export function itemsFromNavigation(
       text: smart(item.title),
       theme: item.data?.theme,
       children: item.children
-        ? sortNavigation(item.children, sort).map((child) => ({
+        ? sortCollection(item.children, sort).map((child) => ({
             current: pageUrl && child.url === pageUrl,
             href: child.url,
             text: smart(child.title)
