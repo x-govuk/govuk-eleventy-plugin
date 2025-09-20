@@ -2,7 +2,7 @@
 {%- set size = params.size or "xl" -%}
 {%- if params.caption -%}
 <span class="govuk-caption-{{ size }}">
-  {{- params.caption -}}
+  {{- params.caption | smart -}}
 </span>
 {%- endif -%}
 <h{{level}} class="govuk-heading-{{ size }}{%- if params.classes %} {{ params.classes }}{% endif %}">
