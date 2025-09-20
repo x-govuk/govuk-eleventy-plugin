@@ -40,7 +40,7 @@ export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   const options = defaultPluginOptions(pluginOptions, pathPrefix)
 
   // Libraries
-  eleventyConfig.setLibrary('md', md(options))
+  eleventyConfig.setLibrary('md', md(options.markdown))
   eleventyConfig.setLibrary('njk', nunjucksConfig(eleventyConfig))
 
   // Collections

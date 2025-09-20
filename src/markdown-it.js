@@ -25,26 +25,27 @@ import { tableRules } from './markdown-it/table.js'
  * Configure markdown-it
  *
  * @see {@link https://markdown-it.github.io/markdown-it/}
- * @param {object} [options] - Plugin options
+ * @param {object} [markdownOptions] - Plugin Markdown options
  * @returns {Function} markdown-it instance
  */
-export function md(options = {}) {
+export function md(markdownOptions = {}) {
   const opts = {
     breaks: true,
     highlight,
     html: true,
     linkify: false,
-    typographer: true
+    typographer: true,
+    ...markdownOptions
   }
 
   const md = new MarkdownIt(opts)
     .use(markdownItGovuk, {
-      headingsStartWith: 'xl',
-      calvert: true
+      calvert: true,
+      headingsStartWith: markdownOptions.headingsStartWith
     })
     .use(markdownItAbbr)
     .use(markdownItAnchor, {
-      permalink: options.headingPermalinks
+      permalink: markdownOptions.headingPermalinks
         ? markdownItAnchor.permalink.headerLink({
             class: 'app-link--heading',
             safariReaderFix: true

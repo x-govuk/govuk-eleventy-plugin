@@ -15,13 +15,15 @@ export default function (eleventyConfig) {
       touch:
         'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-icon-180.png'
     },
+    markdown: {
+      headingPermalinks: true
+    },
     opengraphImageUrl:
       'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
     themeColor: '#2288aa',
     titleSuffix: serviceName,
     homeKey: serviceName,
     showBreadcrumbs: false,
-    headingPermalinks: true,
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/govuk-eleventy-plugin/',

@@ -20,6 +20,10 @@ const defaults = {
     shortcut: '/assets/rebrand/images/favicon.ico',
     touch: '/assets/rebrand/images/govuk-icon-180.png'
   },
+  markdown: {
+    headingPermalinks: false,
+    headingsStartWith: 'xl'
+  },
   opengraphImageUrl: '/assets/rebrand/images/govuk-opengraph-image.png',
   stylesheets: [],
   titleSuffix: 'GOV.UK',
@@ -41,6 +45,18 @@ export function defaultPluginOptions(options, pathPrefix) {
   // Add _feedPath to enable feed to be linked to from page head
   if (options.templates?.feed) {
     options._feedPath = options.templates?.feed?.permalink || '/feed.xml'
+  }
+
+  // Show message if using deprecated headingPermalinks option
+  if (options?.headingPermalinks) {
+    console.warn(
+      'The `headingPermalinks` option is deprecated and will be removed in a future version. Use `markdown.headingPermalinks` option instead.'
+    )
+
+    options.markdown = {
+      headingPermalinks: options.headingPermalinks,
+      ...options.markdown
+    }
   }
 
   return deepmerge(defaults, options)
