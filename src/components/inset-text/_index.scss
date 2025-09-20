@@ -8,14 +8,26 @@
 .app-inset-text--important {
   background-color: govuk-tint(govuk-colour("bright-purple"), 85%);
   border-color: govuk-colour("bright-purple");
+
+  .govuk-link {
+    color: govuk-shade(govuk-colour("bright-purple"), 50%);
+  }
 }
 
 .app-inset-text--warning {
   background-color: govuk-tint(govuk-colour("yellow"), 75%);
   border-color: govuk-colour("brown");
+
+  .govuk-link {
+    color: govuk-shade(govuk-colour("yellow"), 65%);
+  }
 }
 
 .app-inset-text--caution {
   background-color: govuk-tint(govuk-colour("red"), 75%);
   border-color: govuk-colour("red");
+
+  .govuk-link {
+    color: govuk-shade(govuk-colour("red"), 80%);
+  }
 }
