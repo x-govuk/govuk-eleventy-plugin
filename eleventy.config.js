@@ -1,3 +1,4 @@
+import fs from 'node:fs/promises'
 import process from 'node:process'
 
 import { govukEleventyPlugin } from './src/index.js'
@@ -112,6 +113,16 @@ export default function (eleventyConfig) {
 
   // Enable X-GOVUK brand
   eleventyConfig.addNunjucksGlobal('xGovuk', true)
+
+  // Reset contents of output directory before each build
+  eleventyConfig.on('eleventy.before', async ({ directories, runMode }) => {
+    if (runMode === 'build') {
+      await fs.rm(directories.output, {
+        force: true,
+        recursive: true
+      })
+    }
+  })
 
   // Config
   return {

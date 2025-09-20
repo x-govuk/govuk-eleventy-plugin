@@ -28,13 +28,13 @@
     "url": "git+https://github.com/x-govuk/govuk-eleventy-plugin.git"
   },
   "scripts": {
-    "prebuild": "rimraf _site",
-    "postbuild": "npm run build:example",
     "build": "eleventy",
+    "postbuild": "npm run build:example",
     "build:example": "eleventy --config=example.config.js",
     "predev": "npm run build",
     "dev": "eleventy --serve --watch",
     "dev:example": "eleventy --serve --watch --config=example.config.js",
+    "prestart": "npm run build",
     "start": "eleventy --serve",
     "lint:prettier": "prettier . --check",
     "lint:prettier:fix": "prettier . --write",
@@ -75,7 +75,6 @@
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
     "markdown-it-table-of-contents": "^1.0.0",
-    "rimraf": "^6.0.0",
     "rollup": "^4.1.0",
     "sass": "^1.45.1",
     "smartypants": "^0.2.0"

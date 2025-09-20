@@ -1,3 +1,4 @@
+import fs from 'node:fs/promises'
 import process from 'node:process'
 
 import { govukEleventyPlugin } from './src/index.js'
@@ -37,6 +38,16 @@ export default function (eleventyConfig) {
 
   // Passthrough
   eleventyConfig.addPassthroughCopy('./example/assets')
+
+  // Reset contents of output directory before each build
+  eleventyConfig.on('eleventy.before', async ({ directories, runMode }) => {
+    if (runMode === 'build') {
+      await fs.rm(directories.output, {
+        force: true,
+        recursive: true
+      })
+    }
+  })
 
   // Config
   return {
