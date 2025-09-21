@@ -87,6 +87,15 @@ export default function(eleventyConfig) {
 };
 ```
 
+> [!NOTE] Using custom styles
+> If you are [overriding the default styles](/get-started/design#override-the-default-styles), set `$govuk-assets-path` and include the name of your sub-folder. For example:
+>
+> ```scss
+> @use "pkg:govuk-frontend/dist/govuk" with (
+>   $govuk-assets-path: "/api-docs/assets/"
+> );
+> ```
+
 ## Using different values when building a site locally
 
 Environment variables are a good way to let Eleventy know when a site is generated locally and served at the root domain, or when it’s built for production and served from a subpath.
