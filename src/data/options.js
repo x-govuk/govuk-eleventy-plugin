@@ -23,7 +23,8 @@ const defaults = {
   markdown: {
     calvert: true,
     headingPermalinks: false,
-    headingsStartWith: 'xl'
+    headingsStartWith: 'xl',
+    govspeak: true
   },
   opengraphImageUrl: '/assets/rebrand/images/govuk-opengraph-image.png',
   stylesheets: [],
