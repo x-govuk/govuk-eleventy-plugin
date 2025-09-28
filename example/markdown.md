@@ -556,3 +556,32 @@ Here’s a simple footnote,[^1] and here’s a longer one.[^longer]
 | Copyright            | `(C)` `(c)`           | (C)                 |
 | Registered trademark | `(R)` `(r)`           | (R)                 |
 | Trademark            | `(TM)` `(tm)`         | (TM)                |
+
+## Govspeak
+
+==Todo: Integrate examples into above==
+
+### Address
+
+$A
+HM Revenue and Customs
+Bradford
+BD98 1YY
+$A
+
+### Example callout
+
+$E
+**Example** This is an indented example block.
+It may span multiple lines, [contain links](#).
+
+It may even span multiple paragraphs.
+$E
+
+### Information callout
+
+%The water in the mouth of a blue whale weighs more than its body.%
+
+### Warning callout
+
+^If you drilled a tunnel straight through the Earth and jumped in, it would take you exactly 42 minutes and 12 seconds to get to the other side.^
