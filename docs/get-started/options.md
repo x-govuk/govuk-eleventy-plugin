@@ -26,7 +26,7 @@ export default function(eleventyConfig) {
 | --------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | footer                | object            | See [options for footer](#options-for-footer-object)                                                                                                                         |
 | header                | object            | See [options for header](#options-for-header-object)                                                                                                                         |
-| homeKey               | string            | First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is `Home`) |
+| homeKey               | string            | First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/). Default is `Home`. |
 | icons                 | object            | Override GOV.UK site icons                                                                                                                                                   |
 | icons.mask            | string or boolean | Override GOV.UK SVG mask icon. Use `false` to not include a mask icon.                                                                                                       |
 | icons.shortcut        | string or boolean | Override GOV.UK favicon. Use `false` to not include a favicon.                                                                                                               |
@@ -34,16 +34,16 @@ export default function(eleventyConfig) {
 | markdown              | object            | Options for [Markdown](#options-for-markdown)                                                                                                                                |
 | opengraphImageUrl     | string            | URL for default Open Graph share image                                                                                                                                       |
 | serviceNavigation     | object            | See [options for service navigation](#options-for-service-navigation-object)                                                                                                 |
-| showBreadcrumbs       | boolean           | Show breadcrumb navigation (default is `true` for nested pages)                                                                                                              |
+| showBreadcrumbs       | boolean           | Show breadcrumb navigation. Default is `true` for nested pages.                                                                                                              |
 | stylesheets           | array             | Stylesheets to load instead of default application styles                                                                                                                    |
 | templates             | object            | Configuration for page templates                                                                                                                                             |
-| templates.error404    | object or boolean | Configuration for the [404 page not found template](/features/404) (default is `true`)                                                                                       |
-| templates.feed        | object or boolean | Configuration for the [RSS feed template](/features/feed) (default is `false`)                                                                                               |
-| templates.searchIndex | object or boolean | Configuration for the [search index template](/features/search) (default is `false`)                                                                                         |
-| templates.sitemap     | object or boolean | Configuration for the [sitemap template](/features/sitemap) (default is `true`)                                                                                              |
-| templates.tag         | object or boolean | Configuration for the [tag templates](/features/tags) (default is `false`)                                                                                                   |
-| themeColor            | string            | Browser theme colour. Must be a hex value (default is `#0b0c0c`)                                                                                                             |
-| titleSuffix           | string            | Value to show at the end of the document title (default is `GOV.UK`)                                                                                                         |
+| templates.error404    | object or boolean | Configuration for the [404 page not found template](/features/404). Default is `true`.                                                                                       |
+| templates.feed        | object or boolean | Configuration for the [RSS feed template](/features/feed). Default is `false`.                                                                                               |
+| templates.searchIndex | object or boolean | Configuration for the [search index template](/features/search). Default is `false`.                                                                                         |
+| templates.sitemap     | object or boolean | Configuration for the [sitemap template](/features/sitemap). Default is `true`.                                                                                              |
+| templates.tag         | object or boolean | Configuration for the [tag templates](/features/tags). Default is `false`.                                                                                                   |
+| themeColor            | string            | Browser theme colour. Must be a hex value. Default is `#0b0c0c`.                                                                                                             |
+| titleSuffix           | string            | Value to show at the end of the document title. Default is `GOV.UK`.                                                                                                         |
 | url                   | string            | The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data.                                                                        |
 
 ## Options for `header` object
@@ -73,7 +73,7 @@ Follow guidance in the GOV.UK Design System about [adding other header and navig
 
 | Name        | Type   | Description                                                                       |
 | ----------- | ------ | --------------------------------------------------------------------------------- |
-| label       | string | Text to show in the search field (default is `Search site`)                       |
+| label       | string | Text to show in the search field. Default is `Search site`.                       |
 | indexPath   | string | Path to search index file                                                         |
 | sitemapPath | string | Path to sitemap page, shown as a fallback if the search field cannot be displayed |
 
@@ -89,7 +89,7 @@ Alongside [options available for the footer component](https://design-system.ser
 | copyright           | object  | Copyright statement. If no value is provided, `© Crown copyright` is displayed below an image of the Royal Coat of Arms. Set to `false` to remove completely.                                                                 |
 | copyright.text      | string  | If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
 | copyright.html      | string  | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
-| logo                | boolean | Show logo in footer (default is `true`)                                                                                                                                                                                        |
+| logo                | boolean | Show logo in footer. Default is `true`.                                                                                                                                                                                        |
 
 ### Options for Markdown
 
@@ -97,5 +97,5 @@ Alongside [options for markdown-it](https://markdown-it.github.io/markdown-it/#M
 
 | Name              | Type    | Description                                                                              |
 | ----------------- | ------- | ---------------------------------------------------------------------------------------- |
-| headingPermalinks | boolean | Add links to headings, making it easier to share sections of a page (default is `false`) |
-| headingsStartWith | string  | Heading size to use for the top-level heading, `xl` or `l` (default is `xl`)             |
+| headingPermalinks | boolean | Add links to headings, making it easier to share sections of a page. Default is `false`. |
+| headingsStartWith | string  | Heading size to use for the top-level heading, `xl` or `l`. Default is `xl`.             |

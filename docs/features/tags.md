@@ -14,11 +14,11 @@ To enable tag pages on your site, set `templates.tags` to `true` in your plugin 
 
 Or, you can customise tag pages by using these options:
 
-| Name      | Type   | Description                                                                                                           |
-| --------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
-| title     | string | Sets the tag list title (default is `Tags`)                                                                           |
-| tagTitle  | string | Sets the title for individual tag pages (default is `Posts tagged ‘{% raw %}{{ tag }}{% endraw %}’`)                  |
-| permalink | string | Sets the folder name and location (default is `/tags`). Set to `false` to disable writing files to the output folder. |
+| Name      | Type   | Description                                                                                                          |
+| --------- | ------ | -------------------------------------------------------------------------------------------------------------------- |
+| title     | string | Sets the tag list title. Default is `Tags`.                                                                          |
+| tagTitle  | string | Sets the title for individual tag pages. Default is `Posts tagged ‘{% raw %}{{ tag }}{% endraw %}’`.                 |
+| permalink | string | Sets the folder name and location. Default is `/tags`. Set to `false` to disable writing files to the output folder. |
 
 ## Change how tag pages look
 
