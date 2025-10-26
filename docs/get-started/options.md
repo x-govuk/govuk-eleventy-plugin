@@ -95,7 +95,8 @@ Alongside [options available for the footer component](https://design-system.ser
 
 Alongside [options for markdown-it](https://markdown-it.github.io/markdown-it/#MarkdownIt.new), you can also set the following options:
 
-| Name              | Type    | Description                                                                              |
-| ----------------- | ------- | ---------------------------------------------------------------------------------------- |
-| headingPermalinks | boolean | Add links to headings, making it easier to share sections of a page. Default is `false`. |
-| headingsStartWith | string  | Heading size to use for the top-level heading, `xl` or `l`. Default is `xl`.             |
+| Name              | Type             | Description                                                                                                                                                                                                                                                                                          |
+| ----------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| calvert           | boolean or Array | Typographic improvements to enable (alongside those provided by markdown-it’s `typographer` option). Set this option to `true` to enable all improvements, or array containing individual improvement sets to include (choose from `fractions`, `guillemets` and `mathematical`). Default is `true`. |
+| headingPermalinks | boolean          | Add links to headings, making it easier to share sections of a page. Default is `false`.                                                                                                                                                                                                             |
+| headingsStartWith | string           | Heading size to use for the top-level heading, `xl` or `l`. Default is `xl`.                                                                                                                                                                                                                         |
