@@ -99,6 +99,9 @@ The rendered output looks like this:
 >
 > -- Winston Churchill, [in a speech to the House of Commons](https://hansard.parliament.uk/Commons/1947-11-11/debates/ab1e1152-6b4a-4d04-ac38-954df6634b08/ParliamentBill#207). 11th November 1947
 
+> [!TIP]
+> To render blockquotes as inset text, disable the `blockquote` option for `markdown.govspeak`.
+
 ## Alerts
 
 Alerts, based on the blockquote syntax, can be used emphasise critical information. [On GitHub they are displayed with distinctive colors and icons](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts), while pages rendered by the plugin use the [inset text component](https://design-system.service.gov.uk/components/inset-text/) from the GOV.UK Design System.
@@ -556,3 +559,81 @@ Here’s a simple footnote,[^1] and here’s a longer one.[^longer]
 | Copyright            | `(C)` `(c)`           | (C)                 |
 | Registered trademark | `(R)` `(r)`           | (R)                 |
 | Trademark            | `(TM)` `(tm)`         | (TM)                |
+
+## Govspeak
+
+[Govspeak](https://github.com/alphagov/govspeak) is a simplified version of Markdown used on GOV.UK. It’s designed to be as easy-to-read and easy-to-write as possible, using simple punctuation instead of complicated tags and code.
+
+Configure Govspeak extensions using the `markdown.govspeak` option.
+
+### Addresses
+
+To create an address box, add `$A` before and after the address.
+
+```markdown
+$A
+HM Revenue and Customs
+Bradford
+BD98 1YY
+$A
+```
+
+The rendered output looks like this:
+
+$A
+HM Revenue and Customs
+Bradford
+BD98 1YY
+$A
+
+Do not use bold for the address title. This is not accessible because it looks like a heading and can be confusing for users of assistive technology. Use heading Markdown above the address Markdown instead if you need to draw attention to the information.
+
+### Callouts
+
+To draw attention to content, you can use callouts. For example, you can put some text in an information callout to indicate that it’s something related that’s worth knowing, or does not fit the flow of the content.
+
+#### Example callout
+
+To create an example callout, add `$E` before and after the block of text you want to callout as an example.
+
+```markdown
+$E
+**Example** This is an indented example block.
+It may span multiple lines and [contain links](#).
+
+It may even span multiple paragraphs.
+$E
+```
+
+The rendered output looks like this:
+
+$E
+**Example** This is an indented example block.
+It may span multiple lines and [contain links](#).
+
+It may even span multiple paragraphs.
+$E
+
+#### Information callout
+
+To create an information callout, add one `^` before and after a word or phrase.
+
+```markdown
+^The water in the mouth of a blue whale weighs more than its body.^
+```
+
+The rendered output looks like this:
+
+^The water in the mouth of a blue whale weighs more than its body.^
+
+#### Warning callout
+
+To create a warning callout, add one `%` before and after a word or phrase.
+
+```markdown
+%You can be fined up to £5,000 if you do not register.%
+```
+
+The rendered output looks like this:
+
+%You can be fined up to £5,000 if you do not register.%
