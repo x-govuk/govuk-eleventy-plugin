@@ -21,6 +21,7 @@ const defaults = {
     touch: '/assets/rebrand/images/govuk-icon-180.png'
   },
   markdown: {
+    calvert: true,
     headingPermalinks: false,
     headingsStartWith: 'xl'
   },
