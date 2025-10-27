@@ -41,8 +41,8 @@ export function md(markdownOptions = {}) {
   const md = new MarkdownIt(opts)
     .use(markdownItGovuk, {
       calvert: true,
-      headingsStartWith: markdownOptions.headingsStartWith,
-      govspeak: markdownOptions.govspeak
+      govspeak: markdownOptions.govspeak,
+      headingsStartWith: markdownOptions.headingsStartWith
     })
     .use(markdownItAbbr)
     .use(markdownItAnchor, {
