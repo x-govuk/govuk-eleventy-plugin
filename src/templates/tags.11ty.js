@@ -1,3 +1,5 @@
+import Nunjucks from 'nunjucks'
+
 /**
  * Creates a new tags template
  *
@@ -35,7 +37,11 @@ export class TagTemplate {
     this.slugify = options?.slugify || ((string) => string)
     this.permalink = options?.permalink || '/tags/'
     this.caption = options?.title || 'Tags'
-    this.title = (data) => options?.tagTitle || `Posts tagged ‘${data.tag}’`
+    this.title = (data) =>
+      Nunjucks.renderString(
+        options?.tagTitle || 'Posts tagged ‘{{ tag }}’',
+        data
+      )
   }
 
   /**
