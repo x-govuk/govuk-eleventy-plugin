@@ -46,7 +46,7 @@
     "lint:fix": "npm run lint:prettier:fix && npm run lint:js:fix && npm run lint:scss:fix",
     "test": "node --test",
     "coverage": "node --test --experimental-test-coverage",
-    "release": "np"
+    "release": "np --no-publish"
   },
   "publishConfig": {
     "access": "public"
