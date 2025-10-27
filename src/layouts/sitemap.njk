@@ -11,7 +11,7 @@
 
     {{ appProseScope(content) if content }}
 
-    {% for item in collections.sitemap | eleventyNavigation(options.homeKey) %}
+    {% for item in collections.sitemap | sortCollection(true) | eleventyNavigation(options.homeKey) %}
       <div class="govuk-!-margin-bottom-4">
         <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
           <a class="govuk-link" href="{{ item.url | canonicalUrl | pretty }}">{{ item.title | smart }}</a>
