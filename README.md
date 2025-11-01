@@ -30,7 +30,7 @@ export default function(eleventyConfig) {
 }
 ```
 
-Learn more about how to [get started](https://x-govuk.github.io/govuk-eleventy-plugin/get-started/) and which [options you can provide](https://x-govuk.github.io/govuk-eleventy-plugin/get-started/options/).
+Learn more about how to [get started](https://x-govuk.org/govuk-eleventy-plugin/get-started/) and which [options you can provide](https://x-govuk.org/govuk-eleventy-plugin/get-started/options/).
 
 ## Releasing a new version
 

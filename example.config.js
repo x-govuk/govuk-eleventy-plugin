@@ -8,7 +8,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     url:
       process.env.GITHUB_ACTIONS &&
-      'https://x-govuk.github.io/govuk-eleventy-plugin/example/',
+      'https://x-govuk.org/govuk-eleventy-plugin/example/',
     serviceNavigation: {
       serviceName: 'Apply for a juggling licence',
       serviceUrl: '/',

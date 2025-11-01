@@ -20,17 +20,17 @@ export default function (eleventyConfig) {
       headingPermalinks: true
     },
     opengraphImageUrl:
-      'https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png',
+      'https://x-govuk.org/govuk-eleventy-plugin/assets/opengraph-image.png',
     themeColor: '#2288aa',
     titleSuffix: serviceName,
     homeKey: serviceName,
     showBreadcrumbs: false,
     url:
       process.env.GITHUB_ACTIONS &&
-      'https://x-govuk.github.io/govuk-eleventy-plugin/',
+      'https://x-govuk.org/govuk-eleventy-plugin/',
     stylesheets: ['/assets/application.css'],
     header: {
-      homepageUrl: 'https://x-govuk.github.io'
+      homepageUrl: 'https://x-govuk.org'
     },
     serviceNavigation: {
       serviceName,

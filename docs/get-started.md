@@ -28,4 +28,4 @@ You can [see a demo site (opens in a new tab)](/example){target=example} built u
 
 ## Want to build a site using NHS.UK styles?
 
-Use the [NHS.UK Eleventy Plugin](https://x-govuk.github.io/nhsuk-eleventy-plugin/) to build websites that use NHS.UK components and styles.
+Use the [NHS.UK Eleventy Plugin](https://x-govuk.org/nhsuk-eleventy-plugin/) to build websites that use NHS.UK components and styles.

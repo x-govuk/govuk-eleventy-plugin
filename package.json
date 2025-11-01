@@ -8,7 +8,7 @@
     "eleventy",
     "eleventy-plugin"
   ],
-  "homepage": "https://x-govuk.github.io/govuk-eleventy-plugin/",
+  "homepage": "https://x-govuk.org/govuk-eleventy-plugin/",
   "bugs": {
     "url": "git+https://github.com/x-govuk/govuk-eleventy-plugin/issues"
   },
