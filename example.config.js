@@ -1,14 +1,10 @@
 import fs from 'node:fs/promises'
-import process from 'node:process'
 
 import { govukEleventyPlugin } from './src/index.js'
 
 export default function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(govukEleventyPlugin, {
-    url:
-      process.env.GITHUB_ACTIONS &&
-      'https://x-govuk.org/govuk-eleventy-plugin/example/',
     serviceNavigation: {
       serviceName: 'Apply for a juggling licence',
       serviceUrl: '/',
@@ -55,8 +51,6 @@ export default function (eleventyConfig) {
       input: 'example',
       output: '_site/example'
     },
-    pathPrefix: process.env.GITHUB_ACTIONS
-      ? '/govuk-eleventy-plugin/example/'
-      : '/example/'
+    pathPrefix: '/example/'
   }
 }

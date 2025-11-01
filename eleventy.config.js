@@ -1,5 +1,4 @@
 import fs from 'node:fs/promises'
-import process from 'node:process'
 
 import { govukEleventyPlugin } from './src/index.js'
 import { layoutFilenames } from './src/index.js'
@@ -20,21 +19,18 @@ export default function (eleventyConfig) {
       headingPermalinks: true
     },
     opengraphImageUrl:
-      'https://x-govuk.org/govuk-eleventy-plugin/assets/opengraph-image.png',
+      'https://govuk-eleventy-plugin.x-govuk.org/assets/opengraph-image.png',
     themeColor: '#2288aa',
     titleSuffix: serviceName,
     homeKey: serviceName,
     showBreadcrumbs: false,
-    url:
-      process.env.GITHUB_ACTIONS &&
-      'https://x-govuk.org/govuk-eleventy-plugin/',
     stylesheets: ['/assets/application.css'],
     header: {
       homepageUrl: 'https://x-govuk.org'
     },
     serviceNavigation: {
       serviceName,
-      serviceUrl: process.env.GITHUB_ACTIONS ? '/govuk-eleventy-plugin/' : '/',
+      serviceUrl: '/',
       search: {
         indexPath: '/search-index.json',
         sitemapPath: '/sitemap'
@@ -129,7 +125,8 @@ export default function (eleventyConfig) {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    dir: { input: 'docs' },
-    pathPrefix: process.env.GITHUB_ACTIONS && '/govuk-eleventy-plugin/'
+    dir: {
+      input: 'docs'
+    }
   }
 }
