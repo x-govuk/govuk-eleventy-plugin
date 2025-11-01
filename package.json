@@ -55,7 +55,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-navigation": "^1.0.0",
     "@11ty/eleventy-plugin-rss": "^2.0.0",
-    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@x-govuk/govuk-prototype-components": "^5.0.0",
