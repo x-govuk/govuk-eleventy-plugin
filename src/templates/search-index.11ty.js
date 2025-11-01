@@ -16,6 +16,7 @@ export class SearchIndexTemplate {
   data() {
     return {
       eleventyExcludeFromCollections: true,
+      layout: false,
       permalink: this.permalink
     }
   }
