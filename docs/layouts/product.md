@@ -24,9 +24,9 @@ In addition to [common front matter options](/layouts/front-matter-options), thi
 
 | Name               | Type    | Description                                                               |
 | ------------------ | ------- | ------------------------------------------------------------------------- |
-| inverseMasthead    | boolean | Use the masthead with a dark background. Default is `true`.               |
+| inverseMasthead    | boolean | Use the masthead with a dark background (default is `true`)               |
 | startButton        | object  | Start button. Appears below the title and any description.                |
-| startButton.text   | string  | Text for the start button. Default is `Get started`.                      |
+| startButton.text   | string  | Text for the start button (default is `Get started`)                      |
 | startButton.href   | string  | URL or page the start button should link to                               |
 | image              | object  | Product image. Appears to the right of the page title on desktop layouts. |
 | image.src          | string  | Path to product image                                                     |

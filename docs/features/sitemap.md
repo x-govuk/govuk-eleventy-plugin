@@ -16,10 +16,10 @@ The plugin enables the sitemap page by default (it is linked to from the 404 pag
 
 Or, you can customise the page by using these options:
 
-| Name      | Type   | Description                                                                                                                |
-| --------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| title     | string | Sets the page title. Default is `Sitemap`)                                                                                 |
-| permalink | string | Sets the file name and location. Default is `/sitemap/`. Set to `false` to disable writing this file to the output folder. |
+| Name      | Type   | Description                                                                                                                 |
+| --------- | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+| title     | string | Sets the page title (default is `Sitemap`)                                                                                  |
+| permalink | string | Sets the file name and location (default is `/sitemap/`). Set to `false` to disable writing this file to the output folder. |
 
 ## Change how the sitemap page looks
 

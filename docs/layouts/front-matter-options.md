@@ -11,7 +11,7 @@ All layouts can accept the following [front matter data](https://www.11ty.dev/do
 | aside.content        | string  | Content for aside. Accepts Markdown.                                                                                     |
 | caption              | string  | Heading caption that sits above the page title                                                                           |
 | description          | string  | Page description                                                                                                         |
-| includeInBreadcrumbs | boolean | Include page as the last item in any breadcrumbs. Default is `false`.                                                    |
+| includeInBreadcrumbs | boolean | Include page as the last item in any breadcrumbs (default is `false`)                                                    |
 | layout               | string  | Page layout to use                                                                                                       |
 | opengraphImage       | object  | Open Graph image that appears on social media networks                                                                   |
 | opengraphImage.src   | string  | Path to Open Graph image. Can be a relative or absolute URL. This value overrides `opengraphImageUrl` in plugin options. |
@@ -26,7 +26,7 @@ All layouts can accept the following [front matter data](https://www.11ty.dev/do
 
 | Name                | Type   | Description                                                                                               |
 | ------------------- | ------ | --------------------------------------------------------------------------------------------------------- |
-| title               | string | Title for group of related links. Default is `Related content`.                                           |
+| title               | string | Title for group of related links (default is `Related content`)                                           |
 | items               | array  | See [options for related items](#options-for-related-items-array-objects).                                |
 | subsections         | array  | Subsections containing related links                                                                      |
 | subsections[].title | string | Title for a subsection of related links                                                                   |

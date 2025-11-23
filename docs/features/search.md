@@ -18,9 +18,9 @@ To enable search indexing, set `templates.searchIndex` to `true` in your plugin 
 
 Or, you can customise the search index by using these options:
 
-| Name      | Type   | Description                                                                                                                         |
-| --------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| permalink | string | Sets the file name and location. Default is `/search-index.json`. Set to `false` to disable writing this file to the output folder. |
+| Name      | Type   | Description                                                                                                                          |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| permalink | string | Sets the file name and location (default is `/search-index.json`). Set to `false` to disable writing this file to the output folder. |
 
 ## Add a search bar to your site’s header or service navigation
 

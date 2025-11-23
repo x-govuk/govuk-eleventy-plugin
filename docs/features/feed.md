@@ -18,13 +18,13 @@ To enable an RSS feed for all posts on your site, set `templates.feed` to `true`
 
 Or, you can customise the feed by using these options:
 
-| Name       | Type    | Description                                                                                                                |
-| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------- |
-| title      | string  | Sets the feed title. Default is `Feed`.                                                                                    |
-| collection | string  | Sets the collection to use for feed entries. Default is `feed`.                                                            |
-| size       | integer | Sets the number of recent entries to include in the feed. Default is `20`.                                                 |
-| url        | string  | Sets the base URL for the feed. Default is value used for `options.url`.                                                   |
-| permalink  | string  | Sets the file name and location. Default is `/feed.xml`. Set to `false` to disable writing this file to the output folder. |
+| Name       | Type    | Description                                                                                                                 |
+| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
+| title      | string  | Sets the feed title (default is `Feed`)                                                                                     |
+| collection | string  | Sets the collection to use for feed entries (default is `feed`)                                                             |
+| size       | integer | Sets the number of recent entries to include in the feed (default is `20`)                                                  |
+| url        | string  | Sets the base URL for the feed (default is value used for `options.url`)                                                    |
+| permalink  | string  | Sets the file name and location (default is `/feed.xml`). Set to `false` to disable writing this file to the output folder. |
 
 ## Using a different collection of pages
 
