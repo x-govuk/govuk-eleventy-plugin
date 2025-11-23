@@ -25,6 +25,24 @@ sectionKey: Page title
 Page content
 ```
 
+## Showing previous and next pages
+
+To link pages in a series, add `showPagination: true` to the page’s front matter options. This adds previous and next links to the bottom of the page.
+
+Pages get ordered by `title`. To set a specific order, use the `order` front matter option:
+
+```yaml
+---
+layout: sub-navigation
+title: Second page title
+order: 2
+---
+
+This is the second page
+```
+
+## Front matter options
+
 In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
 
 | Name           | Type    | Description                                                                                                                                                              |

@@ -25,6 +25,8 @@ pagination:
 Page introduction content (optional).
 ```
 
+## Front matter options
+
 In addition to [common front matter options](/layouts/front-matter-options), this layout accepts the following options:
 
 | Name               | Type    | Description                                                                                                                                                |

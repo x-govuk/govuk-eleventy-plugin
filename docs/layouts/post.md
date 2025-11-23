@@ -18,6 +18,24 @@ title: Page title
 Page content
 ```
 
+## Showing previous and next posts
+
+To link posts in a series, add `showPagination: true` to the post’s front matter options. This adds previous and next links to the bottom of the page.
+
+Posts get ordered by `title`. To set a specific order, use the `order` front matter option:
+
+```yaml
+---
+layout: post
+title: Second post title
+order: 2
+---
+
+This is the second post
+```
+
+## Front matter options
+
 In addition to [common front matter options](/layouts/front-matter-options), this layout accepts the following options:
 
 | Name           | Type                    | Description                                                                                             |
@@ -29,14 +47,14 @@ In addition to [common front matter options](/layouts/front-matter-options), thi
 | showPagination | boolean                 | Show previous/next pagination links at the foot of the page                                             |
 | tags           | array                   | List of tags post relates to                                                                            |
 
-## Options for `author` object
+### Options for `author` object
 
 | Name        | Type   | Description                    |
 | ----------- | ------ | ------------------------------ |
 | author.name | string | Name of post author            |
 | author.url  | string | URL for website of post author |
 
-## Options for `image` object
+### Options for `image` object
 
 | Name           | Type    | Description                                                            |
 | -------------- | ------- | ---------------------------------------------------------------------- |
