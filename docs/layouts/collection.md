@@ -7,9 +7,9 @@ theme: Content presentation
 > [!NOTE]
 > View an [example page that uses this layout (opens in a new tab)](/example/collection){target=example}
 
-To use this layout, make `collection` the value for a page’s `layout` key.
+To use this layout, make `collection` the value for a page’s `layout` front matter option.
 
-You will also need to say which pages should be listed, by using the options under the `pagination` key:
+To say which pages you want to list, use the [options](https://www.11ty.dev/docs/pagination/) under the `pagination` front matter option:
 
 ```yaml
 ---

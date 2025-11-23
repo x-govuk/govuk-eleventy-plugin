@@ -31,7 +31,7 @@ Next, create a folder to contain all the content for your site, for example `doc
 
 Next, add an `eleventy.config.js` file to the root folder of your project. You will use this file to [configure Eleventy](https://www.11ty.dev/docs/config/), and set [options for the plugin](/get-started/options).
 
-Add your chosen folder name to the `input` key within the `eleventy.config.js` file:
+Add your chosen folder name to the `input` option within the `eleventy.config.js` file:
 
 ```js
 import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'

@@ -9,7 +9,7 @@ theme: Content presentation
 
 This layout, based on the component used on [GOV.UK product pages](https://github.com/alphagov/product-page-example), can be useful if you need a product or marketing page.
 
-To use this layout, make `product` the value for a page’s `layout` key:
+To use this layout, make `product` the value for a page’s `layout` front matter option:
 
 ```yaml
 ---
