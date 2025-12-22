@@ -85,7 +85,7 @@ import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
-    header: {
+    footer: {
       contentLicence: {
         html: 'Licensed under the <a class="govuk-footer__link" href="https://licence.example">Example Licence</a>, except where otherwise stated'
       },
