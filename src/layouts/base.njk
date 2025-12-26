@@ -71,7 +71,7 @@
   {{- " - " + options.titleSuffix if options.titleSuffix -}}
 {% endblock %}
 
-{% block header %}
+{% block govukHeader %}
   {{ appHeader(options.header) }}
   {{ appServiceNavigation(options.serviceNavigation) if options.serviceNavigation }}
   {% block phaseBanner %}
@@ -79,7 +79,7 @@
   {% endblock %}
 {% endblock %}
 
-{% block footer %}
+{% block govukFooter %}
   {{ appFooter(options.footer) }}
 {% endblock %}
 
