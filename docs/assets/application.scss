@@ -2,13 +2,13 @@
 $_font-family: system-ui, sans-serif;
 @use "pkg:govuk-frontend/dist/govuk" as * with (
   $govuk-global-styles: true,
-  $govuk-new-organisation-colours: true,
-  $govuk-new-typography-scale: true,
   $govuk-font-family: $_font-family,
-  $govuk-brand-colour: #2288aa,
-  $govuk-link-colour: #006688,
-  $govuk-link-hover-colour: #004466,
-  $govuk-link-visited-colour: #333366
+  $govuk-functional-colours: (
+    brand: #2288aa,
+    link: #006688,
+    link-hover: #004466,
+    link-visited: #333366
+  )
 );
 
 // Use GOV.UK Eleventy Plugin components
@@ -39,7 +39,7 @@ $_font-family: system-ui, sans-serif;
     }
 
     .govuk-table__body .govuk-table__cell::before {
-      color: $govuk-secondary-text-colour;
+      color: govuk-functional-colour(secondary-text);
       display: block;
       margin-bottom: govuk-spacing(1);
       @include govuk-font(16);

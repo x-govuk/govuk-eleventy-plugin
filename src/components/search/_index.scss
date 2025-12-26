@@ -49,7 +49,7 @@ $_icon-size: 40px;
     position: relative;
 
     .govuk-service-navigation & {
-      outline: 1px solid $govuk-border-colour;
+      outline: 1px solid govuk-functional-colour(border);
     }
 
     .govuk-service-navigation--inverse & {
@@ -66,7 +66,7 @@ $_icon-size: 40px;
   }
 
   .app-search__hint {
-    color: govuk-colour("mid-grey");
+    color: govuk-colour("black", $variant: "tint-80");
     position: absolute;
   }
 
@@ -79,15 +79,15 @@ $_icon-size: 40px;
     position: relative;
 
     &::placeholder {
-      color: govuk-colour("dark-grey");
+      color: govuk-functional-colour(secondary-text);
     }
   }
 
   .app-search__input:focus,
   .app-search__input--focused {
-    border-color: $govuk-focus-text-colour;
+    border-color: govuk-functional-colour(focus-text);
     box-shadow: inset 0 0 0 $govuk-border-width-form-element;
-    outline: $govuk-focus-width solid $govuk-focus-colour;
+    outline: $govuk-focus-width solid govuk-functional-colour(focus);
     outline-offset: 0;
   }
 
@@ -109,7 +109,7 @@ $_icon-size: 40px;
   .app-search__menu {
     background-color: govuk-colour("white");
     border-top: 0;
-    color: govuk-colour("black");
+    color: govuk-functional-colour(text);
     margin: 0;
     max-height: 342px;
     overflow-x: hidden;
@@ -138,7 +138,7 @@ $_icon-size: 40px;
   }
 
   .app-search__option {
-    border-bottom: solid govuk-colour("mid-grey");
+    border-bottom: solid govuk-functional-colour(border);
     border-width: 1px 0;
     cursor: pointer;
     display: block;
@@ -164,8 +164,8 @@ $_icon-size: 40px;
 
   .app-search__option--focused,
   .app-search__option:hover {
-    background-color: $govuk-link-colour;
-    border-color: $govuk-link-colour;
+    background-color: govuk-functional-colour(link);
+    border-color: govuk-functional-colour(link);
     color: govuk-colour("white");
     // Add a transparent outline for when users change their colours.
     outline: 3px solid transparent;
@@ -178,7 +178,7 @@ $_icon-size: 40px;
 
   .app-search__option--no-results {
     background-color: govuk-colour("white");
-    color: govuk-colour("dark-grey");
+    color: govuk-functional-colour(secondary-text);
     cursor: not-allowed;
   }
 
@@ -189,7 +189,7 @@ $_icon-size: 40px;
   }
 
   .app-search__option-metadata {
-    color: $govuk-secondary-text-colour;
+    color: govuk-functional-colour(secondary-text);
     display: block;
     margin-top: govuk-spacing(1);
 

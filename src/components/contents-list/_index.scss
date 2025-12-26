@@ -17,10 +17,10 @@
     }
 
     li {
+      color: govuk-functional-colour(text);
       padding-top: govuk-spacing(2);
 
       @include govuk-font($size: 16, $weight: bold);
-      @include govuk-text-colour;
 
       @include govuk-media-query($from: tablet) {
         padding-top: govuk-spacing(6) / 4;
@@ -49,9 +49,9 @@
   }
 
   .app-contents-list__title {
+    color: govuk-functional-colour(text);
     margin: 0;
 
-    @include govuk-text-colour;
     @include govuk-font($size: 16, $weight: regular, $line-height: 1.5);
   }
 }
