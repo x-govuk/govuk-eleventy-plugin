@@ -46,7 +46,7 @@
 
     // Use GOV.UK yellow colour for highlighted text
     mark {
-      background-color: govuk-tint($govuk-focus-colour, 50%);
+      background-color: govuk-colour("yellow", $variant: "tint-50");
     }
 
     // Ensure sub- and superscript text doesn’t disrupt vertical rhythm
@@ -84,16 +84,16 @@
       // Show outline around linked images within figures
       img {
         display: inline-block;
-        outline: 1px solid rgba($govuk-border-colour, 0.5);
+        outline: 1px solid rgba(govuk-functional-colour(border), 0.5);
       }
 
       > .govuk-link img {
         &:hover {
-          outline-color: $govuk-link-hover-colour;
+          outline-color: govuk-functional-colour(link-hover);
         }
 
         &:active {
-          outline-color: $govuk-link-active-colour;
+          outline-color: govuk-functional-colour(link-active);
         }
       }
 
@@ -104,12 +104,12 @@
       }
 
       :focus & {
-        background-color: $govuk-focus-colour;
+        background-color: govuk-functional-colour(focus);
       }
     }
 
     figcaption {
-      color: $govuk-secondary-text-colour;
+      color: govuk-functional-colour(secondary-text);
       margin-top: govuk-spacing(1);
 
       @include govuk-font($size: 19);
@@ -119,14 +119,14 @@
     .govuk-table[tabindex] {
       display: block;
       overflow-x: auto;
-      scrollbar-color: $govuk-border-colour govuk-colour("light-grey");
+      scrollbar-color: govuk-functional-colour(border) govuk-colour("black", $variant: "tint-95");
       scrollbar-width: thin;
 
       &:focus,
       &:focus-visible {
         box-shadow:
-          0 0 0 #{$govuk-focus-width * 3} govuk-colour("black"),
-          0 0 0 #{$govuk-focus-width * 4} $govuk-focus-colour;
+          0 0 0 #{$govuk-focus-width * 3} govuk-functional-colour(focus-text),
+          0 0 0 #{$govuk-focus-width * 4} govuk-functional-colour(focus);
         outline: #{$govuk-focus-width * 2} solid govuk-colour("white");
       }
 
