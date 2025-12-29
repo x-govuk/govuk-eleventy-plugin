@@ -20,6 +20,7 @@
 {# Components #}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
 {% from "x-govuk/components/masthead/macro.njk" import xGovukMasthead %}
 {% from "x-govuk/components/related-navigation/macro.njk" import xGovukRelatedNavigation %}
@@ -69,6 +70,9 @@
 {% block header %}
   {{ appHeader(options.header) }}
   {{ appServiceNavigation(options.serviceNavigation) if options.serviceNavigation }}
+  {% block phaseBanner %}
+    {{ govukPhaseBanner(options.header.phaseBanner) if options.header.phaseBanner }}
+  {% endblock %}
 {% endblock %}
 
 {% block footer %}
