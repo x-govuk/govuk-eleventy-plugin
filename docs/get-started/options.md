@@ -55,7 +55,45 @@ Alongside [options available for the header component](https://design-system.ser
 | logotype      | object | Logo that appears in the header. If no value is provided, the GOV.UK logo is shown.                                                                                    |
 | logotype.text | string | Text to show instead of the GOV.UK logo. This text will appear bold. If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored. |
 | logotype.html | string | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                      |
+| phaseBanner   | object | See [options for phase banner](#options-for-phasebanner-object)                                                                                                        |
 | search        | object | See [options for search](#options-for-search-object)                                                                                                                   |
+
+## Options for `phaseBanner` object
+
+Show a phase banner to indicate your service is in alpha or beta. The banner appears below the header and service navigation.
+
+Alongside [options available for the phase banner component](https://design-system.service.gov.uk/components/phase-banner/), the following options can be set:
+
+| Name       | Type   | Description                                                                   |
+| ---------- | ------ | ----------------------------------------------------------------------------- |
+| tag        | object | Required. Phase tag config (e.g., `{ text: "Alpha" }` or `{ text: "Beta" }`). |
+| tag.text   | string | Text for the phase tag. If `html` is set, this is not required.               |
+| tag.html   | string | HTML for the phase tag. If provided, `text` is ignored.                       |
+| text       | string | Text to display in the banner message.                                        |
+| html       | string | HTML for banner message. If provided, `text` is ignored.                      |
+| classes    | string | Additional CSS classes for the phase banner container.                        |
+| attributes | object | HTML attributes (e.g., data attributes) for the phase banner container.       |
+
+### Example
+
+```js
+import { govukEleventyPlugin } from '@x-govuk/govuk-eleventy-plugin'
+
+export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(govukEleventyPlugin, {
+    header: {
+      productName: 'Apply for a juggling licence',
+      phaseBanner: {
+        classes: 'govuk-width-container',
+        tag: {
+          text: 'Alpha'
+        },
+        html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/feedback">give your feedback</a>.'
+      }
+    }
+  })
+}
+```
 
 ## Options for `serviceNavigation` object
 
@@ -86,7 +124,7 @@ Alongside [options available for the footer component](https://design-system.ser
 | contentLicence      | object  | Licence description. If no value is provided, the OGL logo is shown alongside the words `All content is available under the Open Government Licence v3.0, except where otherwise stated`. Set to `false` to remove completely. |
 | contentLicence.text | string  | If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
 | contentLicence.html | string  | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
-| copyright           | object  | Copyright statement. If no value is provided, `© Crown copyright` is displayed below an image of the Royal Coat of Arms. Set to `false` to remove completely.                                                                 |
+| copyright           | object  | Copyright statement. If no value is provided, `© Crown copyright` is displayed below an image of the Royal Coat of Arms. Set to `false` to remove completely.                                                                  |
 | copyright.text      | string  | If `html` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
 | copyright.html      | string  | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored.                                                                                                                              |
 | logo                | boolean | Show logo in footer (default is `true`)                                                                                                                                                                                        |
