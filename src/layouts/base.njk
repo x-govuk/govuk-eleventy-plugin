@@ -43,7 +43,11 @@
 {% endblock %}
 
 {% block head %}
-  <script src="/assets/application.js" type="module"></script>
+  {% for script in options.scripts %}
+  <script src="{{ script | canonicalUrl }}" type="module"></script>
+  {% else %}
+  <script src="{{ "/assets/application.js" | canonicalUrl }}" type="module"></script>
+  {% endfor %}
 
   {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | canonicalUrl }}">

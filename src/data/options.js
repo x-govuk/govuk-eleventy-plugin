@@ -27,6 +27,7 @@ const defaults = {
     govspeak: true
   },
   opengraphImageUrl: '/assets/rebrand/images/govuk-opengraph-image.png',
+  scripts: [],
   stylesheets: [],
   titleSuffix: 'GOV.UK',
   url: false,
