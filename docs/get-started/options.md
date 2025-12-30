@@ -64,15 +64,15 @@ Show a phase banner to indicate your service is in alpha or beta. The banner app
 
 Alongside [options available for the phase banner component](https://design-system.service.gov.uk/components/phase-banner/), the following options can be set:
 
-| Name       | Type   | Description                                                                   |
-| ---------- | ------ | ----------------------------------------------------------------------------- |
-| tag        | object | Required. Phase tag config (e.g., `{ text: "Alpha" }` or `{ text: "Beta" }`). |
-| tag.text   | string | Text for the phase tag. If `html` is set, this is not required.               |
-| tag.html   | string | HTML for the phase tag. If provided, `text` is ignored.                       |
-| text       | string | Text to display in the banner message.                                        |
-| html       | string | HTML for banner message. If provided, `text` is ignored.                      |
-| classes    | string | Additional CSS classes for the phase banner container.                        |
-| attributes | object | HTML attributes (e.g., data attributes) for the phase banner container.       |
+| Name       | Type   | Description                                                                                 |
+| ---------- | ------ | ------------------------------------------------------------------------------------------- |
+| tag        | object | Required. Phase tag config (e.g., `{ text: "Alpha" }` or `{ text: "Beta" }`).               |
+| tag.text   | string | Text for the phase tag. If `html` is set, this is not required.                             |
+| tag.html   | string | HTML for the phase tag. If provided, `text` is ignored.                                     |
+| text       | string | Text to display in the banner message.                                                      |
+| html       | string | HTML for banner message. If provided, `text` is ignored.                                    |
+| classes    | string | Additional CSS classes for the phase banner container (default is `govuk-width-container`). |
+| attributes | object | HTML attributes (e.g., data attributes) for the phase banner container.                     |
 
 ### Example
 
@@ -84,7 +84,6 @@ export default function(eleventyConfig) {
     header: {
       productName: 'Apply for a juggling licence',
       phaseBanner: {
-        classes: 'govuk-width-container',
         tag: {
           text: 'Alpha'
         },

@@ -61,5 +61,10 @@ export function defaultPluginOptions(options, pathPrefix) {
     }
   }
 
+  // Default phaseBanner classes to govuk-width-container for proper width
+  if (options.header?.phaseBanner && !options.header.phaseBanner.classes) {
+    options.header.phaseBanner.classes = 'govuk-width-container'
+  }
+
   return deepmerge(defaults, options)
 }
