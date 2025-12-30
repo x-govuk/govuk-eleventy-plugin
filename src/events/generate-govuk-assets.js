@@ -46,22 +46,25 @@ export async function generateAssets(dir, options) {
   }
 
   // Bundle JavaScript
-  try {
-    const jsFile = `${dir.output}/assets/application.js`
-    const bundle = await rollup({
-      input: path.join(import.meta.dirname, '../application.js'),
-      context: 'window',
-      plugins: [
-        nodeResolve(),
-        commonJs(),
-        terser({ format: { comments: false } })
-      ]
-    })
+  // Ignored if custom scripts are used
+  if (options.scripts.length === 0) {
+    try {
+      const jsFile = `${dir.output}/assets/application.js`
+      const bundle = await rollup({
+        input: path.join(import.meta.dirname, '../application.js'),
+        context: 'window',
+        plugins: [
+          nodeResolve(),
+          commonJs(),
+          terser({ format: { comments: false } })
+        ]
+      })
 
-    const { output } = await bundle.generate({ format: 'es' })
-    const { code } = output[0]
-    fs.writeFile(jsFile, code)
-  } catch (error) {
-    console.error(error)
+      const { output } = await bundle.generate({ format: 'es' })
+      const { code } = output[0]
+      fs.writeFile(jsFile, code)
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
