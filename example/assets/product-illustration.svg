@@ -2,37 +2,37 @@
   <defs>
     <path id="a" d="M0 140h48c4 0 8 4 8 8v13h144V0H0v140Z"/>
   </defs>
-  <circle cx="456" cy="80" r="24" fill="#F499BE"/>
-  <circle cx="392" cy="40" r="24" fill="#619BCD"/>
-  <circle cx="320" cy="24" r="24" fill="#85994B"/>
-  <circle cx="248" cy="40" r="24" fill="#FD0"/>
-  <circle cx="184" cy="84" r="24" fill="#F47738"/>
-  <circle cx="144" cy="152" r="24" fill="#D4351C"/>
-  <path fill="#912B88" d="M148 228a24 24 0 0 0-48 0h48Z"/>
+  <circle cx="456" cy="80" r="24" fill="#e59abe"/>
+  <circle cx="392" cy="40" r="24" fill="#5694ca"/>
+  <circle cx="320" cy="24" r="24" fill="#4da583"/>
+  <circle cx="248" cy="40" r="24" fill="#ffdd00"/>
+  <circle cx="184" cy="84" r="24" fill="#f47738"/>
+  <circle cx="144" cy="152" r="24" fill="#ca3535"/>
+  <path d="M148 228a24 24 0 0 0-48 0h48Z" fill="#98285d"/>
   <g transform="translate(370 90)">
     <mask id="b" fill="#fff">
       <use xlink:href="#a"/>
     </mask>
     <g fill-rule="nonzero" mask="url(#b)">
-      <path fill="#323232" stroke="#0B0C0C" stroke-width="6" d="M197 3v154H3V3h194Z"/>
+      <path fill="#323232" stroke="#0b0c0c" stroke-width="6" d="M197 3v154H3V3h194Z"/>
       <path fill="#B1B4B6" d="M44 30 23 18h-1l-2 2 1 2 16 9-16 9-1 2 2 2h1l21-12v-2Zm30 25-1-1H47l-1 1v2l1 1h26l1-1 1-1-1-1Z"/>
     </g>
   </g>
-  <path fill="#FFF" d="M78 236h340v230H78z" opacity=".4"/>
+  <path fill="#fff" d="M78 236h340v230H78z" opacity=".4"/>
   <path fill="#1E1E1E" fill-rule="nonzero" d="M416 229c6 0 10 3 10 9v239H71V238c0-6 3-9 9-9h336Zm-196 7H82c-2 0-4 2-4 4v226h340V240c0-2-2-4-4-4H276v6c0 2-1 3-3 3h-50c-2 0-3-1-3-3v-6Z"/>
-  <path fill="#EDEDED" fill-rule="nonzero" d="M426 476h-1V238c0-5-3-9-8-9H80c-5 0-9 4-9 9v238h-1V238c0-6 4-10 10-10h337c5 0 9 4 9 10v238Z"/>
+  <path fill="#f3f3f3" fill-rule="nonzero" d="M426 476h-1V238c0-5-3-9-8-9H80c-5 0-9 4-9 9v238h-1V238c0-6 4-10 10-10h337c5 0 9 4 9 10v238Z"/>
   <path fill="#808283" fill-rule="nonzero" d="M209 476h78v7h-78z"/>
-  <path fill="#B1B4B6" fill-rule="nonzero" d="M280 483h-64c-5 0-6-3-6-7H20v10c0 4 4 8 8 8h440c4 0 8-4 8-8v-10H287c0 4-2 7-7 7Z"/>
-  <path stroke="#EDEDED" d="M476 477H287c0 4-3 6-7 6h-64c-4 0-6-2-6-6H20"/>
-  <path fill="#A5A9AB" fill-rule="nonzero" d="M20 486c0 4 4 8 8 8h440a8 8 0 0 0 8-8l-6 2H26l-6-2Z"/>
+  <path fill="#b1b4b6" fill-rule="nonzero" d="M280 483h-64c-5 0-6-3-6-7H20v10c0 4 4 8 8 8h440c4 0 8-4 8-8v-10H287c0 4-2 7-7 7Z"/>
+  <path stroke="#f3f3f3" d="M476 477H287c0 4-3 6-7 6h-64c-4 0-6-2-6-6H20"/>
+  <path fill="#a5a9ab" fill-rule="nonzero" d="M20 486c0 4 4 8 8 8h440a8 8 0 0 0 8-8l-6 2H26l-6-2Z"/>
   <path fill="#000" fill-opacity=".5" fill-rule="nonzero" d="M45 496h406l20 4H25z"/>
-  <path fill="#505A5F" fill-rule="nonzero" d="m47 494 6 3h39l5-3zm352 0 6 3h39l5-3z"/>
-  <path fill="#FFF" fill-rule="nonzero" stroke="#1D70B8" stroke-width="2" d="M119 280h258v148H119z"/>
-  <path fill="#1D70B8" fill-rule="nonzero" d="M119 280h258v28H119z"/>
-  <text fill="#FFF" font-family="sans-serif" font-size="16" font-weight="300" letter-spacing="-.1">
+  <path fill="#484949" fill-rule="nonzero" d="m47 494 6 3h39l5-3zm352 0 6 3h39l5-3z"/>
+  <path fill="#fff" fill-rule="nonzero" stroke="#1D70B8" stroke-width="2" d="M119 280h258v148H119z"/>
+  <path fill="#1d70b8" fill-rule="nonzero" d="M119 280h258v28H119z"/>
+  <text fill="#fff" font-family="sans-serif" font-size="16" font-weight="300" letter-spacing="-.1">
     <tspan x="136" y="300">Service</tspan>
   </text>
-  <path fill="#B1B4B6" fill-rule="nonzero" d="M136 322h82v9h-82v-9Zm0 18h171v9H136v-9Zm0 18h171v9H136v-9Zm0 18h113v9H136v-9Z"/>
-  <path fill="#00703C" fill-rule="nonzero" d="M136 397h96v15h-96z"/>
-  <path fill="#0B0C0C" fill-rule="nonzero" d="M136 412h96v2h-96z"/>
+  <path fill="#cecece" fill-rule="nonzero" d="M136 322h82v9h-82v-9Zm0 18h171v9H136v-9Zm0 18h171v9H136v-9Zm0 18h113v9H136v-9Z"/>
+  <path fill="#11875a" fill-rule="nonzero" d="M136 397h96v15h-96z"/>
+  <path fill="#0b0c0c" fill-rule="nonzero" d="M136 412h96v2h-96z"/>
 </svg>

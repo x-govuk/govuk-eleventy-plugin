@@ -2,7 +2,7 @@
 
 @include govuk-exports("govuk-eleventy-plugin/component/aside") {
   .app-aside {
-    border-top: 2px solid $govuk-brand-colour;
+    border-top: 2px solid govuk-functional-colour(brand);
 
     @include govuk-responsive-margin(6, "bottom");
     @include govuk-text-colour;

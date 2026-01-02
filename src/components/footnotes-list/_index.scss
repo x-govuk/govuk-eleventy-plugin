@@ -49,7 +49,7 @@
     }
 
     :target {
-      background-color: govuk-tint($govuk-focus-colour, 75%);
+      background-color: govuk-colour("yellow", $variant: "tint-80");
     }
 
     :last-child {
