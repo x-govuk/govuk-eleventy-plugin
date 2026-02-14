@@ -455,12 +455,12 @@ The rendered output looks like this:
 To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
 
 ```markdown
-[![A stylised crown icon.](/assets/rebrand/images/govuk-icon-180.png)](https://www.gov.uk)
+[![A stylised crown icon.](/assets/images/govuk-icon-180.png)](https://www.gov.uk)
 ```
 
 The rendered output looks like this:
 
-[![A stylised crown icon.](/assets/rebrand/images/govuk-icon-180.png)](https://www.gov.uk)
+[![A stylised crown icon.](/assets/images/govuk-icon-180.png)](https://www.gov.uk)
 
 ## Tables
 
