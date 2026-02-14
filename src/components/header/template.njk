@@ -24,8 +24,7 @@
         {% else %}
           {{ govukLogo({
             classes: "govuk-header__logotype",
-            ariaLabelText: "GOV.UK",
-            rebrand: true
+            ariaLabelText: "GOV.UK"
           }) | trim | indent(10) }}
         {% endif %}
         {% if params.productName %}
