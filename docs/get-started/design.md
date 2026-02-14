@@ -127,10 +127,12 @@ You can also change other [SCSS settings used by GOV.UK Frontend](https://fronte
 $_font-family: system-ui, sans-serif;
 @use "pkg:govuk-frontend/dist/govuk" with (
   $govuk-font-family: $_font-family,
-  $govuk-brand-colour: #8822aa,
-  $govuk-link-colour: #660088,
-  $govuk-link-hover-colour: #440066,
-  $govuk-link-visited-colour: #333366,
+  $govuk-functional-colours: (
+    brand: #8822aa,
+    link: #660088,
+    link-hover: #440066,
+    link-visited: #333366
+  ),
   $govuk-page-width: 1100px
 );
 
