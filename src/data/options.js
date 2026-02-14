@@ -16,9 +16,9 @@ const defaults = {
   },
   homeKey: 'Home',
   icons: {
-    mask: '/assets/rebrand/images/govuk-icon-mask.svg',
-    shortcut: '/assets/rebrand/images/favicon.ico',
-    touch: '/assets/rebrand/images/govuk-icon-180.png'
+    mask: '/assets/images/govuk-icon-mask.svg',
+    shortcut: '/assets/images/favicon.ico',
+    touch: '/assets/images/govuk-icon-180.png'
   },
   markdown: {
     calvert: true,
@@ -26,7 +26,7 @@ const defaults = {
     headingsStartWith: 'xl',
     govspeak: true
   },
-  opengraphImageUrl: '/assets/rebrand/images/govuk-opengraph-image.png',
+  opengraphImageUrl: '/assets/images/govuk-opengraph-image.png',
   scripts: [],
   stylesheets: [],
   titleSuffix: 'GOV.UK',

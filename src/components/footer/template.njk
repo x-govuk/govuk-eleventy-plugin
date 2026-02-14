@@ -16,8 +16,7 @@
     {% elif params.logo != false %}
       {{- govukLogo({
         classes: "govuk-footer__crown",
-        useLogotype: false,
-        rebrand: true
+        useLogotype: false
       }) }}
     {% endif %}
     {% if params.navigation | length %}
