@@ -2,7 +2,7 @@
 
 @include govuk-exports("govuk-eleventy-plugin/component/document-header") {
   .app-document-header__metadata {
-    color: $govuk-secondary-text-colour;
+    color: govuk-functional-colour(secondary-text);
     max-width: 45em;
 
     @include govuk-font($size: 16, $line-height: 1.5);

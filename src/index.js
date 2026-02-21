@@ -125,11 +125,6 @@ export async function govukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
   eleventyConfig.addPlugin(eleventyNavigation)
 
-  // Enable GOV.UK rebrand for govuk/template.njk
-  // Can be remove with GOV.UK Frontend v6
-  // https://github.com/alphagov/govuk-frontend/issues/6097
-  eleventyConfig.addNunjucksGlobal('govukRebrand', true)
-
   // Events
   eleventyConfig.on('eleventy.after', async ({ dir }) => {
     generateAssets(dir, options)

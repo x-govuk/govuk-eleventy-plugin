@@ -1,33 +1,33 @@
 @use "govuk-frontend/dist/govuk" as *;
 
 .app-inset-text--tip {
-  background-color: govuk-tint(govuk-colour("blue"), 90%);
+  background-color: govuk-colour("blue", "tint-80");
   border-color: govuk-colour("blue");
 }
 
 .app-inset-text--important {
-  background-color: govuk-tint(govuk-colour("bright-purple"), 85%);
-  border-color: govuk-colour("bright-purple");
+  background-color: govuk-colour("purple", "tint-80");
+  border-color: govuk-colour("purple");
 
   .govuk-link {
-    color: govuk-shade(govuk-colour("bright-purple"), 50%);
+    color: govuk-colour("purple", "shade-50");
   }
 }
 
 .app-inset-text--warning {
-  background-color: govuk-tint(govuk-colour("yellow"), 75%);
-  border-color: govuk-colour("brown");
+  background-color: govuk-colour("yellow", $variant: "tint-80");
+  border-color: govuk-colour("yellow", $variant: "shade-25");
 
   .govuk-link {
-    color: govuk-shade(govuk-colour("yellow"), 65%);
+    color: govuk-colour("yellow", "shade-50");
   }
 }
 
 .app-inset-text--caution {
-  background-color: govuk-tint(govuk-colour("red"), 75%);
+  background-color: govuk-colour("red", $variant: "tint-80");
   border-color: govuk-colour("red");
 
   .govuk-link {
-    color: govuk-shade(govuk-colour("red"), 80%);
+    color: govuk-colour("red", "shade-50");
   }
 }

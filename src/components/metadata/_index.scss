@@ -2,8 +2,8 @@
 
 @include govuk-exports("govuk-eleventy-plugin/components/metadata") {
   .app-metadata {
-    border-bottom: 1px solid $govuk-border-colour;
-    border-top: 1px solid $govuk-border-colour;
+    border-bottom: 1px solid govuk-functional-colour(border);
+    border-top: 1px solid govuk-functional-colour(border);
     margin-top: 0;
 
     @include govuk-font($size: 16, $line-height: 1.5);

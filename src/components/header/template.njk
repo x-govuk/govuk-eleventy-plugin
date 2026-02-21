@@ -8,10 +8,10 @@
   {%- set headerClasses = " app-header--no-border" -%}
 {%- endif -%}
 
-<header class="govuk-header app-header{{ headerClasses }}" role="banner" data-module="govuk-header">
+<div class="govuk-header app-header{{ headerClasses }}" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
-      <a href="{{ params.homepageUrl | default("/") }}" class="govuk-header__link govuk-header__link--homepage">
+      <a href="{{ params.homepageUrl | default("/") }}" class="govuk-header__homepage-link">
         {% if xGovuk %}
           {{ xGovukLogo({
             classes: "govuk-header__logotype x-govuk-header__logotype",
@@ -24,8 +24,7 @@
         {% else %}
           {{ govukLogo({
             classes: "govuk-header__logotype",
-            ariaLabelText: "GOV.UK",
-            rebrand: true
+            ariaLabelText: "GOV.UK"
           }) | trim | indent(10) }}
         {% endif %}
         {% if params.productName %}
@@ -37,4 +36,4 @@
     </div>
     {{ appSearch(params.search) if params.search.indexPath | indent(4) }}
   </div>
-</header>
+</div>

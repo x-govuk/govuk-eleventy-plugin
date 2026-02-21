@@ -2,7 +2,7 @@
 
 {#- Hardcoded value is $govuk-brand-blue -#}
 {% set themeColor = options.themeColor | default("#1d70b8", true) -%}
-{% set assetPath = assetPath | default("/assets/rebrand", true) -%}
+{% set assetPath = assetPath | default("/assets", true) -%}
 
 {#- Set the opengraphImageUrl in parent template to either the one
     from the page metadata or else fallback to the generic one from options. -#}
@@ -71,7 +71,7 @@
   {{- " - " + options.titleSuffix if options.titleSuffix -}}
 {% endblock %}
 
-{% block header %}
+{% block govukHeader %}
   {{ appHeader(options.header) }}
   {{ appServiceNavigation(options.serviceNavigation) if options.serviceNavigation }}
   {% block phaseBanner %}
@@ -79,7 +79,7 @@
   {% endblock %}
 {% endblock %}
 
-{% block footer %}
+{% block govukFooter %}
   {{ appFooter(options.footer) }}
 {% endblock %}
 

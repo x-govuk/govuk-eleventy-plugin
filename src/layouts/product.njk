@@ -2,7 +2,7 @@
 
 {% set inverseMasthead = inverseMasthead | default(true) %}
 
-{% block main %}
+{% block container %}
   <main id="main-content" role="main" {%- if mainLang %} lang="{{ mainLang }}"{% endif %}>
     {{ xGovukMasthead({
       inverse: inverseMasthead,
