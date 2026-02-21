@@ -22,7 +22,8 @@ export async function generateAssets(dir, options) {
     let inputFile = await fs.readFile(inputFilePath)
 
     // Update asset path to use configured path prefix
-    const assetPath = path.join(options.pathPrefix, '/assets/')
+    // Use POSIX forward slash path separator for generated SCSS
+    const assetPath = path.posix.join(options.pathPrefix, '/assets/')
     inputFile = inputFile
       .toString()
       .replace(
