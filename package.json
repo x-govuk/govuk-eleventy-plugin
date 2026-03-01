@@ -84,7 +84,7 @@
     "@x-govuk/govuk-eleventy-plugin": "file:./",
     "np": "^11.0.0",
     "prettier": "^3.1.0",
-    "stylelint": "^16.0.0",
+    "stylelint": "^17.4.0",
     "stylelint-config-gds": "^2.0.0",
     "stylelint-order": "^7.0.0"
   },
