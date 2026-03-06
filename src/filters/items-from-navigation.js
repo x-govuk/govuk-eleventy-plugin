@@ -7,14 +7,12 @@ import { smart } from './smart.js'
  *
  * @param {Array} eleventyNavigation - Eleventy navigation data
  * @param {string} [pageUrl] - URL of current page
- * @param {object} [options] - Plugin options
  * @param {boolean} [sort] - Sort navigation items
  * @returns {Array} `items` array
  */
 export function itemsFromNavigation(
   eleventyNavigation,
   pageUrl = false,
-  options = {},
   sort = false
 ) {
   const navigationItems = []

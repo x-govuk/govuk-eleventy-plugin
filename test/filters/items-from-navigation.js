@@ -126,7 +126,6 @@ describe('itemsFromNavigation filter', () => {
     const result = itemsFromNavigation(
       eleventyNavigationBreadcrumb,
       '/parent/child',
-      {},
       true
     )
 

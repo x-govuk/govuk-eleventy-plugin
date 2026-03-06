@@ -14,7 +14,7 @@
 {% set pageCount = pagination.pages | length %}
 
 {# Navigation #}
-{% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs, allowMissing: true }) | itemsFromNavigation(page.url, options) if eleventyNavigation.key %}
+{% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs, allowMissing: true }) | itemsFromNavigation(page.url) if eleventyNavigation.key %}
 {% set showBreadcrumbs = options.showBreadcrumbs != false and breadcrumbItems | length > 0 %}
 
 {# Components #}
