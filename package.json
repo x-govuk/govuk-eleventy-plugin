@@ -82,7 +82,7 @@
     "@11ty/eleventy-plugin-rss": "^2.0.0",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-terser": "^1.0.0",
     "@x-govuk/govuk-prototype-components": "^5.0.0",
     "deepmerge": "^4.2.2",
     "govuk-frontend": "^5.11.0",
@@ -105,7 +105,7 @@
     "smartypants": "^0.2.0"
   },
   "devDependencies": {
-    "@x-govuk/eslint-config": "^0.0.1",
+    "@x-govuk/eslint-config": "^0.0.2",
     "@x-govuk/govuk-eleventy-plugin": "file:./",
     "np": "^11.0.0",
     "prettier": "^3.1.0",
