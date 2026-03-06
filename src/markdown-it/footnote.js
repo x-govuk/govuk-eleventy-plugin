@@ -1,7 +1,7 @@
 /**
  * Render footnotes
  *
- * @param {Function} md - markdown-it instance
+ * @param {import('markdown-it')} md - markdown-it instance
  */
 export function footnotesRules(md) {
   const { rules } = md.renderer

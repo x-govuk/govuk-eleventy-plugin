@@ -1,6 +1,6 @@
 /**
  * Get the first `n` elements of a collection. Based on filter provided for the
- * virtual templates in @11ty/eleventy-plugin-rss’
+ * virtual templates in \@11ty/eleventy-plugin-rss’
  *
  * @param {Array} array - Eleventy collection data
  * @param {number} n - Number of items to slice from collection

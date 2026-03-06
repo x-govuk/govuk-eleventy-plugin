@@ -26,7 +26,7 @@ import { tableRules } from './markdown-it/table.js'
  *
  * @see {@link https://markdown-it.github.io/markdown-it/}
  * @param {object} [markdownOptions] - Plugin Markdown options
- * @returns {Function} markdown-it instance
+ * @returns {import('markdown-it')} markdown-it instance
  */
 export function md(markdownOptions = {}) {
   const opts = {

@@ -29,7 +29,7 @@ export function govukDate(string) {
  * Format string into an ISO 8601 date
  *
  * @param {string} string - String
- * @returns {string} ISO 8601 date
+ * @returns {string|undefined} ISO 8601 date
  */
 export function isoDate(string) {
   string = normalise(string, '')

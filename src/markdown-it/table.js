@@ -1,7 +1,7 @@
 /**
  * Render a table with `tabindex` to enable keyboard scrolling
  *
- * @param {Function} md - markdown-it instance
+ * @param {import('markdown-it')} md - markdown-it instance
  */
 export function tableRules(md) {
   const { rules } = md.renderer

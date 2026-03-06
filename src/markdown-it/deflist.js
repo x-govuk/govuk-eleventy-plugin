@@ -1,7 +1,7 @@
 /**
  * Render a definition list
  *
- * @param {Function} md - markdown-it instance
+ * @param {import('markdown-it')} md - markdown-it instance
  */
 export function defListRules(md) {
   const { rules } = md.renderer

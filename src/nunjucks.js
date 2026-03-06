@@ -21,7 +21,7 @@ const resolveNpmModule = (module) => {
  *
  * @see {@link https://mozilla.github.io/nunjucks/api.html#environment}
  * @param {object} eleventyConfig - Eleventy config
- * @returns {Function} Nunjucks environment
+ * @returns {import('nunjucks').Environment} Nunjucks environment
  */
 export function nunjucksConfig(eleventyConfig) {
   const { includes, input, layouts } = eleventyConfig.dir

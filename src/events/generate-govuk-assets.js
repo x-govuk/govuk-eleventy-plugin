@@ -12,7 +12,6 @@ import * as sass from 'sass'
  *
  * @param {object} dir - Project directories
  * @param {object} options - Plugin options
- * @returns {Function} Eleventy event
  */
 export async function generateAssets(dir, options) {
   // Generate default CSS
