@@ -6,7 +6,7 @@ sectionKey: Get started
 
 ## Requirements
 
-- [Node.js](https://nodejs.org) v22 or later
+- [Node.js](https://nodejs.org) v22.16 or later
 - [Eleventy](https://www.11ty.dev) v3 or later
 
 We recommend [Node version manager](https://github.com/nvm-sh/nvm) if you are working across projects that use different versions of Node.js.
