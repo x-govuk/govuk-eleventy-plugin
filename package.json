@@ -87,7 +87,7 @@
     "@x-govuk/govuk-prototype-components": "^5.0.0",
     "accessible-autocomplete": "^3.0.1",
     "deepmerge": "^4.2.2",
-    "govuk-frontend": "^5.11.0",
+    "govuk-frontend": "^6.1.0",
     "markdown-it": "^14.1.1",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-anchor": "^9.0.0",
