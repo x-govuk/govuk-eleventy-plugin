@@ -12,44 +12,69 @@
   "bugs": {
     "url": "git+https://github.com/x-govuk/govuk-eleventy-plugin/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x-govuk/govuk-eleventy-plugin.git"
+  },
+  "license": "MIT",
   "contributors": [
     {
       "name": "Paul Robert Lloyd",
       "url": "https://paulrobertlloyd.com"
     }
   ],
-  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "module-sync": "./src/index.js",
+      "sass": "./src/index.scss"
+    },
+    "./collections": {
+      "import": "./src/collections/index.js",
+      "module-sync": "./src/collections/index.js"
+    },
+    "./extensions": {
+      "import": "./src/extensions/index.js",
+      "module-sync": "./src/extensions/index.js"
+    },
+    "./filters": {
+      "import": "./src/filters/index.js",
+      "module-sync": "./src/filters/index.js"
+    },
+    "./templates": {
+      "import": "./src/templates/index.js",
+      "module-sync": "./src/templates/index..js"
+    },
+    "./utils": {
+      "import": "./src/utils.js",
+      "module-sync": "./src/utils.js"
+    }
+  },
+  "main": "src/index.js",
   "files": [
     "src"
   ],
-  "main": "src/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/x-govuk/govuk-eleventy-plugin.git"
-  },
   "scripts": {
     "build": "eleventy",
     "postbuild": "npm run build:example",
     "build:example": "eleventy --config=example.config.js",
+    "coverage": "node --test --experimental-test-coverage",
     "predev": "npm run build",
     "dev": "eleventy --serve --watch",
     "dev:example": "eleventy --serve --watch --config=example.config.js",
-    "prestart": "npm run build",
-    "start": "eleventy --serve",
-    "lint:prettier": "prettier . --check",
-    "lint:prettier:fix": "prettier . --write",
-    "lint:js": "eslint '**/*.js'",
-    "lint:js:fix": "eslint '**/*.js' --fix",
-    "lint:scss": "stylelint '**/*.scss'",
-    "lint:scss:fix": "stylelint '**/*.scss' --fix",
     "lint": "npm run lint:prettier && npm run lint:js && npm run lint:scss",
     "lint:fix": "npm run lint:prettier:fix && npm run lint:js:fix && npm run lint:scss:fix",
-    "test": "node --test",
-    "coverage": "node --test --experimental-test-coverage",
-    "release": "np --no-publish"
-  },
-  "publishConfig": {
-    "access": "public"
+    "lint:js": "eslint '**/*.js'",
+    "lint:js:fix": "eslint '**/*.js' --fix",
+    "lint:prettier": "prettier . --check",
+    "lint:prettier:fix": "prettier . --write",
+    "lint:scss": "stylelint '**/*.scss'",
+    "lint:scss:fix": "stylelint '**/*.scss' --fix",
+    "release": "np --no-publish",
+    "prestart": "npm run build",
+    "start": "eleventy --serve",
+    "test": "node --test"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
@@ -91,32 +116,7 @@
   "engines": {
     "node": ">=22"
   },
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./src/index.js",
-      "module-sync": "./src/index.js",
-      "sass": "./src/index.scss"
-    },
-    "./collections": {
-      "import": "./src/collections/index.js",
-      "module-sync": "./src/collections/index.js"
-    },
-    "./extensions": {
-      "import": "./src/extensions/index.js",
-      "module-sync": "./src/extensions/index.js"
-    },
-    "./filters": {
-      "import": "./src/filters/index.js",
-      "module-sync": "./src/filters/index.js"
-    },
-    "./templates": {
-      "import": "./src/templates/index.js",
-      "module-sync": "./src/templates/index..js"
-    },
-    "./utils": {
-      "import": "./src/utils.js",
-      "module-sync": "./src/utils.js"
-    }
+  "publishConfig": {
+    "access": "public"
   }
 }
