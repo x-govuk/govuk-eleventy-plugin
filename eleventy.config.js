@@ -1,7 +1,6 @@
 import fs from 'node:fs/promises'
 
-import { govukEleventyPlugin } from './src/index.js'
-import { layoutFilenames } from './src/index.js'
+import { govukEleventyPlugin, layoutFilenames } from './src/index.js'
 
 const serviceName = 'GOV.UK Eleventy Plugin'
 
