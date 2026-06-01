@@ -84,7 +84,7 @@
       // Show outline around linked images within figures
       img {
         display: inline-block;
-        outline: 1px solid rgba(govuk-functional-colour(border), 0.5);
+        outline: 1px solid rgb(govuk-functional-colour(border), 0.5);
       }
 
       > .govuk-link img {
