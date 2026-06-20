@@ -8,19 +8,17 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      {{ appDocumentHeader({
-        caption: caption,
-        title: title,
-        date: date,
-        modified: modified,
-        author: author,
-        authors: authors,
-        tags: tags
-      }) }}
-    </div>
+  {{ appDocumentHeader({
+    caption: caption,
+    title: title,
+    date: date,
+    modified: modified,
+    author: author,
+    authors: authors,
+    tags: tags
+  }) }}
 
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       {{ appMetadata({
         date: date,
