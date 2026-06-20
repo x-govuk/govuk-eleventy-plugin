@@ -77,8 +77,8 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.5",
-    "@11ty/eleventy-navigation": "^1.0.0",
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-navigation": "^1.0.5",
     "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@rollup/plugin-commonjs": "^29.0.3",
     "@rollup/plugin-node-resolve": "^16.0.3",
@@ -104,16 +104,16 @@
     "markdown-it-sup": "^2.0.0",
     "markdown-it-table-of-contents": "^1.2.0",
     "nunjucks": "^3.2.4",
-    "rollup": "^4.61.0",
-    "sass": "^1.100.0",
+    "rollup": "^4.62.2",
+    "sass": "^1.101.0",
     "smartypants": "^0.2.2"
   },
   "devDependencies": {
     "@x-govuk/eslint-config": "^0.0.2",
     "@x-govuk/govuk-eleventy-plugin": "file:./",
     "np": "^11.2.1",
-    "prettier": "^3.8.3",
-    "stylelint": "^17.12.0",
+    "prettier": "^3.8.4",
+    "stylelint": "^17.13.0",
     "stylelint-config-gds": "^3.0.0",
     "stylelint-order": "^8.1.1"
   },
