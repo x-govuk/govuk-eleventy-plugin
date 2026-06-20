@@ -63,6 +63,15 @@ jobs:
 
 Then, in your repository’s settings, under ‘Pages’, set ‘Source’ to ‘GitHub Actions’.
 
+> [!NOTE]
+> The above workflow references an npm script called `build` that should be included in your `package.json` file. For example:
+>
+> ```json
+> "scripts": {
+>   "build": "eleventy"
+> }
+> ```
+
 ### Hosting a site on a subpath
 
 By default, Eleventy assumes that a website is hosted on the root path of a domain, but you may want to host a website on a subpath, for example `https://<organisation>.github.io/<reponame>`.
