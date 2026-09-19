@@ -36,12 +36,13 @@ export class SearchElement extends HTMLElement {
   }
 
   findResults(searchQuery, searchIndex) {
+    const query = searchQuery.toLowerCase()
+
     return searchIndex.filter((item) => {
-      const regex = new RegExp(searchQuery, 'gi')
       return (
-        item?.title?.match(regex) ||
-        item?.description?.match(regex) ||
-        item?.tokens?.match(regex)
+        item?.title?.toLowerCase().includes(query) ||
+        item?.description?.toLowerCase().includes(query) ||
+        item?.tokens?.toLowerCase().includes(query)
       )
     })
   }
@@ -103,10 +104,15 @@ export class SearchElement extends HTMLElement {
         const section = document.createElement('span')
         section.className = 'app-search__option-metadata'
 
-        section.innerHTML =
-          result.date && result.section
-            ? `${result.section}<br>${result.date}`
-            : result.section || result.date
+        if (result.date && result.section) {
+          section.appendChild(document.createTextNode(result.section))
+          section.appendChild(document.createElement('br'))
+          section.appendChild(document.createTextNode(result.date))
+        } else {
+          section.appendChild(
+            document.createTextNode(result.section || result.date)
+          )
+        }
 
         container.appendChild(section)
       }
